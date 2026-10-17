@@ -1,7 +1,7 @@
 // Build: add documents and watch Jev parse them, live. Every event the parser streams becomes motion here: the
 // decision flow (which questions run, and which branch each block takes), the audit stack firing, parse health
 // falling, the pages filling with color, and a feed of the decisions themselves.
-import { $, h, s, fmt, pct, human, clip, toast, streamPost, ROLE_COLOR, ROLE_LABEL, MOD_COLOR, MOD_LABEL, CONTENT_ROLES, SERIES } from "./ui.js";
+import { $, h, s, fmt, pct, human, clip, toast, streamPost, ROLE_COLOR, ROLE_LABEL, MOD_COLOR, MOD_LABEL, CONTENT_ROLES, SERIES, ENGINE } from "./ui.js";
 
 const CHECKS = [
   ["R3", "Re-verify stitches"], ["R1", "Find fragments"], ["R2", "Attach fragments"], ["R4", "Second opinion on roles"],
@@ -65,7 +65,7 @@ export class BuildView {
         h("div", { class: "bscroll" },
           h("header", { class: "bhead", id: "bHead" }),
           h("div", { class: "stats", id: "bStats" }),
-          h("div", { class: "section-label" }, "How Jev parsed it"),
+          h("div", { class: "section-label" }, `How ${ENGINE.name} parsed it`),
           h("div", { class: "steps", id: "river" }),
           h("div", { class: "mosaic-wrap" },
             h("div", { class: "section-label row between" }, h("span", {}, "Every block on every page"), h("div", { class: "legend", id: "mosLegend" })),
@@ -74,7 +74,7 @@ export class BuildView {
       ),
       h("aside", { class: "feedpanel" },
         h("div", { class: "feed-h" }, h("span", {}, "Decisions as they land"), h("span", { class: "num", id: "bFeedStats" })),
-        h("div", { class: "dfeed", id: "dFeed" }, h("div", { class: "empty" }, "Rebuild a document, or drop a new one, and every question Jev answers appears here: which block, what it asked, what it decided.")),
+        h("div", { class: "dfeed", id: "dFeed" }, h("div", { class: "empty" }, `Rebuild a document, or drop a new one, and every question ${ENGINE.name} answers appears here: which block, what it asked, what it decided.`)),
       ),
     );
     $("#mosLegend").replaceChildren(...Object.entries(ROLE_LABEL).filter(([k]) => !["front_matter", "page_furniture", "toc_entry"].includes(k)).map(([k, l]) => h("span", {}, h("i", { style: `background:${ROLE_COLOR[k]}` }), l)));
@@ -172,12 +172,12 @@ export class BuildView {
 
   rebuild(fresh) {
     if (!this.sel) return;
-    this.watch("/api/library/structure", null, { ids: [this.sel], fresh, label: fresh ? "Re-parsing with live Jev calls" : "Rebuilding (answers served from cache)" });
+    this.watch("/api/library/structure", null, { ids: [this.sel], fresh, label: fresh ? `Re-parsing with live ${ENGINE.name} calls` : "Rebuilding (answers served from cache)" });
   }
 
   async watch(url, file, opts) {
     if (this.busy) return toast("A build is already running.", "warn");
-    if (!this.app.state.keys.typesafe) return this.app.openKey();
+    if (!this.app.state.keys.decisions) return this.app.openKey();
     this.busy = true;
     const d = opts.ids ? this.app.state.library.find((x) => x.id === opts.ids[0]) : null;
     this.job = this.newJob(d?.id ?? null, d);
@@ -247,7 +247,7 @@ export class BuildView {
     const N = (k) => J.nodes[k] ?? (J.nodes[k] = { n: 0, calls: 0 });
     switch (ev.t) {
       case "add_status":
-        J.status = { uploaded: `Uploaded ${fmt(ev.bytes)} bytes`, downloading: "Downloading", extracting: "Extracting text and layout (code)", extracted: "Extracted", structuring: "Jev is structuring" }[ev.status] ?? ev.status;
+        J.status = { uploaded: `Uploaded ${fmt(ev.bytes)} bytes`, downloading: "Downloading", extracting: "Extracting text and layout (code)", extracted: "Extracted", structuring: `${ENGINE.name} is structuring` }[ev.status] ?? ev.status;
         if (ev.id) J.id = ev.id;
         if (ev.status === "extracted") Object.assign(J, { pages: ev.pages, raw: ev.blocks, ocr: ev.ocr });
         if (ev.status === "structuring") {
@@ -343,7 +343,7 @@ export class BuildView {
     if (!J) return;
     const d = this.app.state.library.find((x) => x.id === J.id);
     const elapsed = J.idle ? J.elapsed : (J.end ?? Date.now()) - J.t0;
-    const est = d ? Math.max(0.01, (d.pages || d.blocks / 40) * 0.0022) : null;
+    const est = d ? Math.max(0.01, (d.pages || d.blocks / 40) * 0.0022 * ((this.app.state.models.pricePerMTok ?? 0.042) / 0.042)) : null; // measured on Jev, scaled to this engine's price
     const meta = [J.profile ? human(J.profile.doc_type) : null, (J.format ?? "").toUpperCase(), J.pages ? `${J.pages} pages` : null, J.ocr ? `${J.ocr} scanned page${J.ocr > 1 ? "s" : ""} read with OCR` : null].filter(Boolean).join(" · ");
     const act = (label, onclick, cls = "", title) => h("button", { class: `act ${cls}`, onclick, title }, label);
     $("#bHead").replaceChildren(...[
@@ -351,7 +351,7 @@ export class BuildView {
       h("h1", { class: "bh-title" }, J.title || J.short || "New document"),
       J.id && !this.busy ? h("div", { class: "bh-actions" },
         act("Watch it rebuild", () => this.rebuild(false), "strong", "Run the whole parse again with every answer served from the cache: the pipeline at full speed, for free"),
-        act(`Re-parse live${est ? ` · ≈$${est.toFixed(2)}` : ""}`, () => confirm(`Re-parse ${J.short} with live Jev calls (about $${est?.toFixed(2)})?`) && this.rebuild(true), "", "Ask Jev every question again, live"),
+        act(`Re-parse live${est ? ` · ≈$${est.toFixed(2)}` : ""}`, () => confirm(`Re-parse ${J.short} with live ${ENGINE.name} calls (about $${est?.toFixed(2)})?`) && this.rebuild(true), "", `Ask ${ENGINE.name} every question again, live`),
         act("Open document", () => this.app.showInLibrary(J.id)),
         act("Its data", () => this.app.showData({ doc: [J.id] })),
         act("Remove", () => this.remove(J.id), "danger", "Remove this document from the library")) : null,
@@ -359,12 +359,12 @@ export class BuildView {
     const rate = this.rateNow();
     const H = J.health;
     $("#bStats").replaceChildren(...[
-      stat("Decisions", fmt(J.decisions || (J.idle ? null : 0)), `${fmt(J.calls)} Jev calls${J.cached ? `, ${fmt(J.cached)} cached` : ""}`),
+      stat("Decisions", fmt(J.decisions || (J.idle ? null : 0)), `${fmt(J.calls)} ${ENGINE.name} calls${J.cached ? `, ${fmt(J.cached)} cached` : ""}`),
       J.idle ? null : h("div", { class: "stat" }, h("span", { class: "k" }, "Per second"), h("b", { class: `v ${this.busy ? "live" : ""}` }, this.busy ? fmt(Math.round(rate)) : J.idle || !elapsed ? "—" : fmt(Math.round(J.decisions / Math.max(0.1, elapsed / 1000)))), this.spark()),
       stat("Blocks", fmt(J.blocks || null), J.raw && J.raw !== J.blocks ? `from ${fmt(J.raw)} pieces` : "with positions"),
       stat("Open issues", H ? `${H.before ?? "…"} → ${H.after ?? "…"}` : "—", H?.verified ? `${H.verified} more confirmed fine` : "before → after audit"),
       stat(J.idle ? "Built in" : "Elapsed", elapsed == null ? "—" : elapsed < 1000 ? `${Math.round(elapsed)} ms` : `${(elapsed / 1000).toFixed(1)} s`, J.idle ? "" : this.busy ? `${Math.max(0, J.inflight)} calls in flight` : ""),
-      J.idle ? null : stat("Jev cost", `$${(J.cost ?? 0).toFixed(3)}`, J.fresh ? "live calls" : "cache is free"),
+      J.idle ? null : stat(`${ENGINE.name} cost`, `$${(J.cost ?? 0).toFixed(3)}`, J.fresh ? "live calls" : "cache is free"),
     ].filter(Boolean));
     this.renderRiver();
   }
@@ -499,7 +499,7 @@ export class BuildView {
   feedRow(x) {
     if (x.err) return h("div", { class: "df err" }, h("span", { class: "st" }, x.stage), x.err);
     const say = SAY[x.node]?.(x.k ?? "") ?? clip((x.q ?? "").replace(/`/g, ""), 70);
-    return h("div", { class: `df n-${x.node}`, onclick: x.call ? () => this.app.showCallById(x.call) : null, title: "Open the Jev call" },
+    return h("div", { class: `df n-${x.node}`, onclick: x.call ? () => this.app.showCallById(x.call) : null, title: `Open the ${ENGINE.name} call` },
       h("span", { class: "q" }, say),
       h("span", { class: "a", style: `--c:${answerColor(x.a, x.node)}` }, answerText(x.a, x.node, x.k)),
       x.t ? h("span", { class: "t" }, clip(x.t, 90)) : null);

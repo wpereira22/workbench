@@ -3,7 +3,7 @@
 // Writes data/library/<id>/structure.json. Restart the server afterwards so it reloads the library.
 import { createWriteStream } from "node:fs";
 import { join } from "node:path";
-import { Jev } from "../src/jev.mjs";
+import { createDecisionClient, ENGINE, PROVIDER } from "../src/jev.mjs";
 import { Run } from "../src/run.mjs";
 import { Library, structureDoc, ISSUE_TYPES } from "../src/library.mjs";
 
@@ -14,14 +14,7 @@ const evIdx = args.indexOf("--events");
 const events = evIdx >= 0 ? createWriteStream(args.splice(evIdx, 2)[1]) : null;
 const library = await new Library(join(DATA, "library")).load();
 const ids = args.length ? args : [...library.docs.keys()];
-const jev = new Jev({
-  apiKey: process.env.TYPESAFE_API_KEY,
-  baseUrl: process.env.TYPESAFE_BASE_URL,
-  model: process.env.JEV_MODEL ?? "jev-latest",
-  maxRps: Number(process.env.JEV_MAX_RPS ?? 35),
-  maxInflight: Number(process.env.JEV_MAX_INFLIGHT ?? 32),
-  cacheDir: process.env.JEV_CACHE_DIR ?? join(ROOT, ".cache"),
-});
+const jev = createDecisionClient({ cacheDir: join(ROOT, ".cache") });
 let fails = 0;
 const run = new Run((ev) => {
   if (ev.t === "fail") fails++;

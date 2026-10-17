@@ -4,7 +4,7 @@ import { existsSync, createReadStream } from "node:fs";
 import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
 import { extname, join } from "node:path";
-import { Jev } from "./src/jev.mjs";
+import { createDecisionClient, ENGINE, PROVIDER } from "./src/jev.mjs";
 import { Run } from "./src/run.mjs";
 import { Library, structureDoc, exportDocument, SCHEMA_INFO } from "./src/library.mjs";
 import { prepareProgram, executeProgram, computeViews, datasetForClient, setShortNames, evalCond, BASE_FIELDS } from "./src/program.mjs";
@@ -18,14 +18,7 @@ const PROGRAMS = join(ROOT, "programs");
 await mkdir(join(DATA, "runs"), { recursive: true });
 await mkdir(PROGRAMS, { recursive: true });
 
-const jev = new Jev({
-  apiKey: process.env.TYPESAFE_API_KEY,
-  baseUrl: process.env.TYPESAFE_BASE_URL,
-  model: process.env.JEV_MODEL ?? "jev-latest",
-  maxRps: Number(process.env.JEV_MAX_RPS ?? 35),
-  maxInflight: Number(process.env.JEV_MAX_INFLIGHT ?? 32),
-  cacheDir: process.env.JEV_CACHE_DIR ?? join(ROOT, ".cache"),
-});
+const jev = createDecisionClient({ cacheDir: join(ROOT, ".cache") });
 const manifest = JSON.parse(await readFile(join(ROOT, "sources/manifest.json"), "utf8"));
 const library = await new Library(LIB).load();
 const refreshNames = () => setShortNames(Object.fromEntries([...library.docs.values()].map(({ doc }) => [doc.id, doc.short])));
@@ -244,8 +237,8 @@ const server = createServer(async (req, res) => {
     if (path === "/api/state") {
       return json(res, 200, {
         collection: manifest.collection,
-        keys: { typesafe: jev.configured },
-        models: { jev: jev.model },
+        keys: { typesafe: jev.configured, decisions: jev.configured },
+        models: { jev: jev.model, engine: ENGINE.label, provider: PROVIDER, keyVar: ENGINE.keyVar, pricePerMTok: ENGINE.price },
         planner: { cli: planner.cli, model: planner.lastModel, error: planner.lastError },
         library: library.summary(),
         schema: { roles: Object.keys(SCHEMA_INFO.ROLES), levels: SCHEMA_INFO.LEVELS, modality: Object.keys(SCHEMA_INFO.MODALITY), sectionRoles: Object.keys(SCHEMA_INFO.SECTION_ROLES), topics: SCHEMA_INFO.TOPICS },
@@ -304,11 +297,12 @@ const server = createServer(async (req, res) => {
     if (path === "/api/key" && req.method === "POST") {
       const { key } = await readBody(req);
       const probe = await fetch(`${jev.baseUrl}/v1/models`, { headers: { Authorization: `Bearer ${key}` } });
-      if (!probe.ok) return json(res, 400, { error: `TypeSafe rejected the key (HTTP ${probe.status}).` });
+      if (!probe.ok) return json(res, 400, { error: `${ENGINE.label} rejected the key (HTTP ${probe.status}).` });
       jev.apiKey = key;
       const envPath = join(ROOT, ".env");
       const prev = existsSync(envPath) ? await readFile(envPath, "utf8") : "";
-      await writeFile(envPath, /^TYPESAFE_API_KEY=.*$/m.test(prev) ? prev.replace(/^TYPESAFE_API_KEY=.*$/m, `TYPESAFE_API_KEY=${key}`) : `${prev}TYPESAFE_API_KEY=${key}\n`, { mode: 0o600 });
+      const line = new RegExp(`^${ENGINE.keyVar}=.*$`, "m");
+      await writeFile(envPath, line.test(prev) ? prev.replace(line, `${ENGINE.keyVar}=${key}`) : `${prev}${prev && !prev.endsWith("\n") ? "\n" : ""}${ENGINE.keyVar}=${key}\n`, { mode: 0o600 });
       return json(res, 200, { ok: true });
     }
 
@@ -499,5 +493,5 @@ const server = createServer(async (req, res) => {
 
 server.listen(PORT, "127.0.0.1", () => {
   const n = library.docs.size, s = [...library.docs.values()].filter((d) => d.structure).length;
-  console.log(`RegLens → http://localhost:${PORT}   library ${s}/${n} structured · jev ${jev.configured ? "ready" : "NO KEY"} · planner: Claude Code CLI`);
+  console.log(`RegLens → http://localhost:${PORT}   library ${s}/${n} structured · ${ENGINE.label} (${jev.model}) ${jev.configured ? "ready" : `NO KEY: set ${ENGINE.keyVar}`} · planner: Claude Code CLI`);
 });

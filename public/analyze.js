@@ -1,4 +1,4 @@
-import { $, h, kids, fmt, pct, human, clip, esc, short, toast, tipHandlers, showCall, streamPost, openModal, parsePartialJSON, SERIES, OTHER } from "./ui.js";
+import { $, h, kids, fmt, pct, human, clip, esc, short, toast, tipHandlers, showCall, streamPost, openModal, parsePartialJSON, SERIES, OTHER, ENGINE } from "./ui.js";
 import { FlowGraph, optionColor, levelColor, segmentsOf } from "./flow.js";
 import { renderView } from "./charts.js";
 
@@ -39,7 +39,7 @@ export class AnalyzeView {
         h("div", { class: "qhome", id: "qHome" },
           h("div", { class: "qhome-inner" },
             h("h1", {}, "What do you want to know?"),
-            h("p", { class: "qhome-sub" }, "Describe the dataset you want. Claude Code designs the columns, Jev answers every cell from the source text, and you get a table, charts, and a written answer."),
+            h("p", { class: "qhome-sub" }, `Describe the dataset you want. Claude Code designs the columns, ${ENGINE.name} answers every cell from the source text, and you get a table, charts, and a written answer.`),
             h("form", { class: "composer", onsubmit: (e) => { e.preventDefault(); this.ask(); } },
               h("textarea", { id: "askQ", rows: 3, placeholder: "For every obligation on stablecoin issuers: who must act, what they must do, and by when", onkeydown: (e) => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) { e.preventDefault(); this.ask(); } } }),
               h("div", { class: "composer-foot" }, h("span", { id: "askScope" }), h("button", { class: "btn primary", type: "submit" }, "Build it", h("kbd", {}, "⌘↵")))),
@@ -53,7 +53,7 @@ export class AnalyzeView {
           h("div", { class: "work-body" },
             h("div", { class: "pane", id: "paneFlow" },
               h("div", { class: "flowbox", id: "flowBox" }),
-              h("div", { class: "feed-wrap" }, h("div", { class: "feed-h" }, h("span", {}, "What Jev is answering"), h("span", { class: "num", id: "feedStats" })), h("div", { class: "feed", id: "feed" })),
+              h("div", { class: "feed-wrap" }, h("div", { class: "feed-h" }, h("span", {}, `What ${ENGINE.name} is answering`), h("span", { class: "num", id: "feedStats" })), h("div", { class: "feed", id: "feed" })),
             ),
             h("div", { class: "pane scroll", id: "paneTable" }),
             h("div", { class: "pane scroll", id: "paneCharts" }),
@@ -147,7 +147,7 @@ export class AnalyzeView {
 
   async run(body) {
     if (this.busy) return toast("An analysis is already running.", "warn");
-    if (!this.app.state.keys.typesafe) return this.app.openKey();
+    if (!this.app.state.keys.decisions) return this.app.openKey();
     this.busy = true;
     this.app.setActivity(body.extend ? "Claude Code is adding layers" : body.question ? "Claude Code is designing the query" : "Query running");
     const prev = this.R?.program;
@@ -204,7 +204,7 @@ export class AnalyzeView {
     const R = this.R;
     const NS = (n) => (R.nodeStats[n] ??= { ran: 0, running: 0, skipped: 0, dist: {} });
     switch (ev.t) {
-      case "stage": R.stages[ev.stage] = ev.status; if (ev.status === "running") this.app.setActivity({ plan: "Claude Code is designing the query", exec: "Jev is filling the table", insights: "Claude Code is writing the answer" }[ev.stage] ?? "Query running"); if (ev.stage === "insights" && ev.status === "running" && this.tab === "answer") this.renderAnswer(); break;
+      case "stage": R.stages[ev.stage] = ev.status; if (ev.status === "running") this.app.setActivity({ plan: "Claude Code is designing the query", exec: `${ENGINE.name} is filling the table`, insights: "Claude Code is writing the answer" }[ev.stage] ?? "Query running"); if (ev.stage === "insights" && ev.status === "running" && this.tab === "answer") this.renderAnswer(); break;
       case "llm_thinking":
         R.thinking[ev.phase] += ev.delta;
         if (ev.phase === "plan") { const t = $("#planThinking"); if (t) { t.textContent = R.thinking.plan.slice(-1600); t.scrollTop = t.scrollHeight; } }
@@ -382,10 +382,10 @@ export class AnalyzeView {
           R.followups?.length ? h("span", {}, h("b", {}, R.followups.length), ` follow-up${R.followups.length > 1 ? "s" : ""}`) : null,
           h("span", {}, h("b", {}, fmt(m?.predicates ?? null)), " decisions"),
           h("span", {}, h("b", {}, ms(m?.wallMs))),
-          h("span", {}, h("b", {}, m ? `$${m.costUsd.toFixed(3)}` : "—"), m?.cacheHits ? ` Jev · ${fmt(m.cacheHits)} cached` : " Jev")] : null),
+          h("span", {}, h("b", {}, m ? `$${m.costUsd.toFixed(3)}` : "—"), m?.cacheHits ? ` ${ENGINE.name} · ${fmt(m.cacheHits)} cached` : ` ${ENGINE.name}`)] : null),
         R?.programId ? h("div", { class: "row gap" },
-          h("label", { class: "fresh", title: "Skip the cache so every question is answered live by Jev" }, h("input", { type: "checkbox", id: "liveToggle" }), "live"),
-          h("button", { class: "act", disabled: this.busy || !R.program, title: "Claude Code reads how Jev answered and adds layers where the program is shallowest", onclick: () => this.inspect({ kind: "deeper" }) }, "Go deeper"),
+          h("label", { class: "fresh", title: `Skip the cache so every question is answered live by ${ENGINE.name}` }, h("input", { type: "checkbox", id: "liveToggle" }), "live"),
+          h("button", { class: "act", disabled: this.busy || !R.program, title: `Claude Code reads how ${ENGINE.name} answered and adds layers where the program is shallowest`, onclick: () => this.inspect({ kind: "deeper" }) }, "Go deeper"),
           h("button", { class: "btn small", disabled: this.busy, onclick: () => this.run({ programId: R.programId }) }, "Run again")) : null),
     );
   }
@@ -412,7 +412,7 @@ export class AnalyzeView {
   renderTable() {
     const R = this.R;
     const pane = $("#paneTable");
-    if (!R?.program || !R.order.length) return pane.replaceChildren(h("div", { class: "empty center" }, "The table fills in as Jev answers."));
+    if (!R?.program || !R.order.length) return pane.replaceChildren(h("div", { class: "empty center" }, `The table fills in as ${ENGINE.name} answers.`));
     const cols = R.program.nodes;
     let ids = R.order;
     if (R.filter) ids = ids.filter((id) => R.filter.ids.has(id));
@@ -488,7 +488,7 @@ export class AnalyzeView {
   renderCharts() {
     const R = this.R;
     const pane = $("#paneCharts");
-    if (!R?.views.length) return pane.replaceChildren(h("div", { class: "empty center" }, "Charts are computed in code once Jev has filled in the table."));
+    if (!R?.views.length) return pane.replaceChildren(h("div", { class: "empty center" }, `Charts are computed in code once ${ENGINE.name} has filled in the table.`));
     const order = { stat: 0, coverage: 1 };
     const views = [...R.views].sort((a, b) => (order[a.type] ?? 2) - (order[b.type] ?? 2));
     pane.replaceChildren(h("div", { class: "views" }, views.map((v) => renderView(v, this.ctx()))));
@@ -501,14 +501,14 @@ export class AnalyzeView {
     if (!R.insights) {
       return pane.replaceChildren(h("article", { class: "brief" },
         h("div", { class: "brief-meta" }, "Answer"),
-        h("p", { class: "brief-lead muted" }, R.stages.insights === "running" ? `Claude Code is reading the ${fmt(R.order.length)} rows Jev structured and writing the answer.` : "Written once Jev has filled in the table."),
+        h("p", { class: "brief-lead muted" }, R.stages.insights === "running" ? `Claude Code is reading the ${fmt(R.order.length)} rows ${ENGINE.name} structured and writing the answer.` : `Written once ${ENGINE.name} has filled in the table.`),
         R.thinking.insights ? h("div", { class: "thinking live" }, R.thinking.insights.slice(-2000)) : null));
     }
     const ins = R.insights;
     const rowCite = (uid) => { const r = R.rows.get(uid); return r ? h("button", { onclick: () => this.inspect({ kind: "row", id: uid }), title: clip(r.text ?? r.snippet ?? "", 200) }, `¶ ${r.label}`) : null; };
     const viewCite = (vid) => h("button", { onclick: () => this.flashView(vid) }, `▦ ${clip(R.views.find((v) => v.id === vid)?.title ?? vid, 48)}`);
     pane.replaceChildren(h("article", { class: "brief" },
-      h("div", { class: "brief-meta" }, ins.fallback ? "Computed from the views" : `Written by ${ins.model ?? "Claude"} from ${fmt(R.order.length)} rows Jev structured${ins.cached ? " · cached" : ""}`),
+      h("div", { class: "brief-meta" }, ins.fallback ? "Computed from the views" : `Written by ${ins.model ?? "Claude"} from ${fmt(R.order.length)} rows ${ENGINE.name} structured${ins.cached ? " · cached" : ""}`),
       h("p", { class: "brief-lead" }, ins.answer),
       ins.key_points?.length ? h("ol", { class: "points" }, ins.key_points.map((k) => h("li", {}, h("div", {}, h("div", { class: "pt-text" }, k.point), k.unit_ids?.length ? h("div", { class: "cites" }, k.unit_ids.slice(0, 4).map(rowCite)) : null)))) : null,
       ins.insights?.length ? [h("h3", {}, ins.key_points?.length ? "Behind the answer" : "Findings"), ins.insights.map((i) => h("section", { class: "finding" },
@@ -557,7 +557,7 @@ export class AnalyzeView {
     const R = this.R;
     if (!R?.program) {
       return el.replaceChildren(h("div", { class: "empty" },
-        h("p", {}, "Every analysis is a program: a set of questions Jev asks about each row, stacked in layers so narrow questions only run where earlier answers allow."),
+        h("p", {}, `Every analysis is a program: a set of questions ${ENGINE.name} asks about each row, stacked in layers so narrow questions only run where earlier answers allow.`),
         h("p", {}, "Pick one on the left, or ask a new question and Claude Code will design one."),
         h("p", { class: "muted small" }, "Click anything (a flow segment, a chart mark, a table row) and its details and source show up here.")));
     }
@@ -575,7 +575,7 @@ export class AnalyzeView {
       h("p", { class: "small" }, p.unit.rationale),
       h("div", { class: "row wrap gap6" }, (p.unit.docs.length ? p.unit.docs : ["all documents"]).map((d) => h("span", { class: "chip tiny" }, short(d)))),
       p.unit.where.length ? h("div", { class: "mono tiny warnc", style: "margin-top:6px" }, "where ", p.unit.where.map(condText).join(" & ")) : null,
-      p.doc_notes?.length ? [h("h4", {}, "Scope notes sent to Jev"), p.doc_notes.map((n) => h("div", { class: "scope" }, h("b", {}, short(n.doc)), " ", n.note))] : null,
+      p.doc_notes?.length ? [h("h4", {}, `Scope notes sent to ${ENGINE.name}`), p.doc_notes.map((n) => h("div", { class: "scope" }, h("b", {}, short(n.doc)), " ", n.note))] : null,
       h("h4", {}, `Questions · ${p.nodes.length} in ${p.layers.length} layers`),
       p.nodes.map((n) => h("button", { class: `qnode ${n.gen ? "added" : ""}`, style: `margin-left:${(n.depth - 1) * 14}px;width:calc(100% - ${(n.depth - 1) * 14}px)`, onclick: () => this.inspect({ kind: "node", id: n.id }) },
         h("span", { class: `kind k-${n.kind}` }, `L${n.depth} ${n.kind}`), h("b", {}, n.label), h("span", { class: "small muted" }, clip(n.question, 110)),
@@ -644,7 +644,7 @@ export class AnalyzeView {
             h("div", { class: "row between" }, h("b", {}, n.label), status === "skipped" ? h("span", { class: "mono tiny warnc" }, "↷ skipped") : null),
             n.when.length ? h("div", { class: "mono tiny warnc" }, (status === "skipped" ? "condition failed: " : "because ") + n.when.map(condText).join(" & ")) : null,
             v ? probs(n, v) : null,
-            v && tr.call ? h("a", { class: "tiny", onclick: () => showCall(tr.call, (k) => k === tr.key) }, `Jev call #${tr.call} ↗`) : null));
+            v && tr.call ? h("a", { class: "tiny", onclick: () => showCall(tr.call, (k) => k === tr.key) }, `${ENGINE.name} call #${tr.call} ↗`) : null));
       })),
       edges.length ? [h("h4", {}, `Relationships (${edges.length})`), h("div", { class: "samples" }, edges.map((e) => { const o = R.rows.get(e.a === id ? e.b : e.a); return h("button", { class: "sample", onclick: () => this.inspect({ kind: "pair", edge: e }) }, h("b", {}, `${human(e.type)} ${pct(e.conf)}`), `${o?.label}: ${clip(o?.text ?? "", 110)}`); }))] : null,
     ];
@@ -656,7 +656,7 @@ export class AnalyzeView {
       h("button", { class: "back", onclick: () => this.inspect({ kind: "program" }) }, "← program"),
       h("div", { class: "eyebrow" }, "Go deeper"),
       h("h3", {}, "Add layers to this program"),
-      h("p", { class: "small muted" }, "Claude Code reads how Jev answered every question, finds where the program is shallow (big catch-all buckets, branches with no follow-up), and adds the next layers. Or click any segment in the Flow to drill into that branch."),
+      h("p", { class: "small muted" }, `Claude Code reads how ${ENGINE.name} answered every question, finds where the program is shallow (big catch-all buckets, branches with no follow-up), and adds the next layers. Or click any segment in the Flow to drill into that branch.`),
       this.deeperForm(null, R.order.length),
       R.followups?.length ? [h("h4", {}, "Earlier follow-ups"), R.followups.map((f) => h("div", { class: "scope" }, h("b", {}, f.focus ? `On ${f.focus}: ` : ""), f.request || "Claude chose", h("div", { class: "muted small" }, f.rationale)))] : null,
     ];
@@ -685,7 +685,7 @@ export class AnalyzeView {
       h("div", { class: "probs" }, r.options.map((o, i) => h("div", { class: o.key === e.type ? "top" : "" }, h("span", {}, human(o.key)), h("span", { class: "bar" }, h("span", { style: `width:${pct(e.probs?.[o.key] ?? 0)};background:${o.key === r.none_option ? OTHER : SERIES[[4, 2, 6][i] ?? i]}` })), h("span", { class: "p" }, pct(e.probs?.[o.key] ?? 0))))),
       h("h4", {}, `A · ${a?.label}`), h("button", { class: "quote link", onclick: () => this.inspect({ kind: "row", id: e.a }) }, a?.text),
       h("h4", {}, `B · ${b?.label}`), h("button", { class: "quote link", onclick: () => this.inspect({ kind: "row", id: e.b }) }, b?.text),
-      e.call ? h("a", { class: "tiny", onclick: () => showCall(e.call) }, `Jev call #${e.call} ↗`) : null,
+      e.call ? h("a", { class: "tiny", onclick: () => showCall(e.call) }, `${ENGINE.name} call #${e.call} ↗`) : null,
     ];
   }
 

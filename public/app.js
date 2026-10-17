@@ -1,4 +1,4 @@
-import { $, $$, h, SHORT, toast, fmt, clip, showCall } from "./ui.js";
+import { $, $$, h, SHORT, toast, fmt, clip, showCall, ENGINE } from "./ui.js";
 import { BuildView } from "./build.js";
 import { LibraryView } from "./library.js";
 import { DataView } from "./data.js";
@@ -21,8 +21,10 @@ const app = {
   renderTop() {
     const st = this.state;
     $(".brand").title = `${st.collection} · ${st.library.length} documents`;
-    $("#jevPill").classList.toggle("ok", st.keys.typesafe);
-    $("#jevPill").title = `TypeSafe Jev (${st.models.jev}) answers every decision`;
+    ENGINE.name = st.models.engine ?? "Jev";
+    $("#jevPill").classList.toggle("ok", st.keys.decisions);
+    $("#jevPill").lastChild.textContent = ENGINE.name;
+    $("#jevPill").title = `${ENGINE.name} (${st.models.jev}) answers every decision`;
     $("#claudePill").classList.toggle("ok", !st.planner.error);
     $("#claudePill").title = st.planner.error ? `Claude Code: ${st.planner.error}` : "Claude Code designs queries and writes answers (your local CLI, no API key)";
     for (const b of $$(".modes button[data-mode]")) b.classList.toggle("on", b.dataset.mode === this.mode);
@@ -95,7 +97,7 @@ const app = {
         h("div", { class: "crop", style: `height:${H}px`, onclick: () => this.showInLibrary(docId, b.id), title: "Open this page in Documents" },
           h("img", { src: `/pages/${docId}/${part.page}.jpg`, style: `width:${W}px;top:${-offset}px` }),
           h("div", { class: "crop-box", style: `left:${x0 * k - 3}px;top:${y0 * k - offset - 3}px;width:${(x1 - x0) * k + 6}px;height:${(y1 - y0) * k + 6}px` })),
-        h("div", { class: "muted tiny" }, `${doc.short} · page ${part.page} of ${doc.pages.length} · the outlined block is the exact text Jev judged`),
+        h("div", { class: "muted tiny" }, `${doc.short} · page ${part.page} of ${doc.pages.length} · the outlined block is the exact text ${ENGINE.name} judged`),
         h("div", { class: "quote small" }, row.text));
     } else {
       el.replaceChildren(h("div", { class: "muted tiny" }, `${doc.short} · ${doc.format.toUpperCase()} · ${b?.tag ? `<${b.tag}> element` : "web capture"}`), h("div", { class: "quote small" }, row.text));
@@ -109,10 +111,15 @@ const app = {
   },
 
   setMetrics(m) {
-    $("#libMetrics").textContent = m ? `${fmt(m.calls)} Jev calls · ${fmt(m.predicates)} decisions · ${(m.wallMs / 1000).toFixed(1)} s · $${m.costUsd.toFixed(3)}` : "";
+    $("#libMetrics").textContent = m ? `${fmt(m.calls)} ${ENGINE.name} calls · ${fmt(m.predicates)} decisions · ${(m.wallMs / 1000).toFixed(1)} s · $${m.costUsd.toFixed(3)}` : "";
   },
 
   openKey() {
+    const openai = this.state.models.provider === "openai";
+    $("#keyTitle").textContent = `${ENGINE.name} key`;
+    $("#keyLink").href = openai ? "https://platform.openai.com/api-keys" : "https://console.typesafe.ai/keys";
+    $("#keyLink").textContent = openai ? "platform.openai.com/api-keys" : "console.typesafe.ai/keys";
+    $("#keyInput").placeholder = openai ? "sk-…" : "ts_…";
     $("#keyErr").textContent = "";
     $("#keyInput").value = "";
     $("#keyDlg").showModal();

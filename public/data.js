@@ -1,7 +1,7 @@
 // Data: every piece Jev parsed, across the whole library, in one place. Lenses pick a kind of piece
 // (definitions, obligations, deadlines…), facets narrow it, every row traces back to its page, and the
 // current selection exports as CSV/JSON or becomes the scope of a new query.
-import { $, h, kids, fmt, pct, human, clip, toast, short, ROLE_COLOR, MOD_COLOR, MOD_LABEL } from "./ui.js";
+import { $, h, kids, fmt, pct, human, clip, toast, short, ROLE_COLOR, MOD_COLOR, MOD_LABEL, ENGINE } from "./ui.js";
 
 const KIND_LABEL = { paragraph: "paragraph", list_item: "list item", definition: "definition", question: "question", quote: "quote", field: "field", heading: "heading", footnote: "footnote", table_or_figure: "table / figure", toc_entry: "contents entry", front_matter: "front matter" };
 const KIND_COLOR = { paragraph: ROLE_COLOR.body, list_item: ROLE_COLOR.list_item, definition: ROLE_COLOR.definition_entry, question: ROLE_COLOR.question, quote: ROLE_COLOR.quote, field: ROLE_COLOR.field, heading: ROLE_COLOR.heading, footnote: ROLE_COLOR.footnote, table_or_figure: ROLE_COLOR.table_or_figure, toc_entry: ROLE_COLOR.toc_entry, front_matter: ROLE_COLOR.front_matter };
@@ -160,7 +160,7 @@ export class DataView {
       h("div", { class: "drawer-path" }, r.path),
       src,
       r.lead_in ? [h("h4", {}, "Introduced by"), h("div", { class: "quote small" }, r.lead_in)] : null,
-      h("h4", {}, "What Jev decided"),
+      h("h4", {}, `What ${ENGINE.name} decided`),
       h("div", { class: "kv" },
         h("div", {}, h("span", {}, "Kind"), h("b", {}, `${KIND_LABEL[r.kind] ?? r.kind} · ${pct(r.role_p)}`)),
         r.term ? h("div", {}, h("span", {}, "Defines"), h("b", {}, r.term)) : null,

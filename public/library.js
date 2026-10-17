@@ -1,5 +1,5 @@
 import { $, h, kids, fmt, pct, human, clip, esc, short, toast, tipHandlers, hideTip, showCall, streamPost,
-  ROLE_COLOR, ROLE_LABEL, MOD_COLOR, MOD_LABEL, SECROLE_FAMILY, FAMILY_COLOR, FAMILY_LABEL, SERIES, CONTENT_ROLES } from "./ui.js";
+  ROLE_COLOR, ROLE_LABEL, MOD_COLOR, MOD_LABEL, SECROLE_FAMILY, FAMILY_COLOR, FAMILY_LABEL, SERIES, CONTENT_ROLES, ENGINE } from "./ui.js";
 
 const FORMAT_LABEL = { pdf: "PDF", html: "HTML", web: "Web" };
 const FORCE = ["no legal force", "non-binding staff views", "agency interpretation", "proposed, not in force", "binding"];
@@ -62,7 +62,7 @@ export class LibraryView {
           h("button", { class: "act", title: "Add a PDF or web page and watch it parse", onclick: () => this.openAdd() }, "Add")),
         h("div", { class: "filters", id: "libFilter" }),
         h("div", { class: "doclist", id: "docList" }),
-        h("button", { class: "act side-foot", title: "Re-run Jev's structuring over every document, skipping the cache", onclick: () => this.restructure(null, true) }, "Re-structure all documents live"),
+        h("button", { class: "act side-foot", title: `Re-run ${ENGINE.name}'s structuring over every document, skipping the cache`, onclick: () => this.restructure(null, true) }, "Re-structure all documents live"),
       ),
       h("section", { class: "viewer" },
         h("header", { class: "viewer-head", id: "viewerHead" }),
@@ -99,7 +99,7 @@ export class LibraryView {
       const fp = h("div", { class: "fingerprint", ...tipHandlers(() => Object.entries(d.roles).sort((a, b) => b[1] - a[1]).map(([r, n]) => `<i style="background:${ROLE_COLOR[r]}"></i>${ROLE_LABEL[r]} ${n}`).join("<br>")) },
         total ? Object.keys(ROLE_COLOR).filter((r) => d.roles[r]).map((r) => h("span", { style: `flex:${d.roles[r]};background:${ROLE_COLOR[r]}` })) : h("span", { style: "flex:1;background:var(--cell)" }));
       return h("button", { class: `docitem ${this.cur?.doc.id === d.id ? "on" : ""}`, onclick: () => this.open(d.id) },
-        h("span", { class: "dt" }, d.short, d.health?.after ? h("i", { class: "hdot", title: `parse health: ${d.health.before} issues → ${d.health.after} open${d.health.verified ? `, ${d.health.verified} checked and confirmed by Jev` : ""}` }) : null),
+        h("span", { class: "dt" }, d.short, d.health?.after ? h("i", { class: "hdot", title: `parse health: ${d.health.before} issues → ${d.health.after} open${d.health.verified ? `, ${d.health.verified} checked and confirmed by ${ENGINE.name}` : ""}` }) : null),
         h("span", { class: "dm" }, live ? `structuring · ${live.stage ?? ""} ${fmt(live.labeled)}/${fmt(d.blocks)}` : `${d.issuer} · ${d.date?.slice(0, 4) ?? ""}`),
         live ? h("div", { class: "progress" }, h("span", { style: `width:${pct(live.labeled / Math.max(1, d.blocks))}` })) : fp,
       );
@@ -166,12 +166,12 @@ export class LibraryView {
         h("span", {}, [doc.issuer, doc.date, doc.pages.length ? `${doc.pages.length} pages` : FORMAT_LABEL[doc.format], doc.line_numbered ? "line-numbered bill" : null].filter(Boolean).join(" · ")),
         h("a", { href: doc.url, target: "_blank", rel: "noreferrer" }, "Source ↗")),
       h("h1", { class: "vh-title" }, doc.title),
-      h("div", { class: "vh-profile" }, p ? [h("span", { title: `Jev, ${pct(p.doc_type_conf)} sure` }, human(p.doc_type)), h("span", {}, FORCE[p.legal_force_level] ?? "—"), ...Object.entries(p.topics ?? {}).filter(([, v]) => v >= 0.5).map(([k]) => h("span", {}, human(k)))] : h("span", { class: "warnc" }, "not structured yet")),
+      h("div", { class: "vh-profile" }, p ? [h("span", { title: `${ENGINE.name}, ${pct(p.doc_type_conf)} sure` }, human(p.doc_type)), h("span", {}, FORCE[p.legal_force_level] ?? "—"), ...Object.entries(p.topics ?? {}).filter(([, v]) => v >= 0.5).map(([k]) => h("span", {}, human(k)))] : h("span", { class: "warnc" }, "not structured yet")),
       h("div", { class: "vh-tools" },
         h("div", { class: "filters" }, modes.map(([k, l]) => h("button", { class: this.mode === k ? "on" : "", onclick: () => { this.mode = k; this.renderViewer(); this.renderPanel(); } }, l))),
         h("div", { class: "row gap6" },
-          h("a", { class: "act", href: `/api/doc/${doc.id}/export`, download: `${doc.id}.reglens.json`, title: "The structured document as JSON: typed elements with their outline path, labels, page positions, and the Jev calls behind them" }, "JSON"),
-          h("button", { class: "act", title: "Re-run Jev's structuring on this document live, skipping the cache", onclick: () => this.restructure([doc.id], true) }, "Re-structure live")),
+          h("a", { class: "act", href: `/api/doc/${doc.id}/export`, download: `${doc.id}.reglens.json`, title: `The structured document as JSON: typed elements with their outline path, labels, page positions, and the ${ENGINE.name} calls behind them` }, "JSON"),
+          h("button", { class: "act", title: `Re-run ${ENGINE.name}'s structuring on this document live, skipping the cache`, onclick: () => this.restructure([doc.id], true) }, "Re-structure live")),
       ),
       this.legend(),
     );
@@ -187,7 +187,7 @@ export class LibraryView {
     const items = this.mode === "roles" ? Object.entries(ROLE_LABEL).map(([k, l]) => [ROLE_COLOR[k], l])
       : this.mode === "modality" ? Object.entries(MOD_LABEL).map(([k, l]) => [MOD_COLOR[k], l])
       : this.mode === "sections" ? [[ROLE_COLOR.heading, "heading"], ...Object.entries(FAMILY_LABEL).map(([k, l]) => [FAMILY_COLOR[k], l])]
-      : this.mode === "raw" ? [["#9aa3b0", "piece as the extractor cut it"], ["#f2b84b", "pieces Jev stitched into one block"]] : [];
+      : this.mode === "raw" ? [["#9aa3b0", "piece as the extractor cut it"], ["#f2b84b", `pieces ${ENGINE.name} stitched into one block`]] : [];
     return h("div", { class: "legend" }, items.map(([c, l]) => h("span", {}, h("i", { style: `background:${c}` }), l)));
   }
 
@@ -231,7 +231,7 @@ export class LibraryView {
         class: `ov ${n > 1 ? "multi" : ""} ${raw ? "rawcut" : ""} ${raw && n > 1 ? "stitched" : ""}`, "data-b": b.id,
         style: `left:${(x0 / pg.w) * 100}%;top:${(y0 / pg.h) * 100}%;width:${((x1 - x0) / pg.w) * 100}%;height:${((y1 - y0) / pg.h) * 100}%`,
         onclick: () => this.select(b.id),
-        ...tipHandlers(() => (raw ? `<b>${n > 1 ? `piece ${k + 1} of ${n}, stitched by Jev` : "extracted piece"}</b><br>${esc(clip(raw.text, 160))}` : this.tipFor(b))),
+        ...tipHandlers(() => (raw ? `<b>${n > 1 ? `piece ${k + 1} of ${n}, stitched by ${ENGINE.name}` : "extracted piece"}</b><br>${esc(clip(raw.text, 160))}` : this.tipFor(b))),
       }, n > 1 && !raw ? h("span", { class: "partno" }, `${k + 1}/${n}`) : null);
       (this.overlays.get(b.id) ?? this.overlays.set(b.id, []).get(b.id)).push(o);
       this.paintOverlay(b.id);
@@ -278,7 +278,7 @@ export class LibraryView {
     const l = this.lab(b.id);
     if (!l) return `<span class=m>not labeled yet</span><br>${esc(clip(b.text, 160))}`;
     const s = this.sectionOf(b.id);
-    const sx = (b.split ? `<br><span class=m>${b.split.part === "heading" ? "run-in heading split off its text" : "text after a run-in heading"}</span>` : "") + (b.parts?.length > 1 && !b.split ? `<br><span class=m>stitched by Jev from ${b.parts.length} pieces${new Set(b.parts.map((p) => p.page)).size > 1 ? " across a page break" : ""}</span>` : "");
+    const sx = (b.split ? `<br><span class=m>${b.split.part === "heading" ? "run-in heading split off its text" : "text after a run-in heading"}</span>` : "") + (b.parts?.length > 1 && !b.split ? `<br><span class=m>stitched by ${ENGINE.name} from ${b.parts.length} pieces${new Set(b.parts.map((p) => p.page)).size > 1 ? " across a page break" : ""}</span>` : "");
     return `<b>${ROLE_LABEL[l.role]}</b> ${pct(l.roleConf)}${l.role === "heading" ? ` · level ${l.level}` : ""}${l.modality ? ` · <b>${MOD_LABEL[l.modality]}</b>` : ""}${(l.deadline ?? 0) >= 0.5 ? " · deadline" : ""}<br>${esc(clip(b.text, 180))}${s ? `<br><span class=m>§ ${esc(clip(s.title, 70))}</span>` : ""}${sx}<br><span class=m>click to inspect</span>`;
   }
 
@@ -320,7 +320,7 @@ export class LibraryView {
     const st = this.cur.structure;
     const secs = st.sections ?? [];
     return [
-      h("div", { class: "muted small pad" }, `${secs.length} sections, built in code from the headings Jev found and the levels it assigned.`),
+      h("div", { class: "muted small pad" }, `${secs.length} sections, built in code from the headings ${ENGINE.name} found and the levels it assigned.`),
       h("div", { class: "outline" }, secs.map((s) => h("button", {
         class: "osec", style: `padding-left:${8 + Math.min(9, Math.max(0, s.level)) * 11}px`, title: `level ${s.level}`,
         onclick: () => this.select(s.heading ?? s.blocks?.[0], true),
@@ -386,7 +386,7 @@ export class LibraryView {
       of != null ? h("div", { class: "mono tiny muted" }, `${fmt(n)} / ${fmt(of)}`) : null);
     const branch = (label, n, color, note) => h("div", { class: "pbranch" }, h("i", { style: `background:${color}` }), h("span", {}, label), h("b", {}, fmt(n)), h("span", { class: "muted tiny" }, note));
     return [
-      h("p", { class: "muted small pad" }, "How this document was parsed. Code segments the file into blocks with exact positions; Jev decides what each block is, and later questions run only where earlier answers allow."),
+      h("p", { class: "muted small pad" }, `How this document was parsed. Code segments the file into blocks with exact positions; ${ENGINE.name} decides what each block is, and later questions run only where earlier answers allow.`),
       stage("E", "Extract", "code", `${doc.format === "pdf" ? `PyMuPDF lines → blocks by gaps, indents, enumerators, font changes${doc.line_numbered ? "; margin line numbers stripped" : ""}` : "HTML elements → blocks, with tag hints"} · ${fmt(doc.blocks.length)} blocks`),
       doc.raw && doc.format === "pdf" ? stage("S0", "Stitch", "jev", `with the whole page in view: is one of the next three pieces this piece's cut-off remainder? ${fmt(doc.raw.length)} pieces → ${fmt(st.stitched?.links?.length ?? 0)} joins → ${fmt(doc.blocks.length)} blocks`, live?.s0 ?? doc.raw.length, doc.raw.length, "#f2b84b") : null,
       doc.raw && doc.format === "pdf" ? h("div", { class: "samples", style: "margin:-2px 0 6px 14px" }, doc.blocks.filter((b) => b.parts?.length > 1).slice(0, 5).map((b) => h("button", { class: "sample", onclick: () => this.select(b.id, true) }, h("b", {}, `${b.parts.length} pieces`), clip(b.text, 110)))) : null,
@@ -399,7 +399,7 @@ export class LibraryView {
       st.audit ? stage("A", "Audit & repair", "jev", `${st.audit.checks.length} checks · ${fmt(st.audit.fixes.filter((f) => !f.verified).length)} fixes${st.audit.loop?.length ? ` · issue loop ${Math.max(...st.audit.loop.map((x) => x.round))} round(s)` : ""} · parse health ${fmt(st.health.before.total)} → ${fmt(st.health.after.total)} open (see Health)`) : null,
       stage("O", "Outline", "code", `headings + levels → ${fmt(st.sections?.length ?? 0)} sections; each content block attached to its section`),
       stage("S5", "Section role + topics", "jev", "sections with substantive text", live?.s5 ?? withText, live?.s5total ?? withText, FAMILY_COLOR.rule),
-      st.metrics ? h("div", { class: "muted small pad" }, `Last build: ${fmt(st.metrics.calls)} Jev calls in ${(st.metrics.wallMs / 1000).toFixed(1)} s · ${new Date(st.builtAt).toLocaleString()}`) : null,
+      st.metrics ? h("div", { class: "muted small pad" }, `Last build: ${fmt(st.metrics.calls)} ${ENGINE.name} calls in ${(st.metrics.wallMs / 1000).toFixed(1)} s · ${new Date(st.builtAt).toLocaleString()}`) : null,
     ];
   }
 
@@ -415,13 +415,13 @@ export class LibraryView {
     const loop = au?.loop ?? [];
     return [
       h("div", { class: "health-head" }, h("div", { class: "eyebrow" }, "Parse health"),
-        h("div", { class: "hh-n" }, h("span", { class: "muted" }, fmt(hh.before.total)), " → ", h("b", {}, fmt(hh.after.total)), h("span", { class: "muted small" }, " open issues, before → after Jev's audit")),
-        hh.after.verified ? h("div", { class: "muted small" }, `${fmt(hh.after.verified)} more were flagged by the detectors, checked by Jev, and confirmed correct as they are (listed below with the reason)`) : null),
+        h("div", { class: "hh-n" }, h("span", { class: "muted" }, fmt(hh.before.total)), " → ", h("b", {}, fmt(hh.after.total)), h("span", { class: "muted small" }, ` open issues, before → after ${ENGINE.name}'s audit`)),
+        hh.after.verified ? h("div", { class: "muted small" }, `${fmt(hh.after.verified)} more were flagged by the detectors, checked by ${ENGINE.name}, and confirmed correct as they are (listed below with the reason)`) : null),
       h("div", { class: "hbars" }, types.map((k) => [k, ISSUE_LABEL[k]]).map(([k, l]) => h("div", { class: "hrow2" },
         h("span", { class: "hl2" }, l),
         h("span", { class: "hb2" }, h("i", { class: "b4", style: `width:${pct((hh.before[k] ?? 0) / max)}` }), h("i", { class: "af", style: `width:${pct((hh.after[k] ?? 0) / max)}` })),
         h("span", { class: "mono tiny" }, `${hh.before[k] ?? 0} → ${hh.after[k] ?? 0}`)))),
-      h("h4", {}, "Audit checks (Jev decides; code applies)"),
+      h("h4", {}, `Audit checks (${ENGINE.name} decides; code applies)`),
       h("div", { class: "checks" }, (au?.checks ?? []).map((c) => h("div", { class: "chk", title: c.detail },
         h("span", { class: "mono tiny" }, c.id), h("span", { class: "small" }, c.label),
         h("span", { class: "mono tiny muted" }, `${fmt(c.examined)} → ${fmt(c.flagged)} → `, h("b", {}, fmt(c.fixed)), c.verified ? ` · ✓${fmt(c.verified)}` : "", c.rolledBack ? ` · ↩${fmt(c.rolledBack)}` : "")))),
@@ -432,7 +432,7 @@ export class LibraryView {
           h("span", { class: "mono tiny" }, `${fmt(x.before)} → ${fmt(x.after)}`, x.rolledBack ? " ↩ rolled back" : ""))))] : null,
       h("h4", {}, `Still open (${open.length})`),
       open.length ? h("div", { class: "samples" }, open.slice(0, 150).map((x) => jump(x.block, `${ISSUE_LABEL[x.type] ?? x.type}${x.detail ? ` · ${x.detail}` : ""} · ${clip(byId.get(x.block)?.text ?? "", 80)}`))) : h("div", { class: "muted small pad" }, "Nothing open."),
-      verified.length ? [h("h4", {}, `Checked and confirmed by Jev (${verified.length})`),
+      verified.length ? [h("h4", {}, `Checked and confirmed by ${ENGINE.name} (${verified.length})`),
         h("div", { class: "samples" }, verified.slice(0, 150).map((x) => jump(x.block, `${ISSUE_LABEL[x.type] ?? x.type} · ${x.verified.check}: ${x.verified.note} · ${clip(byId.get(x.block)?.text ?? "", 70)}`,
           x.verified.call ? h("a", { class: "tiny", onclick: (e) => { e.stopPropagation(); showCall(x.verified.call, mentions(byId.get(x.block) ?? { text: "" })); } }, " call ↗") : null)))] : null,
       h("h4", {}, `Fixes applied (${au?.fixes.filter((f) => !f.verified).length ?? 0})`),
@@ -441,7 +441,7 @@ export class LibraryView {
   }
 
   panel_block() {
-    if (!this.sel || !this.cur) return h("div", { class: "empty" }, "Click any block on the page to see what Jev decided about it and why.");
+    if (!this.sel || !this.cur) return h("div", { class: "empty" }, `Click any block on the page to see what ${ENGINE.name} decided about it and why.`);
     const b = this.byId.get(this.sel);
     const l = this.lab(b.id) ?? {};
     const s = this.sectionOf(b.id);
@@ -453,7 +453,7 @@ export class LibraryView {
     const out = [
       h("div", { class: "row between" }, h("div", { class: "eyebrow" }, `Block ${b.id}`), h("button", { class: "btn small ghost", onclick: () => this.select(b.id, true) }, "locate")),
       h("div", { class: "quote" }, b.text),
-      h("h4", {}, "What Jev decided"),
+      h("h4", {}, `What ${ENGINE.name} decided`),
       h("div", { class: "labels" },
         l.role ? h("div", { class: "lab" }, h("span", {}, "Role"), h("span", { class: "chip", style: `border-color:${ROLE_COLOR[l.role]}` }, h("i", { style: `background:${ROLE_COLOR[l.role]}` }), ROLE_LABEL[l.role]), h("span", { class: "mono tiny" }, pct(l.roleConf)), l.calls?.role ? h("a", { onclick: () => showCall(l.calls.role, (k, x) => x.instructions?.target === b.text.slice(0, 1500)) }, "call ↗") : null) : h("div", { class: "muted" }, "not labeled"),
         l.role === "heading" ? h("div", { class: "lab" }, h("span", {}, "Level"), h("b", {}, `${l.level} · ${LEVEL_NAME[l.level] ?? `depth ${l.level}`}`), l.levelWas != null && l.levelWas !== l.level ? h("span", { class: "mono tiny muted" }, `was ${l.levelWas}`) : null, l.calls?.nesting ? h("a", { onclick: () => showCall(l.calls.nesting, mentions(b)) }, "nesting call ↗") : l.calls?.level ? h("a", { onclick: () => showCall(l.calls.level, (k, x) => x.instructions?.target === b.text.slice(0, 1500)) }, "call ↗") : null) : null,
@@ -463,7 +463,7 @@ export class LibraryView {
       ),
       holder,
       this.auditTrail(b, l),
-      b.stitched && !b.split ? [h("h4", {}, `Stitched by Jev (S0) from ${b.parts.length} extracted pieces`),
+      b.stitched && !b.split ? [h("h4", {}, `Stitched by ${ENGINE.name} (S0) from ${b.parts.length} extracted pieces`),
         h("div", { class: "samples" }, b.parts.map((pt, k) => {
           const r = this.cur.doc.raw?.find((x) => x.id === pt.id);
           const l = b.stitched.links[k - 1];
@@ -497,7 +497,7 @@ export class LibraryView {
     if (!a?.probabilities) return;
     const items = Object.entries(a.probabilities).sort((x, y) => y[1] - x[1]).slice(0, 5);
     const top = items[0]?.[0];
-    const note = top && top !== a.choice ? h("div", { class: "warnc tiny" }, `Close call: Jev picked “${ROLE_LABEL[a.choice] ?? a.choice}” (confidence ${pct(a.confidence)}) though “${ROLE_LABEL[top] ?? top}” has the highest probability.`) : a.confidence < 0.4 ? h("div", { class: "warnc tiny" }, `Low confidence (${pct(a.confidence)}): a borderline block.`) : null;
+    const note = top && top !== a.choice ? h("div", { class: "warnc tiny" }, `Close call: ${ENGINE.name} picked “${ROLE_LABEL[a.choice] ?? a.choice}” (confidence ${pct(a.confidence)}) though “${ROLE_LABEL[top] ?? top}” has the highest probability.`) : a.confidence < 0.4 ? h("div", { class: "warnc tiny" }, `Low confidence (${pct(a.confidence)}): a borderline block.`) : null;
     holder.replaceChildren(...kids(note), h("div", { class: "probs" }, h("div", { class: "muted tiny" }, "role probabilities"), items.map(([k, p], i) => h("div", { class: i ? "" : "top" }, h("span", {}, ROLE_LABEL[k] ?? k), h("span", { class: "bar" }, h("span", { style: `width:${pct(p)};background:${ROLE_COLOR[k]}` })), h("span", { class: "p" }, pct(p))))));
   }
 
@@ -506,7 +506,7 @@ export class LibraryView {
   async restructure(ids, fresh) {
     if (this.busy) return;
     const targets = ids ?? this.docs.map((d) => d.id);
-    if (!ids && !confirm(`Re-run Jev's structuring over all ${targets.length} documents, live (about 38K predicates, ~90 s, ~$0.40)?`)) return;
+    if (!ids && !confirm(`Re-run ${ENGINE.name}'s structuring over all ${targets.length} documents, live (about 38K predicates, ~90 s, ~$${(0.40 * (this.app.state.models.pricePerMTok ?? 0.042) / 0.042).toFixed(2)})?`)) return;
     this.busy = true;
     for (const id of targets) {
       const d = this.docs.find((x) => x.id === id);

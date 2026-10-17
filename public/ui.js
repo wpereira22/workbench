@@ -59,6 +59,9 @@ export function parsePartialJSON(t) {
   return null;
 }
 
+/** The decision model's display name ("Jev" or "OpenAI Decisions"), set from the server at boot. */
+export const ENGINE = { name: "Jev" };
+
 export const SHORT = {};
 export const short = (id) => SHORT[id] ?? id;
 
@@ -166,9 +169,9 @@ export async function showCall(callId, highlight) {
     const v = i.target ?? i.text ?? i.fragment ?? i.heading?.text ?? i.heading ?? i.block?.text ?? i.left?.text ?? i.requirement_a?.text ?? i.before?.text ?? i.occurrences?.[0]?.text;
     return typeof v === "string" ? v : null;
   };
-  openModal(`Jev call #${rec.id}`, `${rec.stage} · ${rec.target}`, [
+  openModal(`${ENGINE.name} call #${rec.id}`, `${rec.stage} · ${rec.target}`, [
     h("div", { class: "row wrap gap6" }, h("span", { class: "chip" }, rec.model), h("span", { class: "chip" }, rec.cached ? "served from cache" : `${rec.latencyMs} ms`), h("span", { class: "chip" }, `${fmt(rec.usage?.input_tokens)} input tokens`), h("span", { class: "chip" }, `${n} predicates in one request`), h("span", { class: "chip mono" }, `key ${rec.cacheKey}`)),
-    h("p", { class: "muted small" }, "Jev read the shared state once and answered every question below in parallel. Each question quotes the text it is about."),
+    h("p", { class: "muted small" }, `${ENGINE.name} read the shared state once and answered every question below in parallel. Each question quotes the text it is about.`),
     h("table", { class: "rec-table" }, Object.entries(rec.questions).map(([k, x]) => {
       const t = tgt(x);
       const me = highlight && (highlight(k, x) ?? false);

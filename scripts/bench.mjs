@@ -6,7 +6,7 @@
 import { readFile, writeFile, mkdtemp, rm, readdir } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { Jev } from "../src/jev.mjs";
+import { createDecisionClient, ENGINE, PROVIDER } from "../src/jev.mjs";
 import { Run } from "../src/run.mjs";
 import { prepareProgram, executeProgram, computeViews, setShortNames } from "../src/program.mjs";
 import { Library } from "../src/library.mjs";
@@ -24,14 +24,8 @@ const files = process.argv.slice(2).length ? process.argv.slice(2) : (await read
 const programs = await Promise.all(files.map(async (f) => { const j = JSON.parse(await readFile(f, "utf8")); return { name: j.question ?? f, program: j.program }; }));
 
 const cacheDir = await mkdtemp(join(tmpdir(), "reglens-bench-"));
-const jev = new Jev({
-  apiKey: process.env.TYPESAFE_API_KEY,
-  baseUrl: process.env.TYPESAFE_BASE_URL,
-  model: process.env.JEV_MODEL ?? "jev-latest",
-  maxRps: Number(process.env.JEV_MAX_RPS ?? 35),
-  maxInflight: Number(process.env.JEV_MAX_INFLIGHT ?? 32),
-  cacheDir,
-});
+const jev = createDecisionClient({ cacheDir });
+jev.cacheDir = cacheDir; // a fresh cache, so every call is live
 
 const rows = [];
 try {

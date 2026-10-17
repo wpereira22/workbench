@@ -181,17 +181,34 @@ Requirements:
 - Node 22+.
 - Python 3 with `pymupdf`, `beautifulsoup4`, and `lxml`, for extraction.
 - The `claude` CLI, logged in (`claude` then `/login`).
-- A TypeSafe key: `TYPESAFE_API_KEY` in `.env`, or use the Jev pill in the header.
+- Tesseract (`brew install tesseract`), only for scanned PDFs.
+- A decision-model key in `.env` (copy `.env.example`), or paste it into the key dialog from the header pill:
+  - **OpenAI Decisions API:** `DECISIONS_PROVIDER=openai` and `OPENAI_API_KEY`. Uses `gpt-6-luna` at `/v1/decisions`.
+  - **TypeSafe Jev:** `DECISIONS_PROVIDER=typesafe` and `TYPESAFE_API_KEY`.
 
 ```bash
 npm start            # http://localhost:4317
 ```
 
+**Choosing the decision model.** The pipeline is written against one question format: shared evidence plus a batch of named yes/no (`noul`), choice, and score questions, answered with probabilities. Both providers take that shape. `src/jev.mjs` sends Jev's format as is, and for OpenAI translates on the way out and back:
+
+| | TypeSafe Jev | OpenAI Decisions API |
+|---|---|---|
+| Endpoint | `/v1/systemone` | `/v1/decisions` |
+| Shared evidence | `state` (object) | `input` (the same fields, as labeled text) |
+| Questions | map of name → question | list, each with a `name` (at most 200 per request; larger batches are split) |
+| Yes/no | `noul` → `{ noul }` | `predicate` → `{ probability }` |
+| Choice / score | `criteria` → probabilities by key | `choices` / `levels` → probabilities by value |
+| Refusals | — | dropped; the question is treated as unanswered |
+| Price (input tokens) | $0.042 / M | $0.10 / M (cached input free) |
+
+Answers are cached by a hash of the exact request sent, so switching providers never mixes their answers; the first run on a new provider is a cold build. The measurements in this README were made with Jev.
+
 To rebuild from the raw sources:
 
 ```bash
 python3 scripts/extract.py sources/manifest.json sources/raw data/library   # extraction (code)
-node --env-file-if-exists=.env scripts/structure.mjs                         # structuring (Jev)
+node --env-file-if-exists=.env scripts/structure.mjs                         # structuring (decision model)
 ```
 
 ## Notes from building it

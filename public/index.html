@@ -13,10 +13,10 @@
   <header class="top">
     <a class="brand" href="#build" title="RegLens"><span class="brand-mark" aria-hidden="true"></span>RegLens</a>
     <nav class="modes" aria-label="Workspaces">
-      <button data-mode="build" title="Add documents and watch Jev parse them">Build</button>
-      <button data-mode="documents" title="Every document, page by page, with what Jev decided">Documents</button>
+      <button data-mode="build" title="Add documents and watch them parse">Build</button>
+      <button data-mode="documents" title="Every document, page by page, with what the model decided">Documents</button>
       <button data-mode="data" title="Every parsed piece across the library">Data</button>
-      <button data-mode="query" title="Ask for a new structure; Jev builds it row by row">Query</button>
+      <button data-mode="query" title="Ask for a new structure; the model builds it row by row">Query</button>
     </nav>
     <form class="cmd" id="cmdForm" autocomplete="off">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
@@ -27,7 +27,7 @@
     <div class="status">
       <div class="activity" id="activity" hidden><span class="pulse"></span><span id="activityText"></span></div>
       <span class="metrics" id="libMetrics"></span>
-      <button class="engine" id="jevPill" title="TypeSafe Jev answers every decision"><span class="dot"></span>Jev</button>
+      <button class="engine" id="jevPill" title="The decision model answers every question"><span class="dot"></span>Decisions</button>
       <button class="engine" id="claudePill" title="Claude Code designs queries and writes answers"><span class="dot"></span>Claude</button>
     </div>
   </header>
@@ -39,7 +39,7 @@
     <div class="mode ana" id="analyzeMode" hidden></div>
   </main>
 
-  <div class="dropveil" id="dropVeil" hidden><div><b>Drop to parse</b><span>PDF or HTML. Jev structures it while you watch.</span></div></div>
+  <div class="dropveil" id="dropVeil" hidden><div><b>Drop to parse</b><span>PDF or HTML. It is structured while you watch.</span></div></div>
 
   <dialog id="modal" class="modal">
     <div class="modal-head"><div><div class="eyebrow" id="mEyebrow"></div><h3 id="mTitle"></h3></div><button class="icon-btn" id="mClose" aria-label="Close">✕</button></div>
@@ -48,8 +48,8 @@
 
   <dialog id="keyDlg" class="dlg">
     <form method="dialog" id="keyForm">
-      <h3>TypeSafe Jev key</h3>
-      <p class="muted small">From <a href="https://console.typesafe.ai/keys" target="_blank" rel="noreferrer">console.typesafe.ai/keys</a>. Verified, then saved to this project's <code>.env</code>.</p>
+      <h3 id="keyTitle">API key</h3>
+      <p class="muted small">From <a id="keyLink" href="https://console.typesafe.ai/keys" target="_blank" rel="noreferrer">console.typesafe.ai/keys</a>. Verified, then saved to this project's <code>.env</code>.</p>
       <input id="keyInput" type="password" autocomplete="off" placeholder="ts_…" />
       <p id="keyErr" class="err small"></p>
       <div class="row end gap"><button class="btn ghost" value="cancel" formnovalidate>Cancel</button><button class="btn primary" value="save">Verify &amp; save</button></div>
