@@ -1,0 +1,263 @@
+{
+  "question": "Map every notification requirement across the corpus: who has to be told, about what, and how fast?",
+  "program": {
+    "title": "Notification requirements across 12 regulations",
+    "thesis": "Find every duty to notify someone, then classify its trigger, recipient, deadline, and whether delivery is prescribed. Cross-tabbing those columns shows which regimes converge and which stand alone.",
+    "unit": {
+      "level": "paragraph",
+      "docs": [],
+      "where": [
+        {
+          "field": "modality",
+          "op": "in",
+          "values": [
+            "must",
+            "must_not"
+          ],
+          "threshold": 0
+        }
+      ],
+      "rationale": "Every duty-bearing paragraph in the corpus."
+    },
+    "doc_notes": [],
+    "nodes": [
+      {
+        "id": "requires_notice",
+        "label": "Requires notice?",
+        "kind": "noul",
+        "question": "Does this text require someone to notify, inform, disclose to, or send a notice to another party?",
+        "options": [],
+        "levels": [],
+        "when": [],
+        "why": "Gate."
+      },
+      {
+        "id": "trigger",
+        "label": "Trigger",
+        "kind": "choice",
+        "question": "What triggers the notice?",
+        "options": [
+          {
+            "key": "security_incident",
+            "description": "A breach, security incident, or unauthorized access to information"
+          },
+          {
+            "key": "privacy_practices",
+            "description": "Privacy practices, consumer rights, choices, or opt-outs"
+          },
+          {
+            "key": "relationship_or_sale",
+            "description": "Opening an account, a sale, a transaction, or an ongoing customer relationship"
+          },
+          {
+            "key": "marketing_contact",
+            "description": "A marketing email, sales call, advertisement, or endorsement"
+          },
+          {
+            "key": "material_change",
+            "description": "A change in policies, terms, ownership, or material facts"
+          },
+          {
+            "key": "other",
+            "description": "Something else"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "requires_notice",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "What the notice is about."
+      },
+      {
+        "id": "recipient",
+        "label": "Recipient",
+        "kind": "choice",
+        "question": "Who must receive the notice?",
+        "options": [
+          {
+            "key": "individuals",
+            "description": "Individuals: consumers, customers, parents, patients, or call recipients"
+          },
+          {
+            "key": "regulator",
+            "description": "A government agency or regulator"
+          },
+          {
+            "key": "media_public",
+            "description": "The media or the public, including investors"
+          },
+          {
+            "key": "business",
+            "description": "Another business, such as a service provider or covered entity"
+          },
+          {
+            "key": "unspecified",
+            "description": "Not specified"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "requires_notice",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Who is told."
+      },
+      {
+        "id": "timeframe",
+        "label": "Timeframe",
+        "kind": "score",
+        "question": "How quickly must the notice be given?",
+        "options": [],
+        "levels": [
+          "No time requirement stated",
+          "Before or at the time of the interaction",
+          "Within a reasonable time or without unreasonable delay",
+          "Within a fixed period longer than 30 days",
+          "Within 30 days or less"
+        ],
+        "when": [
+          {
+            "field": "requires_notice",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Urgency."
+      },
+      {
+        "id": "prescribed_form",
+        "label": "Form prescribed?",
+        "kind": "noul",
+        "question": "Does this text prescribe the notice's content, format, or delivery channel (for example what it must include, that it be written, or how it is sent)?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "requires_notice",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "How much drafting work the notice carries."
+      }
+    ],
+    "relations": {
+      "enabled": false,
+      "label": "",
+      "question": "",
+      "options": [],
+      "none_option": "",
+      "candidates": [],
+      "anchor_docs": [],
+      "block_by": "",
+      "cross_document": false,
+      "max_pairs": 0
+    },
+    "views": [
+      {
+        "id": "v_count",
+        "type": "stat",
+        "title": "Paragraphs that impose a notice duty",
+        "why": "Headline.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "requires_notice",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_trigger_doc",
+        "type": "heatmap",
+        "title": "What triggers notice, by regulation",
+        "why": "Which regimes are about incidents vs. relationships vs. marketing.",
+        "x": "trigger",
+        "y": "doc",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_trigger_whom",
+        "type": "heatmap",
+        "title": "Trigger \u00d7 recipient",
+        "why": "Who gets told about what.",
+        "x": "trigger",
+        "y": "recipient",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_speed",
+        "type": "histogram",
+        "title": "How fast notices are due",
+        "why": "Distribution of deadlines.",
+        "x": "timeframe",
+        "y": "",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_form",
+        "type": "bar",
+        "title": "Share of notice duties with a prescribed form, by regulation",
+        "why": "Drafting burden.",
+        "x": "doc",
+        "y": "",
+        "where": [
+          {
+            "field": "requires_notice",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "mean",
+        "measure_field": "prescribed_form",
+        "top": 0
+      },
+      {
+        "id": "v_rows",
+        "type": "table",
+        "title": "Fastest notice duties",
+        "why": "The deadlines to calendar.",
+        "x": "trigger",
+        "y": "recipient",
+        "where": [
+          {
+            "field": "requires_notice",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "timeframe",
+        "top": 20
+      }
+    ]
+  }
+}

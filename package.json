@@ -1,0 +1,15 @@
+{
+  "name": "reglens",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Semantic compute over regulatory text, powered by TypeSafe Jev",
+  "scripts": {
+    "corpus": "node scripts/build-corpus.mjs",
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "bench": "node --env-file-if-exists=.env scripts/bench.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

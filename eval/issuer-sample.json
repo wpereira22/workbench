@@ -1,0 +1,1202 @@
+[
+ {
+  "id": "fed-genius-applications/b52",
+  "section": "SUPPLEMENTARY INFORMATION: › III. Proposed Rule",
+  "lead_in": null,
+  "text": "The proposed rule would set out a process for insured State member banks to apply to the Board for prior approval for a subsidiary to issue payment stablecoins using the applications process and requirements set out in the GENIUS Act. The proposed rule would: (i) describe the scope of the application requirements; (ii) set out rules of procedure governing such applications; (iii) specify the information that applicants must submit; and (iv) establish a process governing the appeal, hearings, and final determination for applications. These provisions in the proposal would not apply to uninsured State member banks. [ 18 ]"
+ },
+ {
+  "id": "fed-genius-applications/b87",
+  "section": "SUPPLEMENTARY INFORMATION: › III. Proposed Rule › C. Framework for Receiving and Reviewing Applications › 3. Information Submitted as Part of an Application › Certifications.",
+  "lead_in": null,
+  "text": "Relatedly, section 247.30(b)(4)(i) of the proposed rule would require all officers and directors of the proposed Board-supervised PPSI to certify that they have not been convicted of a felony offense involving insider trading, embezzlement, cybercrime, money laundering, financing of terrorism, or financial fraud. [ 61 ] This certification would help the Board to monitor compliance with section 4(f) of the GENIUS Act. [ 62 ] Section 247.30(b)(4)(ii) would require an authorized officer of the applicant to certify in writing that the filing submitted to the Board, including any supporting materials, contains no material misrepresentations or omissions. It would also provide that the Board may review and verify any information filed in connection with a notice or an application, and that any person responsible for any material misrepresentation or omission in a filing or supporting materials may be subject to enforcement action and other penalties, including criminal penalties provided in 18 U.S.C. 1001 ."
+ },
+ {
+  "id": "fed-genius-applications/b92",
+  "section": "SUPPLEMENTARY INFORMATION: › III. Proposed Rule › C. Framework for Receiving and Reviewing Applications › 4. Initial Action on an Application",
+  "lead_in": null,
+  "text": "With respect to approvals, the Board reserves the right to impose conditions or commitments. [ 67 ] Specifically, section 247.30(g) of the proposed rule provides that the Board may impose conditions on any approval, including conditions to address financial, managerial, safety and soundness, compliance, or other concerns to ensure that approval is consistent with the relevant statutory factors and other provisions of the GENIUS Act."
+ },
+ {
+  "id": "fed-genius-applications/b222",
+  "section": "SUPPLEMENTARY INFORMATION: › V. Administrative Law Matters › E. Providing Accountability Through Transparency Act of 2023",
+  "lead_in": null,
+  "text": "In summary, the Board of Governors of the Federal Reserve System (Board) proposes to issue regulations that would establish procedures to be followed by an insured State member bank that seeks to obtain Board approval for a subsidiary to issue payment stablecoins pursuant to the Guiding and Establishing National Innovation for U.S. Stablecoins Act (GENIUS Act)."
+ },
+ {
+  "id": "fed-genius-applications/b231",
+  "section": "PART 247—STABLECOINS (REGULATION UU)",
+  "lead_in": null,
+  "text": "1. The authority citation for part 247 reads as follows:"
+ },
+ {
+  "id": "fed-genius-applications/b232",
+  "section": "PART 247—STABLECOINS (REGULATION UU)",
+  "lead_in": null,
+  "text": "Authority: 12 U.S.C. 12 U.S.C. 248 , 321-339a , 483 , 602 , 1818 , 1828 , 1831o , 1831p-1 , and 5901 et seq."
+ },
+ {
+  "id": "fed-genius-applications/b254",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart A—Authority, Purpose, Scope, and Definitions › § 247.2 Definitions. › Control.",
+  "lead_in": "A person controls another person if:",
+  "text": "(2) the person controls in any manner the election of a majority of the directors or trustees of the other person; or"
+ },
+ {
+  "id": "fed-genius-applications/b295",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart D—Applications by Insured State Member Banks for a Subsidiary to Issue Payment Stablecoins › § 247.30 Applications by insured State member banks. › (c) Completeness.— › (2) Material change.",
+  "lead_in": null,
+  "text": "An application considered substantially complete remains substantially complete unless there is a material change in circumstances that requires the Board to treat the application as a new application. An application that has been considered substantially complete may be considered to be no longer be substantially complete if the Board becomes aware that, due to a material change in circumstances, the information received is no longer sufficient for the Board to evaluate all factors that the Board must consider under 12 U.S.C. 5904(c) and paragraph (d) of this section."
+ },
+ {
+  "id": "fed-genius-applications/b296",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart D—Applications by Insured State Member Banks for a Subsidiary to Issue Payment Stablecoins › § 247.30 Applications by insured State member banks. › (c) Completeness.— › (3) Notification.",
+  "lead_in": null,
+  "text": "Not later than 30 days after the appropriate Federal Reserve Bank receives an application under this section, the Board shall notify the applicant as to whether the Board considers the application to be substantially complete. If the Board does not believe the application is substantially complete, the Board will specify the additional information the applicant must provide in order for the application to be considered substantially complete."
+ },
+ {
+  "id": "fed-genius-applications/b298",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart D—Applications by Insured State Member Banks for a Subsidiary to Issue Payment Stablecoins › § 247.30 Applications by insured State member banks. › (d) Factors to be considered.",
+  "lead_in": null,
+  "text": "The Board shall consider the following factors when evaluating an application under subsection (a):"
+ },
+ {
+  "id": "fed-genius-applications/b321",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart D—Applications by Insured State Member Banks for a Subsidiary to Issue Payment Stablecoins › § 247.31 Opportunity for Hearing and Final Determination › (e) Right to reapply.",
+  "lead_in": null,
+  "text": "The denial of an application shall not prohibit an applicant from filing a subsequent application."
+ },
+ {
+  "id": "fed-genius-applications/b323",
+  "section": "PART 262—RULES OF PROCEDURE",
+  "lead_in": null,
+  "text": "7. The authority citation for part 262 continues to read as follows:"
+ },
+ {
+  "id": "fed-genius-applications/b325",
+  "section": "PART 262—RULES OF PROCEDURE",
+  "lead_in": null,
+  "text": "7. In § 262.3, add paragraph (m) to read as follows:"
+ },
+ {
+  "id": "fed-genius-nprm/b9",
+  "section": "SUMMARY:",
+  "lead_in": null,
+  "text": "The Board of Governors of the Federal Reserve System (Board) proposes to issue regulations to implement the Guiding and Establishing National Innovation for U.S. Stablecoins Act (GENIUS Act) with respect to Board-supervised permitted payment stablecoin issuers (PPSIs) and certain other entities that are subject to the Board's jurisdiction. In addition, the Board proposes to issue regulations to implement the prohibition on tying in section 4(a)(8) of the GENIUS Act, which is applicable generally to all PPSIs."
+ },
+ {
+  "id": "fed-genius-nprm/b83",
+  "section": "SUPPLEMENTARY INFORMATION: › I. Background › B. Self-Executing Provisions",
+  "lead_in": null,
+  "text": "Section 4(a)(6)(B) of the GENIUS Act ( 12 U.S.C. 5903(a)(6)(B) ) provides that a PPSI can only issue payment stablecoins if the issuer has the technological capability to comply, and will comply, with the terms of any lawful order."
+ },
+ {
+  "id": "fed-genius-nprm/b86",
+  "section": "SUPPLEMENTARY INFORMATION: › I. Background › B. Self-Executing Provisions",
+  "lead_in": null,
+  "text": "Section 7(f)(4) of the GENIUS Act ( 12 U.S.C. 5906(f)(4) ) provides that nothing in the GENIUS Act preempts State consumer protection laws, including with respect to Board-supervised PPSIs."
+ },
+ {
+  "id": "fed-genius-nprm/b93",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › A. Subpart A—Purpose, Scope, Definitions, and Severability › 1. Authority, Purpose, and Scope (Proposed § 247.1)",
+  "lead_in": null,
+  "text": "Proposed § 247.1 sets forth the authority, purpose, and scope of the Board's proposed stablecoin-related regulations. Paragraph (a) cites the GENIUS Act ( 12 U.S.C. 5901 et seq. ) as the authority for the proposed rule and describes the purpose of the proposed rule as implementing the Board's regulatory responsibilities under the Act."
+ },
+ {
+  "id": "fed-genius-nprm/b94",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › A. Subpart A—Purpose, Scope, Definitions, and Severability › 1. Authority, Purpose, and Scope (Proposed § 247.1)",
+  "lead_in": null,
+  "text": "Paragraph (b) would state the scope and affected entities of each subpart of the proposed rule as follows: (1) subpart B implements certain provisions in section 4 of the GENIUS Act ( 12 U.S.C. 5903 ), which requires the Board to issue regulations applicable to Board-supervised PPSIs; (2) subpart C implements section 10 of the GENIUS Act ( 12 U.S.C. 5909 ), which imposes requirements on Board-supervised persons seeking to provide custodial or safekeeping services for payment stablecoin reserves, payment stablecoins used as collateral, or the private keys used to issue payment stablecoins; (3) subpart D implements section 5 of the GENIUS Act ( 12 U.S.C. 5904 ), which requires the Board to establish applications procedures applicable to insured State member banks seeking approval for a subsidiary to issue payment stablecoins; [ 12 ] (4) subpart E implements section 4(a)(8) of the GENIUS Act ( 12 U.S.C. 5903(a)(8) ), which imposes a tying prohibition on all PPSIs, and applies that tying prohibition in a manner consistent with section 4(a)(12)(B)(i)(III) of the Act ( 12 U.S.C. 5903(a)(12)(B)(i)(III) ) to certain companies unanimously approved by the Stablecoin Certification Review Committee under section 4(a)(12) of the Act ( 12 U.S.C. 5903(a)(12) ); and (5) subpart F implements rules pertaining to State-qualified payment stablecoin issuers—specifically, the Board's backup-enforcement authority during unusual and exigent circumstances under section 7(e) of the GENIUS Act ( 12 U.S"
+ },
+ {
+  "id": "fed-genius-nprm/b97",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › A. Subpart A—Purpose, Scope, Definitions, and Severability › 2. Definitions (proposed § 247.2) › Affiliate.",
+  "lead_in": null,
+  "text": "The Board is proposing to define the term “affiliate” consistent with the definition in the Bank Holding Company Act (BHC Act), 12 U.S.C. 1841(k) , and the Board's Regulation Y, 12 CFR 225.2(a) , but modified to use the defined term “person” in place of the term “company.” Under the proposed rule, the term “affiliate” would mean a person that controls, is controlled by, or is under common control with another person. The Board believes the proposed definition of affiliate would include the appropriate individuals and entities that could be involved in payment stablecoin issuance."
+ },
+ {
+  "id": "fed-genius-nprm/b99",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › A. Subpart A—Purpose, Scope, Definitions, and Severability › 2. Definitions (proposed § 247.2) › Board.",
+  "lead_in": null,
+  "text": "Under the proposed rule, “Board” would mean the Board of Governors of the Federal Reserve System. This accords with the definition of Board provided in the GENIUS Act ( 12 U.S.C. 5901(3) )."
+ },
+ {
+  "id": "fed-genius-nprm/b117",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › A. Subpart A—Purpose, Scope, Definitions, and Severability › 2. Definitions (proposed § 247.2) › Director. › GAAP.",
+  "lead_in": null,
+  "text": "The Board is proposing to include a definition of the term GAAP in the rule. The proposed rule would define the term “GAAP” to mean the generally accepted accounting principles as used in the United States. GAAP is used in the definition of fair value and proposed subpart B. The proposed definition of “GAAP” is the same as that in 12 CFR part 217 ."
+ },
+ {
+  "id": "fed-genius-nprm/b128",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › A. Subpart A—Purpose, Scope, Definitions, and Severability › 2. Definitions (proposed § 247.2) › Director. › Officer.",
+  "lead_in": null,
+  "text": "The Board is proposing to define “officer” to mean the president, chairman, chief executive officer, chief operating officer, chief financial officer, chief investment officer, chief risk officer, chief technology officer, and Bank Secrecy Act officer. The term would include any individual serving in the functional capacity of the listed titles or their equivalent, without regard to title, salary, or compensation. The term “officer” also includes any other person identified by the Board or appropriate Federal Reserve Bank, whether or not hired as an employee, with significant influence over, or who participates in, major policymaking decisions of the entity. This definition is generally consistent with the definition of senior executive officer in 12 CFR 225.71(c) ."
+ },
+ {
+  "id": "fed-genius-nprm/b182",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › B. Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › 1. Permissible and Prohibited Activities (proposed § 247.10) › a. Permissible Activities › Permitted Activities.",
+  "lead_in": null,
+  "text": "Section 4(a)(7) of the GENIUS Act ( 12 U.S.C. 5903(a)(7) ) sets forth the list of activities in which a PPSI may engage. Additionally, section 16(b) of the GENIUS Act ( 12 U.S.C. 5915(b) ) outlines certain additional activities and investments in which entities regulated by the Board, including Board-supervised PPSIs, may engage."
+ },
+ {
+  "id": "fed-genius-nprm/b183",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › B. Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › 1. Permissible and Prohibited Activities (proposed § 247.10) › a. Permissible Activities › Permitted Activities.",
+  "lead_in": null,
+  "text": "Consistent with the statute, the Board is proposing to mirror the permitted activities from section 4(a)(7)(A) of the GENIUS Act ( 12 U.S.C. 5903(a)(7)(A) ) in proposed § 247.10(a)(1) through (4), which include: (1) issuing payment stablecoins; (2) redeeming payment stablecoins; (3) managing reserves related to the issuance or redemption of payment stablecoins, including purchasing, selling, and holding reserve assets or providing custodial services for reserve assets, consistent with applicable State and Federal law; [ 29 ] and (4) providing custodial or safekeeping services for payment stablecoins, required reserves, or private keys of stablecoins consistent with the GENIUS Act, as implemented in proposed subpart C. The permitted activities would not include lending or issuing ( printed page 61589) payment stablecoins as the proceeds of a loan."
+ },
+ {
+  "id": "fed-genius-nprm/b220",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › B. Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › 1. Permissible and Prohibited Activities (proposed § 247.10) › b. Prohibited Activities › Prohibition on Remuneration.",
+  "lead_in": null,
+  "text": "Another alternative, as discussed in further in section II.B.2.a of this SUPPLEMENTARY INFORMATION , would be to require each Board-supervised PPSI that issues more than one brand of payment stablecoin to hold the reserve assets backing each payment stablecoin in separate, wholly owned subsidiaries, with the assets of each subsidiary securing the issuance of the corresponding payment stablecoin. Under this approach, each subsidiary would be prohibited from incurring any liability of its own, thereby helping to ensure that the reserve assets held in the subsidiary are effective security for the corresponding payment stablecoin liabilities. The Board seeks comment on this approach."
+ },
+ {
+  "id": "fed-genius-nprm/b235",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › B. Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › 2. Reserve Assets (Proposed § 247.11) › a. Reserve Requirement (Proposed § 247.11(a))",
+  "lead_in": null,
+  "text": "In order to maintain reserve assets that are “identifiable” and comply with proposed § 247.11(a)(1)(i), Board-supervised PPSIs must maintain appropriate records to ensure documented ownership and legal entitlement to individual reserve assets. Similarly, any ownership arrangements, including ownership via custodians, must comply with applicable laws and regulations. The Board generally anticipates that reserve assets will be recorded on the Board-supervised PPSI's balance sheet under GAAP and be included in the quarterly reports required under proposed § 247.14(i) and on Consolidated Reports of Condition and Income (Call Report) Schedule RC, Balance Sheet, for a parent State member bank, as applicable. A Board-supervised PPSI must maintain the appropriate operational capabilities, internal controls, policies, and safeguards to ensure that its payment stablecoins are at all times backed by reserves on an at least one-to-one basis."
+ },
+ {
+  "id": "fed-genius-nprm/b306",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › B. Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › 2. Reserve Assets (Proposed § 247.11) › e. Consequences and Remedial Measures for Noncompliance (Proposed § 247.11(f)-(g))",
+  "lead_in": null,
+  "text": "Proposed § 247.11(f)(1) would require a Board-supervised PPSI that fails to satisfy the one-to-one requirement in proposed § 247.11(a)(1)(iii) to, within 24 hours of such failure, submit: (i) notification to the Board through its supervising Federal Reserve Bank of such failure; and (ii) a plan describing how the Board-supervised PPSI will return to compliance with the one-to-one requirement. Proposed § 247.11(f)(1)(ii)(A) clarifies that the Board reserves discretion to require the Board-supervised PPSI to modify the plan submitted under proposed § 247.11(f)(1)(ii) as appropriate in light of circumstances surrounding the shortfall."
+ },
+ {
+  "id": "fed-genius-nprm/b377",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › B. Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › 4. Risk Management Standards (Proposed § 247.13) › b. Information Technology and Security Standards (Proposed § 247.13(b)) › Board of Directors Approval.",
+  "lead_in": null,
+  "text": "Under proposed § 247.13(b)(2), the board of directors of a Board-supervised PPSI, or an appropriate board committee, must approve the Board-supervised PPSI's information technology and security program. The board or board committee must oversee the development, implementation, and maintenance of the program, including the appointment of a qualified Information Technology and Security Officer. The board or committee must also assign specific responsibility for program implementation and review program-related reporting."
+ },
+ {
+  "id": "fed-genius-nprm/b396",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › B. Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › 4. Risk Management Standards (Proposed § 247.13) › d. Bank Secrecy Act/Anti-Money Laundering and Sanctions Requirements (Proposed § 247.13(d)) › Definitions.",
+  "lead_in": null,
+  "text": "The proposed rule would define several terms used throughout this section. The term “AML/CFT requirement” would mean certain requirements of the Bank Secrecy Act, the GENIUS Act, or of the regulations in title 31, Chapter X applicable to Board-supervised PPSIs."
+ },
+ {
+  "id": "fed-genius-nprm/b422",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › B. Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › 5. Audits, Reports, and Supervision (Proposed § 247.14) › b. Reporting (Proposed § 247.14(h)-(k), (n)-(o)) › Quarterly Reports of Financial Condition and Income.",
+  "lead_in": null,
+  "text": "The Board also proposes to require that each quarterly report of financial condition and income includes a declaration from the PPSI's Chief Financial Officer, or the individual performing an equivalent function, that the report is true and correct to the best of their knowledge and belief. The correctness of the quarterly report of condition and income shall also be attested to by the signatures of the directors and senior management of the Board-supervised PPSI other than the officer making such declaration, with the attestation stating that the report has been examined by them and to the best of their knowledge and belief is true and correct. The Board proposes requiring these declarations and attestations to ensure that Board-supervised PPSI's officers and directors are accountable for the accuracy of the Board-supervised PPSI's reports of financial condition and income."
+ },
+ {
+  "id": "fed-genius-nprm/b443",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › B. Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › 6. Capital (Proposed §§ 247.15-18)",
+  "lead_in": null,
+  "text": "While the capital requirement for uninsured eligible deposit claims would capture the primary financial risk associated with issuing and redeeming payment stablecoins and managing reserve assets, Board-supervised PPSIs could face other financial risks. For example, a Board-supervised PPSI may hold payment stablecoins as principal under proposed § 247.10(a)(6)(i) and may hold non-payment stablecoin digital assets as principal to facilitate customer transactions or test distributed ledger-based platforms under proposed § 247.10(a)(6)(iv). Risks from these activities include, for example, credit risk and market risks associated with holding digital assets used to pay gas fees. To address such risks, the proposal would impose additional capital requirements based on the Board's capital rule for regulated banking organizations. Specifically, to calculate capital requirements for financial risks that could arise from non-reserve assets, a Board-supervised PPSI would use the capital requirements and definition of capital as specified in 12 CFR part 217 ."
+ },
+ {
+  "id": "fed-genius-nprm/b444",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › B. Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › 6. Capital (Proposed §§ 247.15-18)",
+  "lead_in": null,
+  "text": "Finally, the proposal would include capital requirements to address a Board-supervised PPSI's operational risks. Capital requirements for operational risk would include two components: (i) a capital requirement based on outstanding payment stablecoin issuance and (ii) a capital requirement based on non-reserve asset revenue to capture other operational risks. Together, these two components would capture primary operational risks from issuing and redeeming payment stablecoins and managing reserve assets, which correlate with outstanding issuance value, as well as operational risks from other activities, such as providing stablecoin custody services or trading non-reserve assets, for which revenue is a better proxy."
+ },
+ {
+  "id": "fed-genius-nprm/b490",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › B. Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › 6. Capital (Proposed §§ 247.15-18) › b. Minimum Capital Requirements (Proposed § 247.15) › iii. Capital Requirements for Operational Risks (Proposed §§ 247.18; 247.15(e)(4))",
+  "lead_in": null,
+  "text": "Operational risk is the risk of loss resulting from inadequate or failed internal processes, people, and systems, or events that disrupt business operations. It does not include other losses because of business performance, such as changes in business strategy or customer demand. Board-supervised PPSIs face a range of operational risks in connection with issuing and redeeming payment stablecoins and managing reserve assets. Some of those risks overlap with operational risks faced by other financial institutions. Other risks, however, are relatively novel given Board-supervised PPSIs' reliance on distributed ledger technology as the foundational infrastructure for payment stablecoins as well as technology such as smart contracts. [ 94 ] In many cases, distributed ledger technology offers new functionality that can help mitigate operational risks. Programmable blockchains, for example, can facilitate delivery-versus-payment transactions that mitigate settlement risk. [ 95 ]"
+ },
+ {
+  "id": "fed-genius-nprm/b503",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › B. Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › 6. Capital (Proposed §§ 247.15-18) › b. Minimum Capital Requirements (Proposed § 247.15) › iii. Capital Requirements for Operational Risks (Proposed §§ 247.18; 247.15(e)(4)) › Baseline Operational Risk Requirement.",
+  "lead_in": null,
+  "text": "To calibrate the baseline operational risk requirements, the Board considered banking organizations' operational losses from investment management and agency services relative to fiduciary income, as set forth in the table below. [ 106 ]"
+ },
+ {
+  "id": "fed-genius-nprm/b512",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › B. Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › 6. Capital (Proposed §§ 247.15-18) › b. Minimum Capital Requirements (Proposed § 247.15) › iii. Capital Requirements for Operational Risks (Proposed §§ 247.18; 247.15(e)(4)) › Baseline Operational Risk Requirement.",
+  "lead_in": null,
+  "text": "In addition to help ensure the ongoing operations of Board-supervised PPSIs in the presence of operational risk, this calibration would provide additional benefits. Board-supervised PPSIs would generally be subsidiaries of State member banks, which means that to the extent the other activities are also permissible for State member banks, the consolidated entity may consider conducting those activities at either the State member bank or the PPSI-level. The highest operational risk requirement that would apply under the Basel III proposal is 18 percent of the business indicator, which in practice closely reflects revenues. [ 108 ] Therefore, setting operational risk requirements for Board-supervised PPSIs at 25 percent would limit the potential for banking organizations with PPSI subsidiaries to reduce their operational risk requirements by shifting activities into such subsidiaries."
+ },
+ {
+  "id": "fed-genius-nprm/b579",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › B. Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › 7. Indexing of Thresholds by Nominal GDP Growth",
+  "lead_in": null,
+  "text": "The Board would calculate and publish a GDP growth adjustment scalar, along with updated dollar-based thresholds, each year. [ 125 ] Each calendar year, a Board-supervised PPSI would calculate the regulatory dollar thresholds in proposed 12 CFR part 247 , which would then be multiplied by the GDP growth adjustment scalar, using the updated GDP growth adjustment scalar published by the Board."
+ },
+ {
+  "id": "fed-genius-nprm/b591",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › C. Subpart C—Rules Applicable to Board-Supervised Custodians › 1. Definitions (Proposed § 247.20)",
+  "lead_in": null,
+  "text": "Thus, under the proposed rule, “covered assets” would mean payment stablecoin reserves, payment stablecoins used as collateral, and private keys used to issue payment stablecoins, as well as cash and other property received in the course of the provision of custodial or safekeeping services for such assets. ( printed page 61632)"
+ },
+ {
+  "id": "fed-genius-nprm/b592",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › C. Subpart C—Rules Applicable to Board-Supervised Custodians › 1. Definitions (Proposed § 247.20)",
+  "lead_in": null,
+  "text": "Separately, the Board is proposing to define the entities to which the proposed custody requirements would apply as “covered custodians.” This term would mean any entity that (i) provides custodial or safekeeping services for covered assets, (ii) is subject to supervision or regulation by the Board, and (iii) is not (a) a PPSI (as defined in proposed § 247.2), bank, savings association, Federal branch, or insured branch (as those terms are defined in section 3 of the Federal Deposit Insurance Act ( 12 U.S.C. 1813(r) ) that is subject to supervision by the FDIC or OCC; (b) an entity, other than a federally regulated depository institution, subject to supervision by a State bank supervisor, as defined in section 3(r) of the Federal Deposit Insurance Act ( 12 U.S.C. 1813(r) ), provided that such State bank supervisor makes available to the Board such information as the Board determines necessary and relevant under section 10(d) of the Act ( 12 U.S.C. 5909(d) ); or (c) an entity for which the SEC or CFTC is the primary financial regulatory agency as described in section 2(12) of the Dodd-Frank Wall Street Reform and Consumer Protection Act ( 12 U.S.C. 5301(12) )."
+ },
+ {
+  "id": "fed-genius-nprm/b608",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › C. Subpart C—Rules Applicable to Board-Supervised Custodians › 2. Covered Asset Custodial Property Requirements (Proposed § 247.21)",
+  "lead_in": null,
+  "text": "Finally, proposed § 247.21(d) would clarify, consistent with section 10(c)(2)(D) of the GENIUS Act ( 12 U.S.C. 5909(c)(2)(D) ), that an insured depository institution that is a covered custodian is not required to separate or segregate from its own property any payment stablecoin reserves in the form of cash received from a PPSI in exchange for eligible deposit claims against the insured depository institution. Such holdings may be reflected as deposit liabilities of the insured depository institution, provided such treatment is consistent with Federal law. [ 133 ] For the avoidance of doubt, the Board does not view receiving payment stablecoin reserves in the form of cash on deposit and reflecting such holdings as deposit liabilities as creating a custody relationship between a PPSI and an insured depository institution. Therefore, an insured depository institution is a covered custodian only to the extent that such insured depository institution provides custodial or safekeeping services for other covered assets. Further, the Board does not view this exception as permitting payment stablecoin reserves to be held as secured deposits insulated from the credit risk of the relevant depository institution."
+ },
+ {
+  "id": "fed-genius-nprm/b672",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › E. Subpart F—Rules Applicable to State-Qualified Payment Stablecoin Issuers › 1. Unusual and Exigent Circumstances Enforcement Authority (Proposed § 247.50) › b. Factors for Unusual and Exigent Circumstances (Proposed § 247.50(c))",
+  "lead_in": null,
+  "text": "To illustrate the application of the conditions the Board will consider, the following examples describe instances where the Board believes that “unusual and exigent circumstances” may exist:"
+ },
+ {
+  "id": "fed-genius-nprm/b674",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › E. Subpart F—Rules Applicable to State-Qualified Payment Stablecoin Issuers › 1. Unusual and Exigent Circumstances Enforcement Authority (Proposed § 247.50) › b. Factors for Unusual and Exigent Circumstances (Proposed § 247.50(c))",
+  "lead_in": "To illustrate the application of the conditions the Board will consider, the following examples describe instances where the Board believes that “unusual and exigent circumstances” may exist:",
+  "text": "a State-qualified PPSI has repeatedly violated its redemption policy, is routinely failing to redeem coins upon request in a “timely” manner, or there is other strong evidence of insufficient liquidity management at the State-qualified PPSI;"
+ },
+ {
+  "id": "fed-genius-nprm/b684",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › E. Subpart F—Rules Applicable to State-Qualified Payment Stablecoin Issuers › 1. Unusual and Exigent Circumstances Enforcement Authority (Proposed § 247.50) › c. Procedures for Use of Back-Up Enforcement Authority (Proposed § 247.50(d))",
+  "lead_in": null,
+  "text": "Consistent with section 7(e)(1)(A) of the GENIUS Act ( 12 U.S.C. 5906(e)(1)(A) ), the Board is proposing § 247.50(d) to set forth procedures for notifying and consulting with the applicable State payment stablecoin regulator or a State-qualified PPSI before issuing directives under this back-up enforcement authority."
+ },
+ {
+  "id": "fed-genius-nprm/b696",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › E. Subpart F—Rules Applicable to State-Qualified Payment Stablecoin Issuers › 2. Transition and Waiver Process for Uninsured State-Chartered Depository Institutions (Proposed § 247.51)",
+  "lead_in": null,
+  "text": "Section 2(25)(C) of the GENIUS Act ( 12 U.S.C. 5901(25)(C) ) defines the term “primary Federal payment stablecoin regulator” for these purposes as “the [FDIC], the [OCC], or the Board.” The GENIUS Act is ambiguous as to which of these three Federal banking agencies is intended to supervise a covered PPSI that has surpassed the $10 billion outstanding issuance threshold. In the absence of such clarity, a covered PPSI would generally be required to “cease issuing new payment stablecoins” when its outstanding issuance reaches $10 billion, as it would not have the ability to transition to the Federal regulatory framework or to seek a waiver as provided in section 4(d)(3) of the GENIUS Act ( 12 U.S.C. 5903(d)(3) ). Thus, for a covered PPSI to continue issuing payment stablecoins, it may effectively be forced to convert to a Federal charter; however, this is contrary to section 4(d)(3)(C)(i) of the GENIUS Act ( 12 U.S.C. 5903(d)(3)(C)(i) ), which states that these statutory provisions do not “require [State-qualified PPSIs] to convert to a Federal charter.”"
+ },
+ {
+  "id": "fed-genius-nprm/b742",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › G. Proposed Amendments to Parts 208, 211, 225 › 1. Proposed Amendment to Part 208",
+  "lead_in": null,
+  "text": "The Board is proposing to amend Regulation H ( 12 CFR part 208 ) to include interpretations in proposed § 208.113 regarding the authority of (i) a subsidiary of an insured State member bank to issue payment stablecoins, (ii) an uninsured State member bank to issue payment stablecoins directly, and (iii) a State member bank to engage in certain digital asset related activities. [ 155 ]"
+ },
+ {
+  "id": "fed-genius-nprm/b1091",
+  "section": "List of Subjects › 12 CFR Part 208",
+  "lead_in": null,
+  "text": "Reporting and recordkeeping requirements"
+ },
+ {
+  "id": "fed-genius-nprm/b1098",
+  "section": "List of Subjects › 12 CFR Part 211",
+  "lead_in": null,
+  "text": "Investments"
+ },
+ {
+  "id": "fed-genius-nprm/b1102",
+  "section": "List of Subjects › 12 CFR Part 217",
+  "lead_in": null,
+  "text": "Banks"
+ },
+ {
+  "id": "fed-genius-nprm/b1109",
+  "section": "List of Subjects › 12 CFR Part 217",
+  "lead_in": null,
+  "text": "Securities"
+ },
+ {
+  "id": "fed-genius-nprm/b1125",
+  "section": "List of Subjects › 12 CFR Part 263",
+  "lead_in": null,
+  "text": "Investigations"
+ },
+ {
+  "id": "fed-genius-nprm/b1138",
+  "section": "PART 208—MEMBERSHIP OF STATE BANKING INSTITUTIONS IN THE FEDERAL RESERVE SYSTEM (REGULATION H) › § 208.113 Payment stablecoin activities and investments. › (d) Additional digital asset-related activities.",
+  "lead_in": "A State member bank may, in connection with the payment stablecoin activities and investments contemplated by the GENIUS Act ( 12 U.S.C. 5901 et seq. ) or other permissible activities and investments:",
+  "text": "(3) Pay fees and undertake other activities as necessary to conduct testing on distributed ledger-based platforms; and"
+ },
+ {
+  "id": "fed-genius-nprm/b1148",
+  "section": "PART 211—INTERNATIONAL BANKING OPERATIONS (REGULATION K) › § 211.10 Permissible activities abroad. › (20) Certain digital asset-related activities.",
+  "lead_in": "In connection with the payment stablecoin activities and investments contemplated by the GENIUS Act ( 12 U.S.C. 5901 et seq. ) or other permissible activities and investments:",
+  "text": "(ii) Paying fees to facilitate customer transactions;"
+ },
+ {
+  "id": "fed-genius-nprm/b1161",
+  "section": "PART 217—CAPITAL ADEQUACY STANDARDS",
+  "lead_in": null,
+  "text": "Authority: 12 U.S.C. 248(a) , 321-338a , 481-486 , 1462a , 1467a , 1818 , 1828 , 1831n , 1831o , 1831p-1 , 1831w , 1835 , 1844(b) , 1851 , 3904 , 3906-3909 , 4808 , 5365 , 5368 , 5371 , 5371 note , 5903 , and sec. 4012, Pub. L. 116-136 , 134 Stat. 281."
+ },
+ {
+  "id": "fed-genius-nprm/b1165",
+  "section": "PART 217—CAPITAL ADEQUACY STANDARDS › § 217.2 Definitions.",
+  "lead_in": null,
+  "text": "8. Amend § 217.22 by adding a new paragraph (a)(8) to read as follows:"
+ },
+ {
+  "id": "fed-genius-nprm/b1174",
+  "section": "PART 225—BANK HOLDING COMPANIES AND CHANGE IN BANK CONTROL (REGULATION Y)",
+  "lead_in": null,
+  "text": "Authority: 12 U.S.C. 1817(j)(13) , 1818 , 1828(o) , 1831i , 1831p-1 , 1843(c)(8) , 1844(b) , 1972(1) , 3106 , 3108 , 3310 , 3331-3351 , 3354 , 3906 , 3907 , 3909 , 5915(b) ; 15 U.S.C. 1681s , 1681w , 6801 and 6805 ."
+ },
+ {
+  "id": "fed-genius-nprm/b1245",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart A—Purpose, Scope, Definitions, and Severability › § 247.1 Authority, purpose, and scope. › (b) Scope.",
+  "lead_in": "This part applies to Board-supervised PPSIs and certain other persons. Specifically:",
+  "text": "(2) subpart C of this part implements section 10 of the GENIUS Act ( 12 U.S.C. 5909 ), which imposes requirements on Board-supervised persons seeking to provide custodial or safekeeping services for payment stablecoin reserves, payment stablecoins used as collateral, or the private keys used to issue payment stablecoins;"
+ },
+ {
+  "id": "fed-genius-nprm/b1248",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart A—Purpose, Scope, Definitions, and Severability › § 247.1 Authority, purpose, and scope. › (b) Scope.",
+  "lead_in": "This part applies to Board-supervised PPSIs and certain other persons. Specifically:",
+  "text": "(5) subpart F of this part implements rules pertaining to State-qualified PPSIs—specifically, the Board's backup-enforcement authority during unusual and exigent circumstances under section 7(e) of the GENIUS Act ( 12 U.S.C. 5906(e) ) and the transition and waiver process for uninsured State-chartered depository institutions under section 4(d) of the GENIUS Act ( 12 U.S.C. 5903(d) )."
+ },
+ {
+  "id": "fed-genius-nprm/b1304",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart A—Purpose, Scope, Definitions, and Severability › § 247.2 Definitions. › Control.",
+  "lead_in": "(1) means information—",
+  "text": "(iii) otherwise obtained by the Board-supervised permitted payment stablecoin issuer in connection with providing a financial product or service to a customer; and"
+ },
+ {
+  "id": "fed-genius-nprm/b1315",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart A—Purpose, Scope, Definitions, and Severability › § 247.2 Definitions. › Control.",
+  "lead_in": null,
+  "text": "Publicly available information means any information that a person has a reasonable basis to believe is lawfully made available to the general public from:"
+ },
+ {
+  "id": "fed-genius-nprm/b1359",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.10 Permissible and prohibited activities. › (c) Prohibitions. — › (4) Prohibition on remuneration.",
+  "lead_in": "(i) The Board presumes that a Board-supervised PPSI is paying interest or yield (whether in cash, tokens, or other consideration) to the holder of a payment stablecoin solely in connection with the holding, use, or retention of such payment stablecoin if:",
+  "text": "(B) the affiliate or related third party identified in paragraph (c)(4)(i)(A) of this section or, if the person is a related third party, an affiliate of such related third party, has a contract, agreement, or other arrangement to pay interest or yield (whether in cash, tokens, or other consideration) to a holder of any payment stablecoin issued by the Board-supervised PPSI solely in connection with the holding, use, or retention of such payment stablecoin."
+ },
+ {
+  "id": "fed-genius-nprm/b1379",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.11 Reserve assets. › (a) Reserve requirement.",
+  "lead_in": "(iv) are held:",
+  "text": "(A) in custody by a person that is eligible to provide such services under, and is in compliance with, the provisions in section 10 of the GENIUS Act ( 12 U.S.C. 5909 ) and any applicable implementing regulations;"
+ },
+ {
+  "id": "fed-genius-nprm/b1382",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.11 Reserve assets. › (a) Reserve requirement.",
+  "lead_in": "(iv) are held:",
+  "text": "(D) by the Board-supervised PPSI;"
+ },
+ {
+  "id": "fed-genius-nprm/b1389",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.11 Reserve assets. › (b) Permissible reserve assets.",
+  "lead_in": "The reserve assets required under paragraph (a)(1) of this section must comprise exclusively:",
+  "text": "(3) Treasury bills, Treasury notes, or Treasury bonds with a remaining maturity of 93 days or less;"
+ },
+ {
+  "id": "fed-genius-nprm/b1395",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.11 Reserve assets. › (b) Permissible reserve assets.",
+  "lead_in": "The reserve assets required under paragraph (a)(1) of this section must comprise exclusively:",
+  "text": "(6) securities issued by an investment company registered under section 8(a) of the Investment Company Act of 1940 ( 15 U.S.C. 80a-8(a) ), or other registered Government money market fund, and that are invested solely in underlying assets described in paragraphs (b)(1) through (5) of this section;"
+ },
+ {
+  "id": "fed-genius-nprm/b1436",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.11 Reserve assets. › (f) Failure to meet the one-to-one requirement. —",
+  "lead_in": "(1) If, at any time, a Board-supervised PPSI fails to satisfy the requirement in paragraph (a)(1)(iii) of this section, the Board-supervised PPSI must, within 24 hours of such a failure, submit:",
+  "text": "(ii) a plan describing how the Board-supervised PPSI will return to compliance with such requirement."
+ },
+ {
+  "id": "fed-genius-nprm/b1443",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.11 Reserve assets. › (f) Failure to meet the one-to-one requirement. — › (2) Automatic liquidation and prohibition on fees.",
+  "lead_in": "(i) begin liquidating all of its reserve assets and redeeming outstanding payment stablecoins, consistent with § 247.12, unless either:",
+  "text": "(iii) not issue payment stablecoins at any time during the liquidation."
+ },
+ {
+  "id": "fed-genius-nprm/b1444",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.11 Reserve assets. › (g) Failure to meet reserve asset requirements. —",
+  "lead_in": null,
+  "text": "If at any point the Board determines that a Board-supervised PPSI has not demonstrated that it meets the reserve asset requirements in paragraph (a), (b), or (c) of this section, the Board may require the Board-supervised PPSI to submit a plan describing how it will attain compliance, as well as the timeline for the plan. If the Board determines, either before or after the submission of a plan, that a Board-supervised PPSI faces a significant risk of being unable to attain compliance with the reserve requirements in paragraph (a), (b), or (c) of this section within a reasonable period, the Board may order the Board-supervised PPSI to redeem all of its outstanding payment stablecoins. The Board's authority to require a compliance plan or order redemption does not limit the Board's authority to pursue other measures, including enforcement actions, if appropriate."
+ },
+ {
+  "id": "fed-genius-nprm/b1446",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.12 Redemption and fees. › (a) Redemption policy.",
+  "lead_in": null,
+  "text": "A Board-supervised PPSI must publicly disclose its redemption policy and include, at a minimum, the following information:"
+ },
+ {
+  "id": "fed-genius-nprm/b1461",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.12 Redemption and fees. › (e) Disclosures and fees associated with purchase and redemption.",
+  "lead_in": "(1) publicly, clearly, and conspicuously disclose in plain language and in a format that is readily noticeable to customers, readily understandable by customers, and not mixed in with other information:",
+  "text": "(ii) that the Board-supervised PPSI is the entity that is obligated to convert, redeem, or repurchase the payment stablecoin for a fixed amount of monetary value;"
+ },
+ {
+  "id": "fed-genius-nprm/b1475",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.13 Risk management. › (a) General operational and managerial standards. — › (2) Internal audit system.",
+  "lead_in": "A Board-supervised PPSI must have an internal audit system that is tailored to the size and complexity of the Board-supervised PPSI and the nature, scope, and risk of its activities and that provides for:",
+  "text": "(i) adequate monitoring of the system of internal controls through an internal audit function, or for a Board-supervised PPSI whose size, complexity, or scope of operations does not warrant a full-scale internal audit function, a system of independent reviews of key internal controls;"
+ },
+ {
+  "id": "fed-genius-nprm/b1481",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.13 Risk management. › (a) General operational and managerial standards. — › (2) Internal audit system.",
+  "lead_in": "A Board-supervised PPSI must have an internal audit system that is tailored to the size and complexity of the Board-supervised PPSI and the nature, scope, and risk of its activities and that provides for:",
+  "text": "(vii) review by the Board-supervised PPSI's audit committee or board of directors of the effectiveness of the internal audit system."
+ },
+ {
+  "id": "fed-genius-nprm/b1522",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.13 Risk management. › (d) Bank Secrecy Act/anti-money laundering and sanctions requirements. — › (1) Definitions.",
+  "lead_in": "(i) AML/CFT enforcement action means any formal or informal action taken under authority of the GENIUS Act ( 12 U.S.C. 5901 et seq. ), or other applicable law, that seeks to penalize, remedy, prevent, or respond to noncompliance with past or ongoing violations of, or past or ongoing deficiencies relating to, an AML/CFT requirement applicable to a Board-supervised PPSI. The term includes—",
+  "text": "(B) a requirement of 12 U.S.C. 5903(a)(5)(A)(i)-(v) , 12 U.S.C. 5903(a)(6)(B) , or 12 U.S.C. 5903(f)(1) applicable to a Board-supervised PPSI."
+ },
+ {
+  "id": "fed-genius-nprm/b1553",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.14 Audits, reports, and supervision. › (k) Ongoing compliance reporting.",
+  "lead_in": null,
+  "text": "(2) A Board-supervised PPSI required to prepare an audited annual financial statement under this paragraph ( l ) must:"
+ },
+ {
+  "id": "fed-genius-nprm/b1563",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.15 Capital adequacy and minimum requirements. › (a) General.",
+  "lead_in": null,
+  "text": "Each Board-supervised PPSI must meet the overall capital adequacy standards in accordance with §§ 247.15 through 247.18 at all times."
+ },
+ {
+  "id": "fed-genius-nprm/b1575",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.15 Capital adequacy and minimum requirements. › (b) Minimum capital requirements. › (2) De novo capital requirement. —",
+  "lead_in": "(i) Notwithstanding paragraph (b)(1) of this section, a Board-supervised PPSI that is in its de novo period must maintain total minimum capital that is equal to the greater of:",
+  "text": "(ii) For purposes of this paragraph (b)(2), a Board-supervised PPSI is in its de novo period if less than three years have elapsed since Board-supervised PPSI received initial approval from an appropriate Federal or State payment stablecoin regulator to issue payment stablecoins."
+ },
+ {
+  "id": "fed-genius-nprm/b1580",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.15 Capital adequacy and minimum requirements. › (c) Failure to meet minimum capital requirements. —",
+  "lead_in": "(2) If a Board-supervised PPSI fails to meet its minimum capital requirements paragraph (b) of this section by the end of the quarter following the quarter described in paragraph (c)(1) of this section, it must, starting the next day:",
+  "text": "(i) begin liquidation of reserve assets and redemption of outstanding stablecoins, consistent with § 247.12, concluding liquidation of all reserve assets as soon as practicable;"
+ },
+ {
+  "id": "fed-genius-nprm/b1597",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.16 Capital elements. › (b) Tangible equity.",
+  "lead_in": "Tangible equity is the sum of equity capital elements in this paragraph (b) minus regulatory adjustments and deductions in paragraph (c) of this section. The tangible equity capital elements are:",
+  "text": "(1) any common stock instruments (plus any related surplus) issued by the Board-supervised PPSI, net of treasury stock, that meet all the following criteria: ( printed page 61677)"
+ },
+ {
+  "id": "fed-genius-nprm/b1609",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.16 Capital elements. › (b) Tangible equity.",
+  "lead_in": "(2) any cumulative or non-cumulative perpetual stock instrument (plus any related surplus) issued by the Board-supervised PPSI, net of treasury stock, that meets the following criteria:",
+  "text": "(iv) the instrument is not secured, not covered by a guarantee of the Board-supervised PPSI or of an affiliate of the Board-supervised PPSI, and not subject to any other arrangement that legally or economically enhances the seniority of the instrument;"
+ },
+ {
+  "id": "fed-genius-nprm/b1638",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.17 Capital requirements for financial risks. › (a) Risk-based capital requirements for stablecoin reserves. — › (2) Credit risk requirement for reverse repurchase agreements. › (ii) Exposure amount equation.",
+  "lead_in": "The exposure amount for a reverse repurchase agreement or netting set of qualifying repo transactions is equal to max {0, [(ΣE − ΣC) + Σ(Es × Hs)]}, where:",
+  "text": "(B) “Qualifying master netting agreement” means a written, legally enforceable agreement that:"
+ },
+ {
+  "id": "fed-genius-nprm/b1648",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.17 Capital requirements for financial risks. › (a) Risk-based capital requirements for stablecoin reserves. — › (2) Credit risk requirement for reverse repurchase agreements. › (ii) Exposure amount equation.",
+  "lead_in": "(C) “Qualifying repo transactions” means transactions described in § 247.11(b)(4) or § 247.11(b)(5) held as reserves under § 247.11(a)(1), provided that:",
+  "text": "( 1 )( i ) the transaction is a “repurchase agreement” under section 599 of the Bankruptcy Code ( 11 U.S.C. 559 ) or section 11(e)(8)(D)(v) of the Federal Deposit Insurance Act; or"
+ },
+ {
+  "id": "fed-genius-nprm/b1649",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.17 Capital requirements for financial risks. › (a) Risk-based capital requirements for stablecoin reserves. — › (2) Credit risk requirement for reverse repurchase agreements. › (ii) Exposure amount equation.",
+  "lead_in": "(C) “Qualifying repo transactions” means transactions described in § 247.11(b)(4) or § 247.11(b)(5) held as reserves under § 247.11(a)(1), provided that:",
+  "text": "( ii ) if the transaction does not meet the criteria set forth in paragraph (a)(2)(iii)(C)( 1 )( i ) of this section, then the transaction is executed under an agreement that provides the Board-regulated institution the right to accelerate, terminate, and close-out the transaction on a net basis and to liquidate or set-off collateral promptly upon an event of counterparty default; and"
+ },
+ {
+  "id": "fed-genius-nprm/b1651",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.17 Capital requirements for financial risks. › (a) Risk-based capital requirements for stablecoin reserves. — › (2) Credit risk requirement for reverse repurchase agreements. › (ii) Exposure amount equation.",
+  "lead_in": "( 2 ) the Board-supervised PPSI has conducted sufficient legal review to conclude with a well-founded basis (and maintain sufficient documentation of that legal review) that the agreement underlying the exposure:",
+  "text": "( i ) meets the requirements of paragraph (a)(2)(iii)(C)( 1 ) of this section, and"
+ },
+ {
+  "id": "fed-genius-nprm/b1654",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.17 Capital requirements for financial risks. › (b) Non-reserve assets. — › (1) Applicable framework. —",
+  "lead_in": null,
+  "text": "(i) A Board-supervised PPSI with a parent State member bank is subject to part 217 of this title as if it were its parent State member bank, subject to the exclusions and adjustments in paragraph (b)(2) of this section."
+ },
+ {
+  "id": "fed-genius-nprm/b1655",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.17 Capital requirements for financial risks. › (b) Non-reserve assets. — › (1) Applicable framework. —",
+  "lead_in": null,
+  "text": "(ii) A Board-supervised PPSI that is a State-qualified PPSI that has transitioned to the Board's regulatory framework pursuant to § 247.51 is subject to part 217 of this title as if it is a State member bank, subject to the adjustments in paragraph (b)(2) of this section."
+ },
+ {
+  "id": "fed-genius-nprm/b1669",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.18 Capital requirements for operational risks.",
+  "lead_in": null,
+  "text": "(b) For purposes of this section:"
+ },
+ {
+  "id": "fed-genius-nprm/b1683",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.18 Capital requirements for operational risks.",
+  "lead_in": null,
+  "text": "where the:"
+ },
+ {
+  "id": "fed-genius-nprm/b1691",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart B—Rules Applicable to Board-Supervised Permitted Payment Stablecoin Issuers › § 247.18 Capital requirements for operational risks.",
+  "lead_in": "(i) The processes must produce operational loss event data that satisfy the following criteria:",
+  "text": "(A) Operational loss event data must be comprehensive and capture all operational loss events that resulted in operational losses equal to or higher than $20,000 multiplied by the GDP growth adjustment (before any recoveries are taken into account) from all activities and exposures of the Board-supervised PPSI;"
+ },
+ {
+  "id": "fed-genius-nprm/b1710",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart C—Rules Applicable to Board-Supervised Custodians › § 247.20 Definitions.",
+  "lead_in": null,
+  "text": "Sub-custodian means a person that provides custody and safekeeping services to a covered custodian, including through a digital wallet for which such person controls the associated private keys, with respect to covered assets of a covered customer, for which the covered custodian otherwise serves as a custodian under this subpart."
+ },
+ {
+  "id": "fed-genius-nprm/b1715",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart C—Rules Applicable to Board-Supervised Custodians › § 247.21 Covered asset custodial property requirements. › (b) Protection, possession, and control. —",
+  "lead_in": null,
+  "text": "(ii) With regards to any payment stablecoin or stablecoin reserve in the form of a tokenized asset held in safekeeping under this subpart, a covered custodian, or sub-custodian, as applicable, maintains control for purposes of paragraph (b)(2)(i) of this section if it can reasonably demonstrate, consistent with the standard of care established by applicable law, that no other party, including the covered customer, can transfer the payment stablecoin or tokenized asset using a distributed ledger without the consent of the custodian or sub-custodian, as applicable."
+ },
+ {
+  "id": "fed-genius-nprm/b1717",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart C—Rules Applicable to Board-Supervised Custodians › § 247.21 Covered asset custodial property requirements. › (d) Holdings of cash.",
+  "lead_in": null,
+  "text": "Notwithstanding any other provision of this section, an insured depository institution that is a covered custodian is not required to separate or segregate from its own property any payment stablecoin reserves in the form of cash received from a PPSI in exchange for eligible deposit claims against the insured depository institution. Such holdings may be reflected as deposit liabilities of the insured depository institution, provided such treatment is consistent with Federal law."
+ },
+ {
+  "id": "fed-genius-nprm/b1739",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart E—Rules Applicable to All Permitted Payment Stablecoin Issuers › § 247.41 Tying exceptions. › (d) Additional information.",
+  "lead_in": null,
+  "text": "The Board may require additional information in connection with any request under this section."
+ },
+ {
+  "id": "fed-genius-nprm/b1744",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart F—Rules Applicable to State-Qualified Payment Stablecoin Issuers › § 247.50 Unusual and exigent circumstances enforcement authority. › (b) In general.",
+  "lead_in": null,
+  "text": "If the Board determines that unusual and exigent circumstances exist under subsection (c), and that there is reasonable cause to believe that the continuation of any activity, including the failure to act, by a State-qualified PPSI constitutes a serious risk to the financial safety, soundness, or stability of the State-qualified PPSI, the Board may, after requisite notice to the relevant State payment stablecoin regulator under subsection (d), take an enforcement action against a State-qualified PPSI or an institution-affiliated party of such State-qualified PPSI for a violation of the GENIUS Act ( 12 U.S.C. 5901 et seq. ) in the form of a directive with the effect of a cease-and-desist order that has become final. These restrictions may include, but are not limited to, limitations on:"
+ },
+ {
+  "id": "fed-genius-nprm/b1757",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart F—Rules Applicable to State-Qualified Payment Stablecoin Issuers › § 247.50 Unusual and exigent circumstances enforcement authority. › (c) Unusual and exigent circumstances.",
+  "lead_in": "(6) disorderly failure, significant impairment to the operations, or substantiated concerns about the imminent disorderly failure, of—",
+  "text": "(iii) any infrastructure necessary for the transmission or redemption of payment stablecoins issued by the State-qualified PPSI;"
+ },
+ {
+  "id": "fed-genius-nprm/b1793",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart F—Rules Applicable to State-Qualified Payment Stablecoin Issuers › § 247.51 Transition and waiver process for uninsured State-chartered depository institutions. › (d) Waiver from Federal supervision. — › (1) Waiver request.",
+  "lead_in": null,
+  "text": "A covered PPSI seeking to remain solely supervised by a State payment stablecoin regulator must submit to the Board a written waiver request containing information necessary to evaluate such request under paragraphs (d)(2) and (3) of this section within 240 days of reaching the $10 billion outstanding issuance value."
+ },
+ {
+  "id": "fed-genius-nprm/b1798",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart F—Rules Applicable to State-Qualified Payment Stablecoin Issuers › § 247.51 Transition and waiver process for uninsured State-chartered depository institutions. › (d) Waiver from Federal supervision. — › (2) Waiver criteria.",
+  "lead_in": "The Board will consider the following exclusive criteria when deciding whether to grant a waiver:",
+  "text": "(iv) the supervisory framework, including regulations and guidance, applicable to the covered PPSI with respect to payment stablecoins and digital assets."
+ },
+ {
+  "id": "fed-genius-nprm/b1799",
+  "section": "PART 247—STABLECOINS (REGULATION UU) › Subpart F—Rules Applicable to State-Qualified Payment Stablecoin Issuers › § 247.51 Transition and waiver process for uninsured State-chartered depository institutions. › (d) Waiver from Federal supervision. — › (3) Waiver presumption. —",
+  "lead_in": null,
+  "text": "(i) Except as provided in paragraph (d)(3)(ii) of this section, the Board will approve a waiver request under this section if the relevant State payment stablecoin regulator has:"
+ },
+ {
+  "id": "fed-genius-nprm/b1806",
+  "section": "PART 263-RULES OF PRACTICE FOR HEARINGS",
+  "lead_in": null,
+  "text": "Authority: 5 U.S.C. 504 , 554-557 ; 12 U.S.C. 248 , 324 , 334 , 347a , 504 , 505 , 1464 , 1467 , 1467a , 1817(j) , 1818 , 1820(k) , 1829 , 1831o , 1831p-1 , 1832(c) , 1847(b) , 1847(d) , 1884 , 1972(2)(F) , 3105 , 3108 , 3110 , 3349 , 3907 , 3909(d) , 4717 , 5323 , 5362 , 5365 , 5463 , 5464 , 5466 , 5467 , 5905 ; 15 U.S.C. 21 , 78l(i) , 78o-4 , 78o-5 , 78u-2 ; 1639e(K); 28 U.S.C. 2461 note ; 31 U.S.C. 5321 ; and 42 U.S.C. 4012a ."
+ },
+ {
+  "id": "fed-genius-nprm/b1810",
+  "section": "PART 263-RULES OF PRACTICE FOR HEARINGS › § 263.1 Scope.",
+  "lead_in": null,
+  "text": "(i) This subpart also applies to all other adjudications required by statute to be determined on the record after opportunity for an agency hearing, unless otherwise specifically provided for in the Local Rules (see § 263.3(i))."
+ },
+ {
+  "id": "fed-genius-nprm/b1814",
+  "section": "PART 263-RULES OF PRACTICE FOR HEARINGS › § 263.3 Definitions.",
+  "lead_in": "(g) Institution includes:",
+  "text": "(9) Any Board-supervised PPSI, as that term is defined in 12 CFR 247.2 ; and"
+ },
+ {
+  "id": "fed-genius-nprm/b1815",
+  "section": "PART 263-RULES OF PRACTICE FOR HEARINGS › § 263.3 Definitions.",
+  "lead_in": "(g) Institution includes:",
+  "text": "(10) Any other entity subject to the supervision of the Board."
+ },
+ {
+  "id": "fed-genius-nprm/b1817",
+  "section": "PART 263-RULES OF PRACTICE FOR HEARINGS › § 263.3 Definitions.",
+  "lead_in": null,
+  "text": "15. Revise § 263.450 to read as follows"
+ },
+ {
+  "id": "genius-act/b12",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 2. DEFINITIONS. › (2) BANK SECRECY ACT.—",
+  "lead_in": null,
+  "text": "The term ‘‘Bank Secrecy Act’’ means—"
+ },
+ {
+  "id": "genius-act/b14",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 2. DEFINITIONS. › (2) BANK SECRECY ACT.—",
+  "lead_in": "The term ‘‘Bank Secrecy Act’’ means—",
+  "text": "(A) section 21 of the Federal Deposit Insurance Act (12 U.S.C. 1829b);"
+ },
+ {
+  "id": "genius-act/b24",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 2. DEFINITIONS. › (7) DIGITAL ASSET SERVICE PROVIDER.—",
+  "lead_in": "(A) means a person that, for compensation or profit, engages in the business in the United States (including on behalf of customers or users in the United States) of—",
+  "text": "(ii) exchanging digital assets for other digital assets;"
+ },
+ {
+  "id": "genius-act/b64",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 2. DEFINITIONS. › (15) INSURED DEPOSITORY INSTITUTION.—",
+  "lead_in": "The term ‘‘insured depository institution’’ means—",
+  "text": "(A) an insured depository institution, as defined in section 3 of the Federal Deposit Insurance Act (12 U.S.C. 1813); and"
+ },
+ {
+  "id": "genius-act/b77",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 2. DEFINITIONS. › (19) NATIONAL CURRENCY.—",
+  "lead_in": "The term ‘‘national currency’’ means each of the following:",
+  "text": "(B) Money standing to the credit of an account with a Federal Reserve Bank."
+ },
+ {
+  "id": "genius-act/b86",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 2. DEFINITIONS. › (22) PAYMENT STABLECOIN.—",
+  "lead_in": "(A) means a digital asset—",
+  "text": "(i) that is, or is designed to be, used as a means of payment or settlement; and"
+ },
+ {
+  "id": "genius-act/b98",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 2. DEFINITIONS. › (23) PERMITTED PAYMENT STABLECOIN ISSUER.—",
+  "lead_in": null,
+  "text": "The term ‘‘permitted payment stablecoin issuer’’ means a person formed in the United States that is—"
+ },
+ {
+  "id": "genius-act/b129",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 2. DEFINITIONS. › (33) SUBSIDIARY OF AN INSURED CREDIT UNION.—",
+  "lead_in": "With respect to an insured credit union, the term ‘‘subsidiary of an insured credit union’’ means—",
+  "text": "(C) a subsidiary of a State chartered insured credit union authorized under State law."
+ },
+ {
+  "id": "genius-act/b133",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 3. ISSUANCE AND TREATMENT OF PAYMENT STABLECOINS. › (b) PROHIBITION ON OFFERS OR SALES.— › (1) IN GENERAL.—",
+  "lead_in": null,
+  "text": "Except as provided in subsection (c) and section 18, beginning on the date that is 3 years after the date of enactment of this Act, it shall be unlawful for a digital asset service provider to offer or sell a payment stablecoin to a person in the United States, unless the payment stablecoin is issued by a permitted payment stablecoin issuer."
+ },
+ {
+  "id": "genius-act/b134",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 3. ISSUANCE AND TREATMENT OF PAYMENT STABLECOINS. › (b) PROHIBITION ON OFFERS OR SALES.— › (2) FOREIGN PAYMENT STABLECOIN ISSUERS.—",
+  "lead_in": null,
+  "text": "It shall be unlawful for any digital asset service provider to offer, sell, or otherwise make available in the United States a payment stablecoin issued by a foreign payment stablecoin issuer unless the foreign payment stablecoin issuer has the technological capability to comply, and will comply, with the terms of any lawful order and any reciprocal arrangement pursuant to section 18."
+ },
+ {
+  "id": "genius-act/b177",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (a) STANDARDS FOR THE ISSUANCE OF PAYMENT STABLECOINS.— › (1) IN GENERAL.—",
+  "lead_in": "A permitted payment stablecoin issuer shall—",
+  "text": "(A) maintain identifiable reserves backing the outstanding payment stablecoins of the permitted payment stablecoin issuer on an at least 1 to 1 basis, with reserves comprising—"
+ },
+ {
+  "id": "genius-act/b199",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (a) STANDARDS FOR THE ISSUANCE OF PAYMENT STABLECOINS.— › (1) IN GENERAL.—",
+  "lead_in": "A permitted payment stablecoin issuer shall—",
+  "text": "(B) publicly disclose the issuer’s redemption policy, which shall—"
+ },
+ {
+  "id": "genius-act/b206",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (a) STANDARDS FOR THE ISSUANCE OF PAYMENT STABLECOINS.— › (2) PROHIBITION ON REHYPOTHECATION.—",
+  "lead_in": "Reserves required under paragraph (1)(A) may not be pledged, rehypothecated, or reused by the permitted payment stablecoin issuer, either directly or indirectly, except for the purpose of—",
+  "text": "(A) satisfying margin obligations in connection with investments in permitted reserves under clauses (iv) and (v) of paragraph (1)(A);"
+ },
+ {
+  "id": "genius-act/b223",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (a) STANDARDS FOR THE ISSUANCE OF PAYMENT STABLECOINS.— › (3) MONTHLY CERTIFICATION; EXAMINATION OF REPORTS BY REGISTERED PUBLIC ACCOUNTING FIRM.— › (A) IN GENERAL.—",
+  "lead_in": null,
+  "text": "A permitted payment stablecoin issuer shall, each month, have the information disclosed in the previous month-end report required under paragraph (1)(D) examined by a registered public accounting firm."
+ },
+ {
+  "id": "genius-act/b248",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (a) STANDARDS FOR THE ISSUANCE OF PAYMENT STABLECOINS.— › (4) CAPITAL, LIQUIDITY, AND RISK MANAGEMENT REQUIREMENTS.— › (A) IN GENERAL.—",
+  "lead_in": "(i) capital requirements applicable to permitted payment stablecoin issuers that—",
+  "text": "(I) are tailored to the business model and risk profile of permitted payment stablecoin issuers; and"
+ },
+ {
+  "id": "genius-act/b250",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (a) STANDARDS FOR THE ISSUANCE OF PAYMENT STABLECOINS.— › (4) CAPITAL, LIQUIDITY, AND RISK MANAGEMENT REQUIREMENTS.— › (B) RULE OF CONSTRUCTION.—",
+  "lead_in": null,
+  "text": "Nothing in this paragraph shall be construed to limit—"
+ },
+ {
+  "id": "genius-act/b251",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (a) STANDARDS FOR THE ISSUANCE OF PAYMENT STABLECOINS.— › (4) CAPITAL, LIQUIDITY, AND RISK MANAGEMENT REQUIREMENTS.— › (B) RULE OF CONSTRUCTION.—",
+  "lead_in": "Nothing in this paragraph shall be construed to limit—",
+  "text": "(i) the authority of the primary Federal payment stablecoin regulators, in prescribing standards under this paragraph, to tailor or differentiate among issuers on an individual basis or by category, taking into consideration the capital structure, business model risk profile, complexity, financial activities (including financial activities of subsidiaries), size, and any other riskrelated factors of permitted payment stablecoin issuers that a primary Federal payment stablecoin regulator determines appropriate, provided that such tailoring or differentiation occurs without respect to whether a permitted payment stablecoin issuer is regulated by a State payment stablecoin regulator; or"
+ },
+ {
+  "id": "genius-act/b294",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (a) STANDARDS FOR THE ISSUANCE OF PAYMENT STABLECOINS.— › (5) TREATMENT UNDER THE BANK SECRECY ACT AND SANCTIONS LAWS.— › (C) REPORT REQUIRED.—",
+  "lead_in": null,
+  "text": "Not later than 1 year after the date of enactment of this Act, the Attorney General and the Secretary of the Treasury shall submit to the Committee on Banking, Housing, and Urban Affairs of the Senate and the Committee on Financial Services of the House of Representatives a report, which may include a classified annex if applicable, on the coordination with permitted payment stablecoin issuers required under subparagraph (A)."
+ },
+ {
+  "id": "genius-act/b299",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (a) STANDARDS FOR THE ISSUANCE OF PAYMENT STABLECOINS.— › (7) LIMITATION ON PAYMENT STABLECOIN ACTIVITIES.— › (A) IN GENERAL.—",
+  "lead_in": "A permitted payment stablecoin issuer may only—",
+  "text": "(i) issue payment stablecoins;"
+ },
+ {
+  "id": "genius-act/b321",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (a) STANDARDS FOR THE ISSUANCE OF PAYMENT STABLECOINS.— › (9) PROHIBITION ON THE USE OF DECEPTIVE NAMES.— › (A) IN GENERAL.—",
+  "lead_in": "(ii) market a payment stablecoin in such a way that a reasonable person would perceive the payment stablecoin to be—",
+  "text": "(III) guaranteed or approved by the Government of the United States."
+ },
+ {
+  "id": "genius-act/b327",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (a) STANDARDS FOR THE ISSUANCE OF PAYMENT STABLECOINS.— › (10) AUDITS AND REPORTS.— › (A) ANNUAL FINANCIAL STATEMENT.— › (iii) STANDARDS.—",
+  "lead_in": null,
+  "text": "An audit described in clause (ii) shall be conducted in accordance with all applicable auditing standards established by the Public Company Accounting Oversight Board, including those relating to auditor independence, internal controls, and related party transactions."
+ },
+ {
+  "id": "genius-act/b372",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (a) STANDARDS FOR THE ISSUANCE OF PAYMENT STABLECOINS.— › (12) NON-FINANCIAL SERVICES PUBLIC COMPANIES.— › (C) EXTENSION OF PROHIBITION.— › (i) IN GENERAL.—",
+  "lead_in": "(II) the public company will comply with data use limitations providing that, unless the public company receives consent from the consumer, nonpublic personal information obtained from stablecoin transaction data may not be—",
+  "text": "(bb) sold to any third party; or"
+ },
+ {
+  "id": "genius-act/b374",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (a) STANDARDS FOR THE ISSUANCE OF PAYMENT STABLECOINS.— › (12) NON-FINANCIAL SERVICES PUBLIC COMPANIES.— › (C) EXTENSION OF PROHIBITION.— › (i) IN GENERAL.—",
+  "lead_in": "Any company not domiciled in the United States or its Territories that is not predominantly engaged in 1 or more financial activities, may not issue a payment stablecoin unless the public company obtains a unanimous vote of the Stablecoin Certification Review Committee finding that—",
+  "text": "(III) the public company and the affiliates of the public company will comply with the tying prohibitions under paragraph (8)."
+ },
+ {
+  "id": "genius-act/b401",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (c) STATE-LEVEL REGULATORY REGIMES.— › (3) REVIEW.— › (A) INITIAL CERTIFICATION.—",
+  "lead_in": null,
+  "text": "Subject to subparagraph (B), not later than 1 year after the effective date of this Act, a State payment stablecoin regulator shall submit to the Stablecoin Certification Review Committee an initial certification that the State-level regulatory regime meets the criteria for substantial similarity established pursuant to paragraph (2)."
+ },
+ {
+  "id": "genius-act/b414",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (c) STATE-LEVEL REGULATORY REGIMES.— › (3) REVIEW.— › (C) ANNUAL RECERTIFICATION.—",
+  "lead_in": null,
+  "text": "(5) CERTIFICATION REVIEW.—"
+ },
+ {
+  "id": "genius-act/b416",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (c) STATE-LEVEL REGULATORY REGIMES.— › (3) REVIEW.— › (A) IN GENERAL.—",
+  "lead_in": "Not later than 30 days after the date on which a State payment stablecoin regulator submits an initial certification or a recertification under paragraph (4), the Stablecoin Certification Review Committee shall—",
+  "text": "(i) approve such certification if the Committee unanimously determines that the State-level regulatory regime meets or exceeds the standards and requirements described in subsection (a); or"
+ },
+ {
+  "id": "genius-act/b447",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (d) TRANSITION TO FEDERAL OVERSIGHT.— › (2) OTHER INSTITUTIONS.—",
+  "lead_in": "A State qualified payment stablecoin issuer not described in paragraph (1) with a payment stablecoin with a consolidated total outstanding issuance of more than $10,000,000,000 shall—",
+  "text": "(A) not later than 360 days after the payment stablecoin reaches such threshold, transition to the Federal regulatory framework under subsection (a) administered by the relevant State payment stablecoin regulator and the Comptroller, acting in coordination; or"
+ },
+ {
+  "id": "genius-act/b460",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (d) TRANSITION TO FEDERAL OVERSIGHT.— › (3) WAIVER.— › (B) CRITERIA FOR WAIVER.—",
+  "lead_in": "The primary Federal payment stablecoin regulator shall consider the following exclusive criteria in determining whether to issue a waiver under this paragraph:",
+  "text": "(i) The capital maintained by the State qualified payment stablecoin issuer."
+ },
+ {
+  "id": "genius-act/b461",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (d) TRANSITION TO FEDERAL OVERSIGHT.— › (3) WAIVER.— › (B) CRITERIA FOR WAIVER.—",
+  "lead_in": "The primary Federal payment stablecoin regulator shall consider the following exclusive criteria in determining whether to issue a waiver under this paragraph:",
+  "text": "(ii) The past operations and examination history of the State qualified payment stablecoin issuer."
+ },
+ {
+  "id": "genius-act/b462",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (d) TRANSITION TO FEDERAL OVERSIGHT.— › (3) WAIVER.— › (B) CRITERIA FOR WAIVER.—",
+  "lead_in": "The primary Federal payment stablecoin regulator shall consider the following exclusive criteria in determining whether to issue a waiver under this paragraph:",
+  "text": "(iii) The experience of the State payment stablecoin regulator in supervising payment stablecoin and digital asset activities."
+ },
+ {
+  "id": "genius-act/b485",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (e) MISREPRESENTATION OF INSURED STATUS.— › (3) MARKETING.— › (C) DETERMINATION OF THE NUMBER OF VIOLATIONS.—",
+  "lead_in": "For purposes of determining the number of violations for which to impose penalties under subparagraph (B), separate acts of noncompliance are a single violation when the acts are the result of—",
+  "text": "(ii) the same statement or publication."
+ },
+ {
+  "id": "genius-act/b489",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 4. REQUIREMENTS FOR ISSUING PAYMENT STABLECOINS. › (f) OFFICERS OR DIRECTORS CONVICTED OF CERTAIN FELONIES.— › (1) IN GENERAL.—",
+  "lead_in": null,
+  "text": "No individual who has been convicted of a felony offense involving insider trading, embezzlement, cybercrime, money laundering, financing of terrorism, or financial fraud may serve as—"
+ },
+ {
+  "id": "genius-act/b527",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 5. APPROVAL OF SUBSIDIARIES OF INSURED DEPOSITORY INSTITUTIONS AND FEDERAL QUALIFIED PAYMENT STABLECOIN ISSUERS. › (b) EVALUATION OF APPLICATIONS.—",
+  "lead_in": null,
+  "text": "A substantially complete application received under subsection (a) shall be evaluated by the primary Federal payment stablecoin regulator using the factors described in subsection (c)."
+ },
+ {
+  "id": "genius-act/b528",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 5. APPROVAL OF SUBSIDIARIES OF INSURED DEPOSITORY INSTITUTIONS AND FEDERAL QUALIFIED PAYMENT STABLECOIN ISSUERS. › (c) FACTORS TO BE CONSIDERED.—",
+  "lead_in": null,
+  "text": "The factors described in this subsection are the following:"
+ },
+ {
+  "id": "genius-act/b531",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 5. APPROVAL OF SUBSIDIARIES OF INSURED DEPOSITORY INSTITUTIONS AND FEDERAL QUALIFIED PAYMENT STABLECOIN ISSUERS. › (c) FACTORS TO BE CONSIDERED.—",
+  "lead_in": "The factors described in this subsection are the following:",
+  "text": "(3) The competence, experience, and integrity of the officers, directors, and principal shareholders of the applicant, its subsidiaries, and parent company, including—"
+ },
+ {
+  "id": "genius-act/b532",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 5. APPROVAL OF SUBSIDIARIES OF INSURED DEPOSITORY INSTITUTIONS AND FEDERAL QUALIFIED PAYMENT STABLECOIN ISSUERS. › (c) FACTORS TO BE CONSIDERED.—",
+  "lead_in": "(3) The competence, experience, and integrity of the officers, directors, and principal shareholders of the applicant, its subsidiaries, and parent company, including—",
+  "text": "(A) the record of those officers, directors, and principal shareholders of compliance with laws and regulations; and"
+ },
+ {
+  "id": "genius-act/b535",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 5. APPROVAL OF SUBSIDIARIES OF INSURED DEPOSITORY INSTITUTIONS AND FEDERAL QUALIFIED PAYMENT STABLECOIN ISSUERS. › (c) FACTORS TO BE CONSIDERED.—",
+  "lead_in": "The factors described in this subsection are the following:",
+  "text": "(5) Any other factors established by the primary Federal payment stablecoin regulator that are necessary to ensure the safety and soundness of the permitted payment stablecoin issuer."
+ },
+ {
+  "id": "genius-act/b553",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 5. APPROVAL OF SUBSIDIARIES OF INSURED DEPOSITORY INSTITUTIONS AND FEDERAL QUALIFIED PAYMENT STABLECOIN ISSUERS. › (d) TIMING FOR DECISION; GROUNDS FOR DENIAL.— › (2) DENIAL OF APPLICATION.—",
+  "lead_in": null,
+  "text": "(A) GROUNDS FOR DENIAL.—"
+ },
+ {
+  "id": "genius-act/b576",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 5. APPROVAL OF SUBSIDIARIES OF INSURED DEPOSITORY INSTITUTIONS AND FEDERAL QUALIFIED PAYMENT STABLECOIN ISSUERS. › (e) REPORTS ON PENDING APPLICATIONS.—",
+  "lead_in": "Each primary Federal payment stablecoin regulator shall—",
+  "text": "(1) notify Congress upon beginning to process applications under this Act; and"
+ },
+ {
+  "id": "genius-act/b607",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 6. SUPERVISION AND ENFORCEMENT WITH RESPECT TO FEDERAL QUALIFIED PAYMENT STABLECOIN ISSUERS AND SUBSIDIARIES OF INSURED DEPOSITORY INSTITUTIONS. › (a) SUPERVISION.— › (2) SUBMISSION OF REPORTS.—",
+  "lead_in": "Each permitted payment stablecoin issuer described in paragraph (1) shall, upon request, submit to the appropriate primary Federal payment stablecoin regulator a report on—",
+  "text": "(D) the compliance of the Federal qualified nonbank payment stablecoin issuer with the requirements of the Bank Secrecy Act and with laws authorizing the imposition of sanctions and implemented by the Secretary of the Treasury."
+ },
+ {
+  "id": "genius-act/b656",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 6. SUPERVISION AND ENFORCEMENT WITH RESPECT TO FEDERAL QUALIFIED PAYMENT STABLECOIN ISSUERS AND SUBSIDIARIES OF INSURED DEPOSITORY INSTITUTIONS. › (b) ENFORCEMENT.— › (5) CIVIL MONEY PENALTIES.— › (A) FAILURE TO BE APPROVED.—",
+  "lead_in": null,
+  "text": "Any person that issues a United States dollar-denominated payment stablecoin in violation of section 3, and any institution-affiliated party of such a person who knowingly participates in issuing such a payment stablecoin, shall be liable for a civil penalty of not more than $100,000 for each day during which such payment stablecoins are issued."
+ },
+ {
+  "id": "genius-act/b720",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 7. STATE QUALIFIED PAYMENT STABLECOIN ISSUERS. › (e) ENFORCEMENT AUTHORITY IN UNUSUAL AND EXIGENT CIRCUMSTANCES.— › (D) REVIEW OF DIRECTIVE.— › (II) AUTOMATIC LAPSE OF DIRECTIVE.—",
+  "lead_in": null,
+  "text": "If, after 10 days after the receipt of a response described in subclause (I), the Comptroller does not affirm, modify, or rescind the directive, the directive shall automatically lapse."
+ },
+ {
+  "id": "genius-act/b733",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 7. STATE QUALIFIED PAYMENT STABLECOIN ISSUERS. › (f) EFFECT ON STATE LAW.— › (1) HOST STATE LAW.—",
+  "lead_in": null,
+  "text": "Notwithstanding any other provision of law, the laws of a host State, including laws relating to consumer protection, shall only apply to the activities conducted in the host State by an out-of-State State qualified payment stablecoin issuer to the same extent as such laws apply to the activities conducted in the host State by an out-of-State Federal qualified payment stablecoin issuer."
+ },
+ {
+  "id": "genius-act/b760",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 8. ANTI-MONEY LAUNDERING PROTECTIONS. › (b) PUBLICATION OF DESIGNATION; PROHIBITION ON SECONDARY TRADING.— › (1) IN GENERAL.—",
+  "lead_in": "If a foreign payment stablecoin issuer does not come into compliance with the lawful order within 30 days from the date of issuance of the written notice described in subsection (a), except as provided in subsection (c), the Secretary of the Treasury shall—",
+  "text": "(B) issue a notification in the Federal Register prohibiting digital asset service providers from facilitating secondary trading of payment stablecoins issued by the foreign payment stablecoin issuer in the United States."
+ },
+ {
+  "id": "genius-act/b766",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 8. ANTI-MONEY LAUNDERING PROTECTIONS. › (b) PUBLICATION OF DESIGNATION; PROHIBITION ON SECONDARY TRADING.— › (4) CIVIL MONETARY PENALTIES.—",
+  "lead_in": null,
+  "text": "The Secretary of the Treasury may impose a civil monetary penalty as follows:"
+ },
+ {
+  "id": "genius-act/b781",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 8. ANTI-MONEY LAUNDERING PROTECTIONS. › (b) PUBLICATION OF DESIGNATION; PROHIBITION ON SECONDARY TRADING.— › (4) CIVIL MONETARY PENALTIES.— › (D) COMMENCEMENT OF CIVIL ACTIONS.—",
+  "lead_in": null,
+  "text": "The Secretary of the Treasury may commence a civil action against a foreign payment stablecoin issuer in a district court of the United States to—"
+ },
+ {
+  "id": "genius-act/b782",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 8. ANTI-MONEY LAUNDERING PROTECTIONS. › (b) PUBLICATION OF DESIGNATION; PROHIBITION ON SECONDARY TRADING.— › (4) CIVIL MONETARY PENALTIES.— › (D) COMMENCEMENT OF CIVIL ACTIONS.—",
+  "lead_in": "The Secretary of the Treasury may commence a civil action against a foreign payment stablecoin issuer in a district court of the United States to—",
+  "text": "(i) recover a civil monetary penalty assessed under subparagraph (A) or (B);"
+ },
+ {
+  "id": "genius-act/b786",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 8. ANTI-MONEY LAUNDERING PROTECTIONS. › (c) WAIVER AND LICENSING AUTHORITY EXEMPTIONS.— › (1) IN GENERAL.—",
+  "lead_in": null,
+  "text": "The Secretary of the Treasury may offer a waiver, general license, or specific license to any United States person engaging in secondary trading described in subsection (b)(1)(B) on a case-by-case basis if the Secretary determines that—"
+ },
+ {
+  "id": "genius-act/b828",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 9. ANTI-MONEY LAUNDERING INNOVATION. › (c) TREASURY RISK ASSESSMENT.—",
+  "lead_in": "As part of the national strategy for combating terrorist and other illicit financing required under sections 261 and 262 of the Countering America’s Adversaries Through Sanctions Act (Public Law 115–44; 131 Stat. 934), the Secretary of the Treasury shall consider—",
+  "text": "(2) the effectiveness of and gaps in existing methods, techniques, and strategies used by regulated financial institutions in detecting illicit activity, such as money laundering, involving digital assets;"
+ },
+ {
+  "id": "genius-act/b831",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 9. ANTI-MONEY LAUNDERING INNOVATION. › (d) FINCEN GUIDANCE OR RULEMAKING.—",
+  "lead_in": null,
+  "text": "Not later than 3 years after the date of enactment of this Act, the Financial Crimes Enforcement Network shall issue public guidance and notice and comment rulemaking, based on the results of the research and risk assessments required under this section, relating to the following:"
+ },
+ {
+  "id": "genius-act/b832",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 9. ANTI-MONEY LAUNDERING INNOVATION. › (d) FINCEN GUIDANCE OR RULEMAKING.—",
+  "lead_in": "Not later than 3 years after the date of enactment of this Act, the Financial Crimes Enforcement Network shall issue public guidance and notice and comment rulemaking, based on the results of the research and risk assessments required under this section, relating to the following:",
+  "text": "(1) The implementation of innovative or novel methods, techniques, or strategies by regulated financial institutions to detect illicit activity involving digital assets."
+ },
+ {
+  "id": "genius-act/b833",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 9. ANTI-MONEY LAUNDERING INNOVATION. › (d) FINCEN GUIDANCE OR RULEMAKING.—",
+  "lead_in": "Not later than 3 years after the date of enactment of this Act, the Financial Crimes Enforcement Network shall issue public guidance and notice and comment rulemaking, based on the results of the research and risk assessments required under this section, relating to the following:",
+  "text": "(2) Standards for payment stablecoin issuers to identify and report illicit activity involving the payment stablecoin of a permitted payment stablecoin issuer, including, fraud, cybercrime, money laundering, financing of terrorism, sanctions evasion, or insider trading."
+ },
+ {
+  "id": "genius-act/b839",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 9. ANTI-MONEY LAUNDERING INNOVATION. › (e) RECOMMENDATIONS AND REPORT TO CONGRESS.— › (1) IN GENERAL.—",
+  "lead_in": "Not later than 180 days after the date of enactment of this Act, the Secretary of the Treasury shall submit to the chairs and ranking members of the Committee on Banking, Housing, and Urban Affairs of the Senate and the Committee on Financial Services of the House of Representatives a report on—",
+  "text": "(B) the results of the research and risk assessments conducted pursuant to this section;"
+ },
+ {
+  "id": "genius-act/b853",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 10. CUSTODY OF PAYMENT STABLECOIN RESERVE AND COLLATERAL. › (a) IN GENERAL.—",
+  "lead_in": "A person may only engage in the business of providing custodial or safekeeping services for the payment stablecoin reserve, the payment stablecoins used as collateral, or the private keys used to issue permitted payment stablecoins if the person—",
+  "text": "(1) is subject to—"
+ },
+ {
+  "id": "genius-act/b887",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 11. TREATMENT OF PAYMENT STABLECOIN ISSUERS IN INSOLVENCY PROCEEDINGS. › (a) IN GENERAL.—",
+  "lead_in": "Subject to section 507(e) of title 11, United States Code, as added by subsection (d), in any insolvency proceeding of a permitted payment stablecoin issuer under Federal or State law, including any proceeding under that title and any insolvency proceeding administered by a State payment stablecoin regulator with respect to a permitted payment stablecoin issuer—",
+  "text": "(3) the priority under paragraph (1) shall not apply to claims other than those arising directly from the holding of payment stablecoins."
+ },
+ {
+  "id": "genius-act/b888",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 11. TREATMENT OF PAYMENT STABLECOIN ISSUERS IN INSOLVENCY PROCEEDINGS. › (b) DEFINITIONS.—",
+  "lead_in": null,
+  "text": "Section 101 of title 11, United States Code, is amended by adding after paragraph (40B) the following: ‘‘(40C) The terms ‘payment stablecoin’ and ‘permitted payment stablecoin issuer’ have the meanings given those terms in section 2 of the GENIUS Act.’’."
+ },
+ {
+  "id": "genius-act/b890",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 11. TREATMENT OF PAYMENT STABLECOIN ISSUERS IN INSOLVENCY PROCEEDINGS. › (c) AUTOMATIC STAY.—",
+  "lead_in": null,
+  "text": "Section 362 of title 11, United States Code, is amended—"
+ },
+ {
+  "id": "genius-act/b894",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 11. TREATMENT OF PAYMENT STABLECOIN ISSUERS IN INSOLVENCY PROCEEDINGS. › (c) AUTOMATIC STAY.—",
+  "lead_in": "(1) in subsection (a)—",
+  "text": "(C) by adding at the end the following:"
+ },
+ {
+  "id": "genius-act/b921",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 11. TREATMENT OF PAYMENT STABLECOIN ISSUERS IN INSOLVENCY PROCEEDINGS. › (g) APPLICATION OF EXISTING INSOLVENCY LAW.—",
+  "lead_in": "In accordance with otherwise applicable law, an insolvency proceeding with respect to a permitted payment stablecoin issuer shall occur as follows:",
+  "text": "(1) A depository institution (as defined in section 3 of the Federal Deposit Insurance Act (12 U.S.C. 1813)) shall be resolved by the Federal Deposit Insurance Corporation, National Credit Union Administration, or State payment stablecoin regulator, as applicable."
+ },
+ {
+  "id": "genius-act/b967",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 14. STUDY ON NON-PAYMENT STABLECOINS. › (a) STUDY BY TREASURY.— › (2) REPORT.—",
+  "lead_in": "Not later than 365 days after the date of the enactment of this Act, the Secretary of the Treasury shall provide to the Committee on Banking, Housing, and Urban Affairs of the Senate and the Committee on Financial Services of the House of Representatives a report that contains all findings made in carrying out the study under paragraph (1), including an analysis of—",
+  "text": "(F) governance structure, including aspects of decentralization;"
+ },
+ {
+  "id": "genius-act/b984",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 15. REPORTS. › (a) ANNUAL REPORTING REQUIREMENT.—",
+  "lead_in": "Beginning on the date that is 1 year after the date of enactment of this Act, and annually thereafter, the primary Federal payment stablecoin regulators, in consultation with State payment stablecoin regulators, as necessary, shall submit to the Committee on Banking, Housing, and Urban Affairs of the Senate, the Committee on Financial Services of the House of Representatives, and the Director of the Office of Financial Research a report, which may include a classified annex, if applicable, on the status of the payment stablecoin industry, including—",
+  "text": "(3) a description of the potential financial stability risks posed to the safety and soundness of the broader financial system by payment stablecoin activities."
+ },
+ {
+  "id": "genius-act/b996",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 16. AUTHORITY OF BANKING INSTITUTIONS. › (c) TREATMENT OF CUSTODY ACTIVITIES.—",
+  "lead_in": "(2) to hold in custody or safekeeping regulatory capital against digital assets and reserves backing such assets described in section 4(a)(1)(A), except as necessary to mitigate against operational risks inherent in custody or safekeeping services, as determined by—",
+  "text": "(B) the National Credit Union Administration (in the case of a credit union);"
+ },
+ {
+  "id": "genius-act/b1076",
+  "section": "Public Law 119–27 119th Congress › An Act › SEC. 18. EXCEPTION FOR FOREIGN PAYMENT STABLECOIN ISSUERS AND RECIPROCITY FOR PAYMENT STABLECOINS ISSUED IN OVERSEAS JURISDICTIONS. › (c) REGISTRATION AND ONGOING MONITORING.— › (F) PUBLIC NOTICE.—",
+  "lead_in": null,
+  "text": "The Comptroller shall keep and make publicly available a current list of foreign payment stablecoin issuer registrations that have been approved."
+ },
+ {
+  "id": "treasury-issuance-nprm/b39",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › B. Overview of the Rule",
+  "lead_in": null,
+  "text": "Proposed § 1523.1 sets out the scope of Part 1523 and defines key terms. Consistent with the Act, proposed § 1523.1 makes clear that this part is intended to have extraterritorial effect if conduct involves the offer or sale of a payment stablecoin to a person located in the United States. Proposed § 1523.1 also defines terms such as “issue” and “located in the United States.” Significantly, proposed § 1523.1 makes clear that a payment stablecoin issuer may also be considered a digital asset service provider, and thus, the rules that apply to issuers and the rules that apply to digital asset service providers are not mutually exclusive."
+ },
+ {
+  "id": "treasury-issuance-nprm/b101",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › C. Scope, Applicability, and Definitions (Proposed § 1523.1) › 3. Definitions › Located in the United States.",
+  "lead_in": null,
+  "text": "As discussed in section II.H below, Treasury is proposing to include in Appendix A several interpretations of proposed Part 1523. Some of the proposed interpretations relate to when a person is considered to be located in the United States."
+ },
+ {
+  "id": "treasury-issuance-nprm/b126",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › D. Payment Stablecoin Issuance (Proposed § 1523.2) › 2. Issuance in the United States (Proposed § 1523.2(b))",
+  "lead_in": null,
+  "text": "Treasury next considered whether issuance in the United States should be determined based on the location of the issuer or based on the location of the third party to which the payment stablecoin has been issued. [ 46 ] In the former case, a payment stablecoin would be considered issued in the United States if the issuer is located in the United States, even if the third party to which the payment stablecoin has been issued is located abroad. In the latter case, a payment stablecoin would be considered issued in the United States if the third party is located in the United States, even if the issuer is located abroad."
+ },
+ {
+  "id": "treasury-issuance-nprm/b171",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › E. Payment Stablecoin Offer and Sale (Proposed § 1523.3)",
+  "lead_in": null,
+  "text": "Beyond these obvious differences, there are two more subtle differences between the prohibitions in sections 3(b)(1) and 3(b)(2) of the Act ( 12 U.S.C. 5902(b)(1) , (2)). First, whereas section 3(b)(1) proscribes the “offer or [sale]” of certain payment stablecoins, section 3(b)(2) proscribes the “offer, [sale], or otherwise mak[ing] available” of certain payment stablecoins. With respect to “make available,” Treasury acknowledges that different terms in a statute are ordinarily presumed to have different meanings, in which case, “make available” should be understood to refer to a distinct set of activities that are not “offer” or “sale,” but that general rule is not dispositive. [ 49 ] In this case, the Act defines “offer” as “to make available for purchase, sale, or exchange.” [ 50 ] For this reason, Treasury does not believe that the statutory terms “offer,” “sell,” and “make available” are mutually exclusive, and they may significantly overlap. Further, at least for purposes of the proposed rule, Treasury believes that the value of reducing redundancy and promoting clarity to digital asset service providers on the scope of prohibited activities counsels against providing separate and distinct examples of what constitutes the “mak[ing] available” of a payment stablecoin, which may create confusion among the legal obligations that apply to digital asset service providers. For this reason, proposed § 1523.3(d) enumerates a single set of activities that, when conducted by a d"
+ },
+ {
+  "id": "treasury-issuance-nprm/b172",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › E. Payment Stablecoin Offer and Sale (Proposed § 1523.3)",
+  "lead_in": null,
+  "text": "Second, section 3(b)(1) applies to the offer or sale of certain payment stablecoins “to a person in the United States,” but section 3(b)(2) applies to the offer, sale, or otherwise making available “in the United States” of certain payment stablecoins. As discussed above, Treasury acknowledges that different terms in a statute are ordinarily presumed to have different meanings. However, Treasury believes that whatever the outer boundaries of this phrase in section 3(b)(2), offering, selling, or otherwise making available a payment stablecoin “in the United States” must include offering or selling to a person located in the United States. Thus, in this respect, section 3(b)(2) at least includes, if it is not coextensive with, section 3(b)(1). This reading is consistent with section 3(e) of the Act ( 12 U.S.C. 5902(e) ), which provides extraterritorial treatment for conduct involving an offer or sale of a payment stablecoin to a “person located in the United States.” As noted above, Treasury believes that the value of promoting clarity and reducing redundancy counsels against an overly complex proposed rule. Accordingly, proposed § 1523.3(b) specifies that the prohibition in section 3(b)(2) extends to offers or sales to persons located in the United States, and all of the examples enumerated in proposed § 1523.3(d) that would violate section 3(b)(1) or section 3(b)(2), as applicable, are activities conducted with respect to persons located in the United States."
+ },
+ {
+  "id": "treasury-issuance-nprm/b178",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › E. Payment Stablecoin Offer and Sale (Proposed § 1523.3) › 2. Offer and Sale of Payment Stablecoins Issued by Foreign Payment Stablecoin Issuers (Proposed § 1523.3(b))",
+  "lead_in": null,
+  "text": "Section 3(b)(2) of the Act ( 12 U.S.C. 5902(b)(2) ) provides that it shall be unlawful for any digital asset service provider to offer, sell, or otherwise make available in the United States a payment stablecoin issued by a foreign payment stablecoin issuer unless the foreign payment stablecoin issuer has the technological capability to comply, and will comply, with the terms of any lawful order and any reciprocal arrangement pursuant to section 18 of the Act ( 12 U.S.C. 5916 ). Proposed § 1523.3(b) implements section 3(b)(2) of the Act ( 12 U.S.C. 5902(b)(2) ) and provides that, except in accordance with § 1523.4, it shall be unlawful for a digital asset service provider to offer or sell to a person located in the United States, or otherwise offer, sell, or make available in the United States, a payment stablecoin issued by a foreign payment stablecoin issuer unless the foreign payment stablecoin issuer has the technological capability to comply with, and will comply, with the terms of any lawful order and any reciprocal arrangement pursuant to section 18 of the Act ( 12 U.S.C. 5916 )."
+ },
+ {
+  "id": "treasury-issuance-nprm/b187",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › E. Payment Stablecoin Offer and Sale (Proposed § 1523.3) › 3. Compliance With Lawful Orders and Reciprocal Arrangements (Proposed § 1523.3(c))",
+  "lead_in": null,
+  "text": "Second, the digital asset service provider may not rely on a foreign payment stablecoin issuer's representation if, based on such due diligence or other information reasonably available to it, the digital asset service provider knows, has reason to know, or should know that the representation is false or that the foreign payment stablecoin issuer does not have the technological capability to comply, or will not comply, with the terms of any lawful order or any reciprocal arrangement pursuant to section 18 of the Act ( 12 U.S.C. 5916 ). Treasury intends this language to include, in addition to actual knowledge of falsity, a situation where the digital asset service provider is aware of facts that would cause a reasonable person to conclude that the foreign payment stablecoin issuer does not have the technological capability to comply, or will not comply, with the terms of any lawful order or any reciprocal arrangement pursuant to section 18 of the Act ( 12 U.S.C. 5916 )."
+ },
+ {
+  "id": "treasury-issuance-nprm/b208",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › E. Payment Stablecoin Offer and Sale (Proposed § 1523.3) › 5. Activities Deemed Not To Be Offers or Sales (Proposed § 1523.3(e))",
+  "lead_in": null,
+  "text": "Second, the digital asset service provider must have adopted and implemented policies, procedures, and controls reasonably designed to avoid offering, selling, or making available the payment stablecoin to any person located in the United States. Treasury emphasizes that these policies, procedures, and controls must not only be adopted in form, but actually implemented in the digital asset service provider's operations, in order for the digital asset service provider to benefit from proposed § 1523.3(e). In addition, Treasury believes that policies, procedures, and controls cannot be said to be reasonably designed if they are static; rather, Treasury expects digital asset service providers to periodically review and update their policies, procedures, and controls as the payment stablecoin market matures, technology evolves, as the digital asset service provider gains experience in offering and selling payment stablecoins, and in response to any identified instances of offers or sales to persons located in the United States."
+ },
+ {
+  "id": "treasury-issuance-nprm/b246",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Proposed Rule › F. Exemptions and Safe Harbors (Proposed § 1523.4) › 3. Exempt Transactions (Proposed § 1523.4(c))",
+  "lead_in": null,
+  "text": "Section 3(h)(1) of the Act ( 12 U.S.C. 5902(h)(1) ) provides that section 3 ( 12 U.S.C. 5902 ) shall not apply to three categories of exempt transactions. Proposed § 1523.4(c) implements this provision nearly verbatim and provides that the prohibitions in proposed § 1523.2 and proposed § 1523.3 shall not apply to (i) the direct transfer of digital assets between two individuals acting on their own behalf and for their own lawful purposes, without the involvement of an intermediary; (ii) any transaction involving the receipt of digital assets by an individual between an account owned by the individual in the United States and an account owned by the individual abroad that are offered by the same parent company; and (iii) any transaction by means of a software or hardware wallet that facilitates an individual's own custody of digital assets."
+ },
+ {
+  "id": "treasury-issuance-nprm/b315",
+  "section": "SUBCHAPTER C—REGULATION OF PAYMENT STABLECOINS › PART 1523—PAYMENT STABLECOIN OFFER, SALE, AND ISSUANCE › 1523.1 Scope, Applicability, and Definitions. › Payment Stablecoin Offer and Sale. › § 1523.1 Scope, Applicability, and Definitions.",
+  "lead_in": null,
+  "text": "Federal qualified payment stablecoin issuer has the meaning set forth in section 2(11) of the Act ( 12 U.S.C. 5901(11) )."
+ },
+ {
+  "id": "treasury-issuance-nprm/b321",
+  "section": "SUBCHAPTER C—REGULATION OF PAYMENT STABLECOINS › PART 1523—PAYMENT STABLECOIN OFFER, SALE, AND ISSUANCE › 1523.1 Scope, Applicability, and Definitions. › Payment Stablecoin Offer and Sale. › § 1523.1 Scope, Applicability, and Definitions.",
+  "lead_in": null,
+  "text": "Located in the United States means:"
+ },
+ {
+  "id": "treasury-issuance-nprm/b345",
+  "section": "SUBCHAPTER C—REGULATION OF PAYMENT STABLECOINS › PART 1523—PAYMENT STABLECOIN OFFER, SALE, AND ISSUANCE › 1523.1 Scope, Applicability, and Definitions. › Payment Stablecoin Offer and Sale. › § 1523.2 Payment Stablecoin Issuance.",
+  "lead_in": null,
+  "text": "(3) The person has adopted and implemented policies, procedures, and controls reasonably designed to avoid issuing the payment stablecoin to any person located in the United States; and"
+ },
+ {
+  "id": "treasury-issuance-nprm/b349",
+  "section": "SUBCHAPTER C—REGULATION OF PAYMENT STABLECOINS › PART 1523—PAYMENT STABLECOIN OFFER, SALE, AND ISSUANCE › 1523.1 Scope, Applicability, and Definitions. › Payment Stablecoin Offer and Sale. › § 1523.2 Payment Stablecoin Issuance.",
+  "lead_in": "(d) The following are examples of activities that, when conducted by a person in connection with the issuance of a payment stablecoin that violates paragraph (a), constitute participation by the person in the violation for purposes of the penalty in section 3(f) of the Act ( 12 U.S.C. 5902(f) ):",
+  "text": "(2) The person coordinates with the issuer to facilitate key steps in the issuance, such as soliciting customers or minting the payment stablecoins; or"
+ },
+ {
+  "id": "treasury-issuance-nprm/b355",
+  "section": "SUBCHAPTER C—REGULATION OF PAYMENT STABLECOINS › PART 1523—PAYMENT STABLECOIN OFFER, SALE, AND ISSUANCE › 1523.1 Scope, Applicability, and Definitions. › Payment Stablecoin Offer and Sale. › § 1523.3 Payment Stablecoin Offer and Sale.",
+  "lead_in": null,
+  "text": "(b) Except in accordance with § 1523.4, it shall be unlawful for a digital asset service provider to offer or sell to a person located in the United States, or otherwise offer, sell, or make available in the United States, a payment stablecoin issued by a foreign payment stablecoin issuer unless the foreign payment stablecoin issuer has the technological capability to comply with, and will comply, with the terms of any lawful order and any reciprocal arrangement pursuant to section 18 of the Act ( 12 U.S.C. 5916 )."
+ },
+ {
+  "id": "treasury-issuance-nprm/b365",
+  "section": "SUBCHAPTER C—REGULATION OF PAYMENT STABLECOINS › PART 1523—PAYMENT STABLECOIN OFFER, SALE, AND ISSUANCE › 1523.1 Scope, Applicability, and Definitions. › Payment Stablecoin Offer and Sale. › § 1523.3 Payment Stablecoin Offer and Sale.",
+  "lead_in": null,
+  "text": "(e) Notwithstanding any other provision of this section, a digital asset service provider will be deemed not to offer or sell a payment stablecoin to a person located in the United States, and will be deemed not to offer, sell, or otherwise make available in the United States a payment stablecoin, if:"
+ },
+ {
+  "id": "treasury-issuance-nprm/b385",
+  "section": "Appendix A to Part 1523: Interpretations",
+  "lead_in": null,
+  "text": "No. The digital asset service provider is not considered the issuer as defined in § 1523.1(c) because the digital asset service provider does not have an obligation to convert, redeem, or repurchase the payment stablecoins. However, depending on the facts and circumstances, the digital asset service provider may have participated in the issuance as described in § 1523.2(d) and may be offering or selling the payment stablecoins as described in § 1523.3."
+ },
+ {
+  "id": "treasury-state-cert/b9",
+  "section": "SUMMARY:",
+  "lead_in": null,
+  "text": "The Department of the Treasury is issuing this interim final rule on behalf of the Stablecoin Certification Review Committee (Committee). The Committee is adopting interim procedural regulations and forms to implement its responsibilities under section 4(c) of the Guiding and Establishing National Innovation for U.S. Stablecoins Act (GENIUS Act or the Act). The regulations set out a process to facilitate the Committee's approval or denial of certifications submitted by State payment stablecoin regulators under section 4(c)(4) of the GENIUS Act, and prescribe the form of such certifications. This interim final rule will ensure that interim forms and procedural regulations are in place to facilitate submission of certifications by the effective date of the GENIUS Act, and the Committee intends to revise these forms and procedural regulations, as appropriate, following consideration of comments."
+ },
+ {
+  "id": "treasury-state-cert/b11",
+  "section": "SUMMARY:",
+  "lead_in": null,
+  "text": "Effective date: This interim final rule is effective September 30, 2026; however, certifications will not be accepted until after Paperwork Reduction Act approval of the information collection. Treasury will post a notification on its website as to when certifications will be accepted."
+ },
+ {
+  "id": "treasury-state-cert/b45",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Rule › C. Definitions › Act or GENIUS Act.",
+  "lead_in": null,
+  "text": "Similarly, in accordance with Treasury's proposed part 1521, if there were substantive changes to Federal law (such as Acts of Congress or regulations published in the Federal Register ) that affect permitted payment stablecoin issuers, such changes would likely constitute a significant change in circumstances. For the avoidance of doubt, a significant change in circumstances does not include a change that constitutes a material change to the State-level regulatory regime. Congress used the terms differently, and the definitions give effect to both terms by providing distinct definitions."
+ },
+ {
+  "id": "treasury-state-cert/b48",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Rule › C. Definitions › State.",
+  "lead_in": null,
+  "text": "State payment stablecoin regulator. The Committee defines the term “State payment stablecoin regulator” to have the meaning of that term set forth in section 2(30) of the GENIUS Act ( 12 U.S.C. 5901(30) )."
+ },
+ {
+  "id": "treasury-state-cert/b102",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Rule › I. Submission of Initial Certifications and Recertifications",
+  "lead_in": null,
+  "text": "Section 1522.10(d)(1) describes when initial certifications and recertifications will be considered to be submitted. An initial certification has not been submitted until all materials required under § 1522.10(b) have been submitted. Similarly, a recertification has not been submitted until all materials required under § 1522.10(c)(2) have been submitted."
+ },
+ {
+  "id": "treasury-state-cert/b103",
+  "section": "SUPPLEMENTARY INFORMATION: › II. Description of the Rule › I. Submission of Initial Certifications and Recertifications",
+  "lead_in": null,
+  "text": "In both cases, the referenced list of materials includes such information as the Committee may deem necessary for it to render a decision on whether the State-level regulatory regime satisfies the criteria for approval or denial in section 4(c) of the GENIUS Act ( 12 U.S.C. 5903(c) ). [ 23 ]"
+ },
+ {
+  "id": "treasury-state-cert/b245",
+  "section": "Subchapter C—Regulation of Payment Stablecoins › PART 1522—STABLECOIN CERTIFICATION REVIEW COMMITTEE › Subpart B—State Certifications › § 1522.10 Certification forms and procedures. › (b) Initial certification.",
+  "lead_in": "An initial certification must contain—",
+  "text": "(1) An attestation in the form of appendix A to this part signed by an authorized representative of the State payment stablecoin regulator attesting that the State-level regulatory regime of its State meets the criteria for substantial similarity set forth in the principles for substantial similarity established by the Department of the Treasury pursuant to section 4(c) of the Act;"
+ },
+ {
+  "id": "treasury-state-cert/b252",
+  "section": "Subchapter C—Regulation of Payment Stablecoins › PART 1522—STABLECOIN CERTIFICATION REVIEW COMMITTEE › Subpart B—State Certifications › § 1522.10 Certification forms and procedures. › (c) Annual recertification.",
+  "lead_in": "(2) A recertification must contain—",
+  "text": "(ii) A detailed narrative describing each change to the State-level regulatory regime since the prior certification that could potentially be considered to be a material change, excluding changes that are purely nonsubstantive in form or procedure; whether, in the opinion of the State payment stablecoin regulator, such change is a material change; and whether, in the opinion of the State payment stablecoin regulator, the change will not promote the safe and sound operation of State qualified payment stablecoin issuers under its supervision;"
+ },
+ {
+  "id": "treasury-state-cert/b257",
+  "section": "Subchapter C—Regulation of Payment Stablecoins › PART 1522—STABLECOIN CERTIFICATION REVIEW COMMITTEE › Subpart B—State Certifications › § 1522.10 Certification forms and procedures. › (c) Annual recertification.",
+  "lead_in": "(2) A recertification must contain—",
+  "text": "(iv) Any supporting information and documentation, including, but not limited to, citations to relevant statutes, regulations, and guidance applicable to payment stablecoin issuers, and where necessary, copies of such statutes, regulations, and guidance. For each guidance document that is submitted, the corresponding section of the narrative under paragraph (c)(2)(ii) or (iii) of this section, as applicable, must include a discussion of whether the guidance is binding on State qualified payment stablecoin issuers; and"
+ },
+ {
+  "id": "treasury-state-cert/b261",
+  "section": "Subchapter C—Regulation of Payment Stablecoins › PART 1522—STABLECOIN CERTIFICATION REVIEW COMMITTEE › Subpart B—State Certifications › § 1522.10 Certification forms and procedures. › (d) Submission of initial certifications and recertifications — › (1) Submission.",
+  "lead_in": "For purposes of this section:",
+  "text": "(i) An initial certification has not been submitted until all materials required under paragraph (b) of this section have been submitted."
+ },
+ {
+  "id": "treasury-state-cert/b272",
+  "section": "Subchapter C—Regulation of Payment Stablecoins › PART 1522—STABLECOIN CERTIFICATION REVIEW COMMITTEE › Subpart B—State Certifications › § 1522.10 Certification forms and procedures. › (f) Opportunity to cure and appeal.",
+  "lead_in": null,
+  "text": "(1) If the Committee denies an initial certification or an annual recertification, it will provide the State payment stablecoin regulator with a written explanation of the denial, describing the reasoned basis for the denial with sufficient detail to enable the State to make any changes necessary for the State-level regulatory regime to meet or exceed the standards and requirements described in section 4(a) of the GENIUS Act."
+ },
+ {
+  "id": "treasury-state-cert/b277",
+  "section": "Subchapter C—Regulation of Payment Stablecoins › PART 1522—STABLECOIN CERTIFICATION REVIEW COMMITTEE › Subpart B—State Certifications › § 1522.10 Certification forms and procedures. › (f) Opportunity to cure and appeal.",
+  "lead_in": "(3) If a denial described under paragraph (f)(1) of this section is based on a change resulting from an Act of Congress or a change in a relevant Federal regulation, interpretation, or order in accordance with the principles for substantial similarity established by the Department of the Treasury pursuant to section 4(c) of the Act, the period provided under paragraph (f)(2) of this section shall be the later of:",
+  "text": "(i) 180 days from the date on which the State payment stablecoin regulator is notified of such denial; or"
+ },
+ {
+  "id": "treasury-state-cert/b285",
+  "section": "Subchapter C—Regulation of Payment Stablecoins › PART 1522—STABLECOIN CERTIFICATION REVIEW COMMITTEE › Appendix A to Part 1522—Attestation for an Initial Certification Under Section 4(c) of the GENIUS Act › Attestation for an Initial Certification Under Section 4(c) of the GENIUS Act",
+  "lead_in": null,
+  "text": "State: ___"
+ },
+ {
+  "id": "treasury-state-cert/b287",
+  "section": "Subchapter C—Regulation of Payment Stablecoins › PART 1522—STABLECOIN CERTIFICATION REVIEW COMMITTEE › Appendix A to Part 1522—Attestation for an Initial Certification Under Section 4(c) of the GENIUS Act › Attestation for an Initial Certification Under Section 4(c) of the GENIUS Act",
+  "lead_in": null,
+  "text": "Date of attestation: ___"
+ },
+ {
+  "id": "treasury-state-cert/b315",
+  "section": "Subchapter C—Regulation of Payment Stablecoins › PART 1522—STABLECOIN CERTIFICATION REVIEW COMMITTEE › Appendix A to Part 1522—Attestation for an Initial Certification Under Section 4(c) of the GENIUS Act › Attestation for an Initial Certification Under Section 4(c) of the GENIUS Act",
+  "lead_in": null,
+  "text": "Primary contacts: [Names, titles, email addresses, and phone numbers of at least two authorized officials of the State payment stablecoin regulator]"
+ },
+ {
+  "id": "treasury-state-cert/b328",
+  "section": "Subchapter C—Regulation of Payment Stablecoins › PART 1522—STABLECOIN CERTIFICATION REVIEW COMMITTEE › Appendix A to Part 1522—Attestation for an Initial Certification Under Section 4(c) of the GENIUS Act › Attestation for an Initial Certification Under Section 4(c) of the GENIUS Act › Certification:",
+  "lead_in": "The undersigned hereby certifies and attests that:",
+  "text": "___ The above certifications and attestations are conditional on additional actions that are described in the attached narrative, and the State payment stablecoin regulator intends to amend this attestation once those actions are completed. The undersigned acknowledges on behalf of the State payment stablecoin regulator that the Committee will not process this conditional attestation unless and until an amended attestation has been submitted in accordance with 12 CFR 1522.10 ."
+ },
+ {
+  "id": "treasury-state-cert/b338",
+  "section": "Subchapter C—Regulation of Payment Stablecoins › PART 1522—STABLECOIN CERTIFICATION REVIEW COMMITTEE › Appendix B to Part 1522—Attestation for an Annual Recertification Under Section 4(c) of the GENIUS Act › Attestation for an Annual Recertification Under Section 4(c) of the GENIUS Act",
+  "lead_in": null,
+  "text": "Date of attestation: ___"
+ },
+ {
+  "id": "treasury-state-cert/b345",
+  "section": "Subchapter C—Regulation of Payment Stablecoins › PART 1522—STABLECOIN CERTIFICATION REVIEW COMMITTEE › Appendix B to Part 1522—Attestation for an Annual Recertification Under Section 4(c) of the GENIUS Act › Attestation for an Annual Recertification Under Section 4(c) of the GENIUS Act › Reference table of changes:",
+  "lead_in": null,
+  "text": "Certification: The undersigned hereby certifies and attests that:"
+ },
+ {
+  "id": "treasury-state-cert/b346",
+  "section": "Subchapter C—Regulation of Payment Stablecoins › PART 1522—STABLECOIN CERTIFICATION REVIEW COMMITTEE › Appendix B to Part 1522—Attestation for an Annual Recertification Under Section 4(c) of the GENIUS Act › Attestation for an Annual Recertification Under Section 4(c) of the GENIUS Act › Reference table of changes:",
+  "lead_in": "Certification: The undersigned hereby certifies and attests that:",
+  "text": "1. The information contained in and attached to this attestation form is true and correct to the best of the undersigned's knowledge;"
+ },
+ {
+  "id": "treasury-state-cert/b350",
+  "section": "Subchapter C—Regulation of Payment Stablecoins › PART 1522—STABLECOIN CERTIFICATION REVIEW COMMITTEE › Appendix B to Part 1522—Attestation for an Annual Recertification Under Section 4(c) of the GENIUS Act › Attestation for an Annual Recertification Under Section 4(c) of the GENIUS Act › Reference table of changes:",
+  "lead_in": "Certification: The undersigned hereby certifies and attests that:",
+  "text": "3. [State payment stablecoin regulator] confirms the continuing accuracy of the initial certification submitted on __; and"
+ },
+ {
+  "id": "treasury-state-cert/b354",
+  "section": "Subchapter C—Regulation of Payment Stablecoins › PART 1522—STABLECOIN CERTIFICATION REVIEW COMMITTEE › Appendix B to Part 1522—Attestation for an Annual Recertification Under Section 4(c) of the GENIUS Act › Attestation for an Annual Recertification Under Section 4(c) of the GENIUS Act › Attached:",
+  "lead_in": null,
+  "text": "[ Narrative ]"
+ }
+]

@@ -1,0 +1,153 @@
+{
+ "summary": {
+  "scope": "genius",
+  "paragraphs": 607,
+  "seconds": 212.3,
+  "model": "claude-fable-5-1",
+  "input_tokens": 71887,
+  "output_tokens": 20268,
+  "notional_cost_usd": 2.45112,
+  "listed": 19,
+  "found": "17/17",
+  "missed": [],
+  "not_in_key": [
+   "genius-act/b512",
+   "genius-act/b764"
+  ]
+ },
+ "items": [
+  {
+   "paragraph_id": "genius-act/b153",
+   "section": "GENIUS Act §3 (genius-act/sec47)",
+   "regulator": "Secretary of the Treasury",
+   "what_rule": "Issue regulations to implement section 3 (prohibition on issuance by non-permitted issuers and on digital asset service providers offering non-permitted/foreign stablecoins), including regulations to define terms.",
+   "clock": "'Consistent with section 13' — inherits §13 deadline: not later than 1 year after the date of enactment [genius-act/b946]. No separate clock in the paragraph."
+  },
+  {
+   "paragraph_id": "genius-act/b231",
+   "section": "GENIUS Act §4 (genius-act/sec65)",
+   "regulator": "Primary Federal payment stablecoin regulators (and, for State qualified issuers, the State payment stablecoin regulator)",
+   "what_rule": "Issue regulations implementing (i) tailored capital requirements (with optional capital buffers), (ii) the §4(a)(1)(A) liquidity standard, (iii) reserve asset diversification (incl. deposit concentration) and interest rate risk management standards, and (iv) operational, compliance, and IT risk management requirements including Bank Secrecy Act and sanctions compliance standards.",
+   "clock": "'Consistent with section 13' — not later than 1 year after enactment [genius-act/b946]."
+  },
+  {
+   "paragraph_id": "genius-act/b264",
+   "section": "GENIUS Act §4 (genius-act/sec70)",
+   "regulator": "Each appropriate Federal banking agency (OCC, Federal Reserve Board, FDIC)",
+   "what_rule": "Amend or otherwise modify any consolidated leverage capital or risk-based capital rule so that an insured depository institution or depository institution holding company that consolidates a permitted payment stablecoin issuer is not required to hold capital for that issuer in excess of the issuer's own §4 capital requirement [genius-act/b256].",
+   "clock": "Starts at enactment; due not later than the earlier of (a) the §13 rulemaking deadline (1 year after enactment) or (b) the date the Federal payment stablecoin regulators issue regulations to carry out §4."
+  },
+  {
+   "paragraph_id": "genius-act/b275",
+   "section": "GENIUS Act §4 (genius-act/sec73)",
+   "regulator": "Secretary of the Treasury",
+   "what_rule": "Adopt rules, tailored to the size and complexity of permitted payment stablecoin issuers, implementing the treatment of issuers as Bank Secrecy Act financial institutions (AML program, recordkeeping, SAR monitoring, blocking/freezing capability, customer identification, sanctions compliance) [genius-act/b267]–[genius-act/b274].",
+   "clock": "None stated in the paragraph; the general §13 deadline (1 year after enactment) applies to Treasury regulations carrying out the Act [genius-act/b946]."
+  },
+  {
+   "paragraph_id": "genius-act/b379",
+   "section": "GENIUS Act §4 (genius-act/sec106)",
+   "regulator": "Stablecoin Certification Review Committee",
+   "what_rule": "Issue an interpretive rule clarifying application of the paragraph restricting public companies not predominantly engaged in financial activities (and non-US-domiciled non-financial companies) from issuing payment stablecoins absent a unanimous Committee finding [genius-act/b349]–[genius-act/b378].",
+   "clock": "Starts at enactment; not later than 1 year after the date of enactment (provision-specific clock)."
+  },
+  {
+   "paragraph_id": "genius-act/b393",
+   "section": "GENIUS Act §4 — amendment to 12 U.S.C. 1(b) (genius-act/sec112)",
+   "regulator": "Comptroller of the Currency",
+   "what_rule": "Issue such regulations and orders as necessary to ensure financial stability and implement §4(a), in coordination with other relevant regulators. (The parallel provision at [genius-act/b389] is a grant of authority — 'shall have authority' — not a mandate.)",
+   "clock": "'Consistent with section 13 of the GENIUS Act' — not later than 1 year after enactment [genius-act/b946]."
+  },
+  {
+   "paragraph_id": "genius-act/b398",
+   "section": "GENIUS Act §4(c) (genius-act/sec115)",
+   "regulator": "Secretary of the Treasury",
+   "what_rule": "Through notice-and-comment rulemaking, establish broad-based principles for determining whether a State-level regulatory regime is 'substantially similar' to the Federal framework (used for State certifications to the Stablecoin Certification Review Committee).",
+   "clock": "None stated in the paragraph; general §13 deadline of 1 year after enactment applies [genius-act/b946]. Functionally needed before State regulators' initial certifications, due not later than 1 year after the effective date [genius-act/b401]."
+  },
+  {
+   "paragraph_id": "genius-act/b502",
+   "section": "GENIUS Act §4 (genius-act/sec153)",
+   "regulator": "Primary Federal payment stablecoin regulators (State payment stablecoin regulators 'may')",
+   "what_rule": "Issue such regulations relating to permitted payment stablecoin issuers as necessary to establish a regulatory framework to administer §4, including establishing conditions and preventing evasion. All such regulations must be issued in coordination among the primary Federal regulators [genius-act/b503].",
+   "clock": "'Consistent with section 13' — not later than 1 year after enactment [genius-act/b946]."
+  },
+  {
+   "paragraph_id": "genius-act/b512",
+   "section": "GENIUS Act §5 (genius-act/sec158)",
+   "regulator": "Each primary Federal payment stablecoin regulator",
+   "what_rule": "Establish a process and framework for the licensing, regulation, examination, and supervision of insured depository institution subsidiaries and Federal qualified payment stablecoin issuers that prioritizes safety and soundness (framework mandate; carried out through the §5 regulations required by [genius-act/b515]).",
+   "clock": "None stated in the paragraph; via [genius-act/b515], the implementing regulations must issue before the §13 date (1 year after enactment)."
+  },
+  {
+   "paragraph_id": "genius-act/b515",
+   "section": "GENIUS Act §5 (genius-act/sec159)",
+   "regulator": "Primary Federal payment stablecoin regulators",
+   "what_rule": "Issue regulations consistent with §13 to carry out §5 (application review and approval of permitted payment stablecoin issuers), and pursuant to those regulations accept and process applications [genius-act/b516].",
+   "clock": "'Before the date described in section 13' — i.e., before 1 year after enactment [genius-act/b513], [genius-act/b946]."
+  },
+  {
+   "paragraph_id": "genius-act/b581",
+   "section": "GENIUS Act §5 (genius-act/sec182)",
+   "regulator": "Primary Federal payment stablecoin regulators",
+   "what_rule": "Issue rules necessary for the regulation of the issuance of payment stablecoins, but may not impose requirements in addition to those specified under §4.",
+   "clock": "'Consistent with section 13' — not later than 1 year after enactment [genius-act/b946]."
+  },
+  {
+   "paragraph_id": "genius-act/b684",
+   "section": "GENIUS Act §7 (genius-act/sec223)",
+   "regulator": "Board of Governors of the Federal Reserve System",
+   "what_rule": "Issue rules setting forth the 'unusual and exigent circumstances' in which the Board may take enforcement action against a State qualified payment stablecoin issuer or its institution-affiliated parties [genius-act/b683].",
+   "clock": "'Consistent with section 13' — not later than 1 year after enactment [genius-act/b946]."
+  },
+  {
+   "paragraph_id": "genius-act/b713",
+   "section": "GENIUS Act §7 (genius-act/sec231)",
+   "regulator": "Comptroller of the Currency",
+   "what_rule": "Issue rules setting forth the 'unusual and exigent circumstances' in which the Comptroller may take enforcement action against a State qualified payment stablecoin issuer that is a nonbank entity [genius-act/b712].",
+   "clock": "'Consistent with section 13' — not later than 1 year after enactment [genius-act/b946]."
+  },
+  {
+   "paragraph_id": "genius-act/b764",
+   "section": "GENIUS Act §8 (genius-act/sec257)",
+   "regulator": "Secretary of the Treasury",
+   "what_rule": "Specify the criteria a noncompliant foreign payment stablecoin issuer must meet for Treasury to determine it is no longer noncompliant (ending the secondary-trading prohibition) [genius-act/b763].",
+   "clock": "'Consistent with section 13' — not later than 1 year after enactment [genius-act/b946]."
+  },
+  {
+   "paragraph_id": "genius-act/b831",
+   "section": "GENIUS Act §9 (genius-act/sec276)",
+   "regulator": "Financial Crimes Enforcement Network (FinCEN)",
+   "what_rule": "Issue public guidance and notice-and-comment rulemaking, based on the §9 research and risk assessments, on (1) innovative illicit-activity detection methods for regulated financial institutions, (2) standards for issuers to identify and report illicit activity, (3) standards for monitoring blockchains, mixers, tumblers and similar services, and (4) tailored risk management standards for interacting with DeFi protocols [genius-act/b832]–[genius-act/b835].",
+   "clock": "Starts at enactment; not later than 3 years after the date of enactment (provision-specific clock)."
+  },
+  {
+   "paragraph_id": "genius-act/b946",
+   "section": "GENIUS Act §13 (genius-act/sec303)",
+   "regulator": "Each primary Federal payment stablecoin regulator and the Secretary of the Treasury (also each State payment stablecoin regulator)",
+   "what_rule": "Omnibus mandate: promulgate regulations to carry out the Act through appropriate notice-and-comment rulemaking. This is the deadline incorporated by reference in the 'consistent with section 13' provisions.",
+   "clock": "Starts at enactment; not later than 1 year after the date of enactment. Related: the Act takes effect the earlier of 18 months after enactment or 120 days after the primary Federal regulators issue final implementing regulations [genius-act/b1107]–[genius-act/b1109]."
+  },
+  {
+   "paragraph_id": "genius-act/b991",
+   "section": "GENIUS Act §16 (genius-act/sec317)",
+   "regulator": "Primary Federal payment stablecoin regulators",
+   "what_rule": "Review all existing guidance and regulations and, if necessary, amend or promulgate new regulations and guidance to clarify that regulated entities are authorized to engage in payment stablecoin activities and investments contemplated by the Act (review is mandatory; amendment/promulgation is conditioned on necessity).",
+   "clock": "none"
+  },
+  {
+   "paragraph_id": "genius-act/b1050",
+   "section": "GENIUS Act §18 (genius-act/sec342)",
+   "regulator": "Secretary of the Treasury",
+   "what_rule": "Issue such rules as may be required to carry out §18 (foreign payment stablecoin issuer comparability determinations, reserve requirements, and related framework).",
+   "clock": "Starts at enactment; not later than 1 year after the date of enactment (provision-specific clock)."
+  },
+  {
+   "paragraph_id": "genius-act/b1075",
+   "section": "GENIUS Act §18 (genius-act/sec348)",
+   "regulator": "Comptroller of the Currency",
+   "what_rule": "Issue rules on the standards for approving foreign payment stablecoin issuer registration requests and the process for appealing denials of such registrations.",
+   "clock": "'Pursuant to section 13 of this Act' — not later than 1 year after enactment [genius-act/b946]."
+  }
+ ]
+}

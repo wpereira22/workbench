@@ -1,0 +1,919 @@
+{
+  "question": "Which GENIUS Act provisions direct a regulator to issue rules or take an action, and has any proposed rule addressed each one yet?",
+  "author": "planned by Claude Code (claude-fable-5-1)",
+  "program": {
+    "title": "GENIUS Act mandates vs. proposed-rule coverage",
+    "thesis": "Every paragraph of the GENIUS Act is screened for a directive to a regulator, then typed by action, agency and topic; paragraphs of the four implementing rulemakings are screened for mandate-implementing content and paired against the directives by topic, so the unmatched directives are the mandates no proposed rule has addressed yet.",
+    "unit": {
+      "level": "paragraph",
+      "docs": [
+        "genius-act",
+        "fed-genius-nprm",
+        "fed-genius-applications",
+        "treasury-issuance-nprm",
+        "treasury-state-cert"
+      ],
+      "where": [
+        {
+          "field": "section_role",
+          "op": "not_in",
+          "values": [
+            "request_for_comment",
+            "impact_analysis"
+          ],
+          "threshold": 0
+        },
+        {
+          "field": "role",
+          "op": "not_in",
+          "values": [
+            "question"
+          ],
+          "threshold": 0
+        }
+      ],
+      "rationale": "Directives live in individual statutory paragraphs; implementation shows up in individual preamble or rule-text paragraphs. The print-edition duplicate of the Treasury NPRM is excluded, as are comment solicitations and impact analyses."
+    },
+    "doc_notes": [
+      {
+        "doc": "genius-act",
+        "note": "Public Law 119-27, enacted July 18, 2025. 'Primary Federal payment stablecoin regulator' means: OCC for federal qualified nonbank issuers and national banks; Federal Reserve Board for state member banks; FDIC for insured state nonmember banks; NCUA for credit unions. 'Secretary' = Secretary of the Treasury. 'Committee' = Stablecoin Certification Review Committee (SCRC). Most rulemakings are due within 1 year of enactment; effective date is the earlier of 18 months after enactment or 120 days after final regulations."
+      },
+      {
+        "doc": "fed-genius-nprm",
+        "note": "Federal Reserve Board proposed rule (Sept 2026) implementing the Board's GENIUS Act responsibilities for Board-supervised institutions (state member banks, subsidiaries, foreign banking operations), amending Regulations H, K and Q (capital) and adding Regulation UU (12 CFR 247)."
+      },
+      {
+        "doc": "fed-genius-applications",
+        "note": "Federal Reserve Board proposed rule (Sept 2026) on application procedures for Board-supervised insured depository institutions seeking approval to issue payment stablecoins under the GENIUS Act (12 CFR 247 and 262)."
+      },
+      {
+        "doc": "treasury-issuance-nprm",
+        "note": "Treasury proposed rule (Aug 2026), 12 CFR Part 1523, implementing GENIUS Act provisions on payment stablecoin issuance, offer and sale, including the prohibition on issuance by non-permitted issuers and related interpretations."
+      },
+      {
+        "doc": "treasury-state-cert",
+        "note": "Treasury rule (Sept 2026), 12 CFR Part 1522, establishing forms and procedures for the Stablecoin Certification Review Committee's review of state regulatory regime certifications under the GENIUS Act."
+      }
+    ],
+    "nodes": [
+      {
+        "id": "mandate_relevant",
+        "label": "Mandate-relevant",
+        "kind": "noul",
+        "question": "Does this paragraph either (a) direct a government regulator, agency, Secretary, or committee to issue rules, make a determination, approve or review something, produce a report or study, or take a specific action, or (b) propose or explain rule text that implements a specific GENIUS Act requirement? Use the scope_note for who the regulators are.",
+        "options": [],
+        "levels": [],
+        "when": [],
+        "why": "Cheap gate that keeps only statutory directives and implementing-rule content out of ~2,000 paragraphs."
+      },
+      {
+        "id": "regulator_directive",
+        "label": "Directs regulator",
+        "kind": "noul",
+        "question": "Does this statutory paragraph itself impose a duty or grant on a regulator, agency, Secretary, or committee to issue regulations, make a determination, approve/deny applications, publish a report, establish a process, or otherwise act (as opposed to imposing a duty on issuers or private persons)?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "doc",
+            "op": "in",
+            "values": [
+              "genius-act"
+            ],
+            "threshold": 0
+          },
+          {
+            "field": "mandate_relevant",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Confirms the paragraph is a directive to government rather than an obligation on issuers."
+      },
+      {
+        "id": "directive_type",
+        "label": "Directive type",
+        "kind": "choice",
+        "question": "What kind of action does this paragraph direct the regulator to take?",
+        "options": [
+          {
+            "key": "rulemaking",
+            "description": "Issue, promulgate, or prescribe regulations, standards, or orders of general applicability"
+          },
+          {
+            "key": "application_review",
+            "description": "Approve, deny, review, or process applications, certifications, or licenses"
+          },
+          {
+            "key": "report_study",
+            "description": "Conduct a study, produce a report, or submit findings to Congress or the public"
+          },
+          {
+            "key": "establish_body_process",
+            "description": "Establish a committee, process, registry, procedure, or coordination mechanism"
+          },
+          {
+            "key": "supervision_enforcement",
+            "description": "Examine, supervise, enforce, or take enforcement actions against issuers"
+          },
+          {
+            "key": "discretionary_may",
+            "description": "Permissive authority the regulator may exercise without a required action"
+          },
+          {
+            "key": "other",
+            "description": "Some other action"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "regulator_directive",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Rulemaking mandates are the ones proposed rules should answer; reports and discretionary grants need not be."
+      },
+      {
+        "id": "directed_agency",
+        "label": "Directed agency",
+        "kind": "choice",
+        "question": "Which regulator is directed to act by this paragraph? Use the scope_note to resolve 'primary Federal payment stablecoin regulator', 'Secretary', and 'Committee'.",
+        "options": [
+          {
+            "key": "treasury",
+            "description": "Secretary of the Treasury or Treasury Department (including FinCEN/OFAC)"
+          },
+          {
+            "key": "fed",
+            "description": "Federal Reserve Board specifically"
+          },
+          {
+            "key": "occ",
+            "description": "Comptroller of the Currency specifically"
+          },
+          {
+            "key": "fdic_ncua",
+            "description": "FDIC or NCUA specifically"
+          },
+          {
+            "key": "primary_regulators_jointly",
+            "description": "The primary Federal payment stablecoin regulators collectively or jointly, or 'each' such regulator"
+          },
+          {
+            "key": "scrc",
+            "description": "Stablecoin Certification Review Committee"
+          },
+          {
+            "key": "state_regulators",
+            "description": "State payment stablecoin regulators"
+          },
+          {
+            "key": "other_agency",
+            "description": "SEC, CFTC, GAO, Congress itself, or another body"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "regulator_directive",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Lets coverage be read per agency: Treasury and Fed have proposed rules in the library; OCC, FDIC and NCUA do not."
+      },
+      {
+        "id": "nprm_implements",
+        "label": "NPRM implements mandate",
+        "kind": "noul",
+        "question": "Does this proposed-rule paragraph propose rule text, or explain proposed rule text, that carries out a specific GENIUS Act requirement or authority (e.g. cites a GENIUS Act section the agency is required to implement)? Pure background, procedural boilerplate, and CFR list-of-subjects entries do not count.",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "doc",
+            "op": "in",
+            "values": [
+              "fed-genius-nprm",
+              "fed-genius-applications",
+              "treasury-issuance-nprm",
+              "treasury-state-cert"
+            ],
+            "threshold": 0
+          },
+          {
+            "field": "mandate_relevant",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Narrows the implementing-rule side to paragraphs that can actually satisfy a mandate."
+      },
+      {
+        "id": "topic",
+        "label": "Mandate topic",
+        "kind": "choice",
+        "question": "Which subject area does this paragraph's mandate or implementing provision concern?",
+        "options": [
+          {
+            "key": "licensing_applications",
+            "description": "Approval to issue stablecoins, application procedures, timelines, denials"
+          },
+          {
+            "key": "reserves_capital_liquidity",
+            "description": "Reserve composition, capital, liquidity, diversification, risk management standards"
+          },
+          {
+            "key": "aml_bsa_sanctions",
+            "description": "Bank Secrecy Act, AML, sanctions compliance, lawful-order and freeze capabilities"
+          },
+          {
+            "key": "state_regime_certification",
+            "description": "State regulatory regimes, substantial similarity, certification review, SCRC"
+          },
+          {
+            "key": "supervision_enforcement",
+            "description": "Examination, reporting to regulators, enforcement, penalties, suspension"
+          },
+          {
+            "key": "foreign_issuers",
+            "description": "Foreign payment stablecoin issuers, comparability determinations, reciprocity"
+          },
+          {
+            "key": "custody_safekeeping",
+            "description": "Custody, safekeeping of reserves or private keys, custodial requirements"
+          },
+          {
+            "key": "disclosure_reporting",
+            "description": "Public disclosures, monthly reserve reports, attestations, marketing rules"
+          },
+          {
+            "key": "insolvency_interoperability",
+            "description": "Insolvency priority, interoperability standards, studies and reports to Congress"
+          },
+          {
+            "key": "other_topic",
+            "description": "Another subject (e.g. definitions, prohibitions on non-permitted issuers, effective dates)"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "mandate_relevant",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Shared taxonomy across statute and rules that blocks the pairing so directives are only compared with same-topic rule paragraphs."
+      },
+      {
+        "id": "deadline_type",
+        "label": "Deadline type",
+        "kind": "choice",
+        "question": "What deadline, if any, does this paragraph attach to the regulator's action?",
+        "options": [
+          {
+            "key": "within_1_year",
+            "description": "Within one year of enactment or earlier (i.e. on or before July 18, 2026)"
+          },
+          {
+            "key": "beyond_1_year",
+            "description": "A deadline later than one year after enactment, or tied to the effective date"
+          },
+          {
+            "key": "recurring",
+            "description": "Periodic or recurring (annual, etc.)"
+          },
+          {
+            "key": "none",
+            "description": "No deadline stated"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "regulator_directive",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "As of October 2026 any 'within 1 year' mandate without a proposed rule is overdue."
+      },
+      {
+        "id": "rule_obligation_force",
+        "label": "Rule obligation force",
+        "kind": "choice",
+        "question": "How binding is the rulemaking direction in this statutory paragraph? Decide from the operative verb and structure of the paragraph.",
+        "options": [
+          {
+            "key": "shall_issue",
+            "description": "The regulator must issue a rule, regulation, interpretive rule, or adopt rules (shall / must)."
+          },
+          {
+            "key": "shall_amend_existing",
+            "description": "The regulator must amend or conform an existing regulation, or the paragraph dictates what an existing/future rule must provide."
+          },
+          {
+            "key": "may_issue",
+            "description": "The regulator is permitted but not required to issue regulations (may)."
+          },
+          {
+            "key": "mixed_shall_and_may",
+            "description": "Some regulators shall and others may, or a mandatory rule is paired with a permissive exception authority in the same paragraph."
+          },
+          {
+            "key": "sets_standard_by_rule_implicitly",
+            "description": "No explicit command to issue a rule; the paragraph refers to limits, factors, or criteria 'established by' or 'specified by' the regulator."
+          },
+          {
+            "key": "coordination_or_procedure_only",
+            "description": "The paragraph only governs how rules are issued (coordination, consultation, timing) or is a fragment/list item, without itself commanding a rule."
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "directive_type",
+            "op": "in",
+            "values": [
+              "rulemaking"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Separates hard rulemaking mandates from permissive authority and procedural fragments, so the 'what must each rule cover' answer is not polluted by may-clauses.",
+        "gen": 1
+      },
+      {
+        "id": "rule_subject",
+        "label": "Required rule content",
+        "kind": "choice",
+        "question": "What must the rule or regulation directed by this paragraph cover? Pick the single best description of the required content.",
+        "options": [
+          {
+            "key": "general_implementation",
+            "description": "Regulations generally implementing or carrying out a section or the Act, without a named substantive topic."
+          },
+          {
+            "key": "capital_liquidity_reserves_risk",
+            "description": "Capital, liquidity, reserve asset composition or diversification, interest-rate or operational risk management standards, or limits on reserve deposits."
+          },
+          {
+            "key": "capital_rule_conforming_amendment",
+            "description": "Amending existing bank leverage or risk-based capital rules for consolidated treatment of stablecoin issuers."
+          },
+          {
+            "key": "aml_bsa_sanctions_standards",
+            "description": "Bank Secrecy Act, anti-money-laundering, sanctions compliance, illicit-finance detection or blockchain transaction monitoring standards."
+          },
+          {
+            "key": "safe_harbors_exceptions",
+            "description": "Safe harbors, exemptions, exceptions, or de minimis thresholds from a prohibition."
+          },
+          {
+            "key": "definitions_terms",
+            "description": "Defining statutory terms or clarifying how a provision applies (including interpretive rules)."
+          },
+          {
+            "key": "state_similarity_principles",
+            "description": "Principles or criteria for whether a State regime is substantially similar, or State certification process."
+          },
+          {
+            "key": "application_licensing_process",
+            "description": "Application, approval, licensing factors, or issuance framework for permitted issuers."
+          },
+          {
+            "key": "exigent_enforcement_circumstances",
+            "description": "The unusual and exigent circumstances in which a Federal regulator may take enforcement action against a State-qualified issuer."
+          },
+          {
+            "key": "foreign_issuer_criteria",
+            "description": "Criteria, comparability, or compliance conditions for foreign payment stablecoin issuers."
+          },
+          {
+            "key": "custody_other",
+            "description": "Custody or safekeeping requirements, or another topic not listed above."
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "directive_type",
+            "op": "in",
+            "values": [
+              "rulemaking"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Directly answers 'what exactly must each rule cover' with a fixed vocabulary that can be compared across agencies.",
+        "gen": 1
+      },
+      {
+        "id": "content_specificity",
+        "label": "Content specificity",
+        "kind": "score",
+        "question": "How specifically does this paragraph prescribe the content the rule must contain?",
+        "options": [],
+        "levels": [
+          "Open-ended: issue regulations 'as necessary' or 'to implement this section' with no named content",
+          "Names a topic area the rule must address but no specific elements",
+          "Names specific elements, standards, or criteria the rule must include",
+          "Dictates the substantive outcome or text the rule must reach (e.g. what the rule 'shall provide')"
+        ],
+        "when": [
+          {
+            "field": "directive_type",
+            "op": "in",
+            "values": [
+              "rulemaking"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Shows which mandates leave the agency free and which pin down the rule's content, i.e. where coverage by an NPRM can be checked precisely.",
+        "gen": 1
+      },
+      {
+        "id": "content_constraint",
+        "label": "Constraint on rule",
+        "kind": "choice",
+        "question": "Does this paragraph impose a substantive limit or design requirement on the rule the regulator issues? Pick the most prominent one.",
+        "options": [
+          {
+            "key": "tailoring_required",
+            "description": "Rule must be tailored to size, complexity, business model, or risk profile of issuers."
+          },
+          {
+            "key": "no_additional_requirements",
+            "description": "Rule may not impose requirements beyond those the statute specifies, or is capped by a statutory ceiling."
+          },
+          {
+            "key": "must_be_consistent_with_other_law",
+            "description": "Rule must be consistent with a named section, purpose of the Act, or existing law, beyond a bare 'consistent with section 13' timing reference."
+          },
+          {
+            "key": "based_on_findings",
+            "description": "Rule must be based on results of research, a study, risk assessment, or determination."
+          },
+          {
+            "key": "scope_limited",
+            "description": "Rule is limited to a narrow scope, class of persons, or volume threshold."
+          },
+          {
+            "key": "none",
+            "description": "No substantive constraint on the rule's content is stated."
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "directive_type",
+            "op": "in",
+            "values": [
+              "rulemaking"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Constraints such as tailoring and the bar on adding requirements define what a compliant rule must look like, beyond its topic.",
+        "gen": 1
+      },
+      {
+        "id": "procedure_required",
+        "label": "Required procedure",
+        "kind": "choice",
+        "question": "What procedure does this paragraph require the regulator to follow when issuing the rule?",
+        "options": [
+          {
+            "key": "notice_and_comment",
+            "description": "Explicitly requires notice and comment rulemaking."
+          },
+          {
+            "key": "coordination_consultation",
+            "description": "Requires coordination, consultation, or joint action with other regulators, without naming notice and comment."
+          },
+          {
+            "key": "both_notice_comment_and_coordination",
+            "description": "Requires both notice and comment and coordination or consultation."
+          },
+          {
+            "key": "interpretive_rule_or_guidance",
+            "description": "Calls for an interpretive rule, guidance, or order rather than a legislative rule."
+          },
+          {
+            "key": "none_stated",
+            "description": "No procedure is specified in this paragraph."
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "directive_type",
+            "op": "in",
+            "values": [
+              "rulemaking"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Procedure affects whether an NPRM is the expected vehicle at all, which matters for judging coverage.",
+        "gen": 1
+      },
+      {
+        "id": "clock_trigger",
+        "label": "Clock trigger",
+        "kind": "choice",
+        "question": "What event starts the deadline for the rule this paragraph directs? Read the paragraph's own words; treat 'consistent with section 13' or 'before the date described in section 13' as a cross-reference rather than as an enactment date.",
+        "options": [
+          {
+            "key": "enactment_date",
+            "description": "Deadline counted from the date of enactment of the Act (e.g. 'not later than 1 year after the date of enactment')."
+          },
+          {
+            "key": "effective_date",
+            "description": "Deadline counted from the Act's effective date or from when the Act takes effect."
+          },
+          {
+            "key": "section_13_cross_reference",
+            "description": "No date in the paragraph; it points to section 13 or 'the rulemaking deadline under section 13' for timing."
+          },
+          {
+            "key": "earlier_of_two_events",
+            "description": "Deadline is the earlier (or later) of two events, such as the section 13 deadline or issuance of other regulations."
+          },
+          {
+            "key": "other_event",
+            "description": "Clock starts on another event: a notice, a denial, an application, completion of a study, or issuance of another rule."
+          },
+          {
+            "key": "no_clock",
+            "description": "No deadline or timing reference of any kind; the rule can issue at any time or never."
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "directive_type",
+            "op": "in",
+            "values": [
+              "rulemaking"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Answers the user's clock question directly and splits the existing 'none' deadline bucket into true no-clock versus deadlines borrowed from section 13.",
+        "gen": 1
+      },
+      {
+        "id": "clock_length",
+        "label": "Clock length",
+        "kind": "choice",
+        "question": "How long does the regulator have, as stated in this paragraph, between the triggering event and the date the rule must be issued?",
+        "options": [
+          {
+            "key": "up_to_180_days",
+            "description": "180 days or less."
+          },
+          {
+            "key": "one_year",
+            "description": "More than 180 days up to 1 year."
+          },
+          {
+            "key": "over_1_to_3_years",
+            "description": "More than 1 year, up to and including 3 years."
+          },
+          {
+            "key": "over_3_years",
+            "description": "More than 3 years."
+          },
+          {
+            "key": "not_stated_here",
+            "description": "The paragraph gives a trigger or cross-reference but no length of time."
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "clock_trigger",
+            "op": "in",
+            "values": [
+              "enactment_date",
+              "effective_date",
+              "earlier_of_two_events",
+              "other_event"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Turns each trigger into an actual due date, so overdue or imminent rules can be identified.",
+        "gen": 1
+      },
+      {
+        "id": "sec13_binding",
+        "label": "Section 13 binds",
+        "kind": "noul",
+        "question": "Does this paragraph make the section 13 rulemaking deadline a mandatory time limit for the rule (for example 'shall, before the date described in section 13' or 'not later than the rulemaking deadline under section 13'), as opposed to merely saying the rule should be 'consistent with section 13'?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "clock_trigger",
+            "op": "in",
+            "values": [
+              "section_13_cross_reference",
+              "earlier_of_two_events"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "'Consistent with section 13' and 'before the section 13 date' differ in force; this shows which borrowed deadlines are firm.",
+        "gen": 1
+      },
+      {
+        "id": "no_clock_but_mandatory",
+        "label": "Mandatory without deadline",
+        "kind": "noul",
+        "question": "Does this paragraph command the regulator to issue a rule (shall / must) while giving no deadline or timing reference of any kind, leaving a mandatory rule with no due date?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "clock_trigger",
+            "op": "in",
+            "values": [
+              "no_clock"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Isolates open-ended mandates, the ones most likely to remain unaddressed by any proposed rule.",
+        "gen": 1
+      }
+    ],
+    "relations": {
+      "enabled": true,
+      "label": "Proposed rule addresses mandate",
+      "question": "Does requirement B (a proposed-rule paragraph) address requirement A (a GENIUS Act directive to a regulator)? Choose implements if B proposes rule text or explains proposed rule text that carries out A's mandate; discusses if B mentions or defers A's mandate without proposing rule text for it; none otherwise.",
+      "options": [
+        {
+          "key": "implements",
+          "description": "B proposes or explains rule text that carries out the mandate in A"
+        },
+        {
+          "key": "discusses",
+          "description": "B acknowledges, defers, or partially touches A's mandate without implementing it"
+        },
+        {
+          "key": "none",
+          "description": "No meaningful relationship"
+        }
+      ],
+      "none_option": "none",
+      "candidates": [
+        {
+          "field": "mandate_relevant",
+          "op": "yes",
+          "values": [],
+          "threshold": 0.5
+        }
+      ],
+      "anchor_docs": [
+        "genius-act"
+      ],
+      "block_by": "topic",
+      "cross_document": true,
+      "pairs_per_row": 4,
+      "max_pairs": 2000
+    },
+    "views": [
+      {
+        "id": "n_directives",
+        "type": "stat",
+        "title": "GENIUS Act directives to regulators",
+        "why": "Headline count of provisions that direct an agency to act.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "regulator_directive",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "coverage_by_agency",
+        "type": "coverage",
+        "title": "Share of directives with an implementing proposed rule, by agency",
+        "why": "Shows which agencies' mandates have been answered; OCC/FDIC/NCUA/SCRC gaps should stand out.",
+        "x": "directed_agency",
+        "y": "",
+        "where": [
+          {
+            "field": "regulator_directive",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "share",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "type_by_topic",
+        "type": "heatmap",
+        "title": "Directive type by topic",
+        "why": "Where the rulemaking mandates cluster versus reports, approvals and discretionary grants.",
+        "x": "topic",
+        "y": "directive_type",
+        "where": [
+          {
+            "field": "regulator_directive",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "unaddressed_by_deadline",
+        "type": "bar",
+        "title": "Unaddressed directives by deadline type",
+        "why": "Mandates with no implementing proposed rule, split by whether they were due within a year of enactment (now overdue).",
+        "x": "deadline_type",
+        "y": "",
+        "where": [
+          {
+            "field": "regulator_directive",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          },
+          {
+            "field": "linked",
+            "op": "no",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "unaddressed_table",
+        "type": "table",
+        "title": "Rulemaking directives not yet addressed by any proposed rule",
+        "why": "The list to read: each statutory rulemaking mandate with no 'implements' partner, in page order.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "regulator_directive",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          },
+          {
+            "field": "directive_type",
+            "op": "in",
+            "values": [
+              "rulemaking",
+              "establish_body_process",
+              "application_review"
+            ],
+            "threshold": 0
+          },
+          {
+            "field": "linked",
+            "op": "no",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "page",
+        "top": 80
+      },
+      {
+        "id": "mandate_network",
+        "type": "network",
+        "title": "Directive to proposed-rule links",
+        "why": "Which rulemaking documents cover which statutory provisions, and which provisions sit alone.",
+        "x": "doc",
+        "y": "",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "rule_content_by_clock",
+        "type": "heatmap",
+        "title": "What each rule must cover vs. what starts its clock",
+        "why": "Shows which required rule subjects run from enactment, borrow the section 13 deadline, hang on another event, or have no clock at all.",
+        "x": "rule_subject",
+        "y": "clock_trigger",
+        "where": [
+          {
+            "field": "directive_type",
+            "op": "in",
+            "values": [
+              "rulemaking"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "clock_trigger_by_agency",
+        "type": "heatmap",
+        "title": "Clock trigger by directed agency",
+        "why": "Shows which regulators face dated rulemaking duties and which hold undated or permissive authority.",
+        "x": "directed_agency",
+        "y": "clock_trigger",
+        "where": [
+          {
+            "field": "directive_type",
+            "op": "in",
+            "values": [
+              "rulemaking"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "rulemaking_mandates_table",
+        "type": "table",
+        "title": "Rulemaking mandates: required content, constraints, and clock",
+        "why": "A readable list of each rulemaking provision with its force, required content, constraint, procedure, trigger, and time allowed, most specific first.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "directive_type",
+            "op": "in",
+            "values": [
+              "rulemaking"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "content_specificity",
+        "top": 32
+      }
+    ]
+  },
+  "followups": [
+    {
+      "at": "2026-10-04T16:31:20.063Z",
+      "focus": "Directive type: rulemaking",
+      "request": "What exactly must each rule cover, and what starts its clock: enactment, the effective date, or nothing?",
+      "rationale": "The new layers separate true rulemaking commands from permissive or incidental mentions, pin down what each rule must contain (subject, specificity, constraints, required procedure), and resolve what starts the clock (enactment, the section 13 cross-reference, another trigger, or nothing) so each mandate can be read as a concrete, dated obligation.",
+      "nodes": [
+        "rule_obligation_force",
+        "rule_subject",
+        "content_specificity",
+        "content_constraint",
+        "procedure_required",
+        "clock_trigger",
+        "clock_length",
+        "sec13_binding",
+        "no_clock_but_mandatory"
+      ]
+    }
+  ],
+  "lastRun": {
+    "at": "2026-10-07T02:43:08.806Z",
+    "rows": 1988,
+    "predicates": 6810,
+    "wallMs": 398,
+    "costUsd": 0
+  }
+}

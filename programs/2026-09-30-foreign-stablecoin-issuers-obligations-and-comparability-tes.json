@@ -1,0 +1,509 @@
+{
+  "question": "Which obligations fall on foreign stablecoin issuers, and how do U.S. regulators decide whether a foreign regime is comparable?",
+  "author": "planned by Claude Code (claude-fable-5-1)",
+  "program": {
+    "title": "Foreign stablecoin issuers: obligations and comparability tests",
+    "thesis": "Gate every operative paragraph on whether it concerns foreign issuers or foreign regimes, then split what passes into obligations on the issuer itself, conditions on U.S. intermediaries, and comparability-determination rules; classify the obligation type, the comparability facet and decision-maker, score how concrete each criterion is, and link statute text to the NPRM paragraphs that implement it.",
+    "unit": {
+      "level": "paragraph",
+      "docs": [
+        "genius-act",
+        "treasury-issuance-nprm",
+        "fed-genius-nprm",
+        "fed-genius-applications",
+        "pwg-report",
+        "clarity-act",
+        "fincen-2019",
+        "nydfs-stablecoin",
+        "sec-stablecoins"
+      ],
+      "where": [
+        {
+          "field": "modality",
+          "op": "in",
+          "values": [
+            "must",
+            "must_not",
+            "may",
+            "defines"
+          ],
+          "threshold": 0
+        },
+        {
+          "field": "section_role",
+          "op": "not_in",
+          "values": [
+            "impact_analysis",
+            "request_for_comment"
+          ],
+          "threshold": 0
+        }
+      ],
+      "rationale": "Obligations and determination criteria live in individual operative paragraphs (must/must_not/may/defines). Docs are the GENIUS statute, the rules implementing it, and the policy/guidance documents that discuss foreign issuers or foreign-located firms; the state-certification rule is excluded because it addresses state rather than foreign regimes."
+    },
+    "doc_notes": [
+      {
+        "doc": "genius-act",
+        "note": "Public Law 119-27. A 'foreign payment stablecoin issuer' is an issuer organized under the laws of a non-U.S. jurisdiction. Sec. 18 lets a foreign issuer's stablecoin be offered in the U.S. only if Treasury determines the foreign jurisdiction's regulatory and supervisory regime is comparable, the issuer registers with the OCC, holds reserves in U.S. financial institutions sufficient for U.S. customer liquidity, and complies with lawful orders; Treasury may enter reciprocity arrangements. Sec. 3 bars digital asset service providers from offering stablecoins of issuers that are not permitted or qualifying foreign issuers."
+      },
+      {
+        "doc": "treasury-issuance-nprm",
+        "note": "Proposed 12 CFR part 1523 implements GENIUS Act Sec. 3 restrictions on who may issue, offer, or sell payment stablecoins in the U.S. 'Foreign payment stablecoin issuer' carries the GENIUS Act meaning (issuer organized outside the U.S.); references to comparability mean Treasury's determination under GENIUS Sec. 18."
+      },
+      {
+        "doc": "fed-genius-nprm",
+        "note": "Proposed Fed rules implementing its GENIUS Act responsibilities for Board-supervised institutions. Part 211 (Regulation K) governs foreign banks' U.S. operations and U.S. banks' foreign operations; 'foreign' here can refer to foreign banking organizations, not only foreign stablecoin issuers."
+      },
+      {
+        "doc": "fincen-2019",
+        "note": "BSA guidance on convertible virtual currency business models. Foreign-located money services businesses doing business wholly or substantially in the U.S. must register with FinCEN and comply with BSA obligations; this predates and is separate from the GENIUS Act."
+      },
+      {
+        "doc": "pwg-report",
+        "note": "Non-binding policy report of the President's Working Group on Digital Asset Markets (July 2025). Recommendations may address treatment of foreign stablecoin issuers and international coordination; statements are proposals, not obligations."
+      }
+    ],
+    "nodes": [
+      {
+        "id": "foreign_gate",
+        "label": "Foreign issuer/regime",
+        "kind": "noul",
+        "question": "Does this paragraph concern non-U.S. (foreign) stablecoin issuers, foreign-organized or foreign-located firms offering stablecoins or virtual-currency services in the U.S., foreign regulatory regimes, or cross-border/reciprocity arrangements? Use the scope_note for defined terms. Answer no if it addresses only domestic issuers or generic matters.",
+        "options": [],
+        "levels": [],
+        "when": [],
+        "why": "Cheap gate that keeps the deeper nodes focused on foreign-issuer content."
+      },
+      {
+        "id": "foreign_topic",
+        "label": "Foreign topic",
+        "kind": "choice",
+        "question": "What does this paragraph primarily do with respect to foreign issuers or foreign regimes?",
+        "options": [
+          {
+            "key": "issuer_obligation",
+            "description": "Imposes a requirement, prohibition, or condition directly on a foreign issuer or foreign-located firm (e.g., register, hold reserves in the U.S., comply with orders, consent to jurisdiction)."
+          },
+          {
+            "key": "intermediary_condition",
+            "description": "Restricts or conditions what U.S. digital asset service providers, custodians, exchanges, or banks may do with a foreign issuer's stablecoin."
+          },
+          {
+            "key": "comparability_determination",
+            "description": "Sets criteria, factors, process, or authority for a U.S. regulator to decide whether a foreign jurisdiction's regime is comparable, or to enter reciprocity arrangements."
+          },
+          {
+            "key": "enforcement_consequence",
+            "description": "Consequences of noncompliance by a foreign issuer: designation as noncompliant, penalties, revocation, removal from an approved list."
+          },
+          {
+            "key": "definition_scope",
+            "description": "Defines a term (e.g., foreign payment stablecoin issuer) or delimits which foreign entities are covered."
+          },
+          {
+            "key": "other_foreign",
+            "description": "Other foreign or cross-border content (foreign bank operations, international coordination, studies, recommendations) not fitting the above."
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "foreign_gate",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Separates the two halves of the question: what foreign issuers must do versus how comparability is decided."
+      },
+      {
+        "id": "obligation_type",
+        "label": "Obligation type",
+        "kind": "choice",
+        "question": "What kind of obligation does this paragraph place on the foreign issuer or foreign-located firm?",
+        "options": [
+          {
+            "key": "registration_approval",
+            "description": "Register with, notify, or obtain approval from a U.S. regulator (OCC, FinCEN, Treasury, state)."
+          },
+          {
+            "key": "reserve_custody",
+            "description": "Hold, locate, or segregate reserves or assets in U.S. financial institutions or meet reserve composition rules."
+          },
+          {
+            "key": "aml_sanctions",
+            "description": "Comply with BSA/AML, sanctions, or the ability to freeze, seize, or block transactions."
+          },
+          {
+            "key": "lawful_orders_jurisdiction",
+            "description": "Comply with lawful U.S. orders, consent to U.S. jurisdiction, or appoint an agent for service."
+          },
+          {
+            "key": "reporting_disclosure",
+            "description": "File reports, attestations, disclosures, or submit to examination."
+          },
+          {
+            "key": "redemption_capital_liquidity",
+            "description": "Redemption, capital, liquidity, or risk-management standards."
+          },
+          {
+            "key": "other_obligation",
+            "description": "Any other obligation or condition."
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "foreign_topic",
+            "op": "in",
+            "values": [
+              "issuer_obligation"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Produces the inventory of what foreign issuers actually have to do."
+      },
+      {
+        "id": "comparability_facet",
+        "label": "Comparability facet",
+        "kind": "choice",
+        "question": "Which aspect of the comparability or reciprocity decision does this paragraph address?",
+        "options": [
+          {
+            "key": "substantive_criteria",
+            "description": "The substantive standards a foreign regime must meet (reserve, redemption, capital, AML/sanctions, supervision quality)."
+          },
+          {
+            "key": "decision_process",
+            "description": "Who decides, the application or review procedure, timelines, consultation, or publication of determinations."
+          },
+          {
+            "key": "reciprocity_arrangement",
+            "description": "Bilateral or multilateral reciprocity arrangements with foreign jurisdictions."
+          },
+          {
+            "key": "revocation_review",
+            "description": "Withdrawal, rescission, periodic review, or reconsideration of a determination."
+          },
+          {
+            "key": "aml_regime_adequacy",
+            "description": "Whether the foreign jurisdiction's AML/sanctions regime or its status as a high-risk or sanctioned jurisdiction disqualifies it."
+          },
+          {
+            "key": "other_facet",
+            "description": "Other aspect of comparability."
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "foreign_topic",
+            "op": "in",
+            "values": [
+              "comparability_determination"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Breaks the 'how do regulators decide' half into criteria, process, reciprocity, and revocation."
+      },
+      {
+        "id": "decision_maker",
+        "label": "Decision maker",
+        "kind": "choice",
+        "question": "Which U.S. authority does this paragraph give the power to make or influence the comparability, reciprocity, or foreign-issuer approval decision?",
+        "options": [
+          {
+            "key": "treasury_secretary",
+            "description": "Secretary of the Treasury or Treasury Department."
+          },
+          {
+            "key": "occ",
+            "description": "Office of the Comptroller of the Currency."
+          },
+          {
+            "key": "federal_reserve",
+            "description": "Federal Reserve Board."
+          },
+          {
+            "key": "fincen",
+            "description": "FinCEN."
+          },
+          {
+            "key": "multiple_or_consultation",
+            "description": "Several agencies jointly or one agency in consultation with others."
+          },
+          {
+            "key": "unspecified",
+            "description": "No specific decision maker identified."
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "foreign_topic",
+            "op": "in",
+            "values": [
+              "comparability_determination",
+              "enforcement_consequence"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Shows who holds the gatekeeping authority over foreign regimes and issuers."
+      },
+      {
+        "id": "specificity",
+        "label": "Criterion specificity",
+        "kind": "score",
+        "question": "How concrete and testable is the requirement or criterion stated in this paragraph?",
+        "options": [],
+        "levels": [
+          "General reference only; no operative standard stated",
+          "Broad standard (e.g., 'comparable', 'adequate') with no factors or metrics",
+          "Named factors or elements the regulator must consider, but no thresholds",
+          "Concrete, measurable requirements, thresholds, deadlines, or procedural steps"
+        ],
+        "when": [
+          {
+            "field": "foreign_topic",
+            "op": "in",
+            "values": [
+              "issuer_obligation",
+              "intermediary_condition",
+              "comparability_determination",
+              "enforcement_consequence"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Distinguishes the statute's open-ended 'comparable' standard from the rules that operationalize it."
+      },
+      {
+        "id": "conditional_on_comparability",
+        "label": "Conditioned on comparability",
+        "kind": "noul",
+        "question": "Does this obligation or condition apply only after, or depend on, a determination that the foreign issuer's home regime is comparable or subject to a reciprocity arrangement?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "foreign_topic",
+            "op": "in",
+            "values": [
+              "issuer_obligation",
+              "intermediary_condition",
+              "enforcement_consequence"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Reveals how tightly the issuer obligations are chained to the comparability finding."
+      }
+    ],
+    "relations": {
+      "enabled": true,
+      "label": "Statute to rule implementation",
+      "question": "How does paragraph B (from a rule, guidance, or report) relate to paragraph A (from the GENIUS Act) on foreign issuers or comparability?",
+      "options": [
+        {
+          "key": "implements",
+          "description": "B operationalizes, specifies, or adds procedure to the requirement or authority in A."
+        },
+        {
+          "key": "restates",
+          "description": "B repeats or cross-references A without adding substance."
+        },
+        {
+          "key": "narrows_or_expands",
+          "description": "B changes the scope of A: covers fewer or more entities, adds or drops conditions."
+        },
+        {
+          "key": "conflicts",
+          "description": "B is inconsistent with A."
+        },
+        {
+          "key": "none",
+          "description": "No meaningful relationship."
+        }
+      ],
+      "none_option": "none",
+      "candidates": [
+        {
+          "field": "foreign_gate",
+          "op": "yes",
+          "values": [],
+          "threshold": 0.5
+        },
+        {
+          "field": "foreign_topic",
+          "op": "in",
+          "values": [
+            "issuer_obligation",
+            "intermediary_condition",
+            "comparability_determination",
+            "enforcement_consequence",
+            "definition_scope"
+          ],
+          "threshold": 0
+        }
+      ],
+      "anchor_docs": [
+        "genius-act"
+      ],
+      "block_by": "foreign_topic",
+      "cross_document": true,
+      "pairs_per_row": 3,
+      "max_pairs": 1500
+    },
+    "views": [
+      {
+        "id": "headline",
+        "type": "stat",
+        "title": "Operative paragraphs addressing foreign issuers or regimes",
+        "why": "Headline size of the foreign-issuer regime across the library.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "foreign_gate",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "topic_by_doc",
+        "type": "heatmap",
+        "title": "Foreign topic by document",
+        "why": "Shows which documents carry issuer obligations versus comparability rules versus intermediary conditions.",
+        "x": "doc",
+        "y": "foreign_topic",
+        "where": [
+          {
+            "field": "foreign_gate",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "obligations",
+        "type": "bar",
+        "title": "Obligations on foreign issuers by type",
+        "why": "Ranked inventory of what foreign issuers must do.",
+        "x": "obligation_type",
+        "y": "",
+        "where": [
+          {
+            "field": "foreign_topic",
+            "op": "in",
+            "values": [
+              "issuer_obligation"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "facet_by_decider",
+        "type": "heatmap",
+        "title": "Comparability facet by decision maker",
+        "why": "Who decides which part of the comparability test.",
+        "x": "decision_maker",
+        "y": "comparability_facet",
+        "where": [
+          {
+            "field": "foreign_topic",
+            "op": "in",
+            "values": [
+              "comparability_determination"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "specificity_by_doc",
+        "type": "bar",
+        "title": "Mean criterion specificity by document",
+        "why": "Tests whether the rules make the statute's 'comparable' standard concrete.",
+        "x": "doc",
+        "y": "",
+        "where": [
+          {
+            "field": "foreign_gate",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "mean",
+        "measure_field": "specificity",
+        "top": 0
+      },
+      {
+        "id": "implementation_coverage",
+        "type": "coverage",
+        "title": "Statute foreign-issuer provisions with an implementing rule paragraph",
+        "why": "Which GENIUS Act foreign-issuer requirements have been operationalized by a rule so far.",
+        "x": "foreign_topic",
+        "y": "",
+        "where": [
+          {
+            "field": "doc",
+            "op": "in",
+            "values": [
+              "genius-act"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "share",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "reading_table",
+        "type": "table",
+        "title": "Foreign-issuer paragraphs, most specific first",
+        "why": "Rows to read: the concrete obligations and criteria with their document, topic, and decision maker.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "foreign_gate",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "specificity",
+        "top": 60
+      }
+    ]
+  },
+  "lastRun": {
+    "at": "2026-10-01T19:50:12.237Z",
+    "rows": 3584,
+    "predicates": 4136,
+    "wallMs": 32545,
+    "costUsd": 0
+  }
+}

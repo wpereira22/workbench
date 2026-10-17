@@ -1,0 +1,560 @@
+{
+  "question": "List every deadline, time limit, and required frequency in the GENIUS Act and its implementing rules: who must act, what they must do, and how long they have.",
+  "author": "planned by Claude Code (claude-fable-5-1)",
+  "program": {
+    "title": "GENIUS Act timing obligations: who, what, how long",
+    "thesis": "Every deadline-bearing paragraph in the GENIUS Act and its four implementing rules is gated to genuine timing requirements, then classified by actor, required action, timing type and length, so the list reads as a table of who must do what by when. Pair relations show which statutory deadlines the rules carry through.",
+    "unit": {
+      "level": "paragraph",
+      "docs": [
+        "genius-act",
+        "fed-genius-nprm",
+        "fed-genius-applications",
+        "treasury-issuance-nprm",
+        "treasury-state-cert"
+      ],
+      "where": [
+        {
+          "field": "deadline",
+          "op": "in",
+          "values": [
+            "yes"
+          ],
+          "threshold": 0
+        },
+        {
+          "field": "role",
+          "op": "not_in",
+          "values": [
+            "question"
+          ],
+          "threshold": 0
+        }
+      ],
+      "rationale": "Each deadline sits in a single paragraph or list item. The base deadline flag pre-selects them cheaply. The print-edition duplicate of the Treasury issuance NPRM is left out to avoid double counting."
+    },
+    "doc_notes": [
+      {
+        "doc": "genius-act",
+        "note": "Enacted statute (Public Law 119-27, July 18, 2025) governing payment stablecoins. 'Permitted payment stablecoin issuer' covers subsidiaries of insured depository institutions, Federal qualified issuers and State qualified issuers. 'Primary Federal payment stablecoin regulator' means the OCC, Federal Reserve Board, FDIC or NCUA. The 'Stablecoin Certification Review Committee' is chaired by the Treasury Secretary."
+      },
+      {
+        "doc": "fed-genius-nprm",
+        "note": "Federal Reserve Board proposed rule (2026) implementing the GENIUS Act for Board-supervised issuers; proposed, not final. 'The Board' is the Federal Reserve Board. Preamble text describes the proposal; the CFR part text (Parts 208, 211, 217, 247, 263) is the proposed regulatory text. Comment-period dates are not regulatory deadlines."
+      },
+      {
+        "doc": "fed-genius-applications",
+        "note": "Federal Reserve Board proposed rule (2026) on application procedures for Board-supervised insured depository institutions seeking approval to issue payment stablecoins through a subsidiary under the GENIUS Act; proposed, not final. Applicants are those institutions; the Board decides applications. Comment-period dates are not regulatory deadlines."
+      },
+      {
+        "doc": "treasury-issuance-nprm",
+        "note": "Treasury proposed rule (2026), 12 CFR Part 1523, implementing GENIUS Act provisions on issuance, offer and sale of payment stablecoins; proposed, not final. Comment-period dates are not regulatory deadlines."
+      },
+      {
+        "doc": "treasury-state-cert",
+        "note": "Treasury rule (2026), 12 CFR Part 1522, setting forms and procedures for the Stablecoin Certification Review Committee's review of State certifications that a State regime is substantially similar to the Federal framework under the GENIUS Act. States submit certifications; the Committee reviews them."
+      }
+    ],
+    "nodes": [
+      {
+        "id": "is_timing_rule",
+        "label": "Real timing requirement",
+        "kind": "noul",
+        "question": "Does this paragraph impose or describe a specific deadline, time limit, duration, or required frequency for an action under the GENIUS Act framework (e.g. 'within 120 days', 'not later than 1 year after enactment', 'monthly', 'annually')? Answer no if the only timing is a public comment period, a publication or citation date, a contact detail, or a historical date. Use scope_note for context.",
+        "options": [],
+        "levels": [],
+        "when": [],
+        "why": "Removes comment-period dates and citations that the base deadline flag picks up."
+      },
+      {
+        "id": "text_layer",
+        "label": "Text layer",
+        "kind": "choice",
+        "question": "What kind of text is this paragraph? Use scope_note for context.",
+        "options": [
+          {
+            "key": "operative",
+            "description": "Statutory text or regulatory (CFR) text that itself sets the requirement"
+          },
+          {
+            "key": "preamble",
+            "description": "Preamble or explanatory discussion describing a statutory or proposed requirement"
+          },
+          {
+            "key": "footnote_or_other",
+            "description": "Footnote, burden estimate, or other ancillary text"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_timing_rule",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Separates the deadline itself from preamble restatements so the list is not inflated."
+      },
+      {
+        "id": "actor",
+        "label": "Who must act",
+        "kind": "choice",
+        "question": "Who must act within the deadline, time limit, or frequency stated in this paragraph? Pick the party bound by the timing. Use scope_note for defined terms.",
+        "options": [
+          {
+            "key": "stablecoin_issuer",
+            "description": "A payment stablecoin issuer or permitted payment stablecoin issuer (including its officers, e.g. CEO/CFO certifications)"
+          },
+          {
+            "key": "applicant",
+            "description": "An entity applying for approval or licence to become an issuer"
+          },
+          {
+            "key": "federal_regulator",
+            "description": "A Federal banking regulator: Federal Reserve Board, OCC, FDIC, NCUA, or 'primary Federal payment stablecoin regulator'"
+          },
+          {
+            "key": "treasury_or_committee",
+            "description": "Treasury, the Treasury Secretary, FinCEN, or the Stablecoin Certification Review Committee"
+          },
+          {
+            "key": "state_regulator",
+            "description": "A State, State payment stablecoin regulator, or State official"
+          },
+          {
+            "key": "service_provider",
+            "description": "Digital asset service provider, custodian, accounting firm, or other third party"
+          },
+          {
+            "key": "foreign_issuer",
+            "description": "A foreign payment stablecoin issuer or foreign regulator"
+          },
+          {
+            "key": "other_or_unclear",
+            "description": "Another actor (e.g. Congress, courts, respondents in proceedings) or no clear actor"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_timing_rule",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Answers 'who must act'."
+      },
+      {
+        "id": "action_type",
+        "label": "Required action",
+        "kind": "choice",
+        "question": "What must be done within the deadline, time limit, or frequency stated in this paragraph?",
+        "options": [
+          {
+            "key": "rulemaking",
+            "description": "Issue, propose, or finalize regulations or standards"
+          },
+          {
+            "key": "application_decision",
+            "description": "File, complete, review, approve, or deny an application or registration, including deemed-approval clocks"
+          },
+          {
+            "key": "disclosure_reporting",
+            "description": "Publish or submit reports, reserve composition, financial statements, attestations, or certifications by the issuer"
+          },
+          {
+            "key": "redemption",
+            "description": "Redeem stablecoins or meet redemption timing"
+          },
+          {
+            "key": "state_certification",
+            "description": "Submit, review, or renew a State regime certification or decide on it"
+          },
+          {
+            "key": "notice_or_appeal",
+            "description": "Give notice, request a hearing, respond, or appeal"
+          },
+          {
+            "key": "exam_enforcement",
+            "description": "Examine, supervise, suspend, revoke, penalise, or take enforcement action"
+          },
+          {
+            "key": "study_report",
+            "description": "A government agency completing a study or reporting to Congress"
+          },
+          {
+            "key": "transition_effective",
+            "description": "Effective date, compliance date, transition or grace period, or safe-harbor duration"
+          },
+          {
+            "key": "other",
+            "description": "Any other action"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_timing_rule",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Answers 'what they must do' and blocks pairs for relations."
+      },
+      {
+        "id": "timing_kind",
+        "label": "Timing type",
+        "kind": "choice",
+        "question": "What kind of timing does this paragraph set?",
+        "options": [
+          {
+            "key": "time_limit_after_trigger",
+            "description": "A period that runs from a triggering event (e.g. within 30 days of receipt)"
+          },
+          {
+            "key": "fixed_or_enactment_date",
+            "description": "A calendar date or a period measured from enactment or an effective date"
+          },
+          {
+            "key": "recurring_frequency",
+            "description": "A recurring obligation (daily, monthly, quarterly, annually, etc.)"
+          },
+          {
+            "key": "duration_or_cap",
+            "description": "How long something lasts or may last (term, retention period, maximum duration)"
+          },
+          {
+            "key": "other",
+            "description": "Timing that fits none of these"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_timing_rule",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Distinguishes deadlines, time limits, and frequencies as the question asks."
+      },
+      {
+        "id": "time_length",
+        "label": "How long",
+        "kind": "score",
+        "question": "How long is the period allowed or set by the main deadline, time limit, or duration in this paragraph?",
+        "options": [],
+        "levels": [
+          "Immediate or up to 7 days",
+          "8 to 30 days",
+          "31 to 120 days",
+          "121 days to 1 year",
+          "More than 1 year up to 3 years",
+          "More than 3 years"
+        ],
+        "when": [
+          {
+            "field": "is_timing_rule",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          },
+          {
+            "field": "timing_kind",
+            "op": "in",
+            "values": [
+              "time_limit_after_trigger",
+              "fixed_or_enactment_date",
+              "duration_or_cap"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Answers 'how long they have' on an ordered scale."
+      },
+      {
+        "id": "frequency",
+        "label": "Required frequency",
+        "kind": "choice",
+        "question": "How often must the recurring action in this paragraph be performed?",
+        "options": [
+          {
+            "key": "daily_or_continuous",
+            "description": "Daily, same-day, or continuous"
+          },
+          {
+            "key": "weekly",
+            "description": "Weekly"
+          },
+          {
+            "key": "monthly",
+            "description": "Monthly"
+          },
+          {
+            "key": "quarterly",
+            "description": "Quarterly"
+          },
+          {
+            "key": "annual",
+            "description": "Annually"
+          },
+          {
+            "key": "multi_year",
+            "description": "Less often than annually (e.g. every 2 or 3 years)"
+          },
+          {
+            "key": "other",
+            "description": "Another or unspecified frequency"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_timing_rule",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          },
+          {
+            "field": "timing_kind",
+            "op": "in",
+            "values": [
+              "recurring_frequency"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Gives the interval for recurring obligations."
+      },
+      {
+        "id": "miss_consequence",
+        "label": "Consequence if missed",
+        "kind": "noul",
+        "question": "Does this paragraph state what happens if the deadline or time limit is not met (e.g. the application is deemed approved, a certification lapses, a penalty applies, an approval is revoked)?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_timing_rule",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Flags deadlines with stated consequences, such as deemed-approval clocks."
+      }
+    ],
+    "relations": {
+      "enabled": true,
+      "label": "Rule deadline vs statutory deadline",
+      "question": "A is a timing requirement in one document and B is a timing requirement in another. How does the timing requirement in one relate to the other?",
+      "options": [
+        {
+          "key": "implements_same",
+          "description": "The rule carries through the same statutory deadline, time limit, or frequency for the same actor and action"
+        },
+        {
+          "key": "adds_detail",
+          "description": "Same actor and action, but the rule adds or changes timing detail (sub-deadlines, tolling, a different period)"
+        },
+        {
+          "key": "same_topic_different_clock",
+          "description": "Same subject matter but a distinct deadline or a different actor"
+        },
+        {
+          "key": "unrelated",
+          "description": "No meaningful relationship"
+        }
+      ],
+      "none_option": "unrelated",
+      "candidates": [
+        {
+          "field": "is_timing_rule",
+          "op": "yes",
+          "values": [],
+          "threshold": 0.5
+        },
+        {
+          "field": "text_layer",
+          "op": "in",
+          "values": [
+            "operative",
+            "preamble"
+          ],
+          "threshold": 0
+        }
+      ],
+      "anchor_docs": [
+        "genius-act"
+      ],
+      "block_by": "action_type",
+      "cross_document": true,
+      "pairs_per_row": 3,
+      "max_pairs": 1500
+    },
+    "views": [
+      {
+        "id": "total_timing",
+        "type": "stat",
+        "title": "Timing requirements found",
+        "why": "Headline count of operative deadlines, time limits, and frequencies.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "is_timing_rule",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          },
+          {
+            "field": "text_layer",
+            "op": "in",
+            "values": [
+              "operative"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "actor_by_action",
+        "type": "heatmap",
+        "title": "Who must do what",
+        "why": "Shows which actors carry which timed duties.",
+        "x": "actor",
+        "y": "action_type",
+        "where": [
+          {
+            "field": "is_timing_rule",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          },
+          {
+            "field": "text_layer",
+            "op": "in",
+            "values": [
+              "operative"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "actor_by_doc",
+        "type": "heatmap",
+        "title": "Timed duties by document and actor",
+        "why": "Shows where each actor's deadlines come from: the statute or a specific rule.",
+        "x": "doc",
+        "y": "actor",
+        "where": [
+          {
+            "field": "is_timing_rule",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "length_hist",
+        "type": "histogram",
+        "title": "How long actors have",
+        "why": "Distribution of period lengths, from days to multi-year.",
+        "x": "time_length",
+        "y": "",
+        "where": [
+          {
+            "field": "is_timing_rule",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "frequency_bar",
+        "type": "bar",
+        "title": "Required frequencies",
+        "why": "Ranks recurring obligations by interval.",
+        "x": "frequency",
+        "y": "",
+        "where": [
+          {
+            "field": "timing_kind",
+            "op": "in",
+            "values": [
+              "recurring_frequency"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "statute_coverage",
+        "type": "coverage",
+        "title": "Deadlines matched between statute and rules, by action",
+        "why": "Share of timing requirements with a counterpart that carries through the same deadline in the other layer.",
+        "x": "action_type",
+        "y": "",
+        "where": [
+          {
+            "field": "is_timing_rule",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "share",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "deadline_list",
+        "type": "table",
+        "title": "Full list of deadlines, time limits, and frequencies",
+        "why": "The readable list: each paragraph with actor, action, timing type, and length.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "is_timing_rule",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "time_length",
+        "top": 300
+      }
+    ]
+  },
+  "lastRun": {
+    "at": "2026-10-01T21:24:53.376Z",
+    "rows": 344,
+    "predicates": 2203,
+    "wallMs": 118188,
+    "costUsd": 0.05124680400000001
+  }
+}

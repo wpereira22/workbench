@@ -1,0 +1,376 @@
+{
+  "question": "Which GENIUS Act requirements already have implementing rules, from which agency, and what is still unaddressed?",
+  "author": "authored by Claude (in chat)",
+  "program": {
+    "title": "GENIUS Act implementation tracker",
+    "thesis": "Break the GENIUS Act and its four implementing rules into individual requirements, classify each by area, who it binds, and how prescriptive it is, then pair every statutory requirement with same-area provisions in the rules. Coverage by area shows where rulemaking has caught up and where the statute still stands alone.",
+    "unit": {
+      "level": "paragraph",
+      "docs": [
+        "genius-act",
+        "treasury-issuance-nprm",
+        "fed-genius-nprm",
+        "fed-genius-applications",
+        "treasury-state-cert"
+      ],
+      "where": [
+        {
+          "field": "modality",
+          "op": "in",
+          "values": [
+            "must",
+            "must_not",
+            "may",
+            "defines"
+          ],
+          "threshold": 0
+        },
+        {
+          "field": "section_role",
+          "op": "not_in",
+          "values": [
+            "discussion",
+            "request_for_comment",
+            "impact_analysis"
+          ],
+          "threshold": 0
+        }
+      ],
+      "rationale": "Duty-, permission-, and definition-bearing paragraphs from the statute and the regulatory text of the four rules (preamble discussion, comment requests, and impact analyses excluded by section role)."
+    },
+    "doc_notes": [
+      {
+        "doc": "genius-act",
+        "note": "The GENIUS Act, enacted July 18, 2025, is the federal statute for payment stablecoins. It limits U.S. issuance to permitted payment stablecoin issuers and directs Treasury, the Federal Reserve, and other regulators to issue implementing rules."
+      },
+      {
+        "doc": "treasury-issuance-nprm",
+        "note": "Treasury proposed rule published August 18, 2026, implementing GENIUS Act provisions on the issuance, offer, and sale of payment stablecoins in the United States."
+      },
+      {
+        "doc": "fed-genius-nprm",
+        "note": "Federal Reserve Board proposed rule published September 29, 2026, implementing the Board's responsibilities under the GENIUS Act."
+      },
+      {
+        "doc": "fed-genius-applications",
+        "note": "Federal Reserve Board proposed rule published September 29, 2026, on application procedures for Board-supervised insured depository institutions seeking approval to issue payment stablecoins."
+      },
+      {
+        "doc": "treasury-state-cert",
+        "note": "Treasury final rule published September 30, 2026, setting forms and procedures for the Stablecoin Certification Review Committee's review of state certifications under the GENIUS Act."
+      }
+    ],
+    "nodes": [
+      {
+        "id": "is_requirement",
+        "label": "Requirement?",
+        "kind": "noul",
+        "question": "Does this text set a concrete requirement, prohibition, permission, or definition for issuers, regulators, or other parties, rather than only explaining or cross-referencing?",
+        "options": [],
+        "levels": [],
+        "when": [],
+        "why": "Gate: only real provisions go on."
+      },
+      {
+        "id": "area",
+        "label": "Area",
+        "kind": "choice",
+        "question": "Which area of payment stablecoin regulation does this provision address?",
+        "options": [
+          {
+            "key": "reserves_redemption",
+            "description": "Reserve assets, backing, or redemption of payment stablecoins"
+          },
+          {
+            "key": "eligibility_licensing",
+            "description": "Who may issue payment stablecoins; permitted issuer status, charters, or registration"
+          },
+          {
+            "key": "applications_approval",
+            "description": "Application, approval, or notice procedures and timelines"
+          },
+          {
+            "key": "capital_liquidity_risk",
+            "description": "Capital, liquidity, or risk-management standards"
+          },
+          {
+            "key": "aml_sanctions",
+            "description": "Anti-money laundering, sanctions, or lawful-order compliance"
+          },
+          {
+            "key": "disclosure_reporting_audit",
+            "description": "Disclosures, reports, attestations, or audits"
+          },
+          {
+            "key": "supervision_enforcement",
+            "description": "Supervision, examination, enforcement, or penalties"
+          },
+          {
+            "key": "foreign_issuers",
+            "description": "Foreign payment stablecoin issuers, comparability, or reciprocity"
+          },
+          {
+            "key": "state_regimes",
+            "description": "State-level regulatory regimes and their certification"
+          },
+          {
+            "key": "customer_protection",
+            "description": "Custody of customer assets, insolvency priority, or consumer protection"
+          },
+          {
+            "key": "marketing_restrictions",
+            "description": "Marketing, naming, or representations about stablecoins"
+          },
+          {
+            "key": "definitions_scope",
+            "description": "Definitions or scope of coverage"
+          },
+          {
+            "key": "other",
+            "description": "Something else"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_requirement",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "The Lego piece: everything groups and pairs by area."
+      },
+      {
+        "id": "party",
+        "label": "Who it binds",
+        "kind": "choice",
+        "question": "Who does this provision primarily apply to?",
+        "options": [
+          {
+            "key": "permitted_issuer",
+            "description": "Payment stablecoin issuers in general"
+          },
+          {
+            "key": "bank_subsidiary_issuer",
+            "description": "Subsidiaries of insured depository institutions that issue stablecoins"
+          },
+          {
+            "key": "nonbank_issuer",
+            "description": "Federal or state qualified nonbank issuers"
+          },
+          {
+            "key": "foreign_issuer",
+            "description": "Foreign payment stablecoin issuers"
+          },
+          {
+            "key": "service_providers",
+            "description": "Custodians, digital asset service providers, or other intermediaries"
+          },
+          {
+            "key": "regulators",
+            "description": "Federal or state regulators, Treasury, or the Certification Review Committee"
+          },
+          {
+            "key": "other",
+            "description": "Someone else or unspecified"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_requirement",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Distribution of obligations across actors."
+      },
+      {
+        "id": "prescriptiveness",
+        "label": "Prescriptiveness",
+        "kind": "score",
+        "question": "How specific is this provision?",
+        "options": [],
+        "levels": [
+          "Principle: states a goal or general standard",
+          "Moderately specific",
+          "Highly specific: numbers, lists, forms, or deadlines"
+        ],
+        "when": [
+          {
+            "field": "is_requirement",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Statutes set principles; rules should add specifics. This measures it."
+      }
+    ],
+    "relations": {
+      "enabled": true,
+      "label": "Statute ↔ implementing rules",
+      "question": "Does requirement B implement, elaborate, or operationalize statutory requirement A?",
+      "options": [
+        {
+          "key": "implements",
+          "description": "B implements, elaborates, or operationalizes A"
+        },
+        {
+          "key": "related",
+          "description": "B addresses the same topic but not A's specific requirement"
+        },
+        {
+          "key": "unrelated",
+          "description": "B has nothing to do with A"
+        }
+      ],
+      "none_option": "unrelated",
+      "candidates": [
+        {
+          "field": "is_requirement",
+          "op": "yes",
+          "values": [],
+          "threshold": 0.5
+        }
+      ],
+      "anchor_docs": [
+        "genius-act"
+      ],
+      "block_by": "area",
+      "cross_document": true,
+      "pairs_per_row": 3,
+      "max_pairs": 1800
+    },
+    "views": [
+      {
+        "id": "v_cov",
+        "type": "coverage",
+        "title": "Share of GENIUS Act provisions with an implementing provision, by area",
+        "why": "Where rulemaking has caught up with the statute.",
+        "x": "area",
+        "y": "",
+        "where": [
+          {
+            "field": "doc",
+            "op": "in",
+            "values": [
+              "genius-act"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_mix",
+        "type": "heatmap",
+        "title": "Provisions by area and document",
+        "why": "Which rule carries which part of the load.",
+        "x": "area",
+        "y": "doc",
+        "where": [
+          {
+            "field": "is_requirement",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_net",
+        "type": "network",
+        "title": "Statute ↔ rule links",
+        "why": "Each edge is a pair Jev judged as implementing or related.",
+        "x": "doc",
+        "y": "",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_spec",
+        "type": "heatmap",
+        "title": "Prescriptiveness by document",
+        "why": "Rules should be more specific than the statute.",
+        "x": "prescriptiveness",
+        "y": "doc",
+        "where": [
+          {
+            "field": "is_requirement",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_party",
+        "type": "bar",
+        "title": "Who the provisions bind",
+        "why": "Distribution of obligations across actors.",
+        "x": "party",
+        "y": "",
+        "where": [
+          {
+            "field": "is_requirement",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_gaps",
+        "type": "table",
+        "title": "GENIUS Act provisions with no implementing provision yet",
+        "why": "Candidates for future rulemaking.",
+        "x": "area",
+        "y": "party",
+        "where": [
+          {
+            "field": "doc",
+            "op": "in",
+            "values": [
+              "genius-act"
+            ],
+            "threshold": 0
+          },
+          {
+            "field": "linked",
+            "op": "in",
+            "values": [
+              "no"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "prescriptiveness",
+        "top": 25
+      }
+    ]
+  },
+  "lastRun": {
+    "at": "2026-10-04T16:23:41.293Z",
+    "rows": 1556,
+    "predicates": 7295,
+    "wallMs": 44903,
+    "costUsd": 0
+  }
+}

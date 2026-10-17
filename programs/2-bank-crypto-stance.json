@@ -1,0 +1,277 @@
+{
+  "question": "How has the U.S. regulatory stance on banks engaging in crypto activities shifted over time, and for which activities?",
+  "author": "authored by Claude (in chat)",
+  "program": {
+    "title": "Bank crypto activities: the stance over time",
+    "thesis": "Find every passage about whether banks may engage in crypto-asset or stablecoin activities, classify the activity and how permissive the passage is, and flag reversals of earlier restrictions. Grouping by year and issuer shows the policy swing.",
+    "unit": {
+      "level": "paragraph",
+      "docs": [
+        "occ-1170",
+        "occ-1179",
+        "occ-1183",
+        "occ-1184",
+        "fed-withdrawal",
+        "nydfs-stablecoin",
+        "eo-14178",
+        "pwg-report",
+        "genius-act"
+      ],
+      "where": [
+        {
+          "field": "modality",
+          "op": "in",
+          "values": [
+            "must",
+            "must_not",
+            "may",
+            "context"
+          ],
+          "threshold": 0
+        }
+      ],
+      "rationale": "Substantive paragraphs from bank-regulator letters, the Fed's withdrawal, NYDFS guidance, the executive order, the PWG report, and the GENIUS Act."
+    },
+    "doc_notes": [
+      {
+        "doc": "occ-1170",
+        "note": "OCC interpretive letter from July 2020 on national bank authority to provide cryptocurrency custody services."
+      },
+      {
+        "doc": "occ-1179",
+        "note": "OCC interpretive letter from November 2021 addressing whether national banks may engage in crypto custody, stablecoin reserve, and node activities, and the supervisory process that applies before they do."
+      },
+      {
+        "doc": "occ-1183",
+        "note": "OCC interpretive letter from March 2025 addressing crypto-asset custody, distributed ledger, and stablecoin activities by national banks, including the status of earlier OCC supervisory requirements for these activities."
+      },
+      {
+        "doc": "occ-1184",
+        "note": "OCC interpretive letter from May 2025 on crypto-asset custody and execution services by national banks."
+      },
+      {
+        "doc": "fed-withdrawal",
+        "note": "Federal Reserve Board press release from April 2025 withdrawing earlier guidance to banks about crypto-asset and dollar token activities."
+      },
+      {
+        "doc": "pwg-report",
+        "note": "July 2025 report of the President's Working Group on Digital Asset Markets; it describes policy history and makes recommendations rather than binding rules."
+      }
+    ],
+    "nodes": [
+      {
+        "id": "about_banks",
+        "label": "About banks + crypto?",
+        "kind": "noul",
+        "question": "Does this text address whether or how banks, bank holding companies, or other insured depository institutions may engage in crypto-asset, stablecoin, or blockchain activities?",
+        "options": [],
+        "levels": [],
+        "when": [],
+        "why": "Gate."
+      },
+      {
+        "id": "activity",
+        "label": "Activity",
+        "kind": "choice",
+        "question": "Which bank activity is this about?",
+        "options": [
+          {
+            "key": "custody",
+            "description": "Custody or safekeeping of crypto assets"
+          },
+          {
+            "key": "stablecoins",
+            "description": "Issuing stablecoins or holding stablecoin reserves"
+          },
+          {
+            "key": "nodes_validation",
+            "description": "Operating blockchain nodes or validating transactions"
+          },
+          {
+            "key": "trading_execution",
+            "description": "Buying, selling, or executing crypto trades for customers"
+          },
+          {
+            "key": "payments_settlement",
+            "description": "Payments or settlement using blockchain or tokens"
+          },
+          {
+            "key": "general",
+            "description": "Crypto activities in general"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "about_banks",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "What the stance applies to."
+      },
+      {
+        "id": "stance",
+        "label": "Stance",
+        "kind": "score",
+        "question": "How permissive toward banks is this text about the activity?",
+        "options": [],
+        "levels": [
+          "Discourages or restricts",
+          "Permitted only with prior supervisory approval or non-objection",
+          "Permitted with conditions such as risk management",
+          "Clearly permitted or encouraged"
+        ],
+        "when": [
+          {
+            "field": "about_banks",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "The dependent variable."
+      },
+      {
+        "id": "reverses_prior",
+        "label": "Reverses earlier policy?",
+        "kind": "noul",
+        "question": "Does this text withdraw, rescind, or reverse an earlier restriction, requirement, or guidance on bank crypto activities?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "about_banks",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Marks the turning points."
+      }
+    ],
+    "relations": {
+      "enabled": false,
+      "label": "",
+      "question": "",
+      "options": [],
+      "none_option": "",
+      "candidates": [],
+      "anchor_docs": [],
+      "block_by": "",
+      "cross_document": false,
+      "pairs_per_row": 0,
+      "max_pairs": 0
+    },
+    "views": [
+      {
+        "id": "v_n",
+        "type": "stat",
+        "title": "Passages about bank crypto activities",
+        "why": "Size of the evidence base.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "about_banks",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_year",
+        "type": "bar",
+        "title": "Average permissiveness by year (0 = restricts, 3 = clearly permitted)",
+        "why": "The policy swing over time.",
+        "x": "year",
+        "y": "",
+        "where": [
+          {
+            "field": "about_banks",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "mean",
+        "measure_field": "stance",
+        "top": 0
+      },
+      {
+        "id": "v_issuer",
+        "type": "heatmap",
+        "title": "Stance by issuer",
+        "why": "Who says what.",
+        "x": "stance",
+        "y": "issuer",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_act",
+        "type": "heatmap",
+        "title": "Activities by document",
+        "why": "Which activities each document addresses.",
+        "x": "activity",
+        "y": "doc",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_rev",
+        "type": "bar",
+        "title": "Reversals of earlier policy, by document",
+        "why": "Where the turning points are.",
+        "x": "doc",
+        "y": "",
+        "where": [
+          {
+            "field": "reverses_prior",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_rows",
+        "type": "table",
+        "title": "Most permissive passages",
+        "why": "The language behind the shift.",
+        "x": "activity",
+        "y": "reverses_prior",
+        "where": [
+          {
+            "field": "about_banks",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "stance",
+        "top": 15
+      }
+    ]
+  },
+  "lastRun": {
+    "at": "2026-10-01T19:43:15.439Z",
+    "rows": 1603,
+    "predicates": 2086,
+    "wallMs": 51562,
+    "costUsd": 0.029475810000000005
+  }
+}

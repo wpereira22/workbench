@@ -1,0 +1,469 @@
+{
+  "question": "Where the Fed NPRM goes beyond restating the statute, which capital, liquidity and reserve requirements add numbers or deadlines the Act does not contain?",
+  "author": "planned by Claude Code (claude-fable-5-1)",
+  "program": {
+    "title": "Fed GENIUS NPRM: numbers and deadlines beyond the Act",
+    "thesis": "Classify each Fed NPRM and GENIUS Act paragraph by prudential topic and whether it states a concrete number or deadline, then pair NPRM requirements with their closest statutory provisions to see which NPRM quantities and time limits have no counterpart in the Act.",
+    "unit": {
+      "level": "paragraph",
+      "docs": [
+        "fed-genius-nprm",
+        "genius-act"
+      ],
+      "where": [
+        {
+          "field": "modality",
+          "op": "in",
+          "values": [
+            "must",
+            "must_not",
+            "may",
+            "defines"
+          ],
+          "threshold": 0
+        },
+        {
+          "field": "section_role",
+          "op": "not_in",
+          "values": [
+            "impact_analysis",
+            "request_for_comment"
+          ],
+          "threshold": 0
+        }
+      ],
+      "rationale": "Numbers and deadlines live in individual obligations; paragraph units from the NPRM and the Act let each proposed requirement be compared with the statutory text it implements."
+    },
+    "doc_notes": [
+      {
+        "doc": "fed-genius-nprm",
+        "note": "Federal Reserve Board proposed rule (2026) implementing the Board's responsibilities under the GENIUS Act (Public Law 119-27, 'the Act'). Covers payment stablecoin issuers supervised by the Board, including subsidiaries of state member banks; proposes text in 12 CFR Parts 208, 211, 217, 247 (Regulation UU) and 263. Proposed, not yet binding."
+      },
+      {
+        "doc": "genius-act",
+        "note": "GENIUS Act, Public Law 119-27, enacted July 18, 2025: the statute governing permitted payment stablecoin issuers. It sets reserve, redemption, disclosure and supervisory requirements and directs regulators to issue capital, liquidity and risk-management rules. This is 'the Act' that the Fed NPRM implements."
+      }
+    ],
+    "nodes": [
+      {
+        "id": "is_prudential",
+        "label": "Prudential requirement",
+        "kind": "noul",
+        "question": "Does this paragraph state or define a requirement, limit or standard concerning capital, liquidity, or reserves backing payment stablecoins (including reserve composition, custody, redemption timing, or reserve reporting/attestation)? See scope_note.",
+        "options": [],
+        "levels": [],
+        "when": [],
+        "why": "Cheap gate to the three topics the question asks about."
+      },
+      {
+        "id": "topic",
+        "label": "Prudential topic",
+        "kind": "choice",
+        "question": "Which prudential topic does this paragraph mainly address?",
+        "options": [
+          {
+            "key": "capital",
+            "description": "Capital requirements, capital ratios, buffers, minimum capital amounts"
+          },
+          {
+            "key": "liquidity",
+            "description": "Liquidity requirements, liquid asset buffers, redemption timing and liquidity risk management"
+          },
+          {
+            "key": "reserve_composition",
+            "description": "What assets may back the stablecoin, the 1:1 backing ratio, maturity or concentration limits"
+          },
+          {
+            "key": "reserve_custody_use",
+            "description": "Segregation, custody, rehypothecation or pledging of reserves"
+          },
+          {
+            "key": "reserve_reporting",
+            "description": "Reserve disclosure, monthly reports, attestations, examinations or certifications"
+          },
+          {
+            "key": "other",
+            "description": "Some other prudential matter or none of the above"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_prudential",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Groups findings by capital, liquidity and reserve subtopics and blocks pairing."
+      },
+      {
+        "id": "has_number",
+        "label": "States a number",
+        "kind": "noul",
+        "question": "Does this paragraph state a specific quantitative threshold or parameter (a percentage, ratio, dollar amount, maturity in days, count, or cap)? Ignore section numbers, citations and dates of enactment.",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_prudential",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Identifies quantified requirements."
+      },
+      {
+        "id": "has_deadline",
+        "label": "States a deadline",
+        "kind": "noul",
+        "question": "Does this paragraph set a specific deadline, time limit, or frequency for doing something (e.g. within N days, monthly, annually, by a stated date)?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_prudential",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Identifies time-bound requirements; more targeted than the base deadline field."
+      },
+      {
+        "id": "quant_kind",
+        "label": "Quantity type",
+        "kind": "choice",
+        "question": "What kind of specific figure or time element does this paragraph mainly contain?",
+        "options": [
+          {
+            "key": "ratio_or_percent",
+            "description": "A percentage or ratio (e.g. capital ratio, backing ratio, concentration limit)"
+          },
+          {
+            "key": "dollar_amount",
+            "description": "A dollar amount or size threshold"
+          },
+          {
+            "key": "maturity_or_duration",
+            "description": "A maturity limit or duration of an asset or instrument"
+          },
+          {
+            "key": "action_deadline",
+            "description": "A time limit to act, such as redeeming, notifying, or curing a shortfall"
+          },
+          {
+            "key": "recurring_frequency",
+            "description": "A recurring frequency such as daily, monthly, quarterly, annual"
+          },
+          {
+            "key": "none",
+            "description": "No specific figure or time element"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_prudential",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Shows what sort of specifics are present."
+      },
+      {
+        "id": "beyond_statute",
+        "label": "Relation to Act",
+        "kind": "choice",
+        "question": "Using scope_note, how does this Fed proposed-rule paragraph present its requirement relative to the GENIUS Act?",
+        "options": [
+          {
+            "key": "restates_act",
+            "description": "Repeats or closely paraphrases what the Act itself requires, or cites the Act as setting this requirement"
+          },
+          {
+            "key": "specifies_act",
+            "description": "Fills in detail (a number, deadline, method or definition) for a requirement the Act states only in general terms or delegates to regulators"
+          },
+          {
+            "key": "new_requirement",
+            "description": "Imposes a requirement the Board adds on its own authority, not traceable to a specific statutory requirement"
+          },
+          {
+            "key": "unclear",
+            "description": "Cannot be told from the paragraph"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_prudential",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          },
+          {
+            "field": "doc",
+            "op": "in",
+            "values": [
+              "fed-genius-nprm"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Single-unit estimate of whether the NPRM goes beyond restating; corroborated by the pairwise relation."
+      },
+      {
+        "id": "specificity",
+        "label": "Specificity",
+        "kind": "score",
+        "question": "How concrete is the requirement in this paragraph?",
+        "options": [],
+        "levels": [
+          "General principle or objective only",
+          "Qualitative standard with no figures or timing",
+          "Names a figure or timing but leaves it to be determined later or case by case",
+          "States one explicit number or deadline",
+          "States multiple explicit numbers, deadlines or a full formula"
+        ],
+        "when": [
+          {
+            "field": "is_prudential",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Lets the NPRM's concreteness be compared with the Act's by topic."
+      }
+    ],
+    "relations": {
+      "enabled": true,
+      "label": "NPRM vs Act",
+      "question": "A and B are prudential provisions, one from the Fed proposed rule and one from the GENIUS Act. How does the proposed-rule provision relate to the statutory provision?",
+      "options": [
+        {
+          "key": "same_number_or_deadline",
+          "description": "Both address the same requirement and the Act already contains the same number or deadline the rule states (or neither has one): the rule restates the statute"
+        },
+        {
+          "key": "adds_number_or_deadline",
+          "description": "Both address the same requirement, but the rule states a number, threshold, deadline or frequency that the statutory provision does not contain"
+        },
+        {
+          "key": "different_number_or_deadline",
+          "description": "Both address the same requirement and both state a number or deadline, but the values differ"
+        },
+        {
+          "key": "unrelated",
+          "description": "They address different requirements"
+        }
+      ],
+      "none_option": "unrelated",
+      "candidates": [
+        {
+          "field": "is_prudential",
+          "op": "yes",
+          "values": [],
+          "threshold": 0.5
+        },
+        {
+          "field": "topic",
+          "op": "not_in",
+          "values": [
+            "other"
+          ],
+          "threshold": 0
+        }
+      ],
+      "anchor_docs": [
+        "fed-genius-nprm"
+      ],
+      "block_by": "topic",
+      "cross_document": true,
+      "pairs_per_row": 4,
+      "max_pairs": 2000
+    },
+    "views": [
+      {
+        "id": "headline",
+        "type": "stat",
+        "title": "NPRM prudential paragraphs going beyond the Act with a number or deadline",
+        "why": "Headline count of proposed requirements that specify or add to the statute.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "doc",
+            "op": "in",
+            "values": [
+              "fed-genius-nprm"
+            ],
+            "threshold": 0
+          },
+          {
+            "field": "beyond_statute",
+            "op": "in",
+            "values": [
+              "specifies_act",
+              "new_requirement"
+            ],
+            "threshold": 0
+          },
+          {
+            "field": "specificity",
+            "op": "gte",
+            "values": [],
+            "threshold": 4
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "topic_by_relation",
+        "type": "heatmap",
+        "title": "NPRM: topic by relation to the Act",
+        "why": "Shows which of capital, liquidity and reserve topics are restated versus specified or newly added.",
+        "x": "topic",
+        "y": "beyond_statute",
+        "where": [
+          {
+            "field": "doc",
+            "op": "in",
+            "values": [
+              "fed-genius-nprm"
+            ],
+            "threshold": 0
+          },
+          {
+            "field": "is_prudential",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "topic_by_quant",
+        "type": "heatmap",
+        "title": "What kind of numbers and deadlines the NPRM adds, by topic",
+        "why": "Breaks the additions into ratios, dollar amounts, maturities, deadlines and frequencies.",
+        "x": "topic",
+        "y": "quant_kind",
+        "where": [
+          {
+            "field": "doc",
+            "op": "in",
+            "values": [
+              "fed-genius-nprm"
+            ],
+            "threshold": 0
+          },
+          {
+            "field": "beyond_statute",
+            "op": "in",
+            "values": [
+              "specifies_act",
+              "new_requirement"
+            ],
+            "threshold": 0
+          },
+          {
+            "field": "quant_kind",
+            "op": "not_in",
+            "values": [
+              "none"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "specificity_by_doc",
+        "type": "heatmap",
+        "title": "Mean specificity: Act vs NPRM by topic",
+        "why": "Where the NPRM is markedly more concrete than the Act, it is supplying the figures.",
+        "x": "topic",
+        "y": "doc",
+        "where": [
+          {
+            "field": "is_prudential",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "mean",
+        "measure_field": "specificity",
+        "top": 0
+      },
+      {
+        "id": "network",
+        "type": "network",
+        "title": "NPRM provisions linked to Act provisions",
+        "why": "Shows which statutory provisions each proposed requirement matches, adds to or departs from.",
+        "x": "doc",
+        "y": "",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "rows",
+        "type": "table",
+        "title": "NPRM requirements with numbers or deadlines beyond the Act",
+        "why": "The actual paragraphs to read, most concrete first.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "doc",
+            "op": "in",
+            "values": [
+              "fed-genius-nprm"
+            ],
+            "threshold": 0
+          },
+          {
+            "field": "beyond_statute",
+            "op": "in",
+            "values": [
+              "specifies_act",
+              "new_requirement"
+            ],
+            "threshold": 0
+          },
+          {
+            "field": "quant_kind",
+            "op": "not_in",
+            "values": [
+              "none"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "specificity",
+        "top": 50
+      }
+    ]
+  },
+  "lastRun": {
+    "at": "2026-10-01T21:21:51.151Z",
+    "rows": 1299,
+    "predicates": 3906,
+    "wallMs": 184,
+    "costUsd": 0
+  }
+}

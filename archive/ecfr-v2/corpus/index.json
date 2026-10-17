@@ -1,0 +1,86 @@
+[
+ {
+  "id": "ftc-safeguards",
+  "title": "FTC Safeguards Rule",
+  "citation": "16 CFR Part 314",
+  "sections": 6,
+  "paragraphs": 176
+ },
+ {
+  "id": "coppa",
+  "title": "Children's Online Privacy Protection Rule (COPPA)",
+  "citation": "16 CFR Part 312",
+  "sections": 13,
+  "paragraphs": 180
+ },
+ {
+  "id": "can-spam",
+  "title": "CAN-SPAM Rule",
+  "citation": "16 CFR Part 316",
+  "sections": 6,
+  "paragraphs": 54
+ },
+ {
+  "id": "red-flags",
+  "title": "Identity Theft Red Flags Rule",
+  "citation": "16 CFR Part 681",
+  "sections": 3,
+  "paragraphs": 151
+ },
+ {
+  "id": "telemarketing",
+  "title": "Telemarketing Sales Rule",
+  "citation": "16 CFR Part 310",
+  "sections": 9,
+  "paragraphs": 257
+ },
+ {
+  "id": "endorsements",
+  "title": "Guides Concerning Endorsements and Testimonials in Advertising",
+  "citation": "16 CFR Part 255",
+  "sections": 7,
+  "paragraphs": 123
+ },
+ {
+  "id": "hipaa-security",
+  "title": "HIPAA Security Rule",
+  "citation": "45 CFR Part 164, Subpart C",
+  "sections": 10,
+  "paragraphs": 180
+ },
+ {
+  "id": "hipaa-breach",
+  "title": "HIPAA Breach Notification Rule",
+  "citation": "45 CFR Part 164, Subpart D",
+  "sections": 8,
+  "paragraphs": 48
+ },
+ {
+  "id": "sec-cyber",
+  "title": "SEC Regulation S-K Item 106: Cybersecurity",
+  "citation": "17 CFR 229.106",
+  "sections": 1,
+  "paragraphs": 17
+ },
+ {
+  "id": "cdd-rule",
+  "title": "FinCEN Customer Due Diligence Rule",
+  "citation": "31 CFR 1010.230",
+  "sections": 1,
+  "paragraphs": 52
+ },
+ {
+  "id": "reg-sp",
+  "title": "SEC Regulation S-P §248.30 (2024 amendments): Safeguards, Incident Response & Customer Notice",
+  "citation": "17 CFR 248.30",
+  "sections": 1,
+  "paragraphs": 68
+ },
+ {
+  "id": "reg-bi",
+  "title": "SEC Regulation Best Interest",
+  "citation": "17 CFR 240.15l-1",
+  "sections": 1,
+  "paragraphs": 25
+ }
+]

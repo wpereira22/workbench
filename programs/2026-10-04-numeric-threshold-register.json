@@ -1,0 +1,2665 @@
+{
+  "question": "Collect every numeric threshold across the library (dollar amounts, percentages, ratios, day counts): what it limits, who it applies to, and where it comes from.",
+  "author": "planned by Claude Code (claude-fable-5-1)",
+  "program": {
+    "title": "Numeric threshold register",
+    "thesis": "Every operative paragraph is gated on whether it states a real numeric threshold, then classified by number type, what it limits, who it binds, and how it bites; source falls out of doc, issuer and legal_force. Cross-document pairs then show where the same number recurs or diverges between statute, rules and guidance.",
+    "unit": {
+      "level": "paragraph",
+      "docs": [
+        "clarity-act",
+        "eo-14178",
+        "fca-ps23-6",
+        "fed-genius-applications",
+        "fed-genius-nprm",
+        "fed-withdrawal",
+        "fincen-2013",
+        "fincen-2019",
+        "fsb-stablecoin-recs",
+        "genius-act",
+        "irs-notice-2014-21",
+        "irs-rr-2023-14",
+        "nydfs-stablecoin",
+        "occ-1170",
+        "occ-1179",
+        "occ-1183",
+        "occ-1184",
+        "pwg-report",
+        "sec-stablecoins",
+        "treasury-issuance-nprm",
+        "treasury-state-cert"
+      ],
+      "where": [
+        {
+          "field": "modality",
+          "op": "in",
+          "values": [
+            "must",
+            "must_not",
+            "may",
+            "defines"
+          ],
+          "threshold": 0
+        },
+        {
+          "field": "section_role",
+          "op": "not_in",
+          "values": [
+            "impact_analysis",
+            "request_for_comment"
+          ],
+          "threshold": 0
+        }
+      ],
+      "rationale": "A threshold lives in a single sentence or clause, so paragraphs are the right grain. Duplicate copies (Treasury print edition, scanned OCC 1184) and the academic DeFi paper are left out; purely contextual paragraphs, cost estimates and comment questions are filtered out to keep the set to operative text, at the cost of missing numbers mentioned only in background discussion."
+    },
+    "doc_notes": [
+      {
+        "doc": "genius-act",
+        "note": "Enacted US federal statute (2025) regulating payment stablecoins. Obligations mostly fall on permitted payment stablecoin issuers (bank subsidiaries, federal qualified issuers, state qualified issuers) and on federal and state regulators implementing it."
+      },
+      {
+        "doc": "clarity-act",
+        "note": "House-passed bill (not enacted) on digital commodity market structure. Covers digital commodity issuers, exchanges, brokers and dealers, and splits SEC and CFTC jurisdiction; Title VI restricts a Federal Reserve central bank digital currency."
+      },
+      {
+        "doc": "fed-genius-nprm",
+        "note": "Proposed (not final) Federal Reserve rule implementing the GENIUS Act for Board-supervised payment stablecoin issuers and banking organizations. Many numbers restate or implement GENIUS Act requirements."
+      },
+      {
+        "doc": "fed-genius-applications",
+        "note": "Proposed (not final) Federal Reserve rule on application procedures for Board-supervised insured depository institutions seeking approval to issue payment stablecoins through a subsidiary under the GENIUS Act."
+      },
+      {
+        "doc": "treasury-issuance-nprm",
+        "note": "Proposed (not final) Treasury rule under the GENIUS Act on issuance, offer and sale of payment stablecoins (12 CFR Part 1523)."
+      },
+      {
+        "doc": "treasury-state-cert",
+        "note": "Treasury rule (12 CFR Part 1522) on forms and procedures for the Stablecoin Certification Review Committee's review of state certifications under the GENIUS Act. Applies mainly to state regulators and the Committee."
+      },
+      {
+        "doc": "fincen-2013",
+        "note": "FinCEN interpretive guidance applying Bank Secrecy Act money services business rules to users, administrators and exchangers of virtual currency."
+      },
+      {
+        "doc": "fincen-2019",
+        "note": "FinCEN interpretive guidance applying Bank Secrecy Act money transmission rules to business models involving convertible virtual currency (CVC)."
+      },
+      {
+        "doc": "nydfs-stablecoin",
+        "note": "New York DFS guidance for DFS-regulated issuers of US dollar-backed stablecoins, covering redeemability, reserves and attestations."
+      },
+      {
+        "doc": "fca-ps23-6",
+        "note": "UK Financial Conduct Authority policy statement on financial promotion rules for cryptoassets. Applies to firms communicating or approving cryptoasset promotions to UK consumers; not US law."
+      },
+      {
+        "doc": "fsb-stablecoin-recs",
+        "note": "Non-binding international Financial Stability Board recommendations addressed to national authorities on global stablecoin arrangements."
+      },
+      {
+        "doc": "irs-notice-2014-21",
+        "note": "IRS notice treating virtual currency as property for US federal tax purposes. Applies to taxpayers and to payers with information reporting duties."
+      },
+      {
+        "doc": "pwg-report",
+        "note": "Non-binding White House working group policy report. Its numbers are mostly recommendations or descriptions of existing or proposed law, not rules of its own."
+      },
+      {
+        "doc": "sec-stablecoins",
+        "note": "Non-binding SEC staff statement on when certain reserve-backed 'covered stablecoins' are not securities."
+      }
+    ],
+    "nodes": [
+      {
+        "id": "has_threshold",
+        "label": "States numeric threshold",
+        "kind": "noul",
+        "question": "Does this paragraph state a specific numeric threshold that limits, triggers, or measures a legal or regulatory requirement, such as a dollar amount, a percentage, a ratio, or a count of days, months or years? Answer no if the only numbers are section or citation numbers, calendar dates, page numbers, list numbering, or descriptive statistics with no regulatory effect.",
+        "options": [],
+        "levels": [],
+        "when": [],
+        "why": "Cheap gate so the classifying questions only run on paragraphs that actually carry a threshold."
+      },
+      {
+        "id": "threshold_type",
+        "label": "Number type",
+        "kind": "choice",
+        "question": "What kind of numeric threshold does this paragraph state? If it states several, pick the one most central to the requirement.",
+        "options": [
+          {
+            "key": "dollar_amount",
+            "description": "A monetary amount, e.g. $10,000,000,000 or $600"
+          },
+          {
+            "key": "percentage",
+            "description": "A percentage or basis-point figure, e.g. 20 percent"
+          },
+          {
+            "key": "ratio",
+            "description": "A ratio or multiple, e.g. 1 to 1 backing"
+          },
+          {
+            "key": "time_period",
+            "description": "A count of days, months or years, or a frequency such as monthly or within 180 days"
+          },
+          {
+            "key": "count_other",
+            "description": "A count of something else, e.g. number of persons, votes, transactions or units"
+          },
+          {
+            "key": "other",
+            "description": "A numeric threshold that fits none of the above"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Separates the four kinds of number the question names."
+      },
+      {
+        "id": "limits_what",
+        "label": "What it limits",
+        "kind": "choice",
+        "question": "What does the numeric threshold in this paragraph limit or govern? Use scope_note for the document's subject if needed.",
+        "options": [
+          {
+            "key": "reserves_backing",
+            "description": "Reserve composition, backing ratio, or maturity of reserve assets"
+          },
+          {
+            "key": "capital_liquidity",
+            "description": "Capital, liquidity or other prudential financial requirements"
+          },
+          {
+            "key": "size_trigger",
+            "description": "A size or volume threshold that decides which regime, regulator or exemption applies (e.g. issuance or revenue above an amount)"
+          },
+          {
+            "key": "redemption_timing",
+            "description": "How quickly or on what terms redemption or customer payout must happen"
+          },
+          {
+            "key": "reporting_disclosure",
+            "description": "Frequency or deadline for reports, attestations, disclosures, notices or recordkeeping"
+          },
+          {
+            "key": "application_review",
+            "description": "Deadlines for applications, approvals, certifications or agency review decisions"
+          },
+          {
+            "key": "rulemaking_effective",
+            "description": "Deadlines for agencies to issue rules or studies, effective dates, transition and comment periods"
+          },
+          {
+            "key": "ownership_control",
+            "description": "Ownership, voting, control or decentralization thresholds"
+          },
+          {
+            "key": "offering_transaction_limit",
+            "description": "Caps on offering size, sales, investment amounts, or per-transaction limits"
+          },
+          {
+            "key": "penalty",
+            "description": "Fine, penalty or imprisonment amounts"
+          },
+          {
+            "key": "tax_aml_reporting",
+            "description": "Tax or anti-money-laundering reporting or filing thresholds"
+          },
+          {
+            "key": "other",
+            "description": "Anything else"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Answers 'what it limits' and gives the grouping used to pair like thresholds across documents."
+      },
+      {
+        "id": "applies_to",
+        "label": "Who it applies to",
+        "kind": "choice",
+        "question": "Who must comply with or is directly measured by the numeric threshold in this paragraph? Use scope_note to identify the covered parties if the paragraph does not name them.",
+        "options": [
+          {
+            "key": "stablecoin_issuer",
+            "description": "Payment stablecoin issuers or stablecoin arrangements"
+          },
+          {
+            "key": "bank",
+            "description": "Banks, depository institutions or their holding companies, other than as stablecoin issuers"
+          },
+          {
+            "key": "digital_asset_intermediary",
+            "description": "Exchanges, brokers, dealers, custodians or other digital asset service providers"
+          },
+          {
+            "key": "digital_asset_issuer",
+            "description": "Issuers or developers of digital assets other than stablecoins, including blockchain projects"
+          },
+          {
+            "key": "money_services_business",
+            "description": "Money transmitters and other money services businesses"
+          },
+          {
+            "key": "federal_agency",
+            "description": "A federal regulator or other federal body that must act within the limit"
+          },
+          {
+            "key": "state_regulator",
+            "description": "State regulators or state regimes"
+          },
+          {
+            "key": "investor_taxpayer",
+            "description": "Individual investors, consumers, customers or taxpayers"
+          },
+          {
+            "key": "other",
+            "description": "Another party, or not determinable"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Answers 'who it applies to' in a form that can be counted and cross-tabulated."
+      },
+      {
+        "id": "threshold_function",
+        "label": "How it bites",
+        "kind": "choice",
+        "question": "How does the numeric threshold in this paragraph operate?",
+        "options": [
+          {
+            "key": "maximum",
+            "description": "A ceiling that must not be exceeded"
+          },
+          {
+            "key": "minimum",
+            "description": "A floor that must be met or exceeded"
+          },
+          {
+            "key": "deadline",
+            "description": "A time limit by which something must be done"
+          },
+          {
+            "key": "frequency",
+            "description": "A recurring interval, e.g. monthly or annually"
+          },
+          {
+            "key": "trigger",
+            "description": "Crossing the number changes which rules, regulator or status applies"
+          },
+          {
+            "key": "fixed_value",
+            "description": "An exact required value or a penalty amount"
+          },
+          {
+            "key": "other",
+            "description": "None of the above"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Distinguishes caps, floors, deadlines and triggers, which read very differently in a register."
+      },
+      {
+        "id": "borrowed_number",
+        "label": "Borrowed from elsewhere",
+        "kind": "noul",
+        "question": "Does this paragraph attribute its numeric threshold to another law, rule or document (for example by restating or citing a statutory requirement) rather than setting the number itself?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Refines 'where it comes from': separates the original source of a number from documents that repeat it."
+      },
+      {
+        "id": "binding_status",
+        "label": "Legal force",
+        "kind": "choice",
+        "question": "What is the legal force of the numeric threshold as stated in this paragraph? Use scope_note to identify the type of document (statute, bill, proposed rule, final rule, guidance, report).",
+        "options": [
+          {
+            "key": "enacted_statute",
+            "description": "Set by an enacted statute or executive order that is in force"
+          },
+          {
+            "key": "pending_bill",
+            "description": "Set by a bill that has not been enacted"
+          },
+          {
+            "key": "final_rule",
+            "description": "Set by a final, binding regulation or rule text"
+          },
+          {
+            "key": "proposed_rule",
+            "description": "Set or proposed in a proposed rule, including proposed rule text and preamble proposals"
+          },
+          {
+            "key": "guidance",
+            "description": "Stated in agency guidance, interpretive letter, notice, ruling or staff statement"
+          },
+          {
+            "key": "recommendation",
+            "description": "Recommended or discussed in a policy report or international standard, not binding"
+          },
+          {
+            "key": "descriptive",
+            "description": "Only describes or summarizes a threshold existing elsewhere, or uses the number in an example or cost estimate"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "The question asks where each number comes from; legal force separates binding numbers from proposals and commentary.",
+        "gen": 1
+      },
+      {
+        "id": "multi_threshold",
+        "label": "Multiple thresholds",
+        "kind": "noul",
+        "question": "Does this paragraph state two or more distinct numeric thresholds (for example a dollar amount and a day count, or two different percentages) rather than a single one?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Flags rows where the single-choice classification hides additional numbers that a full register must capture.",
+        "gen": 1
+      },
+      {
+        "id": "borrowed_source",
+        "label": "Source of number",
+        "kind": "choice",
+        "question": "This paragraph attributes its numeric threshold to another law, rule or document. Which source does the number come from?",
+        "options": [
+          {
+            "key": "genius_act",
+            "description": "The GENIUS Act (payment stablecoin statute), including citations to its sections or 12 U.S.C. 5901 et seq."
+          },
+          {
+            "key": "banking_statute",
+            "description": "Another federal banking statute, such as the Federal Deposit Insurance Act, Bank Holding Company Act, National Bank Act or Federal Reserve Act"
+          },
+          {
+            "key": "securities_commodities_statute",
+            "description": "Federal securities or commodities law, such as the Securities Act, Exchange Act, Investment Company Act or Commodity Exchange Act"
+          },
+          {
+            "key": "bsa_aml",
+            "description": "The Bank Secrecy Act or its implementing AML regulations"
+          },
+          {
+            "key": "tax_code",
+            "description": "The Internal Revenue Code or Treasury tax regulations"
+          },
+          {
+            "key": "procedural_statute",
+            "description": "Procedural or administrative law, such as the Administrative Procedure Act, Paperwork Reduction Act, Regulatory Flexibility Act or Congressional Review Act"
+          },
+          {
+            "key": "existing_regulation",
+            "description": "An existing federal agency regulation, such as capital rules in the CFR, not covered above"
+          },
+          {
+            "key": "state_or_foreign",
+            "description": "A state law or regulation, a foreign law, or an international standard"
+          },
+          {
+            "key": "other",
+            "description": "Another source, or the source is not identifiable"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "borrowed_number",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "The 96 borrowed numbers have no follow-up; naming the source is the direct answer to 'where it comes from'.",
+        "gen": 1
+      },
+      {
+        "id": "time_length_band",
+        "label": "Period length",
+        "kind": "score",
+        "question": "How long is the time period that this paragraph sets as its central numeric threshold?",
+        "options": [],
+        "levels": [
+          "Under 1 week (hours or up to 6 days)",
+          "1 week to 30 days",
+          "31 to 90 days",
+          "91 to 180 days",
+          "181 days to 1 year",
+          "More than 1 year"
+        ],
+        "when": [
+          {
+            "field": "threshold_type",
+            "op": "in",
+            "values": [
+              "time_period"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Time periods are 239 of 376 rows; banding by length makes them comparable across documents.",
+        "gen": 1
+      },
+      {
+        "id": "clock_start",
+        "label": "Clock starts from",
+        "kind": "choice",
+        "question": "From what event does the time period in this paragraph start to run?",
+        "options": [
+          {
+            "key": "enactment",
+            "description": "The date of enactment of an Act"
+          },
+          {
+            "key": "effective_or_publication",
+            "description": "The effective date of a law or rule, or publication in the Federal Register"
+          },
+          {
+            "key": "application_filing",
+            "description": "Receipt or filing of an application, or the application being deemed complete"
+          },
+          {
+            "key": "agency_action",
+            "description": "An agency decision, notice, order, denial or determination"
+          },
+          {
+            "key": "firm_event",
+            "description": "An event at the regulated firm, such as a redemption request, crossing a size threshold, a breach, or a change in control"
+          },
+          {
+            "key": "period_end",
+            "description": "The end of a reporting period, such as month, quarter or fiscal year end"
+          },
+          {
+            "key": "recurring",
+            "description": "No start event; the period is a recurring interval or a duration such as a retention or holding period"
+          },
+          {
+            "key": "other",
+            "description": "Another start event or not stated"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "threshold_type",
+            "op": "in",
+            "values": [
+              "time_period"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "A day count means little without its start event; this turns each time period into a usable register entry.",
+        "gen": 1
+      },
+      {
+        "id": "dollar_magnitude",
+        "label": "Dollar size band",
+        "kind": "score",
+        "question": "How large is the central dollar amount stated in this paragraph (convert foreign currency to an approximate US dollar equivalent)?",
+        "options": [],
+        "levels": [
+          "Under $10,000",
+          "$10,000 to under $1 million",
+          "$1 million to under $1 billion",
+          "$1 billion to under $10 billion",
+          "$10 billion to under $50 billion",
+          "$50 billion or more"
+        ],
+        "when": [
+          {
+            "field": "threshold_type",
+            "op": "in",
+            "values": [
+              "dollar_amount"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Separates small transaction and penalty amounts from the large issuer-size lines such as $10 billion and $50 billion.",
+        "gen": 1
+      },
+      {
+        "id": "size_consequence",
+        "label": "Size trigger effect",
+        "kind": "choice",
+        "question": "What happens when the size threshold in this paragraph is crossed or met?",
+        "options": [
+          {
+            "key": "regulator_shift",
+            "description": "Supervision moves between regulators, for example from a State regime to a Federal regulator"
+          },
+          {
+            "key": "added_requirements",
+            "description": "Additional or stricter requirements apply, such as audited financial statements, capital or governance standards"
+          },
+          {
+            "key": "exemption_relief",
+            "description": "An exemption, exclusion, safe harbor or lighter treatment applies below or above the line"
+          },
+          {
+            "key": "eligibility",
+            "description": "The threshold determines eligibility for a status, license, registration or definition"
+          },
+          {
+            "key": "cease_or_limit",
+            "description": "The entity must stop, limit or wind down an activity"
+          },
+          {
+            "key": "other",
+            "description": "Another consequence or not stated"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "limits_what",
+            "op": "in",
+            "values": [
+              "size_trigger"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "46 size triggers say nothing yet about what the trigger does.",
+        "gen": 1
+      },
+      {
+        "id": "agency_deadline_action",
+        "label": "Agency action due",
+        "kind": "choice",
+        "question": "What must or may the government agency do within or by the numeric threshold in this paragraph?",
+        "options": [
+          {
+            "key": "issue_rules",
+            "description": "Issue, propose or finalize regulations"
+          },
+          {
+            "key": "decide_application",
+            "description": "Act on, approve, deny or deem complete an application or registration"
+          },
+          {
+            "key": "report_study",
+            "description": "Complete a study or submit a report to Congress or the President"
+          },
+          {
+            "key": "notice_hearing",
+            "description": "Give notice, hold a hearing, or take an enforcement or appeal step"
+          },
+          {
+            "key": "review_certify",
+            "description": "Review, certify or determine the status of a State or foreign regulatory regime"
+          },
+          {
+            "key": "comment_period",
+            "description": "Receive public comments or run a consultation period"
+          },
+          {
+            "key": "other",
+            "description": "Another agency action, or the number is not a duty on the agency"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "applies_to",
+            "op": "in",
+            "values": [
+              "federal_agency",
+              "state_regulator"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Agencies account for 122 rows; this distinguishes rulemaking clocks from application and reporting clocks.",
+        "gen": 1
+      },
+      {
+        "id": "other_limit_subject",
+        "label": "Other limit subject",
+        "kind": "choice",
+        "question": "The numeric threshold in this paragraph does not fit the main categories. What does it limit or govern?",
+        "options": [
+          {
+            "key": "custody_segregation",
+            "description": "Custody, segregation or safeguarding of customer assets"
+          },
+          {
+            "key": "marketing_consumer",
+            "description": "Marketing, promotions, cooling-off periods or other consumer protections"
+          },
+          {
+            "key": "recordkeeping",
+            "description": "How long records must be kept"
+          },
+          {
+            "key": "personnel_bars",
+            "description": "Officer, director or employee restrictions, such as conviction bars or post-employment limits"
+          },
+          {
+            "key": "transition_waiver",
+            "description": "Transition periods, safe harbors, waivers or grandfathering"
+          },
+          {
+            "key": "definitional",
+            "description": "A number that is part of a definition, such as maturity limits defining an eligible asset"
+          },
+          {
+            "key": "cost_estimate",
+            "description": "A burden, cost or impact estimate with no direct obligation"
+          },
+          {
+            "key": "none",
+            "description": "None of these"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "limits_what",
+            "op": "in",
+            "values": [
+              "other"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Breaks open the 37-row 'other' bucket of what is limited.",
+        "gen": 1
+      },
+      {
+        "id": "other_party",
+        "label": "Other covered party",
+        "kind": "choice",
+        "question": "The party subject to the numeric threshold in this paragraph does not fit the main categories. Who is it?",
+        "options": [
+          {
+            "key": "consumer_customer",
+            "description": "Consumers, customers or stablecoin holders"
+          },
+          {
+            "key": "custodian_service_provider",
+            "description": "Custodians, auditors, accountants or other service providers"
+          },
+          {
+            "key": "foreign_entity",
+            "description": "Foreign issuers, foreign firms or foreign regulators"
+          },
+          {
+            "key": "individuals_insiders",
+            "description": "Officers, directors, controlling persons or other individuals"
+          },
+          {
+            "key": "congress_executive",
+            "description": "Congress, the President or other non-agency government bodies"
+          },
+          {
+            "key": "any_person",
+            "description": "Any person or the public generally"
+          },
+          {
+            "key": "unclear",
+            "description": "Not identifiable from the paragraph"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "applies_to",
+            "op": "in",
+            "values": [
+              "other"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Breaks open the 37-row 'other' bucket of who the threshold applies to.",
+        "gen": 1
+      },
+      {
+        "id": "issuer_class",
+        "label": "Issuer class",
+        "kind": "choice",
+        "question": "Which class of stablecoin issuer is subject to the numeric threshold in this paragraph? Use scope_note if the paragraph does not name the class.",
+        "options": [
+          {
+            "key": "all_permitted_issuers",
+            "description": "Permitted payment stablecoin issuers generally, with no distinction by charter or regulator"
+          },
+          {
+            "key": "federal_qualified_nonbank",
+            "description": "Federal qualified or OCC-licensed nonbank issuers"
+          },
+          {
+            "key": "bank_subsidiary",
+            "description": "Subsidiaries of insured depository institutions or credit unions, or issuers supervised by the Board, FDIC or NCUA"
+          },
+          {
+            "key": "state_qualified",
+            "description": "State qualified or state-chartered or state-licensed issuers"
+          },
+          {
+            "key": "foreign_issuer",
+            "description": "Foreign payment stablecoin issuers"
+          },
+          {
+            "key": "applicant",
+            "description": "An applicant seeking approval to become an issuer, not yet approved"
+          },
+          {
+            "key": "other_unclear",
+            "description": "Another class of issuer, or the class cannot be determined"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "applies_to",
+            "op": "in",
+            "values": [
+              "stablecoin_issuer"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Stablecoin issuer holds 154 of 377 rows with no breakdown; 'who it applies to' needs the issuer class.",
+        "gen": 2
+      },
+      {
+        "id": "deadline_miss_effect",
+        "label": "Missed deadline effect",
+        "kind": "choice",
+        "question": "What does this paragraph say happens if the deadline or time limit it states is not met?",
+        "options": [
+          {
+            "key": "deemed_approved",
+            "description": "The application or request is deemed approved or takes effect automatically"
+          },
+          {
+            "key": "deemed_denied_or_lapse",
+            "description": "The request is deemed denied, or a status, approval or right lapses or is lost"
+          },
+          {
+            "key": "penalty_enforcement",
+            "description": "A fine, penalty or enforcement action may follow"
+          },
+          {
+            "key": "extension_available",
+            "description": "The period may be extended or tolled"
+          },
+          {
+            "key": "none_stated",
+            "description": "The paragraph states no consequence for missing the deadline"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "threshold_function",
+            "op": "in",
+            "values": [
+              "deadline"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Deadline is the largest function bucket (134) and has no follow-up; the consequence shows how hard each deadline really is.",
+        "gen": 2
+      },
+      {
+        "id": "reporting_item",
+        "label": "What is reported",
+        "kind": "choice",
+        "question": "What report, disclosure or record does the numeric threshold in this paragraph govern?",
+        "options": [
+          {
+            "key": "reserve_report",
+            "description": "Periodic publication or report of reserve composition or outstanding issuance"
+          },
+          {
+            "key": "attestation_audit",
+            "description": "Accountant examination, attestation, certification, or audited financial statements"
+          },
+          {
+            "key": "regulator_filing",
+            "description": "Regular reports or filings submitted to a regulator"
+          },
+          {
+            "key": "event_notice",
+            "description": "Notice of a specific event such as an incident, change, breach or shortfall"
+          },
+          {
+            "key": "customer_disclosure",
+            "description": "Disclosure or notice given to customers, holders or investors"
+          },
+          {
+            "key": "record_retention",
+            "description": "How long records must be kept"
+          },
+          {
+            "key": "other",
+            "description": "Another reporting or disclosure item"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "limits_what",
+            "op": "in",
+            "values": [
+              "reporting_disclosure"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Reporting and disclosure holds 61 rows with no sub-type.",
+        "gen": 2
+      },
+      {
+        "id": "application_step",
+        "label": "Application step",
+        "kind": "choice",
+        "question": "Which step in an application or review process does the numeric threshold in this paragraph govern?",
+        "options": [
+          {
+            "key": "completeness_check",
+            "description": "Regulator determines whether the application is substantially complete, or requests more information"
+          },
+          {
+            "key": "decision",
+            "description": "Regulator approves or denies the application"
+          },
+          {
+            "key": "notice_of_outcome",
+            "description": "Regulator notifies or explains its decision to the applicant"
+          },
+          {
+            "key": "applicant_response",
+            "description": "Applicant supplies information, responds, or reapplies"
+          },
+          {
+            "key": "hearing_appeal",
+            "description": "Request for or conduct of a hearing, appeal or reconsideration"
+          },
+          {
+            "key": "post_approval",
+            "description": "Commencing business, or expiry or conditions after approval"
+          },
+          {
+            "key": "other",
+            "description": "Another step"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "limits_what",
+            "op": "in",
+            "values": [
+              "application_review"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Application review is the largest 'what it limits' bucket (63) and has no breakdown by step.",
+        "gen": 2
+      },
+      {
+        "id": "pct_ratio_base",
+        "label": "Measured against",
+        "kind": "choice",
+        "question": "What quantity is the percentage or ratio in this paragraph measured against?",
+        "options": [
+          {
+            "key": "outstanding_stablecoins",
+            "description": "Value of stablecoins outstanding or issued, including reserve backing ratios such as 1 to 1"
+          },
+          {
+            "key": "assets_or_exposures",
+            "description": "Total assets, reserve assets, or exposure to a single counterparty or asset class"
+          },
+          {
+            "key": "capital_or_expenses",
+            "description": "Capital, operating expenses, or risk-weighted amounts"
+          },
+          {
+            "key": "ownership_voting",
+            "description": "Ownership interests, voting securities, or token supply held or controlled"
+          },
+          {
+            "key": "revenue_or_transactions",
+            "description": "Revenue, transaction value, trading volume, or offering proceeds"
+          },
+          {
+            "key": "tax_or_penalty_base",
+            "description": "An amount of tax, gain, or the base of a penalty"
+          },
+          {
+            "key": "other",
+            "description": "Another base, or not stated"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "threshold_type",
+            "op": "in",
+            "values": [
+              "percentage",
+              "ratio"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "A percentage or ratio is meaningless in a register without its denominator; these 61 rows have no follow-up.",
+        "gen": 2
+      },
+      {
+        "id": "percentage_band",
+        "label": "Percentage size band",
+        "kind": "score",
+        "question": "How large is the central percentage stated in this paragraph?",
+        "options": [],
+        "levels": [
+          "Under 5 percent",
+          "5 to under 10 percent",
+          "10 to under 25 percent",
+          "25 to under 50 percent",
+          "50 to under 100 percent",
+          "100 percent or more"
+        ],
+        "when": [
+          {
+            "field": "threshold_type",
+            "op": "in",
+            "values": [
+              "percentage"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Time and dollar thresholds have magnitude bands; percentages do not.",
+        "gen": 2
+      },
+      {
+        "id": "multi_relation",
+        "label": "How numbers relate",
+        "kind": "choice",
+        "question": "This paragraph states two or more numeric thresholds. How do they relate to each other?",
+        "options": [
+          {
+            "key": "tiers",
+            "description": "Tiers or steps of the same measure, such as different amounts for different sizes or classes"
+          },
+          {
+            "key": "base_plus_extension",
+            "description": "A base period or amount plus an extension, cap or outer limit"
+          },
+          {
+            "key": "amount_with_period",
+            "description": "An amount or percentage paired with the time period over which it is measured or must be met"
+          },
+          {
+            "key": "alternatives",
+            "description": "Alternative tests, where either one applies (greater of, lesser of, or)"
+          },
+          {
+            "key": "sequential_steps",
+            "description": "Successive deadlines for different steps in one process"
+          },
+          {
+            "key": "unrelated",
+            "description": "Separate thresholds for unrelated requirements"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "multi_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "The 60 multi-threshold paragraphs are recorded under a single central number; this shows what the register flattens.",
+        "gen": 2
+      },
+      {
+        "id": "clock_start_other",
+        "label": "Other clock start",
+        "kind": "choice",
+        "question": "The time period in this paragraph does not start from a standard event. What best describes how it runs?",
+        "options": [
+          {
+            "key": "customer_request",
+            "description": "Runs from a request or transaction by a customer or holder, such as a redemption request"
+          },
+          {
+            "key": "standalone_duration",
+            "description": "A term, holding period, lookback, retention or maturity length with no triggering event"
+          },
+          {
+            "key": "fixed_calendar_date",
+            "description": "Measured to or from a fixed calendar date"
+          },
+          {
+            "key": "notice_or_discovery",
+            "description": "Runs from receipt of a notice, or from discovery of a fact"
+          },
+          {
+            "key": "not_stated",
+            "description": "The paragraph does not say when the period starts"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "clock_start",
+            "op": "in",
+            "values": [
+              "other"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "'Other' is the second-largest clock-start bucket (49).",
+        "gen": 2
+      },
+      {
+        "id": "number_basis",
+        "label": "Basis for number",
+        "kind": "choice",
+        "question": "This paragraph sets its numeric threshold without attributing it to another law. What basis, if any, does it give for the number chosen?",
+        "options": [
+          {
+            "key": "set_without_explanation",
+            "description": "The number is stated as a requirement with no explanation"
+          },
+          {
+            "key": "agency_reasoning",
+            "description": "The agency explains why it chose the number, based on its own judgment, data or experience"
+          },
+          {
+            "key": "existing_practice",
+            "description": "The number is modeled on or aligned with an existing regime, industry practice or standard, without being attributed to it as the legal source"
+          },
+          {
+            "key": "comment_requested",
+            "description": "The paragraph asks for comment on the number or offers alternatives to it"
+          },
+          {
+            "key": "illustrative",
+            "description": "The number is an example or illustration, not a requirement"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "borrowed_number",
+            "op": "no",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "281 rows are marked as not borrowed with nothing on where the number comes from; this fills the 'where it comes from' gap for numbers that originate in the document.",
+        "gen": 2
+      },
+      {
+        "id": "adjustable_number",
+        "label": "Regulator can adjust",
+        "kind": "noul",
+        "question": "Does this paragraph allow a regulator or other authority to change, waive, extend or set a different value for the numeric threshold it states?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Separates fixed numbers from those a regulator can move, which matters for every entry in the register.",
+        "gen": 2
+      },
+      {
+        "id": "time_unit_basis",
+        "label": "Time counting unit",
+        "kind": "choice",
+        "question": "In what unit is the central time period in this paragraph expressed?",
+        "options": [
+          {
+            "key": "hours",
+            "description": "Expressed in hours"
+          },
+          {
+            "key": "business_days",
+            "description": "Expressed in business or working days"
+          },
+          {
+            "key": "calendar_days",
+            "description": "Expressed in days, either stated as calendar days or with no qualifier"
+          },
+          {
+            "key": "weeks_months",
+            "description": "Expressed in weeks, months or quarters"
+          },
+          {
+            "key": "years",
+            "description": "Expressed in years"
+          },
+          {
+            "key": "other",
+            "description": "Another unit or not clear"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "threshold_type",
+            "op": "in",
+            "values": [
+              "time_period"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Time periods are 242 of 377 thresholds. The counting unit, especially business versus calendar days, is needed to state each one exactly.",
+        "gen": 3
+      },
+      {
+        "id": "borrowed_fidelity",
+        "label": "How number is borrowed",
+        "kind": "choice",
+        "question": "This paragraph attributes its numeric threshold to another law, rule or document. How does it use that source's number?",
+        "options": [
+          {
+            "key": "restates_same",
+            "description": "Restates or summarizes the source's number unchanged"
+          },
+          {
+            "key": "implements_with_detail",
+            "description": "Adopts the source's number and adds operational detail such as how to calculate or measure it"
+          },
+          {
+            "key": "tightens_or_adds",
+            "description": "Sets a stricter or additional number on top of the source's number"
+          },
+          {
+            "key": "relaxes_or_exempts",
+            "description": "Sets a looser number or an exemption relative to the source"
+          },
+          {
+            "key": "cross_reference_only",
+            "description": "Points to the source without restating the number's content"
+          },
+          {
+            "key": "unclear",
+            "description": "Cannot tell from the paragraph"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "borrowed_number",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "There are 96 borrowed numbers, 70 of them from the GENIUS Act. Knowing whether they are duplicates of the statutory number or modified versions is essential for a deduplicated register with provenance.",
+        "gen": 3
+      },
+      {
+        "id": "adjust_mechanism",
+        "label": "Adjustment mechanism",
+        "kind": "choice",
+        "question": "This paragraph lets an authority change, waive, extend or set a different value for its numeric threshold. By what mechanism?",
+        "options": [
+          {
+            "key": "extension_of_time",
+            "description": "The authority may extend a deadline or time period"
+          },
+          {
+            "key": "waiver_exemption",
+            "description": "The authority may waive the threshold or exempt a party from it"
+          },
+          {
+            "key": "set_by_rule",
+            "description": "The authority may set or revise the number by rulemaking or order"
+          },
+          {
+            "key": "case_by_case_higher",
+            "description": "The authority may impose a stricter or higher number on a specific firm"
+          },
+          {
+            "key": "indexing",
+            "description": "The number adjusts automatically, for example for inflation"
+          },
+          {
+            "key": "other",
+            "description": "Another mechanism or not clear"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "adjustable_number",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "The 34 adjustable thresholds have no follow-up. The mechanism shows how firm each number actually is.",
+        "gen": 3
+      },
+      {
+        "id": "reserve_aspect",
+        "label": "Reserve aspect",
+        "kind": "choice",
+        "question": "Which aspect of stablecoin reserves or backing does the numeric threshold in this paragraph govern?",
+        "options": [
+          {
+            "key": "backing_ratio",
+            "description": "The overall ratio of reserves to outstanding stablecoins, such as one-to-one backing"
+          },
+          {
+            "key": "asset_maturity",
+            "description": "The maximum remaining maturity or term of eligible reserve assets, such as Treasury bills of 93 days or less"
+          },
+          {
+            "key": "concentration_limit",
+            "description": "A cap on the share of reserves held in one asset type, counterparty or institution"
+          },
+          {
+            "key": "liquidity_share",
+            "description": "A minimum share of reserves in cash, deposits or same-day liquid assets"
+          },
+          {
+            "key": "repo_collateral",
+            "description": "Terms of repurchase or reverse repurchase agreements, including overcollateralization or tenor"
+          },
+          {
+            "key": "valuation_buffer",
+            "description": "Haircuts, buffers or valuation frequency for reserve assets"
+          },
+          {
+            "key": "other",
+            "description": "Another reserve aspect"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "limits_what",
+            "op": "in",
+            "values": [
+              "reserves_backing"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "The reserves branch (29 rows) has no follow-up, and it is the core substantive limit in the stablecoin documents.",
+        "gen": 3
+      },
+      {
+        "id": "capital_aspect",
+        "label": "Capital/liquidity aspect",
+        "kind": "choice",
+        "question": "Which capital or liquidity measure does the numeric threshold in this paragraph govern?",
+        "options": [
+          {
+            "key": "minimum_capital_amount",
+            "description": "A fixed minimum dollar amount of capital"
+          },
+          {
+            "key": "capital_ratio",
+            "description": "Capital as a ratio or percentage of assets, exposures or outstanding stablecoins"
+          },
+          {
+            "key": "operating_expense_buffer",
+            "description": "Capital or liquid assets sized to a number of months of operating expenses"
+          },
+          {
+            "key": "liquidity_requirement",
+            "description": "A liquidity buffer or coverage requirement"
+          },
+          {
+            "key": "risk_weight_or_calculation",
+            "description": "A risk weight, deduction or calculation parameter used in computing capital"
+          },
+          {
+            "key": "operational_risk",
+            "description": "Operational risk capital or loss-data parameters"
+          },
+          {
+            "key": "other",
+            "description": "Another capital or liquidity measure"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "limits_what",
+            "op": "in",
+            "values": [
+              "capital_liquidity"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "The capital and liquidity branch (20 rows) has no follow-up. The measure governed is needed to say what each number limits.",
+        "gen": 3
+      },
+      {
+        "id": "ownership_effect",
+        "label": "Ownership threshold effect",
+        "kind": "choice",
+        "question": "What does the ownership or control threshold in this paragraph determine?",
+        "options": [
+          {
+            "key": "defines_control_affiliate",
+            "description": "Defines when a person controls an entity or is an affiliate or related person"
+          },
+          {
+            "key": "decentralization_test",
+            "description": "Tests whether a blockchain system or digital asset is decentralized or mature, such as a cap on holdings or voting power"
+          },
+          {
+            "key": "approval_or_notice",
+            "description": "Triggers a requirement for regulatory approval or notice of an acquisition or change in control"
+          },
+          {
+            "key": "disclosure_of_holders",
+            "description": "Triggers disclosure of holders or insiders above a stake"
+          },
+          {
+            "key": "sale_or_holding_restriction",
+            "description": "Restricts how much insiders or holders may sell or hold"
+          },
+          {
+            "key": "other",
+            "description": "Another effect"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "limits_what",
+            "op": "in",
+            "values": [
+              "ownership_control"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "The ownership branch (28 rows) is not broken down. Control definitions and decentralization tests are very different limits.",
+        "gen": 3
+      },
+      {
+        "id": "penalty_form",
+        "label": "Penalty form",
+        "kind": "choice",
+        "question": "What form does the numeric penalty in this paragraph take?",
+        "options": [
+          {
+            "key": "civil_per_day",
+            "description": "A civil money penalty per day of violation"
+          },
+          {
+            "key": "civil_per_violation",
+            "description": "A civil money penalty per violation or a fixed cap"
+          },
+          {
+            "key": "criminal_fine",
+            "description": "A criminal fine"
+          },
+          {
+            "key": "imprisonment",
+            "description": "A term of imprisonment"
+          },
+          {
+            "key": "bar_or_suspension",
+            "description": "A time-limited bar, suspension or prohibition on a person or firm"
+          },
+          {
+            "key": "tax_penalty",
+            "description": "A tax penalty or addition to tax"
+          },
+          {
+            "key": "other",
+            "description": "Another form"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "limits_what",
+            "op": "in",
+            "values": [
+              "penalty"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Penalty numbers (13 rows) need their form recorded to be comparable across the register.",
+        "gen": 3
+      },
+      {
+        "id": "rule_timing_kind",
+        "label": "Rule timing kind",
+        "kind": "choice",
+        "question": "What kind of rulemaking or effectiveness timing does the numeric threshold in this paragraph set?",
+        "options": [
+          {
+            "key": "rule_issuance_deadline",
+            "description": "A deadline for an agency to propose or finalize rules"
+          },
+          {
+            "key": "effective_date",
+            "description": "When a statute, rule or provision takes effect"
+          },
+          {
+            "key": "transition_or_grace",
+            "description": "A transition, phase-in, grace or safe-harbor period for regulated parties"
+          },
+          {
+            "key": "comment_period",
+            "description": "The length of a public comment period"
+          },
+          {
+            "key": "sunset_or_expiry",
+            "description": "When a provision or authority expires"
+          },
+          {
+            "key": "study_or_report",
+            "description": "A deadline for a study or report tied to rulemaking"
+          },
+          {
+            "key": "other",
+            "description": "Another kind"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "limits_what",
+            "op": "in",
+            "values": [
+              "rulemaking_effective"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "The rulemaking and effective-date branch (55 rows) mixes agency deadlines with transition periods that bind firms.",
+        "gen": 3
+      },
+      {
+        "id": "reporting_other_item",
+        "label": "Other reported item",
+        "kind": "choice",
+        "question": "The report, disclosure or record governed by the numeric threshold in this paragraph did not fit the main categories. What is it?",
+        "options": [
+          {
+            "key": "report_to_congress",
+            "description": "A report or study an agency submits to Congress or the President"
+          },
+          {
+            "key": "public_register_or_publication",
+            "description": "A list, register or information an agency or firm publishes"
+          },
+          {
+            "key": "financial_statements",
+            "description": "Financial statements, call reports or periodic financial condition reports"
+          },
+          {
+            "key": "offering_or_token_disclosure",
+            "description": "Disclosure about a digital asset, its issuer or an offering"
+          },
+          {
+            "key": "risk_warning_promotion",
+            "description": "Risk warnings, cooling-off periods or financial promotion content"
+          },
+          {
+            "key": "paperwork_burden_estimate",
+            "description": "Estimated burden hours, respondents or costs with no compliance effect"
+          },
+          {
+            "key": "suspicious_or_transaction_report",
+            "description": "Suspicious activity, currency transaction or travel rule reports"
+          },
+          {
+            "key": "none",
+            "description": "No report or disclosure is actually governed"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "reporting_item",
+            "op": "in",
+            "values": [
+              "other"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "'Other' holds 28 of the 61 reporting rows, the largest catch-all in this branch.",
+        "gen": 3
+      },
+      {
+        "id": "agency_other_action",
+        "label": "Other agency action",
+        "kind": "choice",
+        "question": "The agency action tied to the numeric threshold in this paragraph did not fit the main categories. What is the agency doing?",
+        "options": [
+          {
+            "key": "enforcement_or_order",
+            "description": "Issuing, serving or lifting an enforcement order, suspension or penalty"
+          },
+          {
+            "key": "apply_size_or_scope_test",
+            "description": "Applying a size, ownership or scope threshold to decide who it supervises or what rules apply"
+          },
+          {
+            "key": "grant_waiver_or_extension",
+            "description": "Granting a waiver, exemption or extension"
+          },
+          {
+            "key": "coordinate_or_consult",
+            "description": "Consulting, coordinating or sharing information with another authority"
+          },
+          {
+            "key": "publish_or_maintain",
+            "description": "Publishing or maintaining a list, register or determination"
+          },
+          {
+            "key": "internal_government_directive",
+            "description": "Carrying out an executive directive, such as reviewing or rescinding prior policies"
+          },
+          {
+            "key": "burden_or_cost_estimate",
+            "description": "Estimating burden, cost or number of affected entities"
+          },
+          {
+            "key": "none",
+            "description": "No distinct agency action is stated"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "agency_deadline_action",
+            "op": "in",
+            "values": [
+              "other"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "'Other' holds 23 of the 122 agency-action rows and hides what the government must do by the number.",
+        "gen": 3
+      },
+      {
+        "id": "statement_role",
+        "label": "Role of statement",
+        "kind": "choice",
+        "question": "In what capacity does this paragraph state its numeric threshold? Use scope_note to identify the document type.",
+        "options": [
+          {
+            "key": "operative_text",
+            "description": "Operative statutory, bill or regulatory text that itself imposes the number as a requirement"
+          },
+          {
+            "key": "preamble_explanation",
+            "description": "Preamble, summary or discussion that describes or explains a requirement set elsewhere in the same document or in another law"
+          },
+          {
+            "key": "question_for_comment",
+            "description": "A question or request for comment about whether the number is appropriate or what it should be"
+          },
+          {
+            "key": "example_illustration",
+            "description": "A worked example, hypothetical or illustration using the number"
+          },
+          {
+            "key": "burden_or_cost_estimate",
+            "description": "An estimate of costs, burden hours, or number of affected entities, not a requirement"
+          },
+          {
+            "key": "background_description",
+            "description": "Background, history or description of market facts or other regimes with no requirement imposed here"
+          },
+          {
+            "key": "other",
+            "description": "None of the above"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Proposed rules account for 133 rows and probably mix regulatory text with preamble restatements. A register should separate the paragraph that sets a number from the ones that discuss it, and expose false positives such as estimates.",
+        "gen": 4
+      },
+      {
+        "id": "administering_authority",
+        "label": "Administering authority",
+        "kind": "choice",
+        "question": "Which authority administers, enforces or is responsible for the numeric threshold in this paragraph? Use scope_note if the paragraph does not name it.",
+        "options": [
+          {
+            "key": "federal_reserve",
+            "description": "Board of Governors of the Federal Reserve System"
+          },
+          {
+            "key": "occ",
+            "description": "Office of the Comptroller of the Currency"
+          },
+          {
+            "key": "treasury_fincen_irs",
+            "description": "Treasury Department, including FinCEN and the IRS"
+          },
+          {
+            "key": "sec",
+            "description": "Securities and Exchange Commission"
+          },
+          {
+            "key": "cftc",
+            "description": "Commodity Futures Trading Commission"
+          },
+          {
+            "key": "multiple_federal",
+            "description": "Several federal regulators jointly or 'the primary Federal payment stablecoin regulator' generically, including FDIC or NCUA"
+          },
+          {
+            "key": "state_regulator",
+            "description": "A State regulator such as NYDFS or State payment stablecoin regulators"
+          },
+          {
+            "key": "foreign_or_international",
+            "description": "A foreign or international body such as the FCA or FSB"
+          },
+          {
+            "key": "congress_or_courts",
+            "description": "Congress, the President or the courts"
+          },
+          {
+            "key": "none_or_unclear",
+            "description": "No administering authority is identifiable"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "The 'where it comes from' part of the question needs the responsible regulator, not only the document and its legal force.",
+        "gen": 4
+      },
+      {
+        "id": "dollar_measure",
+        "label": "Dollar figure measures",
+        "kind": "choice",
+        "question": "What quantity does the central dollar amount in this paragraph measure?",
+        "options": [
+          {
+            "key": "outstanding_issuance",
+            "description": "Total stablecoins or tokens outstanding, or consolidated total outstanding issuance"
+          },
+          {
+            "key": "total_assets",
+            "description": "Total or consolidated assets of an entity"
+          },
+          {
+            "key": "transaction_value",
+            "description": "Value of a single transaction or of transactions aggregated over a period"
+          },
+          {
+            "key": "offering_or_raise_size",
+            "description": "Amount raised or sold in an offering, or an investment limit"
+          },
+          {
+            "key": "capital_or_reserve_amount",
+            "description": "A required amount of capital, liquidity or reserves"
+          },
+          {
+            "key": "penalty_amount",
+            "description": "A fine or civil or criminal penalty amount"
+          },
+          {
+            "key": "revenue_or_income",
+            "description": "Revenue, income, gain or net worth of a person or firm"
+          },
+          {
+            "key": "fee_or_cost",
+            "description": "A fee, cost or burden estimate"
+          },
+          {
+            "key": "other",
+            "description": "Some other quantity"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "threshold_type",
+            "op": "in",
+            "values": [
+              "dollar_amount"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "34 of 62 dollar rows fall in the $10–50 billion band. The register needs to know what each dollar figure counts.",
+        "gen": 4
+      },
+      {
+        "id": "ten_billion_line",
+        "label": "Is $10bn line",
+        "kind": "noul",
+        "question": "Is the dollar amount in this paragraph specifically $10,000,000,000 ($10 billion) of outstanding payment stablecoin issuance, the line dividing State-level from Federal-level oversight of issuers?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "dollar_measure",
+            "op": "in",
+            "values": [
+              "outstanding_issuance"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Collapses the many restatements of the single GENIUS $10 billion threshold into one identifiable register entry and isolates the other issuance thresholds.",
+        "gen": 4
+      },
+      {
+        "id": "trigger_effect",
+        "label": "Trigger consequence",
+        "kind": "choice",
+        "question": "The numeric threshold in this paragraph works as a trigger. What obligation or consequence follows when it is met or crossed?",
+        "options": [
+          {
+            "key": "reporting_or_notice_duty",
+            "description": "A duty to report, file, notify or disclose arises"
+          },
+          {
+            "key": "registration_or_approval",
+            "description": "Registration, licensing, application or prior approval becomes required"
+          },
+          {
+            "key": "status_or_definition",
+            "description": "A person or asset gains or loses a legal status or falls within a definition, such as control, affiliate or mature blockchain"
+          },
+          {
+            "key": "exemption_or_safe_harbor",
+            "description": "An exemption, exclusion or safe harbor becomes available or is lost"
+          },
+          {
+            "key": "supervisory_action",
+            "description": "The regulator may or must act, such as examination, enforcement, restrictions or a hearing"
+          },
+          {
+            "key": "added_prudential_requirement",
+            "description": "Additional capital, reserve, liquidity or risk-management requirements apply"
+          },
+          {
+            "key": "tax_or_penalty_consequence",
+            "description": "A tax treatment or penalty applies"
+          },
+          {
+            "key": "other",
+            "description": "Some other consequence or none stated"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "threshold_function",
+            "op": "in",
+            "values": [
+              "trigger"
+            ],
+            "threshold": 0
+          },
+          {
+            "field": "limits_what",
+            "op": "not_in",
+            "values": [
+              "size_trigger"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Only size triggers have a consequence follow-up. The remaining trigger rows have no account of what crossing the number causes.",
+        "gen": 4
+      },
+      {
+        "id": "firm_deadline_action",
+        "label": "Private party action",
+        "kind": "choice",
+        "question": "What must the regulated firm or private person do within, by, or at the frequency of the time period or count stated in this paragraph?",
+        "options": [
+          {
+            "key": "redeem_or_pay",
+            "description": "Redeem stablecoins, return funds or make a payment to customers"
+          },
+          {
+            "key": "file_report_or_certification",
+            "description": "Submit a periodic report, certification, attestation or filing to a regulator"
+          },
+          {
+            "key": "publish_disclosure",
+            "description": "Publish or give information to the public or to customers"
+          },
+          {
+            "key": "notify_event",
+            "description": "Notify a regulator or customers of an event, change or breach"
+          },
+          {
+            "key": "respond_or_appeal",
+            "description": "Respond to a regulator's request, supply missing information, or request a hearing or appeal"
+          },
+          {
+            "key": "come_into_compliance",
+            "description": "Come into compliance, cure a deficiency, transition or cease an activity"
+          },
+          {
+            "key": "retain_records",
+            "description": "Keep records for the stated period"
+          },
+          {
+            "key": "wait_or_hold",
+            "description": "Observe a waiting, cooling-off, lock-up or holding period before acting"
+          },
+          {
+            "key": "other",
+            "description": "Some other action or none identifiable"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "threshold_function",
+            "op": "in",
+            "values": [
+              "deadline",
+              "frequency"
+            ],
+            "threshold": 0
+          },
+          {
+            "field": "applies_to",
+            "op": "not_in",
+            "values": [
+              "federal_agency",
+              "state_regulator"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Agency deadlines have an action breakdown, but deadlines and frequencies on firms and individuals do not. Those are the compliance-relevant day counts.",
+        "gen": 4
+      },
+      {
+        "id": "exact_period_value",
+        "label": "Exact period value",
+        "kind": "choice",
+        "question": "What is the exact length of the central time period stated in this paragraph?",
+        "options": [
+          {
+            "key": "d30",
+            "description": "30 days or 1 month"
+          },
+          {
+            "key": "d45",
+            "description": "45 days"
+          },
+          {
+            "key": "d60",
+            "description": "60 days or 2 months"
+          },
+          {
+            "key": "d90",
+            "description": "90 days, 3 months or one quarter"
+          },
+          {
+            "key": "d120",
+            "description": "120 days"
+          },
+          {
+            "key": "d180",
+            "description": "180 days or 6 months"
+          },
+          {
+            "key": "d270",
+            "description": "270 days or 9 months"
+          },
+          {
+            "key": "y1",
+            "description": "1 year, 12 months, 360 or 365 days"
+          },
+          {
+            "key": "other_shorter",
+            "description": "Any other period shorter than 1 year, such as hours, 1 to 29 days, or 93 days"
+          },
+          {
+            "key": "other_longer",
+            "description": "Any other period longer than 1 year, such as 18 months, 2, 3 or 5 years"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "threshold_type",
+            "op": "in",
+            "values": [
+              "time_period"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Time periods are 242 of 377 rows and are banded only coarsely. Exact recurring values let the register list actual numbers.",
+        "gen": 4
+      },
+      {
+        "id": "measurement_basis",
+        "label": "How it is measured",
+        "kind": "choice",
+        "question": "How or when is compliance with the minimum or maximum in this paragraph measured?",
+        "options": [
+          {
+            "key": "at_all_times",
+            "description": "Continuously, at all times or on a daily basis"
+          },
+          {
+            "key": "period_end_snapshot",
+            "description": "At a reporting date such as month-end or quarter-end"
+          },
+          {
+            "key": "average_over_period",
+            "description": "As an average or rolling measure over a period"
+          },
+          {
+            "key": "aggregate_over_period",
+            "description": "As a cumulative total within a period, such as per 12 months or per year"
+          },
+          {
+            "key": "per_transaction_or_instrument",
+            "description": "For each transaction, instrument, asset or person separately"
+          },
+          {
+            "key": "one_time_event",
+            "description": "At a single point such as application, issuance or acquisition"
+          },
+          {
+            "key": "not_stated",
+            "description": "The paragraph does not say how or when it is measured"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "threshold_function",
+            "op": "in",
+            "values": [
+              "minimum",
+              "maximum"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Minimums and maximums are 136 rows with no follow-up. A limit is only fully specified once the measurement basis is known.",
+        "gen": 4
+      },
+      {
+        "id": "secondary_type",
+        "label": "Second number type",
+        "kind": "choice",
+        "question": "This paragraph states more than one numeric threshold. Setting aside the most central one, what kind of number is the second most important threshold?",
+        "options": [
+          {
+            "key": "dollar_amount",
+            "description": "A dollar or other currency amount"
+          },
+          {
+            "key": "percentage",
+            "description": "A percentage"
+          },
+          {
+            "key": "ratio",
+            "description": "A ratio or multiple such as 1:1"
+          },
+          {
+            "key": "time_period",
+            "description": "A count of hours, days, months or years"
+          },
+          {
+            "key": "count_other",
+            "description": "A count of people, entities, transactions or other items"
+          },
+          {
+            "key": "other",
+            "description": "Another kind of number"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "multi_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Every type and band node records only the central number, so 60 paragraphs hide a second threshold. This recovers its type so 'every threshold' is closer to complete.",
+        "gen": 4
+      },
+      {
+        "id": "implementing_detail",
+        "label": "Detail added",
+        "kind": "choice",
+        "question": "This paragraph implements a numeric threshold taken from another law with added detail. What does it add?",
+        "options": [
+          {
+            "key": "calculation_method",
+            "description": "How the number is calculated, measured or aggregated"
+          },
+          {
+            "key": "procedure_or_timing",
+            "description": "Procedural steps, filing mechanics or intermediate deadlines"
+          },
+          {
+            "key": "definitions_or_scope",
+            "description": "Definitions or clarification of who or what the number covers"
+          },
+          {
+            "key": "sub_threshold",
+            "description": "A new subsidiary number, tier or buffer on top of the source's number"
+          },
+          {
+            "key": "exception_or_transition",
+            "description": "Exceptions, waivers, transition periods or extensions"
+          },
+          {
+            "key": "other",
+            "description": "Some other addition"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "borrowed_fidelity",
+            "op": "in",
+            "values": [
+              "implements_with_detail"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "27 rows implement a borrowed number with detail. This shows where rules go beyond the statute's number, which the provenance answer needs.",
+        "gen": 4
+      }
+    ],
+    "relations": {
+      "enabled": true,
+      "label": "Same threshold across documents",
+      "question": "Do threshold A and threshold B concern the same regulatory limit, and if so do they agree?",
+      "options": [
+        {
+          "key": "same_threshold",
+          "description": "Same subject and the same number, e.g. a rule restating or implementing a statutory figure"
+        },
+        {
+          "key": "different_value",
+          "description": "Same subject and covered party but a different number or stricter or looser limit"
+        },
+        {
+          "key": "related_subject",
+          "description": "Similar subject but different covered parties or not directly comparable"
+        },
+        {
+          "key": "none",
+          "description": "No meaningful relationship"
+        }
+      ],
+      "none_option": "none",
+      "candidates": [
+        {
+          "field": "has_threshold",
+          "op": "yes",
+          "values": [],
+          "threshold": 0.5
+        }
+      ],
+      "anchor_docs": [],
+      "block_by": "limits_what",
+      "cross_document": true,
+      "pairs_per_row": 3,
+      "max_pairs": 1500
+    },
+    "views": [
+      {
+        "id": "total_thresholds",
+        "type": "stat",
+        "title": "Numeric thresholds found",
+        "why": "Headline size of the register.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "limits_by_doc",
+        "type": "heatmap",
+        "title": "What thresholds limit, by document",
+        "why": "Shows where each kind of limit comes from and which documents are number-heavy.",
+        "x": "limits_what",
+        "y": "doc",
+        "where": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "who_by_type",
+        "type": "heatmap",
+        "title": "Who is bound, by number type",
+        "why": "Shows whether each party mostly faces dollar limits, percentages, ratios or time limits.",
+        "x": "applies_to",
+        "y": "threshold_type",
+        "where": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "by_legal_force",
+        "type": "bar",
+        "title": "Thresholds by legal force",
+        "why": "Separates binding numbers from proposed, interpretive and non-binding ones.",
+        "x": "legal_force",
+        "y": "",
+        "where": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "repeat_coverage",
+        "type": "coverage",
+        "title": "Share of thresholds repeated in another document",
+        "why": "Shows how much of each document's numbers also appear with the same value elsewhere, e.g. rules echoing the GENIUS Act.",
+        "x": "doc",
+        "y": "",
+        "where": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "share",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "threshold_network",
+        "type": "network",
+        "title": "Matching and diverging thresholds",
+        "why": "Makes visible the clusters of the same limit across statute, rules and guidance, and where values differ.",
+        "x": "limits_what",
+        "y": "",
+        "where": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "register_table",
+        "type": "table",
+        "title": "Threshold register",
+        "why": "The rows to read: each threshold with its type, subject, covered party and source.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "has_threshold",
+        "top": 200
+      },
+      {
+        "id": "force_by_subject",
+        "type": "heatmap",
+        "title": "Legal force of thresholds by what they limit",
+        "why": "Shows which kinds of limits are binding law and which are only proposed or recommended.",
+        "x": "limits_what",
+        "y": "binding_status",
+        "where": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "borrowed_sources_bar",
+        "type": "bar",
+        "title": "Where borrowed numbers come from",
+        "why": "Shows which upstream laws supply the thresholds that documents restate.",
+        "x": "borrowed_source",
+        "y": "",
+        "where": [
+          {
+            "field": "borrowed_number",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "clock_by_agency_action",
+        "type": "heatmap",
+        "title": "Time periods: start event by what they limit",
+        "why": "Shows what each deadline type runs from, for example enactment-driven rulemaking versus filing-driven application review.",
+        "x": "clock_start",
+        "y": "limits_what",
+        "where": [
+          {
+            "field": "threshold_type",
+            "op": "in",
+            "values": [
+              "time_period"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "issuer_class_by_limit",
+        "type": "heatmap",
+        "title": "Stablecoin issuer thresholds: issuer class by what is limited",
+        "why": "Shows which classes of issuer carry which kinds of numeric limit",
+        "x": "issuer_class",
+        "y": "limits_what",
+        "where": [
+          {
+            "field": "applies_to",
+            "op": "in",
+            "values": [
+              "stablecoin_issuer"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "number_basis_by_force",
+        "type": "heatmap",
+        "title": "Where non-borrowed numbers come from, by legal force",
+        "why": "Shows whether statutes, proposed rules and guidance explain, borrow by analogy, or simply state their numbers",
+        "x": "number_basis",
+        "y": "binding_status",
+        "where": [
+          {
+            "field": "borrowed_number",
+            "op": "no",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "deadline_miss_bar",
+        "type": "bar",
+        "title": "What happens when a deadline is missed",
+        "why": "Shows how many deadlines carry a stated consequence such as deemed approval or a penalty, and how many carry none",
+        "x": "deadline_miss_effect",
+        "y": "",
+        "where": [
+          {
+            "field": "threshold_function",
+            "op": "in",
+            "values": [
+              "deadline"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "borrowed_fidelity_by_force",
+        "type": "heatmap",
+        "title": "How borrowed numbers are used, by legal force",
+        "why": "Shows whether rules and guidance merely repeat statutory numbers or tighten and elaborate on them, separating duplicate entries from genuinely new ones.",
+        "x": "borrowed_fidelity",
+        "y": "binding_status",
+        "where": [
+          {
+            "field": "borrowed_number",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "reserve_aspect_bar",
+        "type": "bar",
+        "title": "What reserve thresholds govern",
+        "why": "Breaks the reserves branch into backing ratio, maturity, concentration and liquidity limits.",
+        "x": "reserve_aspect",
+        "y": "",
+        "where": [
+          {
+            "field": "limits_what",
+            "op": "in",
+            "values": [
+              "reserves_backing"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "time_unit_by_subject",
+        "type": "heatmap",
+        "title": "Time counting unit by what the period limits",
+        "why": "Shows where business-day, calendar-day, month and year clocks are used across redemption, application, reporting and rulemaking deadlines.",
+        "x": "time_unit_basis",
+        "y": "limits_what",
+        "where": [
+          {
+            "field": "threshold_type",
+            "op": "in",
+            "values": [
+              "time_period"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "role_by_force",
+        "type": "heatmap",
+        "title": "Operative vs. explanatory thresholds by legal force",
+        "why": "Shows how many thresholds are actually set in operative text and how many are preamble restatements, questions or estimates, for each document type.",
+        "x": "binding_status",
+        "y": "statement_role",
+        "where": [
+          {
+            "field": "has_threshold",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "period_value_by_party",
+        "type": "heatmap",
+        "title": "Exact time periods by who they bind",
+        "why": "Shows which day counts (30, 60, 90, 120, 180, 270, 1 year) recur and whether they bind agencies or regulated firms.",
+        "x": "exact_period_value",
+        "y": "applies_to",
+        "where": [
+          {
+            "field": "threshold_type",
+            "op": "in",
+            "values": [
+              "time_period"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "operative_by_authority",
+        "type": "bar",
+        "title": "Operative thresholds by administering authority",
+        "why": "Shows which regulator is responsible for the thresholds that are actually imposed, which answers where the numbers come from.",
+        "x": "administering_authority",
+        "y": "",
+        "where": [
+          {
+            "field": "statement_role",
+            "op": "in",
+            "values": [
+              "operative_text"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      }
+    ]
+  },
+  "followups": [
+    {
+      "at": "2026-10-04T16:35:58.333Z",
+      "focus": null,
+      "request": "",
+      "rationale": "The new layers pin down where each number comes from (legal force and the source of borrowed numbers), size the two dominant number types (time periods and dollar amounts), and break open the largest buckets: time periods, federal-agency deadlines, size triggers and the two 'other' catch-alls.",
+      "nodes": [
+        "binding_status",
+        "multi_threshold",
+        "borrowed_source",
+        "time_length_band",
+        "clock_start",
+        "dollar_magnitude",
+        "size_consequence",
+        "agency_deadline_action",
+        "other_limit_subject",
+        "other_party"
+      ]
+    },
+    {
+      "at": "2026-10-04T16:40:38.683Z",
+      "focus": null,
+      "request": "",
+      "rationale": "The new layers split the largest unrefined buckets (stablecoin issuers, deadlines, reporting, application review, percentages and ratios, multi-threshold paragraphs, clock-start 'other') and add where a non-borrowed number comes from and whether a regulator can change it. Together they sharpen all three parts of the register: what each number limits, who it binds, and its origin.",
+      "nodes": [
+        "issuer_class",
+        "deadline_miss_effect",
+        "reporting_item",
+        "application_step",
+        "pct_ratio_base",
+        "percentage_band",
+        "multi_relation",
+        "clock_start_other",
+        "number_basis",
+        "adjustable_number"
+      ]
+    },
+    {
+      "at": "2026-10-04T16:41:45.403Z",
+      "focus": null,
+      "request": "",
+      "rationale": "The new layers break open the largest catch-alls (other reports, other agency actions) and add first follow-ups to branches that had none: reserves, capital, ownership, penalties, rulemaking timing and adjustable numbers. They also record how time periods are counted and whether borrowed numbers are restated exactly or tightened, so each register entry says more precisely what the number limits and where it comes from.",
+      "nodes": [
+        "time_unit_basis",
+        "borrowed_fidelity",
+        "adjust_mechanism",
+        "reserve_aspect",
+        "capital_aspect",
+        "ownership_effect",
+        "penalty_form",
+        "rule_timing_kind",
+        "reporting_other_item",
+        "agency_other_action"
+      ]
+    },
+    {
+      "at": "2026-10-04T16:43:03.596Z",
+      "focus": null,
+      "request": "",
+      "rationale": "The new layers separate operative thresholds from preamble, examples and estimates, name the authority behind each number, and pin down recurring values (exact day counts, the $10 billion line, what the dollar figure measures). They also fill untouched branches: non-size triggers, firm-side deadlines, minimum/maximum measurement, second numbers in multi-threshold paragraphs, and what implementing rules add to statutory numbers.",
+      "nodes": [
+        "statement_role",
+        "administering_authority",
+        "dollar_measure",
+        "ten_billion_line",
+        "trigger_effect",
+        "firm_deadline_action",
+        "exact_period_value",
+        "measurement_basis",
+        "secondary_type",
+        "implementing_detail"
+      ]
+    }
+  ],
+  "lastRun": {
+    "at": "2026-10-04T16:44:14.925Z",
+    "rows": 4179,
+    "predicates": 40685,
+    "wallMs": 280075,
+    "costUsd": 0.13668627000000003
+  }
+}

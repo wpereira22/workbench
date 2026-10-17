@@ -1,0 +1,140 @@
+[
+ {
+  "question": "How does the amended Reg S-P impact broker-dealers, and where does it overlap with rules they may already follow?",
+  "pass": "cold",
+  "units": 489,
+  "edges": 94,
+  "wallMs": 4510,
+  "firstResultMs": 688,
+  "calls": 144,
+  "predicates": 1515,
+  "cacheHits": 0,
+  "inputTokens": 409393,
+  "costUsd": 0.017194506000000002,
+  "p50": 357,
+  "p95": 804,
+  "errors": 0,
+  "model": "jev-1.13.0",
+  "llm": {
+   "inputTokens": 0,
+   "outputTokens": 0,
+   "costUsd": 0,
+   "calls": 0
+  }
+ },
+ {
+  "question": "How does the amended Reg S-P impact broker-dealers, and where does it overlap with rules they may already follow?",
+  "pass": "warm",
+  "units": 489,
+  "edges": 94,
+  "wallMs": 27,
+  "firstResultMs": 5,
+  "calls": 144,
+  "predicates": 1515,
+  "cacheHits": 144,
+  "inputTokens": 0,
+  "costUsd": 0,
+  "p50": null,
+  "p95": null,
+  "errors": 0,
+  "model": "jev-1.13.0",
+  "llm": {
+   "inputTokens": 0,
+   "outputTokens": 0,
+   "costUsd": 0,
+   "calls": 0
+  }
+ },
+ {
+  "question": "Map every notification requirement across the corpus: who has to be told, about what, and how fast?",
+  "pass": "cold",
+  "units": 673,
+  "edges": 0,
+  "wallMs": 4538,
+  "firstResultMs": 307,
+  "calls": 134,
+  "predicates": 1417,
+  "cacheHits": 0,
+  "inputTokens": 329259,
+  "costUsd": 0.013828878000000001,
+  "p50": 362,
+  "p95": 1494,
+  "errors": 0,
+  "model": "jev-1.13.0",
+  "llm": {
+   "inputTokens": 0,
+   "outputTokens": 0,
+   "costUsd": 0,
+   "calls": 0
+  }
+ },
+ {
+  "question": "Map every notification requirement across the corpus: who has to be told, about what, and how fast?",
+  "pass": "warm",
+  "units": 673,
+  "edges": 0,
+  "wallMs": 23,
+  "firstResultMs": 10,
+  "calls": 134,
+  "predicates": 1417,
+  "cacheHits": 134,
+  "inputTokens": 0,
+  "costUsd": 0,
+  "p50": null,
+  "p95": null,
+  "errors": 0,
+  "model": "jev-1.13.0",
+  "llm": {
+   "inputTokens": 0,
+   "outputTokens": 0,
+   "costUsd": 0,
+   "calls": 0
+  }
+ },
+ {
+  "question": "Which regulations put the heaviest ongoing burden on a 40-person fintech, and what kind of work drives it?",
+  "pass": "cold",
+  "units": 66,
+  "edges": 0,
+  "wallMs": 7879,
+  "firstResultMs": 195,
+  "calls": 85,
+  "predicates": 123,
+  "cacheHits": 0,
+  "inputTokens": 132435,
+  "costUsd": 0.005562270000000001,
+  "p50": 661,
+  "p95": 4210,
+  "errors": 0,
+  "model": "jev-1.13.0",
+  "llm": {
+   "inputTokens": 0,
+   "outputTokens": 0,
+   "costUsd": 0,
+   "calls": 0
+  }
+ },
+ {
+  "question": "Which regulations put the heaviest ongoing burden on a 40-person fintech, and what kind of work drives it?",
+  "pass": "warm",
+  "units": 66,
+  "edges": 0,
+  "wallMs": 9,
+  "firstResultMs": 6,
+  "calls": 85,
+  "predicates": 123,
+  "cacheHits": 85,
+  "inputTokens": 0,
+  "costUsd": 0,
+  "p50": null,
+  "p95": null,
+  "errors": 0,
+  "model": "jev-1.13.0",
+  "llm": {
+   "inputTokens": 0,
+   "outputTokens": 0,
+   "costUsd": 0,
+   "calls": 0
+  }
+ }
+]

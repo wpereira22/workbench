@@ -1,0 +1,306 @@
+{
+  "question": "For each obligation: who must act (issuer, federal regulator, state regulator, digital asset service provider, other), what kind of duty it is (reserves, redemption, AML or sanctions, disclosure or reporting, licensing or approval, supervision or enforcement, other), and whether it sets a deadline",
+  "author": "planned by Claude Code (claude-fable-5-1)",
+  "program": {
+    "title": "GENIUS Act obligations: actor, duty type, deadline",
+    "thesis": "Each must/must_not paragraph of the GENIUS Act is confirmed as a real obligation, then classified by who must act and what kind of duty it is, and paired with a deadline flag; the answer is the actor x duty cross-tab and the deadline share per cell.",
+    "unit": {
+      "level": "paragraph",
+      "docs": [
+        "genius-act"
+      ],
+      "where": [
+        {
+          "field": "role",
+          "op": "in",
+          "values": [
+            "list_item",
+            "body",
+            "quote"
+          ],
+          "threshold": 0
+        },
+        {
+          "field": "modality",
+          "op": "in",
+          "values": [
+            "must",
+            "must_not"
+          ],
+          "threshold": 0
+        }
+      ],
+      "rationale": "Obligations are stated at paragraph level; the user scoped to GENIUS Act must/must_not paragraphs with role body, list_item or quote."
+    },
+    "doc_notes": [
+      {
+        "doc": "genius-act",
+        "note": "GENIUS Act (Public Law 119-27, enacted 2025-07-18) regulates payment stablecoins. 'Permitted payment stablecoin issuer' = a subsidiary of an insured depository institution, a Federal qualified payment stablecoin issuer, or a State qualified payment stablecoin issuer; only these may issue payment stablecoins in the US. 'Primary Federal payment stablecoin regulator' = OCC, Federal Reserve Board, FDIC or NCUA depending on the issuer; Treasury/the Secretary, FinCEN and the Stablecoin Certification Review Committee are also federal bodies. 'State payment stablecoin regulator' = the state agency supervising State qualified issuers. 'Digital asset service provider' = a person that for profit exchanges, transfers or custodies digital assets for others (exchanges, custodians), not the issuer itself. Many paragraphs are sub-items whose subject is stated in a parent clause; infer the actor from the section title and context when possible."
+      }
+    ],
+    "nodes": [
+      {
+        "id": "is_obligation",
+        "label": "Real obligation",
+        "kind": "noul",
+        "question": "Does this paragraph impose a concrete duty or prohibition on some identifiable actor (something they must do or must not do), as opposed to a definition, rule of construction, heading fragment, or purely conforming amendment? Use scope_note for defined terms.",
+        "options": [],
+        "levels": [],
+        "when": [],
+        "why": "Cheap gate to drop mislabeled or fragmentary paragraphs before classification."
+      },
+      {
+        "id": "actor",
+        "label": "Who must act",
+        "kind": "choice",
+        "question": "Who is the actor that must act or refrain under this obligation? Use scope_note for defined terms and the section title to infer the subject if the paragraph is a sub-item.",
+        "options": [
+          {
+            "key": "issuer",
+            "description": "A payment stablecoin issuer or applicant to become one (permitted, Federal or State qualified, bank subsidiary, or foreign issuer)"
+          },
+          {
+            "key": "federal_regulator",
+            "description": "A federal body: primary Federal payment stablecoin regulator, OCC, Federal Reserve, FDIC, NCUA, Treasury/Secretary, FinCEN, Stablecoin Certification Review Committee, or other federal agency"
+          },
+          {
+            "key": "state_regulator",
+            "description": "A State payment stablecoin regulator or other state authority"
+          },
+          {
+            "key": "digital_asset_service_provider",
+            "description": "A digital asset service provider such as an exchange or custodian offering, selling, or holding stablecoins for others"
+          },
+          {
+            "key": "other",
+            "description": "Any other actor (any person generally, accounting firms, officers, courts, Congress) or actor unclear"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_obligation",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "First dimension the user asked for."
+      },
+      {
+        "id": "duty_type",
+        "label": "Duty type",
+        "kind": "choice",
+        "question": "What kind of duty does this obligation mainly concern? Pick the single best fit.",
+        "options": [
+          {
+            "key": "reserves",
+            "description": "Reserve backing, composition, segregation, custody of reserves, limits on rehypothecation, capital or liquidity"
+          },
+          {
+            "key": "redemption",
+            "description": "Redeeming stablecoins, redemption policies, timeliness, fees, holder claims or priority in insolvency"
+          },
+          {
+            "key": "aml_sanctions",
+            "description": "Bank Secrecy Act, anti-money laundering, customer identification, sanctions compliance, freezing or blocking transactions, lawful orders"
+          },
+          {
+            "key": "disclosure_reporting",
+            "description": "Public disclosures, reserve reports, attestations, audits, certifications, reports to regulators or Congress, marketing representations"
+          },
+          {
+            "key": "licensing_approval",
+            "description": "Who may issue, applications, approval or denial, registration, state certification, eligibility conditions"
+          },
+          {
+            "key": "supervision_enforcement",
+            "description": "Examination, supervision, rulemaking, enforcement actions, penalties, coordination between regulators"
+          },
+          {
+            "key": "other",
+            "description": "Any other duty, e.g. activity limits, interoperability, studies, naming restrictions, effective dates"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_obligation",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Second dimension the user asked for."
+      },
+      {
+        "id": "sets_deadline",
+        "label": "Sets deadline",
+        "kind": "noul",
+        "question": "Does this obligation set a deadline, time limit, or recurring frequency for performance (e.g. 'not later than 180 days', 'monthly', 'within 30 days', 'annually')?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_obligation",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Third dimension; verifies the base deadline flag specifically for the obligation."
+      },
+      {
+        "id": "deadline_kind",
+        "label": "Deadline kind",
+        "kind": "choice",
+        "question": "What kind of timing does this obligation set?",
+        "options": [
+          {
+            "key": "one_time_date",
+            "description": "A one-time deadline measured from enactment or a fixed date (e.g. rulemaking or report due within N days/years of enactment)"
+          },
+          {
+            "key": "response_window",
+            "description": "A time limit triggered by an event (e.g. decide an application within 120 days, redeem within N days, notify within N days)"
+          },
+          {
+            "key": "recurring",
+            "description": "A recurring frequency (monthly, quarterly, annually)"
+          },
+          {
+            "key": "other",
+            "description": "Other or unclear timing"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "sets_deadline",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Distinguishes periodic duties from one-off and reaction deadlines."
+      }
+    ],
+    "relations": {
+      "enabled": false,
+      "label": "",
+      "question": "",
+      "options": [],
+      "none_option": "",
+      "candidates": [],
+      "anchor_docs": [],
+      "block_by": "",
+      "cross_document": false,
+      "pairs_per_row": 3,
+      "max_pairs": 0
+    },
+    "views": [
+      {
+        "id": "n_obligations",
+        "type": "stat",
+        "title": "Obligations in the GENIUS Act",
+        "why": "Headline count of confirmed obligations.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "is_obligation",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "actor_by_duty",
+        "type": "heatmap",
+        "title": "Who must act x duty type",
+        "why": "Shows where the Act's burden falls: which actors carry which kinds of duties.",
+        "x": "actor",
+        "y": "duty_type",
+        "where": [
+          {
+            "field": "is_obligation",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "deadline_by_actor_duty",
+        "type": "heatmap",
+        "title": "Average deadline probability by actor and duty",
+        "why": "Shows which actor/duty combinations are time-bound (cell value = mean probability that a deadline is set).",
+        "x": "actor",
+        "y": "duty_type",
+        "where": [
+          {
+            "field": "is_obligation",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "mean",
+        "measure_field": "sets_deadline",
+        "top": 0
+      },
+      {
+        "id": "deadline_kinds",
+        "type": "bar",
+        "title": "Deadline kinds",
+        "why": "Mix of one-time, event-triggered and recurring deadlines.",
+        "x": "deadline_kind",
+        "y": "",
+        "where": [
+          {
+            "field": "sets_deadline",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "obligation_table",
+        "type": "table",
+        "title": "Every obligation: actor, duty, deadline",
+        "why": "Row-level list to read each obligation with its classification.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "is_obligation",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "sets_deadline",
+        "top": 500
+      }
+    ]
+  },
+  "lastRun": {
+    "at": "2026-10-01T20:56:04.436Z",
+    "rows": 295,
+    "predicates": 1029,
+    "wallMs": 71908,
+    "costUsd": 0.020908482000000003
+  }
+}

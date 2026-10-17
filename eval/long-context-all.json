@@ -1,0 +1,161 @@
+{
+ "summary": {
+  "scope": "all",
+  "paragraphs": 1988,
+  "seconds": 231.4,
+  "model": "claude-fable-5-1",
+  "input_tokens": 289041,
+  "output_tokens": 18902,
+  "notional_cost_usd": 6.7259,
+  "listed": 20,
+  "found": "17/17",
+  "missed": [],
+  "not_in_key": [
+   "genius-act/b512",
+   "genius-act/b764",
+   "genius-act/b403"
+  ]
+ },
+ "items": [
+  {
+   "paragraph_id": "genius-act/b946",
+   "section": "Sec. 13(a) (general rulemaking deadline)",
+   "regulator": "Each primary Federal payment stablecoin regulator (Board, OCC, FDIC, NCUA) and the Secretary of the Treasury (also State payment stablecoin regulators, outside scope)",
+   "what_rule": "Promulgate regulations to carry out the Act through appropriate notice and comment rulemaking",
+   "clock": "Date of enactment (July 18, 2025); not later than 1 year after enactment -> July 18, 2026"
+  },
+  {
+   "paragraph_id": "genius-act/b153",
+   "section": "Sec. 3 (Treasury implementing-rules directive following §3(c))",
+   "regulator": "Secretary of the Treasury",
+   "what_rule": "Issue regulations to implement section 3 (prohibitions on issuance, offer, sale of payment stablecoins), including regulations to define terms",
+   "clock": "'Consistent with section 13' -> 1 year after enactment (July 18, 2026)"
+  },
+  {
+   "paragraph_id": "genius-act/b231",
+   "section": "Sec. 4(a)(4)(A)",
+   "regulator": "Primary Federal payment stablecoin regulators (State payment stablecoin regulators for State-qualified issuers)",
+   "what_rule": "Issue regulations implementing (i) capital requirements tailored to PPSI business model/risk; (ii) the liquidity standard under 4(a)(1)(A); (iii) reserve asset diversification and interest rate risk management standards; (iv) operational, compliance, and IT risk-management principles-based standards including BSA and sanctions compliance",
+   "clock": "'Consistent with section 13' -> 1 year after enactment (July 18, 2026)"
+  },
+  {
+   "paragraph_id": "genius-act/b264",
+   "section": "Sec. 4(a)(4)(C)(iv) (implementing clause (iii), genius-act/b256)",
+   "regulator": "Each appropriate Federal banking agency",
+   "what_rule": "Amend or otherwise modify consolidated leverage/risk-based capital regulations so that an insured depository institution or depository institution holding company that consolidates a PPSI is not required to hold capital for the PPSI in excess of the PPSI's own capital requirement",
+   "clock": "Not later than the earlier of (a) the section 13 rulemaking deadline (1 year after enactment) or (b) the date the Federal payment stablecoin regulators issue regulations to carry out section 4"
+  },
+  {
+   "paragraph_id": "genius-act/b275",
+   "section": "Sec. 4(a)(5)(B)",
+   "regulator": "Secretary of the Treasury (FinCEN/OFAC in practice)",
+   "what_rule": "Adopt rules, tailored to the size and complexity of PPSIs, implementing 4(a)(5)(A) (treatment of PPSIs as financial institutions under the Bank Secrecy Act: AML program, recordkeeping, SAR, blocking/freezing, CIP, sanctions compliance)",
+   "clock": "No deadline stated in the paragraph; general section 13 one-year deadline governs (July 18, 2026)"
+  },
+  {
+   "paragraph_id": "genius-act/b379",
+   "section": "Sec. 4(a)(12)(D)",
+   "regulator": "Stablecoin Certification Review Committee",
+   "what_rule": "Issue an interpretive rule clarifying the application of 4(a)(12) (restrictions on non-financial public companies and foreign non-financial companies issuing payment stablecoins)",
+   "clock": "Not later than 1 year after enactment -> July 18, 2026"
+  },
+  {
+   "paragraph_id": "genius-act/b393",
+   "section": "Sec. 4(b)(2) (amending 12 U.S.C. 1(b))",
+   "regulator": "Comptroller of the Currency",
+   "what_rule": "Issue such regulations and orders as necessary to ensure financial stability and implement section 4(a), in coordination with other relevant regulators",
+   "clock": "'Consistent with section 13' -> 1 year after enactment (July 18, 2026)"
+  },
+  {
+   "paragraph_id": "genius-act/b398",
+   "section": "Sec. 4(c)(2)",
+   "regulator": "Secretary of the Treasury",
+   "what_rule": "Through notice and comment rulemaking, establish broad-based principles for determining whether a State-level regulatory regime is substantially similar to the Federal framework",
+   "clock": "No deadline stated in the paragraph; section 13 one-year deadline governs (July 18, 2026); practically required before States' initial certifications due 1 year after the Act's effective date (genius-act/b401)"
+  },
+  {
+   "paragraph_id": "genius-act/b502",
+   "section": "Sec. 4(h)(1)",
+   "regulator": "Primary Federal payment stablecoin regulators ('shall'; State regulators 'may')",
+   "what_rule": "Issue such regulations relating to PPSIs as may be necessary to establish a payment stablecoin regulatory framework to administer and carry out section 4, including establishing conditions and preventing evasion",
+   "clock": "'Consistent with section 13' -> 1 year after enactment (July 18, 2026)"
+  },
+  {
+   "paragraph_id": "genius-act/b513",
+   "section": "Sec. 5(a)(2) (with genius-act/b515 and genius-act/b516)",
+   "regulator": "Primary Federal payment stablecoin regulators",
+   "what_rule": "(A) Issue regulations consistent with section 13 to carry out section 5 (applications by IDI subsidiaries and Federal qualified issuers) and (B) accept and process applications pursuant to those regulations",
+   "clock": "'Before the date described in section 13' -> 1 year after enactment (July 18, 2026)"
+  },
+  {
+   "paragraph_id": "genius-act/b512",
+   "section": "Sec. 5(a)(1)(B) (framework requirement; flagged as related to rulemaking)",
+   "regulator": "Each primary Federal payment stablecoin regulator",
+   "what_rule": "Establish a process and framework for the licensing, regulation, examination, and supervision of applicant entities that prioritizes safety and soundness (Board reads this with 5(a)(2) as requiring application rules)",
+   "clock": "No deadline in the paragraph; implemented through the 5(a)(2) regulations due before the section 13 date (July 18, 2026)"
+  },
+  {
+   "paragraph_id": "genius-act/b581",
+   "section": "Sec. 5(g)",
+   "regulator": "Primary Federal payment stablecoin regulators",
+   "what_rule": "Issue rules necessary for the regulation of the issuance of payment stablecoins, but may not impose requirements in addition to those specified under section 4",
+   "clock": "'Consistent with section 13' -> 1 year after enactment (July 18, 2026)"
+  },
+  {
+   "paragraph_id": "genius-act/b684",
+   "section": "Sec. 7(e)(1)(B)",
+   "regulator": "Board of Governors of the Federal Reserve System",
+   "what_rule": "Issue rules setting forth the unusual and exigent circumstances in which the Board may take back-up enforcement action against State qualified payment stablecoin issuers",
+   "clock": "'Consistent with section 13' -> 1 year after enactment (July 18, 2026)"
+  },
+  {
+   "paragraph_id": "genius-act/b713",
+   "section": "Sec. 7(e)(2)(B)",
+   "regulator": "Comptroller of the Currency",
+   "what_rule": "Issue rules setting forth the unusual and exigent circumstances in which the Comptroller may take enforcement action against nonbank State qualified payment stablecoin issuers",
+   "clock": "'Consistent with section 13' -> 1 year after enactment (July 18, 2026)"
+  },
+  {
+   "paragraph_id": "genius-act/b764",
+   "section": "Sec. 8(b)(3)(B)",
+   "regulator": "Secretary of the Treasury",
+   "what_rule": "Specify the criteria a noncompliant foreign payment stablecoin issuer must meet for the Secretary to determine it is no longer noncompliant",
+   "clock": "'Consistent with section 13' -> 1 year after enactment (July 18, 2026)"
+  },
+  {
+   "paragraph_id": "genius-act/b831",
+   "section": "Sec. 9(d)",
+   "regulator": "Financial Crimes Enforcement Network (FinCEN)",
+   "what_rule": "Issue public guidance and notice and comment rulemaking on (1) innovative methods for regulated financial institutions to detect illicit digital-asset activity; (2) standards for issuers to identify and report illicit activity; (3) standards for monitoring blockchains, mixers, tumblers; (4) tailored risk management standards for interacting with DeFi protocols",
+   "clock": "Not later than 3 years after enactment -> July 18, 2028"
+  },
+  {
+   "paragraph_id": "genius-act/b991",
+   "section": "Sec. 16(b)",
+   "regulator": "Primary Federal payment stablecoin regulators",
+   "what_rule": "Review all existing guidance and regulations and, if necessary, amend or promulgate new regulations and guidance clarifying that regulated entities may engage in payment stablecoin activities and investments (acting as principal or agent, paying fees to facilitate customer transactions)",
+   "clock": "No deadline stated in the paragraph; review is mandatory, amendment conditional on necessity; general section 13 one-year deadline governs (July 18, 2026)"
+  },
+  {
+   "paragraph_id": "genius-act/b1050",
+   "section": "Sec. 18(b) (comparability determinations)",
+   "regulator": "Secretary of the Treasury",
+   "what_rule": "Issue such rules as may be required to carry out section 18(b) (determinations that a foreign regime is comparable, rescission, public list)",
+   "clock": "Not later than 1 year after enactment -> July 18, 2026"
+  },
+  {
+   "paragraph_id": "genius-act/b1075",
+   "section": "Sec. 18(c) (foreign issuer registration)",
+   "regulator": "Comptroller of the Currency",
+   "what_rule": "Issue rules relating to the standards for approval of foreign payment stablecoin issuer registration requests and the process for appealing denials",
+   "clock": "'Pursuant to section 13' -> 1 year after enactment (July 18, 2026)"
+  },
+  {
+   "paragraph_id": "genius-act/b403",
+   "section": "Sec. 4(c)(4)(B) (implied; attestation 'in a form prescribed by the Committee')",
+   "regulator": "Stablecoin Certification Review Committee",
+   "what_rule": "Implicitly requires the Committee to prescribe the form of attestation for State substantial-similarity certifications; the Committee has implemented this via interim procedural rules and forms (treasury-state-cert/b27)",
+   "clock": "No express deadline; practically needed before States' initial certifications are due (not later than 1 year after the Act's effective date, genius-act/b401)"
+  }
+ ]
+}

@@ -1,0 +1,273 @@
+{
+  "question": "What anti-money-laundering and sanctions obligations apply to digital-asset businesses, and which documents impose them versus only describe them?",
+  "author": "authored by Claude (in chat)",
+  "program": {
+    "title": "AML and sanctions obligations for digital-asset businesses",
+    "thesis": "Find every AML, BSA, or sanctions passage, classify the obligation, who it lands on, and whether the document imposes it, restates existing law, or only recommends it. The imposes-vs-describes split separates binding sources from commentary.",
+    "unit": {
+      "level": "paragraph",
+      "docs": [
+        "fincen-2013",
+        "fincen-2019",
+        "genius-act",
+        "clarity-act",
+        "nydfs-stablecoin",
+        "pwg-report",
+        "treasury-issuance-nprm",
+        "fed-genius-nprm"
+      ],
+      "where": [
+        {
+          "field": "modality",
+          "op": "in",
+          "values": [
+            "must",
+            "must_not",
+            "may",
+            "context",
+            "defines"
+          ],
+          "threshold": 0
+        }
+      ],
+      "rationale": "Substantive paragraphs from FinCEN guidance, the two bills/statutes, NYDFS guidance, the PWG report, and two GENIUS Act rules."
+    },
+    "doc_notes": [],
+    "nodes": [
+      {
+        "id": "is_aml",
+        "label": "AML / sanctions?",
+        "kind": "noul",
+        "question": "Is this text about anti-money-laundering, the Bank Secrecy Act, customer identification, suspicious activity, or economic sanctions?",
+        "options": [],
+        "levels": [],
+        "when": [],
+        "why": "Gate."
+      },
+      {
+        "id": "obligation",
+        "label": "Obligation",
+        "kind": "choice",
+        "question": "Which AML or sanctions obligation is this about?",
+        "options": [
+          {
+            "key": "registration",
+            "description": "Registering or licensing as a money services business or similar"
+          },
+          {
+            "key": "aml_program",
+            "description": "Maintaining an AML or compliance program"
+          },
+          {
+            "key": "customer_due_diligence",
+            "description": "Customer identification or due diligence"
+          },
+          {
+            "key": "recordkeeping_travel",
+            "description": "Recordkeeping or passing information with transfers (travel rule)"
+          },
+          {
+            "key": "suspicious_activity",
+            "description": "Monitoring and reporting suspicious activity"
+          },
+          {
+            "key": "sanctions",
+            "description": "Sanctions screening or OFAC compliance"
+          },
+          {
+            "key": "freeze_seize",
+            "description": "Technical ability to freeze, seize, or block tokens"
+          },
+          {
+            "key": "other",
+            "description": "Other or general"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_aml",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "The obligation taxonomy."
+      },
+      {
+        "id": "who",
+        "label": "Who it lands on",
+        "kind": "choice",
+        "question": "Who must carry out this obligation?",
+        "options": [
+          {
+            "key": "money_transmitter",
+            "description": "Money transmitters or MSBs, including exchangers and administrators"
+          },
+          {
+            "key": "stablecoin_issuer",
+            "description": "Payment stablecoin issuers"
+          },
+          {
+            "key": "intermediary",
+            "description": "Exchanges, brokers, or digital asset service providers"
+          },
+          {
+            "key": "bank",
+            "description": "Banks"
+          },
+          {
+            "key": "users",
+            "description": "Users of virtual currency or unhosted wallets"
+          },
+          {
+            "key": "other",
+            "description": "Other or unspecified"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_aml",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Where the burden sits."
+      },
+      {
+        "id": "effect",
+        "label": "Imposes or describes?",
+        "kind": "choice",
+        "question": "What does this text do with the obligation?",
+        "options": [
+          {
+            "key": "imposes",
+            "description": "Creates or imposes the obligation"
+          },
+          {
+            "key": "applies_existing",
+            "description": "Explains how existing law applies"
+          },
+          {
+            "key": "recommends",
+            "description": "Recommends or proposes it as policy"
+          },
+          {
+            "key": "mentions",
+            "description": "Only mentions it"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_aml",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Binding source vs commentary."
+      }
+    ],
+    "relations": {
+      "enabled": false,
+      "label": "",
+      "question": "",
+      "options": [],
+      "none_option": "",
+      "candidates": [],
+      "anchor_docs": [],
+      "block_by": "",
+      "cross_document": false,
+      "pairs_per_row": 0,
+      "max_pairs": 0
+    },
+    "views": [
+      {
+        "id": "v_n",
+        "type": "stat",
+        "title": "AML / sanctions passages found",
+        "why": "Headline.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "is_aml",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_obl",
+        "type": "heatmap",
+        "title": "Obligations by document",
+        "why": "Who covers what.",
+        "x": "obligation",
+        "y": "doc",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_eff",
+        "type": "heatmap",
+        "title": "Imposes vs describes, by document",
+        "why": "Binding sources vs commentary.",
+        "x": "effect",
+        "y": "doc",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_who",
+        "type": "bar",
+        "title": "Who carries the obligations",
+        "why": "Where the burden lands.",
+        "x": "who",
+        "y": "",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_rows",
+        "type": "table",
+        "title": "Obligations imposed, to read",
+        "why": "The binding language.",
+        "x": "obligation",
+        "y": "who",
+        "where": [
+          {
+            "field": "effect",
+            "op": "in",
+            "values": [
+              "imposes"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 20
+      }
+    ]
+  },
+  "lastRun": {
+    "at": "2026-10-01T19:47:58.801Z",
+    "rows": 5280,
+    "predicates": 6867,
+    "wallMs": 80496,
+    "costUsd": 0.08637825000000002
+  }
+}

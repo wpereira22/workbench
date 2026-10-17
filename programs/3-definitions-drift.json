@@ -1,0 +1,258 @@
+{
+  "question": "How do these documents define digital assets, stablecoins, custody, and related terms, and where do the definitions diverge?",
+  "author": "authored by Claude (in chat)",
+  "program": {
+    "title": "Definition drift across regimes",
+    "thesis": "Collect every definitional paragraph, classify which term family it defines and how broad it is, then compare same-family definitions across documents. Edges show where regimes agree, where one is narrower, and where they conflict.",
+    "unit": {
+      "level": "paragraph",
+      "docs": [],
+      "where": [
+        {
+          "field": "modality",
+          "op": "in",
+          "values": [
+            "defines"
+          ],
+          "threshold": 0
+        }
+      ],
+      "rationale": "Every paragraph the base layer labeled as a definition, across all documents."
+    },
+    "doc_notes": [],
+    "nodes": [
+      {
+        "id": "term",
+        "label": "Term family",
+        "kind": "choice",
+        "question": "Which family of terms does this paragraph define?",
+        "options": [
+          {
+            "key": "digital_asset",
+            "description": "Digital asset, crypto asset, or token"
+          },
+          {
+            "key": "payment_stablecoin",
+            "description": "Stablecoin or payment stablecoin"
+          },
+          {
+            "key": "virtual_currency",
+            "description": "Virtual currency or convertible virtual currency"
+          },
+          {
+            "key": "digital_commodity",
+            "description": "Digital commodity"
+          },
+          {
+            "key": "issuer",
+            "description": "Issuer or permitted issuer"
+          },
+          {
+            "key": "custody",
+            "description": "Custody, custodian, or safekeeping"
+          },
+          {
+            "key": "intermediary",
+            "description": "Exchange, broker, dealer, or digital asset service provider"
+          },
+          {
+            "key": "money_transmission",
+            "description": "Money transmission or money services business"
+          },
+          {
+            "key": "reserves",
+            "description": "Reserves or reserve assets"
+          },
+          {
+            "key": "ledger",
+            "description": "Blockchain, distributed ledger, or network"
+          },
+          {
+            "key": "other",
+            "description": "Some other term"
+          }
+        ],
+        "levels": [],
+        "when": [],
+        "why": "Groups comparable definitions."
+      },
+      {
+        "id": "breadth",
+        "label": "Breadth",
+        "kind": "score",
+        "question": "How broad is this definition?",
+        "options": [],
+        "levels": [
+          "Narrow: a specific instrument or entity",
+          "Moderate",
+          "Broad: a catch-all category"
+        ],
+        "when": [
+          {
+            "field": "term",
+            "op": "not_in",
+            "values": [
+              "other"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Narrow vs catch-all."
+      },
+      {
+        "id": "borrows",
+        "label": "Borrows a definition?",
+        "kind": "noul",
+        "question": "Does this definition incorporate or cross-reference a definition from another statute or regulation?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "term",
+            "op": "not_in",
+            "values": [
+              "other"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Definitions that point elsewhere inherit drift."
+      }
+    ],
+    "relations": {
+      "enabled": true,
+      "label": "Same-term definitions compared",
+      "question": "How does definition B compare with definition A of the same kind of term?",
+      "options": [
+        {
+          "key": "consistent",
+          "description": "Essentially the same meaning"
+        },
+        {
+          "key": "narrower_or_broader",
+          "description": "Same concept, but one is clearly narrower or broader"
+        },
+        {
+          "key": "conflicting",
+          "description": "Materially different or conflicting meanings"
+        },
+        {
+          "key": "unrelated",
+          "description": "They define different things"
+        }
+      ],
+      "none_option": "unrelated",
+      "candidates": [
+        {
+          "field": "term",
+          "op": "not_in",
+          "values": [
+            "other"
+          ],
+          "threshold": 0
+        }
+      ],
+      "anchor_docs": [],
+      "block_by": "term",
+      "cross_document": true,
+      "pairs_per_row": 3,
+      "max_pairs": 900
+    },
+    "views": [
+      {
+        "id": "v_terms",
+        "type": "heatmap",
+        "title": "Which documents define which terms",
+        "why": "Where each concept gets defined.",
+        "x": "term",
+        "y": "doc",
+        "where": [
+          {
+            "field": "term",
+            "op": "not_in",
+            "values": [
+              "other"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_net",
+        "type": "network",
+        "title": "How same-term definitions relate",
+        "why": "Edges: consistent, narrower/broader, or conflicting.",
+        "x": "term",
+        "y": "",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_cov",
+        "type": "coverage",
+        "title": "Share of definitions that match a definition elsewhere",
+        "why": "Which concepts are shared vs regime-specific.",
+        "x": "term",
+        "y": "",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_breadth",
+        "type": "bar",
+        "title": "Average breadth by document (0 = narrow, 2 = broad)",
+        "why": "Who uses catch-alls.",
+        "x": "doc",
+        "y": "",
+        "where": [
+          {
+            "field": "term",
+            "op": "not_in",
+            "values": [
+              "other"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "mean",
+        "measure_field": "breadth",
+        "top": 0
+      },
+      {
+        "id": "v_rows",
+        "type": "table",
+        "title": "Broadest definitions",
+        "why": "Catch-all language to read.",
+        "x": "term",
+        "y": "borrows",
+        "where": [
+          {
+            "field": "term",
+            "op": "not_in",
+            "values": [
+              "other"
+            ],
+            "threshold": 0
+          }
+        ],
+        "measure": "count",
+        "measure_field": "breadth",
+        "top": 15
+      }
+    ]
+  },
+  "lastRun": {
+    "at": "2026-10-01T19:50:44.952Z",
+    "rows": 1201,
+    "predicates": 3095,
+    "wallMs": 32674,
+    "costUsd": 0
+  }
+}

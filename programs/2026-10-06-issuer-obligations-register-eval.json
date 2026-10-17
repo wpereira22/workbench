@@ -1,0 +1,186 @@
+{
+  "question": "Across the GENIUS Act and its four implementing rules, which paragraphs impose a requirement or prohibition on a payment stablecoin issuer, and how many concern each topic?",
+  "author": "written by hand for eval/dataset-question",
+  "program": {
+    "title": "Issuer obligations register (eval)",
+    "thesis": "Every paragraph of the GENIUS Act and its four implementing rules is judged once: does it impose a requirement or prohibition on a payment stablecoin issuer? Those that do are sorted by topic.",
+    "unit": {
+      "level": "paragraph",
+      "docs": [
+        "genius-act",
+        "fed-genius-nprm",
+        "fed-genius-applications",
+        "treasury-issuance-nprm",
+        "treasury-state-cert"
+      ],
+      "where": [
+        {
+          "field": "section_role",
+          "op": "not_in",
+          "values": [
+            "request_for_comment",
+            "impact_analysis"
+          ],
+          "threshold": 0
+        },
+        {
+          "field": "role",
+          "op": "not_in",
+          "values": [
+            "question"
+          ],
+          "threshold": 0
+        }
+      ],
+      "rationale": "Directives live in individual statutory paragraphs; implementation shows up in individual preamble or rule-text paragraphs. The print-edition duplicate of the Treasury NPRM is excluded, as are comment solicitations and impact analyses."
+    },
+    "doc_notes": [
+      {
+        "doc": "genius-act",
+        "note": "Public Law 119-27, enacted July 18, 2025. 'Primary Federal payment stablecoin regulator' means: OCC for federal qualified nonbank issuers and national banks; Federal Reserve Board for state member banks; FDIC for insured state nonmember banks; NCUA for credit unions. 'Secretary' = Secretary of the Treasury. 'Committee' = Stablecoin Certification Review Committee (SCRC). Most rulemakings are due within 1 year of enactment; effective date is the earlier of 18 months after enactment or 120 days after final regulations."
+      },
+      {
+        "doc": "fed-genius-nprm",
+        "note": "Federal Reserve Board proposed rule (Sept 2026) implementing the Board's GENIUS Act responsibilities for Board-supervised institutions (state member banks, subsidiaries, foreign banking operations), amending Regulations H, K and Q (capital) and adding Regulation UU (12 CFR 247)."
+      },
+      {
+        "doc": "fed-genius-applications",
+        "note": "Federal Reserve Board proposed rule (Sept 2026) on application procedures for Board-supervised insured depository institutions seeking approval to issue payment stablecoins under the GENIUS Act (12 CFR 247 and 262)."
+      },
+      {
+        "doc": "treasury-issuance-nprm",
+        "note": "Treasury proposed rule (Aug 2026), 12 CFR Part 1523, implementing GENIUS Act provisions on payment stablecoin issuance, offer and sale, including the prohibition on issuance by non-permitted issuers and related interpretations."
+      },
+      {
+        "doc": "treasury-state-cert",
+        "note": "Treasury rule (Sept 2026), 12 CFR Part 1522, establishing forms and procedures for the Stablecoin Certification Review Committee's review of state regulatory regime certifications under the GENIUS Act."
+      }
+    ],
+    "nodes": [
+      {
+        "id": "issuer_obligation",
+        "label": "Binds issuers",
+        "kind": "noul",
+        "question": "Does this paragraph itself impose a requirement or prohibition on a payment stablecoin issuer (including an applicant to become one, or an issuer's subsidiary): something the issuer must do or must not do? Answer no if it only binds regulators, other parties, or merely describes, defines, permits, or explains.",
+        "options": [],
+        "levels": [],
+        "when": [],
+        "why": "The register's gate"
+      },
+      {
+        "id": "topic",
+        "label": "Topic",
+        "kind": "choice",
+        "question": "What topic does this issuer obligation concern?",
+        "options": [
+          {
+            "key": "licensing_applications",
+            "description": "Licensing, applications, approval, registration"
+          },
+          {
+            "key": "reserves_redemption",
+            "description": "Reserve assets, backing, redemption, disclosure of reserves"
+          },
+          {
+            "key": "capital_liquidity_risk",
+            "description": "Capital, liquidity, risk management, operational resilience"
+          },
+          {
+            "key": "aml_sanctions",
+            "description": "Anti-money laundering, BSA, sanctions, lawful orders, technical ability to freeze"
+          },
+          {
+            "key": "activities_limits",
+            "description": "Permitted and prohibited activities, marketing, naming, interest, tying"
+          },
+          {
+            "key": "governance_ownership",
+            "description": "Governance, ownership and control, officers and directors, affiliates"
+          },
+          {
+            "key": "reporting_examination",
+            "description": "Reports, attestations, examination, supervision, recordkeeping"
+          },
+          {
+            "key": "custody_insolvency",
+            "description": "Custody, segregation of customer assets, insolvency, priority"
+          },
+          {
+            "key": "other",
+            "description": "Anything else"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "issuer_obligation",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Counts by topic"
+      }
+    ],
+    "relations": {
+      "enabled": false,
+      "label": "",
+      "question": "",
+      "options": [],
+      "none_option": "",
+      "candidates": [],
+      "anchor_docs": [],
+      "block_by": "",
+      "cross_document": false,
+      "pairs_per_row": 3,
+      "max_pairs": 0
+    },
+    "views": [
+      {
+        "id": "by_topic",
+        "type": "bar",
+        "title": "Issuer obligations by topic",
+        "why": "Where the burden sits",
+        "x": "topic",
+        "y": "",
+        "where": [
+          {
+            "field": "issuer_obligation",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "by_doc",
+        "type": "bar",
+        "title": "Issuer obligations by document",
+        "why": "Statute vs rules",
+        "x": "doc",
+        "y": "",
+        "where": [
+          {
+            "field": "issuer_obligation",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      }
+    ]
+  },
+  "lastRun": {
+    "at": "2026-10-07T02:42:49.832Z",
+    "rows": 1988,
+    "predicates": 2435,
+    "wallMs": 24453,
+    "costUsd": 0.05013867600000001
+  }
+}

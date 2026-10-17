@@ -1,0 +1,246 @@
+{
+  "collection": "Digital assets & currency",
+  "documents": [
+    {
+      "id": "genius-act",
+      "title": "GENIUS Act (Public Law 119-27)",
+      "short": "GENIUS Act",
+      "issuer": "Congress",
+      "date": "2025-07-18",
+      "format": "pdf",
+      "file": "genius-act.pdf",
+      "url": "https://www.congress.gov/119/plaws/publ27/PLAW-119publ27.pdf"
+    },
+    {
+      "id": "clarity-act",
+      "title": "Digital Asset Market CLARITY Act (H.R. 3633, as passed by the House)",
+      "short": "CLARITY Act",
+      "issuer": "Congress",
+      "date": "2025-07-17",
+      "format": "pdf",
+      "file": "clarity-act.pdf",
+      "url": "https://www.congress.gov/119/bills/hr3633/BILLS-119hr3633eh.pdf"
+    },
+    {
+      "id": "treasury-issuance-nprm",
+      "title": "GENIUS Act Regulations on Payment Stablecoin Issuance, Offer, and Sale (proposed rule)",
+      "short": "Treasury issuance NPRM",
+      "issuer": "Treasury",
+      "date": "2026-08-18",
+      "format": "html",
+      "file": "fr-2026-16796.html",
+      "url": "https://www.federalregister.gov/documents/2026/08/18/2026-16796/genius-act-regulations-on-payment-stablecoin-issuance-offer-and-sale"
+    },
+    {
+      "id": "fed-genius-nprm",
+      "title": "Implementing the Federal Reserve Board's Responsibilities Under the GENIUS Act (proposed rule)",
+      "short": "Fed GENIUS NPRM",
+      "issuer": "Federal Reserve",
+      "date": "2026-09-29",
+      "format": "html",
+      "file": "fr-2026-19860.html",
+      "url": "https://www.federalregister.gov/documents/2026/09/29/2026-19860/implementing-the-federal-reserve-boards-responsibilities-under-the-genius-act"
+    },
+    {
+      "id": "fed-genius-applications",
+      "title": "Application Procedures for Board-Supervised Insured Depository Institutions Seeking Approval to Issue Payment Stablecoins (proposed rule)",
+      "short": "Fed application NPRM",
+      "issuer": "Federal Reserve",
+      "date": "2026-09-29",
+      "format": "html",
+      "file": "fr-2026-19899.html",
+      "url": "https://www.federalregister.gov/documents/2026/09/29/2026-19899/application-procedures-for-board-supervised-insured-depository-institutions-seeking-approval-for-a"
+    },
+    {
+      "id": "treasury-state-cert",
+      "title": "Forms and Procedures for Review of State Certifications by the Stablecoin Certification Review Committee (final rule)",
+      "short": "Treasury state-cert rule",
+      "issuer": "Treasury",
+      "date": "2026-09-30",
+      "format": "html",
+      "file": "fr-2026-19966.html",
+      "url": "https://www.federalregister.gov/documents/2026/09/30/2026-19966/forms-and-procedures-for-review-of-state-certifications-by-the-stablecoin-certification-review"
+    },
+    {
+      "id": "eo-14178",
+      "title": "Executive Order 14178: Strengthening American Leadership in Digital Financial Technology",
+      "short": "EO 14178",
+      "issuer": "White House",
+      "date": "2025-01-23",
+      "format": "pdf",
+      "file": "eo-14178.pdf",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2025-01-31/pdf/2025-02123.pdf"
+    },
+    {
+      "id": "pwg-report",
+      "title": "President's Working Group Report: Strengthening American Leadership in Digital Financial Technology",
+      "short": "PWG report",
+      "issuer": "White House",
+      "date": "2025-07-30",
+      "format": "pdf",
+      "file": "pwg-report.pdf",
+      "url": "https://www.whitehouse.gov/wp-content/uploads/2025/07/Digital-Assets-Report-EO14178.pdf"
+    },
+    {
+      "id": "sec-stablecoins",
+      "title": "SEC Division of Corporation Finance: Statement on Stablecoins",
+      "short": "SEC stablecoin statement",
+      "issuer": "SEC",
+      "date": "2025-04-04",
+      "format": "web",
+      "file": "sec-stablecoins.json",
+      "url": "https://www.sec.gov/newsroom/speeches-statements/statement-stablecoins-040425"
+    },
+    {
+      "id": "fincen-2019",
+      "title": "FinCEN Guidance FIN-2019-G001: Application of FinCEN's Regulations to Certain Business Models Involving Convertible Virtual Currencies",
+      "short": "FinCEN 2019 CVC guidance",
+      "issuer": "FinCEN",
+      "date": "2019-05-09",
+      "format": "pdf",
+      "file": "fincen-2019.pdf",
+      "url": "https://www.fincen.gov/sites/default/files/2019-05/FinCEN%20Guidance%20CVC%20FINAL%20508.pdf"
+    },
+    {
+      "id": "fincen-2013",
+      "title": "FinCEN Guidance FIN-2013-G001: Application of FinCEN's Regulations to Persons Administering, Exchanging, or Using Virtual Currencies",
+      "short": "FinCEN 2013 guidance",
+      "issuer": "FinCEN",
+      "date": "2013-03-18",
+      "format": "pdf",
+      "file": "fincen-2013.pdf",
+      "url": "https://www.fincen.gov/sites/default/files/shared/FIN-2013-G001.pdf"
+    },
+    {
+      "id": "occ-1170",
+      "title": "OCC Interpretive Letter 1170: Authority of a National Bank to Provide Cryptocurrency Custody Services",
+      "short": "OCC IL 1170",
+      "issuer": "OCC",
+      "date": "2020-07-22",
+      "format": "pdf",
+      "file": "occ-1170.pdf",
+      "url": "https://www.occ.gov/topics/charters-and-licensing/interpretations-and-actions/2020/int1170.pdf"
+    },
+    {
+      "id": "occ-1183",
+      "title": "OCC Interpretive Letter 1183: Crypto-Asset Custody, Distributed Ledger, and Stablecoin Activities",
+      "short": "OCC IL 1183",
+      "issuer": "OCC",
+      "date": "2025-03-07",
+      "format": "pdf",
+      "file": "occ-1183.pdf",
+      "url": "https://www.occ.gov/topics/charters-and-licensing/interpretations-and-actions/2025/int1183.pdf"
+    },
+    {
+      "id": "occ-1184",
+      "title": "OCC Interpretive Letter 1184: Crypto-Asset Custody and Execution Services",
+      "short": "OCC IL 1184",
+      "issuer": "OCC",
+      "date": "2025-05-07",
+      "format": "pdf",
+      "file": "occ-1184.pdf",
+      "url": "https://www.occ.gov/topics/charters-and-licensing/interpretations-and-actions/2025/int1184.pdf"
+    },
+    {
+      "id": "irs-notice-2014-21",
+      "title": "IRS Notice 2014-21: Virtual Currency Guidance",
+      "short": "IRS Notice 2014-21",
+      "issuer": "IRS",
+      "date": "2014-03-25",
+      "format": "pdf",
+      "file": "irs-2014-21.pdf",
+      "url": "https://www.irs.gov/pub/irs-drop/n-14-21.pdf"
+    },
+    {
+      "id": "irs-rr-2023-14",
+      "title": "IRS Revenue Ruling 2023-14: Staking Rewards",
+      "short": "IRS Rev. Rul. 2023-14",
+      "issuer": "IRS",
+      "date": "2023-07-31",
+      "format": "pdf",
+      "file": "irs-rr-2023-14.pdf",
+      "url": "https://www.irs.gov/pub/irs-drop/rr-23-14.pdf"
+    },
+    {
+      "id": "nydfs-stablecoin",
+      "title": "NYDFS Guidance on the Issuance of U.S. Dollar-Backed Stablecoins",
+      "short": "NYDFS stablecoin guidance",
+      "issuer": "NYDFS",
+      "date": "2022-06-08",
+      "format": "html",
+      "file": "nydfs-stablecoin.html",
+      "url": "https://www.dfs.ny.gov/industry_guidance/industry_letters/il20220608_issuance_stablecoins"
+    },
+    {
+      "id": "fed-withdrawal",
+      "title": "Federal Reserve Board Withdraws Guidance on Crypto-Asset and Dollar Token Activities",
+      "short": "Fed guidance withdrawal",
+      "issuer": "Federal Reserve",
+      "date": "2025-04-24",
+      "format": "html",
+      "file": "fed-withdraw.html",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20250424a.htm"
+    },
+    {
+      "id": "occ-1179",
+      "title": "OCC Interpretive Letter 1179: Chief Counsel Interpretation on National Bank and Federal Savings Association Digital Activities",
+      "short": "OCC IL 1179",
+      "issuer": "OCC",
+      "date": "2021-11-18",
+      "format": "pdf",
+      "file": "occ-1179.pdf",
+      "url": "https://www.occ.gov/topics/charters-and-licensing/interpretations-and-actions/2021/int1179.pdf"
+    },
+    {
+      "id": "treasury-nprm-print",
+      "title": "Treasury issuance NPRM (Federal Register print edition, three-column PDF)",
+      "short": "Treasury NPRM print",
+      "issuer": "Treasury",
+      "date": "2026-08-18",
+      "format": "pdf",
+      "file": "treasury-nprm-print.pdf",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-08-18/pdf/2026-16796.pdf"
+    },
+    {
+      "id": "fsb-stablecoin-recs",
+      "title": "FSB High-level Recommendations for the Regulation, Supervision and Oversight of Global Stablecoin Arrangements",
+      "short": "FSB stablecoin recs",
+      "issuer": "Financial Stability Board",
+      "date": "2023-07-17",
+      "format": "pdf",
+      "file": "fsb-stablecoin-recs.pdf",
+      "url": "https://www.fsb.org/wp-content/uploads/P170723-3.pdf"
+    },
+    {
+      "id": "defi-sok-arxiv",
+      "title": "SoK: Decentralized Finance (DeFi) (arXiv 2101.08778)",
+      "short": "DeFi SoK (arXiv)",
+      "issuer": "arXiv",
+      "date": "2021-01-21",
+      "format": "pdf",
+      "file": "defi-sok-arxiv.pdf",
+      "url": "https://arxiv.org/pdf/2101.08778"
+    },
+    {
+      "id": "fca-ps23-6",
+      "title": "FCA PS23/6: Financial promotion rules for cryptoassets",
+      "short": "FCA PS23/6",
+      "issuer": "UK Financial Conduct Authority",
+      "date": "2023-06-08",
+      "format": "pdf",
+      "file": "fca-ps23-6.pdf",
+      "url": "https://www.fca.org.uk/publication/policy/ps23-6.pdf"
+    },
+    {
+      "id": "occ-1184-scanned-copy",
+      "title": "Subject: Clarification of Bank Authority Regarding Crypto-Asset Custody Services",
+      "short": "Subject: Clarification of Ba",
+      "issuer": "OCC",
+      "date": "2025-05-07",
+      "format": "pdf",
+      "file": "occ-1184-scanned-copy.pdf",
+      "url": null,
+      "auto_title": true
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "question": "Which regulations put the heaviest ongoing burden on a 40-person fintech, and what kind of work drives it?",
+  "program": {
+    "title": "Compliance burden profile for a 40-person fintech",
+    "thesis": "Judge each section's applicability to a specific company profile, then classify the work each applicable section creates and how heavy and recurring it is. Rolling up by regulation and work type shows where the burden actually comes from.",
+    "unit": {
+      "level": "section",
+      "docs": [],
+      "where": [],
+      "rationale": "Sections are the right grain for 'what does this rule make me do'."
+    },
+    "doc_notes": [
+      {
+        "doc": "ftc-safeguards",
+        "note": "Covers non-bank financial institutions under FTC jurisdiction, including payment processors, money transmitters, lenders and mortgage brokers."
+      },
+      {
+        "doc": "red-flags",
+        "note": "Covers 'financial institutions' (including any entity that holds a consumer transaction account) and 'creditors' that offer or maintain covered accounts."
+      },
+      {
+        "doc": "can-spam",
+        "note": "Covers any business that sends commercial email messages."
+      },
+      {
+        "doc": "endorsements",
+        "note": "FTC guidance for any advertiser that uses endorsements, testimonials, reviews or influencers in marketing."
+      },
+      {
+        "doc": "telemarketing",
+        "note": "Covers sellers and telemarketers that make interstate telephone calls to sell goods or services. A company that markets only online and by email is generally not engaged in telemarketing."
+      },
+      {
+        "doc": "coppa",
+        "note": "Covers operators of websites or online services directed to children under 13, or that knowingly collect personal information from children under 13. A general-audience payments app is not covered unless it knowingly collects from children."
+      },
+      {
+        "doc": "reg-sp",
+        "note": "Covers SEC-registered broker-dealers, investment companies, investment advisers and transfer agents only. A payments fintech that is not SEC-registered is not covered."
+      },
+      {
+        "doc": "reg-bi",
+        "note": "Covers SEC-registered broker-dealers making securities recommendations to retail customers only."
+      },
+      {
+        "doc": "sec-cyber",
+        "note": "Covers public companies filing annual reports with the SEC only."
+      },
+      {
+        "doc": "cdd-rule",
+        "note": "Covers banks, broker-dealers in securities, mutual funds, futures commission merchants and introducing brokers. Money services businesses and non-bank payments companies are not covered by this rule."
+      },
+      {
+        "doc": "hipaa-security",
+        "note": "Covers HIPAA covered entities (health plans, clearinghouses, health care providers) and their business associates only."
+      },
+      {
+        "doc": "hipaa-breach",
+        "note": "Covers HIPAA covered entities and their business associates only."
+      }
+    ],
+    "nodes": [
+      {
+        "id": "applies",
+        "label": "Applies?",
+        "kind": "noul",
+        "question": "Given the document's `scope_note`, would this section impose requirements on a 40-person US fintech that offers consumer payment accounts through a mobile app, markets online and by email, and stores customers' financial data? It is not SEC-registered, not a bank, and not a health care entity.",
+        "options": [],
+        "levels": [],
+        "when": [],
+        "why": "Applicability gate for this company profile."
+      },
+      {
+        "id": "work_type",
+        "label": "Work type",
+        "kind": "choice",
+        "question": "What is the main kind of work this section creates for the company?",
+        "options": [
+          {
+            "key": "technical_controls",
+            "description": "Security or technical controls to build, buy, or configure"
+          },
+          {
+            "key": "policies_documentation",
+            "description": "Written policies, procedures, or records"
+          },
+          {
+            "key": "people_training",
+            "description": "Designated responsible people, staffing, or training"
+          },
+          {
+            "key": "monitoring_testing",
+            "description": "Ongoing monitoring, testing, audits, or risk assessments"
+          },
+          {
+            "key": "customer_facing",
+            "description": "Disclosures, notices, or consents shown to customers"
+          },
+          {
+            "key": "reporting",
+            "description": "Reports or filings to regulators or the board"
+          },
+          {
+            "key": "none",
+            "description": "No real work (definitions, scope, dates)"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "applies",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "What drives cost."
+      },
+      {
+        "id": "effort",
+        "label": "Effort",
+        "kind": "score",
+        "question": "For a 40-person company, how much effort does complying with this section take?",
+        "options": [],
+        "levels": [
+          "Trivial: a few hours, once",
+          "Light: a small one-time project",
+          "Moderate: an ongoing part-time responsibility",
+          "Heavy: a program needing dedicated staff or tooling"
+        ],
+        "when": [
+          {
+            "field": "applies",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Size of the work."
+      },
+      {
+        "id": "recurring",
+        "label": "Recurring?",
+        "kind": "noul",
+        "question": "Does complying with this section require recurring work (periodic tests, reviews, reports, training, or renewals) rather than a one-time setup?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "applies",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Ongoing vs. one-time."
+      }
+    ],
+    "relations": {
+      "enabled": false,
+      "label": "",
+      "question": "",
+      "options": [],
+      "none_option": "",
+      "candidates": [],
+      "anchor_docs": [],
+      "block_by": "",
+      "cross_document": false,
+      "max_pairs": 0
+    },
+    "views": [
+      {
+        "id": "v_applies",
+        "type": "stat",
+        "title": "Sections that apply to this company",
+        "why": "Share of the corpus that is actually in play.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "applies",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "share",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_effort_doc",
+        "type": "bar",
+        "title": "Average effort per applicable section (0 = trivial, 3 = heavy)",
+        "why": "Which regimes are heaviest per section.",
+        "x": "doc",
+        "y": "",
+        "where": [
+          {
+            "field": "applies",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "mean",
+        "measure_field": "effort",
+        "top": 0
+      },
+      {
+        "id": "v_work",
+        "type": "heatmap",
+        "title": "Kind of work, by regulation",
+        "why": "What the burden is made of.",
+        "x": "work_type",
+        "y": "doc",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_recurring",
+        "type": "bar",
+        "title": "Share of applicable sections that recur, by regulation",
+        "why": "Ongoing vs one-time load.",
+        "x": "doc",
+        "y": "",
+        "where": [
+          {
+            "field": "applies",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "mean",
+        "measure_field": "recurring",
+        "top": 0
+      },
+      {
+        "id": "v_rows",
+        "type": "table",
+        "title": "Heaviest sections",
+        "why": "Where to staff first.",
+        "x": "work_type",
+        "y": "recurring",
+        "where": [
+          {
+            "field": "applies",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "effort",
+        "top": 15
+      }
+    ]
+  }
+}

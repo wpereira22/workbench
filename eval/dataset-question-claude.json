@@ -1,0 +1,1463 @@
+{
+ "summary": {
+  "seconds": 892.6,
+  "model": "claude-fable-5-1",
+  "input_tokens": 643034,
+  "output_tokens": 74897,
+  "notional_cost_usd": 10.825672,
+  "listed": 343,
+  "stated_counts": [
+   {
+    "topic": "licensing_applications",
+    "count": 46
+   },
+   {
+    "topic": "reserves_redemption",
+    "count": 70
+   },
+   {
+    "topic": "capital_liquidity_risk",
+    "count": 113
+   },
+   {
+    "topic": "aml_sanctions",
+    "count": 14
+   },
+   {
+    "topic": "activities_limits",
+    "count": 44
+   },
+   {
+    "topic": "governance_ownership",
+    "count": 13
+   },
+   {
+    "topic": "reporting_examination",
+    "count": 42
+   },
+   {
+    "topic": "custody_insolvency",
+    "count": 0
+   },
+   {
+    "topic": "other",
+    "count": 1
+   }
+  ],
+  "error": null
+ },
+ "output": {
+  "paragraphs": [
+   {
+    "id": "fed-genius-applications/b47",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b60",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b73",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b74",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-applications/b76",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-applications/b79",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b80",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b81",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b82",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b83",
+    "topic": "governance_ownership"
+   },
+   {
+    "id": "fed-genius-applications/b84",
+    "topic": "governance_ownership"
+   },
+   {
+    "id": "fed-genius-applications/b87",
+    "topic": "governance_ownership"
+   },
+   {
+    "id": "fed-genius-applications/b114",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b115",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b280",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b281",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b282",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b283",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b284",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b285",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b286",
+    "topic": "governance_ownership"
+   },
+   {
+    "id": "fed-genius-applications/b287",
+    "topic": "governance_ownership"
+   },
+   {
+    "id": "fed-genius-applications/b291",
+    "topic": "governance_ownership"
+   },
+   {
+    "id": "fed-genius-applications/b292",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b300",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-applications/b313",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-applications/b315",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b83",
+    "topic": "aml_sanctions"
+   },
+   {
+    "id": "fed-genius-nprm/b205",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b206",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b207",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b208",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b210",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b211",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b215",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b218",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b233",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b234",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b235",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b236",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b237",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b238",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b240",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b241",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b242",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b243",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b306",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b307",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b321",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b322",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b323",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b327",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b330",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b348",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b350",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b352",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b353",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b354",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b355",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b356",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b375",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b377",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b378",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b380",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b381",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b394",
+    "topic": "aml_sanctions"
+   },
+   {
+    "id": "fed-genius-nprm/b414",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b418",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b419",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b420",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b421",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b422",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b423",
+    "topic": "aml_sanctions"
+   },
+   {
+    "id": "fed-genius-nprm/b446",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b451",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b457",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b481",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b483",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b489",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b494",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b495",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b500",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b501",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b561",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b562",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b566",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b567",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b633",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b635",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b636",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b645",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b695",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b698",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b701",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b702",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b703",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b704",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b712",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b1337",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1349",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1350",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1351",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1352",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1353",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1354",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1355",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1356",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1357",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1358",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1359",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1365",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1371",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1373",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1374",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1375",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1376",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1377",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1383",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1384",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1385",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1386",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1402",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1403",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1404",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1405",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1406",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1407",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1432",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1433",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1434",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1435",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1436",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1438",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1439",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1442",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1443",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1446",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1447",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1448",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1449",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1450",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1451",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1452",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1453",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1454",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1455",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1458",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1459",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1460",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1461",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1462",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1463",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1464",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1465",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1466",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "fed-genius-nprm/b1468",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1469",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1470",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1471",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1472",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1473",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1474",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1475",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1476",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1477",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1478",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1479",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1480",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1481",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1482",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1483",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1484",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1485",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1486",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1487",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1488",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1489",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1490",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1491",
+    "topic": "governance_ownership"
+   },
+   {
+    "id": "fed-genius-nprm/b1492",
+    "topic": "governance_ownership"
+   },
+   {
+    "id": "fed-genius-nprm/b1494",
+    "topic": "governance_ownership"
+   },
+   {
+    "id": "fed-genius-nprm/b1495",
+    "topic": "governance_ownership"
+   },
+   {
+    "id": "fed-genius-nprm/b1496",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1497",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1498",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1499",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1500",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1501",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1502",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1503",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1504",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1505",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1506",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1507",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1508",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1509",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1510",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1511",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1512",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1528",
+    "topic": "aml_sanctions"
+   },
+   {
+    "id": "fed-genius-nprm/b1534",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1542",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1543",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1544",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1545",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1546",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1547",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1548",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1549",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1550",
+    "topic": "aml_sanctions"
+   },
+   {
+    "id": "fed-genius-nprm/b1551",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1552",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1553",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1554",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1555",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1556",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1557",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1558",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1559",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1563",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1564",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1565",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1572",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1573",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1576",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1577",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1578",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1579",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1580",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1581",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1582",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1583",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1619",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1621",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1622",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1623",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1624",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1653",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1654",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1655",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1656",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1658",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1659",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1660",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1661",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1662",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1664",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1666",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1670",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1682",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1688",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1689",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1690",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1691",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1692",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1693",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1694",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1695",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1696",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1697",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1698",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1727",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1728",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1732",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1733",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1734",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1735",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1736",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1737",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1738",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "fed-genius-nprm/b1777",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b1778",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b1779",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b1780",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b1781",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b1782",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b1783",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b1784",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b1785",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b1786",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1788",
+    "topic": "capital_liquidity_risk"
+   },
+   {
+    "id": "fed-genius-nprm/b1790",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b1791",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "fed-genius-nprm/b1792",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "fed-genius-nprm/b1793",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "genius-act/b131",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "genius-act/b176",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "genius-act/b177",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "genius-act/b199",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "genius-act/b200",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "genius-act/b201",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "genius-act/b202",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "genius-act/b203",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "genius-act/b204",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "genius-act/b205",
+    "topic": "reserves_redemption"
+   },
+   {
+    "id": "genius-act/b223",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "genius-act/b225",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "genius-act/b267",
+    "topic": "aml_sanctions"
+   },
+   {
+    "id": "genius-act/b269",
+    "topic": "aml_sanctions"
+   },
+   {
+    "id": "genius-act/b270",
+    "topic": "aml_sanctions"
+   },
+   {
+    "id": "genius-act/b271",
+    "topic": "aml_sanctions"
+   },
+   {
+    "id": "genius-act/b272",
+    "topic": "aml_sanctions"
+   },
+   {
+    "id": "genius-act/b273",
+    "topic": "aml_sanctions"
+   },
+   {
+    "id": "genius-act/b274",
+    "topic": "aml_sanctions"
+   },
+   {
+    "id": "genius-act/b293",
+    "topic": "aml_sanctions"
+   },
+   {
+    "id": "genius-act/b297",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "genius-act/b307",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "genius-act/b315",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "genius-act/b317",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "genius-act/b318",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "genius-act/b319",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "genius-act/b320",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "genius-act/b321",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "genius-act/b325",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "genius-act/b326",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "genius-act/b330",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "genius-act/b336",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "genius-act/b337",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "genius-act/b339",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "genius-act/b349",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "genius-act/b368",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "genius-act/b442",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "genius-act/b443",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "genius-act/b444",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "genius-act/b445",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "genius-act/b447",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "genius-act/b448",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "genius-act/b477",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "genius-act/b481",
+    "topic": "activities_limits"
+   },
+   {
+    "id": "genius-act/b489",
+    "topic": "governance_ownership"
+   },
+   {
+    "id": "genius-act/b490",
+    "topic": "governance_ownership"
+   },
+   {
+    "id": "genius-act/b491",
+    "topic": "governance_ownership"
+   },
+   {
+    "id": "genius-act/b584",
+    "topic": "aml_sanctions"
+   },
+   {
+    "id": "genius-act/b602",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "genius-act/b604",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "genius-act/b605",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "genius-act/b606",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "genius-act/b607",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "genius-act/b1077",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "genius-act/b1078",
+    "topic": "reporting_examination"
+   },
+   {
+    "id": "genius-act/b1079",
+    "topic": "other"
+   },
+   {
+    "id": "treasury-issuance-nprm/b114",
+    "topic": "licensing_applications"
+   },
+   {
+    "id": "treasury-issuance-nprm/b336",
+    "topic": "licensing_applications"
+   }
+  ],
+  "counts": [
+   {
+    "topic": "licensing_applications",
+    "count": 46
+   },
+   {
+    "topic": "reserves_redemption",
+    "count": 70
+   },
+   {
+    "topic": "capital_liquidity_risk",
+    "count": 113
+   },
+   {
+    "topic": "aml_sanctions",
+    "count": 14
+   },
+   {
+    "topic": "activities_limits",
+    "count": 44
+   },
+   {
+    "topic": "governance_ownership",
+    "count": 13
+   },
+   {
+    "topic": "reporting_examination",
+    "count": 42
+   },
+   {
+    "topic": "custody_insolvency",
+    "count": 0
+   },
+   {
+    "topic": "other",
+    "count": 1
+   }
+  ]
+ }
+}

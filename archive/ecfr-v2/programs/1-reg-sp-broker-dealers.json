@@ -1,0 +1,339 @@
+{
+  "question": "How does the amended Reg S-P impact broker-dealers, and where does it overlap with rules they may already follow?",
+  "program": {
+    "title": "Reg S-P obligations for broker-dealers, mapped against neighboring rules",
+    "thesis": "Deconstruct Reg S-P \u00a7248.30 and four neighboring security and breach rules into individual obligations; classify each by type, whether it binds a broker-dealer, and how fast it must be done; then pair every Reg S-P obligation with comparable obligations elsewhere to separate genuinely new work from work a firm may already do.",
+    "unit": {
+      "level": "paragraph",
+      "docs": [
+        "reg-sp",
+        "ftc-safeguards",
+        "hipaa-security",
+        "hipaa-breach",
+        "sec-cyber"
+      ],
+      "where": [],
+      "rationale": "Every paragraph of Reg S-P \u00a7248.30 and four neighboring security and breach rules; the first layer gates to actual obligations (list items like '(iii) Notify each affected individual' carry duties even when they read as fragments)."
+    },
+    "doc_notes": [
+      {
+        "doc": "reg-sp",
+        "note": "Reg S-P \u00a7248.30 applies to 'covered institutions': SEC-registered broker-dealers (including funding portals), investment companies, registered investment advisers, and registered transfer agents. The 2024 amendments added the incident response program, customer notification (as soon as practicable, no later than 30 days), and service provider oversight requirements."
+      },
+      {
+        "doc": "ftc-safeguards",
+        "note": "The FTC Safeguards Rule applies to financial institutions under FTC jurisdiction (e.g. non-bank lenders, mortgage brokers, payment firms). SEC-registered broker-dealers are regulated by the SEC under Regulation S-P instead and are not subject to this rule."
+      },
+      {
+        "doc": "hipaa-security",
+        "note": "The HIPAA Security Rule applies to HIPAA covered entities (health plans, health care clearinghouses, and health care providers that transmit health information electronically) and their business associates. It does not apply to broker-dealers acting as such."
+      },
+      {
+        "doc": "hipaa-breach",
+        "note": "The HIPAA Breach Notification Rule applies to HIPAA covered entities and their business associates, for breaches of unsecured protected health information. It does not apply to broker-dealers acting as such."
+      },
+      {
+        "doc": "sec-cyber",
+        "note": "SEC Regulation S-K Item 106 applies to public companies (SEC registrants filing annual reports). It binds a broker-dealer only if the broker-dealer or its parent is a public registrant; it is a disclosure requirement, not an operational one."
+      }
+    ],
+    "nodes": [
+      {
+        "id": "is_obligation",
+        "label": "Obligation?",
+        "kind": "noul",
+        "question": "Does this text impose a concrete duty on a regulated organization (something it must do or must not do), rather than only defining terms, describing scope, or cross-referencing?",
+        "options": [],
+        "levels": [],
+        "when": [],
+        "why": "Cheap gate: everything downstream only runs on real obligations."
+      },
+      {
+        "id": "obligation_type",
+        "label": "Obligation type",
+        "kind": "choice",
+        "question": "What kind of obligation is this?",
+        "options": [
+          {
+            "key": "written_program",
+            "description": "Adopt or maintain written policies, procedures, or a security program"
+          },
+          {
+            "key": "risk_assessment",
+            "description": "Assess risks, test, audit, or monitor safeguards"
+          },
+          {
+            "key": "safeguards",
+            "description": "Implement specific technical, physical, or administrative controls"
+          },
+          {
+            "key": "incident_response",
+            "description": "Detect, contain, assess, or investigate a security incident"
+          },
+          {
+            "key": "notification",
+            "description": "Notify affected individuals, regulators, or others about an incident or breach"
+          },
+          {
+            "key": "vendor_oversight",
+            "description": "Select, contract with, or oversee service providers or third parties"
+          },
+          {
+            "key": "records_disposal",
+            "description": "Keep records, document actions, or dispose of information"
+          },
+          {
+            "key": "governance_disclosure",
+            "description": "Board or management oversight, reporting, or public disclosure"
+          },
+          {
+            "key": "other",
+            "description": "Some other kind of obligation"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_obligation",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "The Lego piece everything else groups by."
+      },
+      {
+        "id": "binds_broker_dealers",
+        "label": "Binds a BD?",
+        "kind": "noul",
+        "question": "Given the document's `scope_note`, would this obligation apply to an SEC-registered broker-dealer that holds customer financial information?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "is_obligation",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Applicability to the subject of the question."
+      },
+      {
+        "id": "timeframe",
+        "label": "Timeframe",
+        "kind": "score",
+        "question": "How quickly or how often does this obligation require action?",
+        "options": [],
+        "levels": [
+          "No time requirement stated",
+          "Ongoing or periodic (e.g. annually, regularly)",
+          "Within a reasonable time or without unreasonable delay",
+          "Within a fixed period longer than 30 days",
+          "Within 30 days or less"
+        ],
+        "when": [
+          {
+            "field": "is_obligation",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Operational pressure."
+      },
+      {
+        "id": "notify_whom",
+        "label": "Notify whom",
+        "kind": "choice",
+        "question": "Who must be notified under this obligation?",
+        "options": [
+          {
+            "key": "individuals",
+            "description": "Affected individuals or customers"
+          },
+          {
+            "key": "regulator",
+            "description": "A government agency or regulator"
+          },
+          {
+            "key": "media_public",
+            "description": "The media or the public"
+          },
+          {
+            "key": "the_firm",
+            "description": "The regulated firm itself (e.g. a service provider notifying its client)"
+          },
+          {
+            "key": "unspecified",
+            "description": "Recipient not specified"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "obligation_type",
+            "op": "in",
+            "values": [
+              "notification"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Only asked of notification duties (third layer)."
+      }
+    ],
+    "relations": {
+      "enabled": true,
+      "label": "Overlap between Reg S-P and neighboring rules",
+      "question": "For a firm already complying with requirement B, how much of requirement A's work is already done?",
+      "options": [
+        {
+          "key": "same_work",
+          "description": "Essentially the same obligation: complying with B largely satisfies A"
+        },
+        {
+          "key": "partial_overlap",
+          "description": "Related, but with meaningful differences in scope, trigger, timing, or content"
+        },
+        {
+          "key": "different",
+          "description": "Different obligations: complying with B does little for A"
+        }
+      ],
+      "none_option": "different",
+      "candidates": [
+        {
+          "field": "is_obligation",
+          "op": "yes",
+          "values": [],
+          "threshold": 0.5
+        }
+      ],
+      "anchor_docs": [
+        "reg-sp"
+      ],
+      "block_by": "obligation_type",
+      "cross_document": true,
+      "max_pairs": 200
+    },
+    "views": [
+      {
+        "id": "v_bd",
+        "type": "stat",
+        "title": "Reg S-P obligations that bind broker-dealers",
+        "why": "The headline size of the new rule for a BD.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "doc",
+            "op": "in",
+            "values": [
+              "reg-sp"
+            ],
+            "threshold": 0
+          },
+          {
+            "field": "binds_broker_dealers",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_mix",
+        "type": "heatmap",
+        "title": "Obligation mix by regulation",
+        "why": "Where Reg S-P's weight sits relative to other rules.",
+        "x": "obligation_type",
+        "y": "doc",
+        "where": [
+          {
+            "field": "is_obligation",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_overlap",
+        "type": "network",
+        "title": "Which Reg S-P duties are already covered elsewhere",
+        "why": "Edges are pairs Jev judged the same work or partially overlapping.",
+        "x": "doc",
+        "y": "",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_speed",
+        "type": "heatmap",
+        "title": "How fast each rule demands action",
+        "why": "Timeframe of duties by regulation.",
+        "x": "timeframe",
+        "y": "doc",
+        "where": [
+          {
+            "field": "is_obligation",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_whom",
+        "type": "bar",
+        "title": "Who gets notified",
+        "why": "Recipients of notification duties across these rules.",
+        "x": "notify_whom",
+        "y": "",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "v_rows",
+        "type": "table",
+        "title": "Reg S-P duties for a broker-dealer, most time-pressured first",
+        "why": "The rows to read.",
+        "x": "obligation_type",
+        "y": "timeframe",
+        "where": [
+          {
+            "field": "doc",
+            "op": "in",
+            "values": [
+              "reg-sp"
+            ],
+            "threshold": 0
+          },
+          {
+            "field": "binds_broker_dealers",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "timeframe",
+        "top": 20
+      }
+    ]
+  }
+}

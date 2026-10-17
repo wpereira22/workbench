@@ -1,0 +1,455 @@
+{
+  "question": "Which documents treat staking or staking rewards, and do they agree on how staking is characterized (income, securities activity, or neither)?",
+  "author": "planned by Claude Code (claude-fable-5-1)",
+  "program": {
+    "title": "Staking treatment across the library",
+    "thesis": "Gate every paragraph in the documents that could plausibly address staking on whether it substantively discusses staking or staking rewards, then classify how each passage characterizes staking (taxable income, securities activity, non-security/commodity or ancillary activity, permissible banking activity, or merely descriptive) and what legal consequence it attaches; a cross-document relations pass then tests whether passages from different documents agree, conflict, or merely complement one another, so \"do they agree\" falls out of the doc × characterization heatmap and the relation edge counts.",
+    "unit": {
+      "level": "paragraph",
+      "docs": [
+        "irs-rr-2023-14",
+        "irs-notice-2014-21",
+        "pwg-report",
+        "clarity-act",
+        "genius-act",
+        "sec-stablecoins",
+        "occ-1183",
+        "occ-1184",
+        "fed-withdrawal"
+      ],
+      "where": [
+        {
+          "field": "section_role",
+          "op": "not_in",
+          "values": [
+            "impact_analysis",
+            "request_for_comment"
+          ],
+          "threshold": 0
+        }
+      ],
+      "rationale": "Staking is discussed in short passages scattered through statutes, the IRS ruling, the PWG report, and agency letters, often in context paragraphs rather than obligations, so modality cannot be used as a filter. The document list is restricted to those that could plausibly address staking (FinCEN 2013/2019, NYDFS, OCC 1170, the Treasury and Fed GENIUS-implementation rules, and EO 14178 do not) and the cheap layer-1 gate does the narrowing."
+    },
+    "doc_notes": [
+      {
+        "doc": "irs-rr-2023-14",
+        "note": "Revenue Ruling 2023-14 holds that a cash-method taxpayer who stakes cryptocurrency on a proof-of-stake blockchain and receives additional units as validation rewards must include the fair market value of those rewards in gross income in the taxable year the taxpayer gains dominion and control over them. 'Staking rewards' and 'validation rewards' refer to these units."
+      },
+      {
+        "doc": "irs-notice-2014-21",
+        "note": "Notice 2014-21 treats virtual currency as property for federal tax purposes and addresses mining (proof-of-work) rewards as gross income; it predates proof-of-stake and does not use the word staking, but its mining analysis is the basis later applied to staking."
+      },
+      {
+        "doc": "clarity-act",
+        "note": "The CLARITY Act (H.R. 3633, House-passed) creates a digital commodity regime under the CFTC and treats validation, staking and similar network activities as part of blockchain system operation; it addresses whether such activities and related services fall outside the securities laws. 'Digital commodity' and 'mature blockchain system' are defined terms in Title I."
+      },
+      {
+        "doc": "genius-act",
+        "note": "The GENIUS Act (Public Law 119-27) regulates payment stablecoin issuers; it prohibits issuers from paying interest or yield to holders solely in connection with holding a stablecoin and provides that payment stablecoins are not securities or commodities. Any staking discussion is in the context of stablecoin yield or reserve treatment."
+      },
+      {
+        "doc": "pwg-report",
+        "note": "The President's Working Group report (July 2025) is a policy report under EO 14178 with recommendations to Congress and agencies; it is not binding. It discusses staking, liquid staking and staking-as-a-service in the market-structure, banking, and tax chapters and makes recommendations on their tax and securities-law treatment."
+      },
+      {
+        "doc": "sec-stablecoins",
+        "note": "SEC Division of Corporation Finance staff statement (April 2025) concluding that 'Covered Stablecoins' (USD-backed, redeemable 1:1, reserve-backed, no yield to holders) are not securities; yield-bearing or algorithmic stablecoins are excluded from the statement's scope."
+      },
+      {
+        "doc": "occ-1183",
+        "note": "OCC Interpretive Letter 1183 (March 2025) reaffirms that national banks may engage in crypto-asset custody, certain stablecoin activities, and independent node verification network participation, and rescinds the prior supervisory non-objection requirement."
+      },
+      {
+        "doc": "occ-1184",
+        "note": "OCC Interpretive Letter 1184 (May 2025) confirms national banks may buy and sell crypto-assets held in custody at customer direction and may outsource custody and execution services to third parties."
+      },
+      {
+        "doc": "fed-withdrawal",
+        "note": "Federal Reserve press release (April 2025) withdrawing 2022 and 2023 supervisory letters on crypto-asset and dollar token activities of state member banks."
+      }
+    ],
+    "nodes": [
+      {
+        "id": "mentions_staking",
+        "label": "Discusses staking",
+        "kind": "noul",
+        "question": "Does this paragraph substantively discuss staking, staking rewards, validation/validator rewards on a proof-of-stake network, delegated or liquid staking, or staking-as-a-service (not merely mining, and not a passing list-item mention with no content about staking)? Use the scope_note to interpret defined terms.",
+        "options": [],
+        "levels": [],
+        "when": [],
+        "why": "Cheap gate: staking passages are sparse, so everything downstream runs only on the paragraphs that actually address it."
+      },
+      {
+        "id": "staking_form",
+        "label": "Form of staking",
+        "kind": "choice",
+        "question": "Which form of staking activity does this paragraph primarily address?",
+        "options": [
+          {
+            "key": "solo_validation",
+            "description": "A person running their own validator node and staking their own assets"
+          },
+          {
+            "key": "delegated_protocol",
+            "description": "Delegating stake to a validator through the protocol itself (non-custodial delegation)"
+          },
+          {
+            "key": "custodial_service",
+            "description": "Custodial staking or staking-as-a-service offered by an intermediary, exchange, or bank on behalf of customers"
+          },
+          {
+            "key": "liquid_staking",
+            "description": "Liquid staking or receipt tokens representing staked assets"
+          },
+          {
+            "key": "stablecoin_yield",
+            "description": "Yield or interest on stablecoins or reserves, discussed by analogy to staking"
+          },
+          {
+            "key": "unspecified",
+            "description": "Staking generally, without distinguishing a form"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "mentions_staking",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Agreement or conflict often turns on which staking arrangement a document has in mind (e.g. custodial services vs. solo validation)."
+      },
+      {
+        "id": "characterization",
+        "label": "Staking characterization",
+        "kind": "choice",
+        "question": "How does this paragraph characterize staking or staking rewards for legal or regulatory purposes? Read with the scope_note.",
+        "options": [
+          {
+            "key": "taxable_income",
+            "description": "Staking rewards are gross income (or otherwise a taxable event) when received"
+          },
+          {
+            "key": "securities_activity",
+            "description": "Staking, staking services, or staking-related tokens are or may be securities or an investment contract subject to the securities laws"
+          },
+          {
+            "key": "not_securities",
+            "description": "Staking or staking-related activity is not a securities offering / falls outside securities laws (e.g. treated as a digital commodity or ancillary blockchain activity)"
+          },
+          {
+            "key": "permissible_bank_activity",
+            "description": "Staking or node validation is a permissible activity for banks or their service providers"
+          },
+          {
+            "key": "policy_recommendation",
+            "description": "Recommends how staking should be treated (by Congress, IRS, SEC, or others) without stating current law"
+          },
+          {
+            "key": "descriptive_only",
+            "description": "Describes what staking is or how it works without characterizing its legal treatment"
+          },
+          {
+            "key": "other",
+            "description": "Some other characterization (e.g. AML, consumer protection, accounting)"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "mentions_staking",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "The core column: the three positions in the user's question (income, securities activity, neither) plus catch-alls."
+      },
+      {
+        "id": "legal_effect",
+        "label": "Legal effect",
+        "kind": "choice",
+        "question": "What operative legal effect, if any, does this paragraph give to its treatment of staking?",
+        "options": [
+          {
+            "key": "imposes_obligation",
+            "description": "Imposes a duty on a taxpayer, issuer, or intermediary (e.g. must include in income, must register, must disclose)"
+          },
+          {
+            "key": "grants_permission_or_exclusion",
+            "description": "Permits the activity or excludes it from a regulatory regime or definition"
+          },
+          {
+            "key": "prohibits",
+            "description": "Prohibits staking, yield, or a related activity"
+          },
+          {
+            "key": "conditional",
+            "description": "Treatment depends on facts and circumstances or on a test being met"
+          },
+          {
+            "key": "none",
+            "description": "No operative effect: descriptive, background, or recommendation"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "mentions_staking",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Separates binding rules from description so that disagreement can be weighed by legal force."
+      },
+      {
+        "id": "howey_analysis",
+        "label": "Howey applied",
+        "kind": "choice",
+        "question": "Does this paragraph apply or reference the investment-contract (Howey) test or a comparable securities-law analysis to staking, and if so with what conclusion?",
+        "options": [
+          {
+            "key": "applies_finds_security",
+            "description": "Applies the test and concludes staking arrangement is (or may be) an investment contract"
+          },
+          {
+            "key": "applies_finds_no_security",
+            "description": "Applies the test and concludes it is not an investment contract"
+          },
+          {
+            "key": "statutory_carveout",
+            "description": "Relies on a statutory exclusion or definition rather than the Howey test"
+          },
+          {
+            "key": "references_no_conclusion",
+            "description": "Mentions the securities-law question without concluding"
+          },
+          {
+            "key": "not_addressed",
+            "description": "Securities analysis not addressed"
+          }
+        ],
+        "levels": [],
+        "when": [
+          {
+            "field": "characterization",
+            "op": "in",
+            "values": [
+              "securities_activity",
+              "not_securities",
+              "policy_recommendation"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "Distinguishes documents that reach a securities conclusion by analysis from those that assert it by statute or recommendation."
+      },
+      {
+        "id": "income_timing",
+        "label": "Income timing stated",
+        "kind": "noul",
+        "question": "Does this paragraph state when staking rewards become income, such as when the taxpayer gains dominion and control over them or when they are received?",
+        "options": [],
+        "levels": [],
+        "when": [
+          {
+            "field": "characterization",
+            "op": "in",
+            "values": [
+              "taxable_income",
+              "policy_recommendation"
+            ],
+            "threshold": 0
+          }
+        ],
+        "why": "The tax-side disagreement (if any) concerns timing rather than whether rewards are income."
+      },
+      {
+        "id": "definiteness",
+        "label": "How definitive",
+        "kind": "score",
+        "question": "How definitively does this paragraph state its position on the treatment of staking?",
+        "options": [],
+        "levels": [
+          "Merely describes or raises the question",
+          "Suggests or recommends a treatment",
+          "States a position hedged by conditions or facts-and-circumstances",
+          "States an unconditional legal conclusion or rule"
+        ],
+        "when": [
+          {
+            "field": "mentions_staking",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "why": "Lets the reader see whether apparent disagreements are between firm rules or between tentative recommendations."
+      }
+    ],
+    "relations": {
+      "enabled": true,
+      "label": "Staking position agreement",
+      "question": "Passage A and passage B both address staking. How does A's treatment of staking relate to B's?",
+      "options": [
+        {
+          "key": "conflicts",
+          "description": "They characterize staking or its legal treatment in incompatible ways (e.g. one says securities activity, the other says not)"
+        },
+        {
+          "key": "agrees",
+          "description": "They characterize staking the same way or one adopts/builds on the other's conclusion"
+        },
+        {
+          "key": "complementary",
+          "description": "They address different legal questions about staking (e.g. tax vs. securities) without inconsistency"
+        },
+        {
+          "key": "none",
+          "description": "No meaningful relationship"
+        }
+      ],
+      "none_option": "none",
+      "candidates": [
+        {
+          "field": "mentions_staking",
+          "op": "yes",
+          "values": [],
+          "threshold": 0.5
+        },
+        {
+          "field": "characterization",
+          "op": "not_in",
+          "values": [
+            "descriptive_only"
+          ],
+          "threshold": 0
+        }
+      ],
+      "anchor_docs": [],
+      "block_by": "",
+      "cross_document": true,
+      "pairs_per_row": 4,
+      "max_pairs": 800
+    },
+    "views": [
+      {
+        "id": "headline_count",
+        "type": "stat",
+        "title": "Paragraphs that substantively address staking",
+        "why": "Headline: how much of the library actually speaks to staking.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "mentions_staking",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "docs_by_staking",
+        "type": "bar",
+        "title": "Which documents treat staking",
+        "why": "Ranks documents by number of staking passages; documents absent here do not address staking.",
+        "x": "doc",
+        "y": "",
+        "where": [
+          {
+            "field": "mentions_staking",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 12
+      },
+      {
+        "id": "doc_by_characterization",
+        "type": "heatmap",
+        "title": "Characterization of staking by document",
+        "why": "The direct answer to whether documents agree: each document's row shows whether it calls staking income, a securities activity, not a security, or something else.",
+        "x": "doc",
+        "y": "characterization",
+        "where": [
+          {
+            "field": "mentions_staking",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "force_by_characterization",
+        "type": "heatmap",
+        "title": "Characterization by legal force",
+        "why": "Shows whether firm positions come from binding law or from staff views and policy reports.",
+        "x": "legal_force",
+        "y": "characterization",
+        "where": [
+          {
+            "field": "mentions_staking",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "agreement_network",
+        "type": "network",
+        "title": "Agreement and conflict between staking passages",
+        "why": "Edges labeled conflicts/agrees/complementary across documents reveal whether disagreement is real or the documents simply answer different questions.",
+        "x": "characterization",
+        "y": "",
+        "where": [],
+        "measure": "count",
+        "measure_field": "",
+        "top": 0
+      },
+      {
+        "id": "staking_table",
+        "type": "table",
+        "title": "Staking passages, most definitive first",
+        "why": "Rows to read: the strongest statements on staking with their form, characterization, and legal effect.",
+        "x": "",
+        "y": "",
+        "where": [
+          {
+            "field": "mentions_staking",
+            "op": "yes",
+            "values": [],
+            "threshold": 0.5
+          }
+        ],
+        "measure": "count",
+        "measure_field": "definiteness",
+        "top": 60
+      }
+    ]
+  },
+  "lastRun": {
+    "at": "2026-10-01T19:45:36.046Z",
+    "rows": 3385,
+    "predicates": 3638,
+    "wallMs": 58372,
+    "costUsd": 0.057810480000000004
+  }
+}
